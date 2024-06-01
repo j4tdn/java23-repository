@@ -1,0 +1,20 @@
+Kiểu dữ liệu dùng để rang buộc phạm vi lưu trữ
+
+Trong lập trình có 2 loại KDL: 
+	+ satatic data type
+--> lưu chính xác giá trị trong kiểu dữ liệu
+vd:  int , String
+
+	+ dynamic data type
+--> Không quan tâm đến KDL
+vd: var/ let x = "hi", x=5;
+
+------------------------------------
+Biến nguyên thủy:
++ Lưu trữ giá trị đơn: số nguyên, số thực, kí tự
+				     : giá trị mặc định phụ thuộc KDL, chỉ dc phép sử dụng có sẵn của JAVA.
+
+Biến đối tượng:
++ Lưu trữ giá trị đơn, đa: chuỗi , mặt hàng, hóa đơn, đơn hàng, nhân viên giá trị mặc định là null
++ Có thể sử dụng KDL đối tượng có sẵn của Java: Integer, Double, Charactor, String ... và KDL đối tượng do mình tụ tạo ra phục vụ cho bài toán: Item, Order, Employee
+	--> Là 1 class chứa nhiều thuộc tính (biến toàn cục) bên trong
