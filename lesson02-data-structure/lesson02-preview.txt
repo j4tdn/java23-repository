@@ -1,0 +1,31 @@
+Kiểu dữ liệu 
+--> Là khái niệm dùng để ràng buộc, cho phép việc lưu trữ dữ liệu trong phạm vi nào
+--> Ví dụ lưu chuỗi --> cần sử dụng KDL chuỗi
+-->		  lưu số --> cần sử dụng KDL số
+
+Trong lập trình có 2 loại kiểu dữ liệu
+
++static data type
+--> khi có giá trị gì cần lưu chính xác trong KDL gì đó
+	VD: chuỗi --> String
+		số --> int
+		
++ dynamic(loosely) data type
+--> không quan tâm đến KDL lúc khai báo, dù là bất kỳ giá trị lưu được hết
+--> var/let x = "hello" ; x = 5;
+
+
+
+------------------------------------
+Biến nguyên thủy
++ Lưu trữ giá trị đơn:số nguyên, số thực , ký tự
+					:giá trị măc định phụ thuộc vào KDL
++ Chỉ được phép sử dụng các KDL nguyên thủy có sẵn của Java: int double , char ...
+
+Biến đối tượng
++ Lưu trữ giá trị đơn, đa: Chuỗi , mặt hàng , hóa đơn, đơn hàng , nhân viên
+						: giá trị mặc định là null
++ Có thể sử dụng KDL đối tượng có sẵn của Java: Integer, Double , Charactor, String ...
+  và KDL đối tượng do mình tự tạo ra phục vụ cho bài toán: Item, Order, Employee
+  		--> là 1 class chứa nhiều thuộc tính (biến toàn cục) bên trong
+  		VD: Item: id, name, salesPrice						
