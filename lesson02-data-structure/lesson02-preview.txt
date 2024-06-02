@@ -1,0 +1,3 @@
+Kiểu dữ liệu
+
+--> Khái niệm dùng để ràng buộc,cho phép việc lưu trữ dữ liệu trong phạm vi nào đó
