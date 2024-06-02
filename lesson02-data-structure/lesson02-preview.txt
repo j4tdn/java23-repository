@@ -1,0 +1,4 @@
+kiểu dữ liệu 
+
+-->Là khái niệm dùng để ràng buộc , cho phép việc lưu trữ dự việt trong phạm vi nào 
+-->
