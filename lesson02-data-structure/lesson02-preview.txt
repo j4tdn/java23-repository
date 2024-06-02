@@ -1,0 +1,8 @@
+Biến nguyên thủy
+Lưu trữ giá trị đơn : số nguyên, số thực, kí tự
+
+Biến đối tượng 
++ Lưu trữ giá trị đơn, đa: chuỗi , mặt hàng, hóa đơn, đơn hàng, nhân viên giá trị mặc định là null
+
+
+	
