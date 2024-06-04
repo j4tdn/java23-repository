@@ -1,0 +1,10 @@
+kiểu dữ liệu 
+
+--> Là khái niệm dùng để ràng buộc, cho phép việc lưu trữ dữ liệu Trong phạm vi nào
+--> ví dụ lưu chuỗi --> cần sử dụng KDL chuỗi
+--> Ví dụ lưu chuỗi --> cần sử dụng KDL chuỗi 
+
+trong lập trình có 2 kiểu dữ liệu 
+
+ + static data type 
+    --> khi có giá trị gì cần lưu chính xác trong KDL gì đó 
