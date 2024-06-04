@@ -1,5 +1,7 @@
 package view;
 
+import bean.CustomInt;
+
 public class Ex03SwapTest {
 	
 	public static void main(String[] args) {
@@ -24,7 +26,21 @@ public class Ex03SwapTest {
 		
 	}
 	
+	private static void swapCustomInt(CustomInt p1, CustomInt p2) {
+		CustomInt temp = p1;
+		p1 = p2;
+		p2 = temp;
+	}
+	
 	private static void swapInt(int p1, int p2) {
-		int 
+		int temp = p1;
+		p1 = p2;
+		p2 = temp;
+	}
+	
+	private static void swapInteger(Integer p1, Integer p2) {
+		Integer temp = p1;
+		p1 = p2;
+		p2 = temp;
 	}
 }
