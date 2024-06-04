@@ -1,0 +1,15 @@
+kkểu dữ liệu 
+-> laf khái niệm dùng để ràng buộc, cho phép việc lưu trữ trong phạm vi nào 
+ --> ví dụ lưu chuối --> cần sử dụng kdl chuỗi
+ --> lưu số --> sử dụng kiểu dữ liệu số
+  
+trong lập trình có 2 kiểu dữ liệu 
+  
+  + static data type 
+  --> khi có giá trị cần lưu chính xác trong KDL gì đó
+  vd: chuỗi --> string
+      số --> int
+      
+  + dynamic(loosely) data type
+  -->không quan tâm đến KDL lúc khai báo, dù là bất kì giá trị lưu được hết
+  --> var/let x = "hello"; x = S;
