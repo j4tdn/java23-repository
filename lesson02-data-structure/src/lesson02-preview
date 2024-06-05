@@ -1,0 +1,12 @@
+Kiểu dữ liệu 
+--> là khái niệm dùng để ràng buộc, cho phép lưu trữ dữ liệu trong phạm vi nào
+--> ví dụ lưu chuỗi --> cần sử dụng KDL chuỗi 
+--> lưu số --> cần sử dụng KDL số
+  
+  trong lập trình có 2 loại kiệu dữ liệu 
+  +static data syple 
+  --> khi có giá trị gì cần lưu chính xác trong KDL gì đó
+  VD: chuỗi --> String 
+      số --> int 
+  + dynamic( loosely) data type 
+       không quan tâm đến kdl
