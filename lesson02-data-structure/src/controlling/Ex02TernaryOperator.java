@@ -67,6 +67,8 @@ public class Ex02TernaryOperator {
 		
 		// Switch case, loop(for, while, dowhile)
 		// Array(basic)
+		// Enumeration
+		// Practice with simple code & exercises
 	}
 	
 }
