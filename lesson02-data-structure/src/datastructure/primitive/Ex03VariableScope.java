@@ -24,9 +24,12 @@ public class Ex03VariableScope {
 	  ctrl alt down/up --> copy nhanh 1 dòng
 	  
 	 */
+	
+	//biến toàn cục có thể trùng tên với biến cục bộ 
+	//nếu bên trong hàm chứa biến cục bộ thì nó sẽ ưu tiên biến cục bộ hơn
 	private static int g1 = 123;
     static int g2 = 234;
-	
+	static int a1 = 999;
 	
 	public static void main(String[] args) {
 		
@@ -63,7 +66,7 @@ public class Ex03VariableScope {
 		
 		// biến cục bộ - phạm vi trong hàm testScope
 		char z1 = '!';
-		char z2 = '#';
+		int z2 = '#';
 		int a1 = 55;
 	}
 }
