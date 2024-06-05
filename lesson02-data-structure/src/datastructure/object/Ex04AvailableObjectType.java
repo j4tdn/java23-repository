@@ -94,11 +94,8 @@ public class Ex04AvailableObjectType {
 		 			+ Nếu có rồi --> lấy biến trỏ đến ô nhớ đã có
 		 			+ Nếu chưa có --> tạo ô nhớ mới và lấy biến trỏ đến ô nhớ mới đó 
 		 			
-		 	
-		
-		 
-		 
 		 */
+		
 		
 	}
 }
