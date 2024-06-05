@@ -73,6 +73,8 @@ public class Ex01IfElse {
 		System.out.println("Ranking --> " + ranking);
 		System.out.println("Ranking --> " + getRank(roundeAvgPoint)); //dùng hàm
 		
+		ip.close();
+		
 	}
 	
 	private static String getRank(float roundeAvgPoint) {
