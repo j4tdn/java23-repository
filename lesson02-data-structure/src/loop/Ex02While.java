@@ -27,5 +27,16 @@ public class Ex02While {
 			i++;
 	}
 			
+			System.out.println("Su dung while/break");
+			i = a;
+			while(true) {
+				if ( i % 4 ==0) {
+					System.out.println("i--->" +i);
+				}
+				i++;
+				if(i > b) {
+					break;
+				}
+			}
 	}
 }
