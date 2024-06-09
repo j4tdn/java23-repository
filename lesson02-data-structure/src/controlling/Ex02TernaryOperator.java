@@ -41,23 +41,24 @@ public class Ex02TernaryOperator {
 		System.out.println(text);
 		
 		// Xếp loại học lực
-		float roundedAvgPoint = 7.8f;
+		float roundedAvgPoint = 10f;
 		String ranking = "";
-		if(roundedAvgPoint < 5) {
-			ranking = "Yếu";
-		} else if (roundedAvgPoint < 6.5) {
-			ranking = "Trung Bình";
-		} else if (roundedAvgPoint < 8) {
-			ranking = "Khá";
-		} else {
-			ranking = "Giỏi";
-		}
-		System.out.println("Ranking --> " + ranking);
+//		if(roundedAvgPoint < 5) {
+//			ranking = "Yếu";
+//		} else if (roundedAvgPoint < 6.5) {
+//			ranking = "Trung Bình";
+//		} else if (roundedAvgPoint < 8) {
+//			ranking = "Khá";
+//		} else {
+//			ranking = "Giỏi";
+//		}
+//		System.out.println("Ranking --> " + ranking);
 		
 		// Sử dụng toán tử 3 ngôi
 		ranking = roundedAvgPoint < 5 ? "Yếu"
 									  : roundedAvgPoint < 6.5 ? "TB"
 											  				  : roundedAvgPoint < 8 ? "Khá"
 											  						  				: "Giỏi";
+		System.out.println("Ranking --> " + ranking);
 	}
 }
