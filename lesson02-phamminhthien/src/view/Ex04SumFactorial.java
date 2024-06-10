@@ -57,14 +57,10 @@ public class Ex04SumFactorial {
         int[] numbers = new int[4];
         for (int i = 0; i < 4; i++) {
             numbers[i] = random.nextInt(10, 21);
-        }
-
-        for (int i = 0; i < 4; i++) {
             long factorial = Factorial(numbers[i]);
             S += factorial;
             System.out.println(numbers[i] + "! = " + factorial);
         }
-
         System.out.println("\nTổng giai thừa: \nS = " + S);
     }
 

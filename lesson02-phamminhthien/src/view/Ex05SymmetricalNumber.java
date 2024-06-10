@@ -28,7 +28,6 @@ public class Ex05SymmetricalNumber {
 				System.out.println("Lỗi - " + sl + ", Vui lòng nhập lại\n");
 				sl++;
 				ip.next();
-
 			}
 		}
 	}
