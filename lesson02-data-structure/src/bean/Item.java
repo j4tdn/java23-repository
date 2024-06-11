@@ -7,7 +7,7 @@ public class Item {
 	//non static
 	
 	//cu 1 lan dung tu khoa new goi ham
-	public int id =2;
+	public int id ;
 	public char name;
 	public double salesPrice;
 	
