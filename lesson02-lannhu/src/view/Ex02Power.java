@@ -4,7 +4,7 @@ public class Ex02Power {
 	
          public static void main(String[] args) {
          if (args.length == 0) {
-            System.out.println("vui lòng cung cấp một số nguyên dương");
+            System.out.println("vui lòng cung cấp một số nguyên dương :3");
             return;    
          }
    int attempts = 0;
