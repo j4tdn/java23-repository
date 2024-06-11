@@ -2,7 +2,7 @@ package view;
 
 import java.util.Scanner;
 
-public class Ex05SymmectricalNumbers {
+public class Ex05SymmectricalNumber {
 
 	public static void main(String[] args) {
 		
@@ -16,7 +16,7 @@ public class Ex05SymmectricalNumbers {
 		}
 		while(!checkString(n));
 		int n1 = Integer.parseInt(n);
-		if(checkSymetricalNumbers(n1))
+		if(checkSymetricalNumber(n1))
 			System.out.println(n + " la so doi xung");
 		else 
 			System.out.println(n + " khong phai la so doi xung");
@@ -28,7 +28,7 @@ public class Ex05SymmectricalNumbers {
 				return false;
 		return true;
 	}
-	private static boolean checkSymetricalNumbers(int n) {
+	private static boolean checkSymetricalNumber(int n) {
 		int reverse = 0, temp1, temp2 = n;
 		while(n != 0) {
 			temp1 = n % 10;
