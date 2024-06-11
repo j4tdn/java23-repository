@@ -1,0 +1,15 @@
+Kiểu dữ liệu
+--> Là khái niệm dùng để ràng buộc, cho phép việc lưu trữ dữ liệu trong phạm vi nào
+--> VD lưu chuỗi --> cần sd KDL chuỗi
+		lưu số --> cần sd KDL số
+		
+Trong lập trình có 2 loại KDL:
+
++ static data type
+	--> khi có giá trị gì cần leu chính xác trong KDL gì đó
+	VD: chuỗi --> String
+		số --> int
+		
++ dynamic(loosely) data type
+	--> ko quan tâm đến KDL lúc khai báo, dù là bất kì giá trị gì cũng lưu đc hết
+	--> var/let x = "hello"; x = 5;
