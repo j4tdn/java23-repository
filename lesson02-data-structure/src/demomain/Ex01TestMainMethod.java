@@ -44,6 +44,9 @@ public class Ex01TestMainMethod {
 	 	ctrl shift /: tạo chú thích nhiều dòng
 	 	run code: (fn) ctrl f11
 	 	bôi đen + ctrl shift f: format code
+	 	debug code: dừng lại xem giá trị từng dòng code, biến, hàm tại bất kì thời điểm nào
+	 				dùng nhiều trong dự án
+	 				breakpoint
 	 */
 	public static void main(String[] args) {
 		System.out.println("Welcome To Java23 Class");
@@ -58,7 +61,7 @@ public class Ex01TestMainMethod {
 		Ex01TestMainMethod.printStarTriangle(); //gọi hàm
 		
 		System.out.println("==== print number triangle ====");
-		Ex01TestMainMethod.printNumberTriangle(); //gọi hàm static
+		printNumberTriangle("==== print number triangle ===="); //gọi hàm static
 		
 		//trick: tạo đối tượng từ class để gọi nó
 		//khoan dùng (chưa học) --> hiện tại hầu hết cứ tạo static để xử lý
@@ -77,7 +80,8 @@ public class Ex01TestMainMethod {
 
 	// khai báo hàm tên là printNumberTriangle
 	// có chức năng in ra tam giác số
-	public static void printNumberTriangle() {
+	private static void printNumberTriangle(String prefix) {
+		System.out.println("prefix --> " + prefix);
 		System.out.println("1");
 		System.out.println("1 2");
 		System.out.println("1 2 3");
