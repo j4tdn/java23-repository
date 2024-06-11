@@ -2,17 +2,16 @@ package view;
 
 import java.util.Scanner;
 
-public class Ex02PowerOfTwo {
+public class Ex08Prime {
 
 	public static void main(String[] args) {
 		Scanner ip = new Scanner(System.in);
-		int n = inputNumber(ip);
-		boolean result = isPowerOfTwo(n);
-		if (result) {
-			System.out.println(n + " là lũy thừa của 2.");
-		} else {
-			System.out.println(n + " không phải là lũy thừa của 2.");
-		}
+        int n = inputNumber(ip);
+        if (isPrime(n)) {
+            System.out.println(n + " là số nguyên tố.");
+        } else {
+            System.out.println(n + " không phải là số nguyên tố.");
+        }
 	}
 
 	// Hàm nhập số N từ bàn phím và kiểm tra tính hợp lệ
@@ -29,21 +28,25 @@ public class Ex02PowerOfTwo {
 				}
 			} else {
 				System.out.println("Không phải số nguyên, xin hãy nhập một số nguyên dương.");
-				ip.next(); // Xóa dữ liệu không hợp lệ khỏi bộ đệm
+				ip.next(); // Xóa bỏ giá trị không phải số nguyên từ bộ đệm
 			}
 			count++;
 		}
-		System.out.println("Đã vượt quá số lần thử nhập. Chương trình kết thúc.");
+		System.out.println("Đã nhập sai quá 5 lần. Chương trình kết thúc.");
 		System.exit(0); // Kết thúc chương trình nếu quá 5 lần nhập không hợp lệ
-		return 0; // Giá trị mặc định để tránh lỗi biên dịch
+		return 0;
 	}
 
-	// Hàm kiểm tra số N có phải là lũy thừa của 2 hay không
-	public static boolean isPowerOfTwo(int n) {
-		if (n <= 0) {
+	// Hàm kiểm tra số nguyên tố
+	public static boolean isPrime(int n) {
+		if (n <= 1) {
 			return false;
 		}
-		return (n & (n - 1)) == 0;
+		for (int i = 2; i <= Math.sqrt(n); i++) {
+			if (n % i == 0) {
+				return false;
+			}
+		}
+		return true;
 	}
-
 }

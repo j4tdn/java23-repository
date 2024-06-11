@@ -17,8 +17,8 @@ public class Ex01MultipleOfTwo {
 
 	// Hàm nhập số N từ bàn phím và kiểm tra tính hợp lệ
 	public static int inputNumber(Scanner ip) {
-		int attempts = 0;
-		while (attempts < 5) {
+		int count = 0;
+		while (count < 5) {
 			System.out.print("Nhập số nguyên dương N: ");
 			if (ip.hasNextInt()) {
 				int n = ip.nextInt();
@@ -31,11 +31,11 @@ public class Ex01MultipleOfTwo {
 				System.out.println("Không phải số nguyên, xin hãy nhập một số nguyên dương.");
 				ip.next(); // Xóa bỏ giá trị không phải số nguyên từ bộ đệm
 			}
-			attempts++;
+			count++;
 		}
 		System.out.println("Đã nhập sai quá 5 lần. Chương trình kết thúc.");
 		System.exit(0); // Kết thúc chương trình nếu quá 5 lần nhập không hợp lệ
-		return -1; // Giá trị mặc định để tránh lỗi biên dịch
+		return 0;
 	}
 
 	// Hàm kiểm tra số N có phải là bội của 2 hay không
