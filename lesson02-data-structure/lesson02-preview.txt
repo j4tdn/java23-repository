@@ -1,3 +1,67 @@
+1. Tạo ra 1 file java  - excutable file thông qua java
+--> thực thi code 
++ Có  file để tạo ra để như class KDL
++ Có file để tạo ra chứa hàm main -> thực thi chương trình
+
+2. Cấu trúc của 1 chương trình:
++ Cấu trúc dữ liệu 
++ GIải thuật (hàm, phương thức)
+
+3. KDL
++ KDL nguyên thủy (primtive types)
+ --> lưu trữ dữ liệu(giá trị đơn)
+ --> lưu giá trị ở STACK 
++ KDL đối tượng (object types)
+ --> lưu trữ dữ liệu(giá trị đơn, đa)
+ --> lưu giá trị ở vùng nhớ HEAP 
+ 	+ KDL có sẵn của java --> lưu ở HEAP constant pool
+ 	+ KDL tự tạo ra: Item, Employee,.. --> lưu ở HEAP normal
+ --> Tạo các hàm xử lý:
+ VD: Integer.parseInt, ...
+ 
+ VD: Item itA = new Item(1, "Item A1", 22d);
+ 	+ Item: class - KDL
+ 	+ itA: biến có KDL Item
+ 	+ new Item();
+ 	--> giá trị của biến itA
+ 	--> tạo ra 1 ô nhớ trên vùng nhớ HEAP
+ 	--> tạo ra 1 đối tượng cho KDL Item
+ 	Tổng quát giá trị của biến KDL đối tượng --> đối tượng
+ 
+ + Boxing: từ int -. Integer, double -> Double
+ 	--> KDL nguyên thủy sang đối tượng
+ + Unboxing: từ Integer -> int,...
+ 	--> KDL đối tượng về lại nguyên thủy
+ 
+4. Toán tử: ++ -- ! ? ; && ||
+5. Nhập xuất: -> Scanner
+6. Random
+7. Cấu trúc điều kiện: if else ; switch case, termary operator(tt 3 ngôi)
+
+8. Cấu trúc vòng lặp: for while do-while
+9. Mảng: 
+	+ HEAP
+	+ index: [0-length)
+10. Từ khóa
++ final chỉ ở stack (*)
+	final int a = 5; 
+	a=7; --> Lỗi
+	
+	final Item it = new Item(1, "A", 11);
+	it = new Item(2, "B", 22); --> Lỗi
+	it.name = "A";
+	
++ Block scope
+	--> khai báo 1 biến có phạm vi từ { đến }
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------
 Kiểu dữ liệu dùng để rang buộc phạm vi lưu trữ
 
 Trong lập trình có 2 loại KDL: 

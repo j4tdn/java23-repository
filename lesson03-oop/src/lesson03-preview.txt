@@ -1,0 +1,85 @@
+1. Các hướng xây dựng, phát triển, giải quyết bài toán trong lập trình
+
+	+ FOP(Functional Oriented Programming): Lập trình hướng chức năng, hàm
+	  --> Khi code 1 bài toán xem bài toán như 1 chức năng, chia nhỏ chức năng đố thành các chức năng nhỏ hơn để giải quyết
+	  --> Bài toán là 1 hàm lớn chứa và gọi các hàm con nhỏ hơn
+	 - Hạn chế: Vì các hàm gọi lẫn nhau nên khi 1 hàm xảy ra lỗi kéo theo cả hệ thống lỗi
+	 			Dữ liệu dùng chung ko có phân quyền dữ liệu
+	 			
+	 + OOP(Object Oriented Programming): Lập trình hướng đối tượng(chứa 1 hoặc nhiều thông tin bên trong)
+	 --> System = Tập hợp các Object
+	 --> Object = attribute(s) + method(s)
+	 			= data structure + function
+	 			
+	VD: Bài toán quản lý cửa hàng thời trang
+	- Bài toán sẽ có những đối tượng:
+		+ Mặt hàng: 
+			-> Lưu trữ: mã mặt hàng, tên, giá bán , giá mua, ...
+			--> Chức năng: liệt kê các mặt hàng, tìm kiếm, ...
+		+ Đơn hang: 
+			-> Lưu trư: mã đơn hàng, ds các mặt hàng, sl. tổng, ...
+			--> Chức năng: tạo đơn hàng, xuất đơn, thanh toán, ..
+			
+	 + AOP(Aspect Object Programming): Lập trình hướng khía cạnh
+	 --> Xậy dụng thư viện, framwork
+	 --> Khi  gọi/ thực thi 1 chức năng, chức năng đố sẽ dc thực thi tự động kèm vs 1/n chức năng(khía cạnh) khác theo cấu hình
+	 
+	 VD: Ngôn ngữ JDBC/JPA-Hibernate: Database Connection
+	 	+ Chức năng: chuyển/nhận tiền qua các app: làm 2 việc
+	 	
+	 	+ Đăng nhập:
+	 	+ Người chuyển: Trừ tiền tk --> hàm A()
+	 	+ Người nhận: Nhận dc tiền --> hàm A()
+	 	--> Vấn đềL lỗi mạng, .. số tiền từ ng chuyển bị trừ, ng nhận ko nhận dc
+	 	--> commit, rollback
+	 	
+	 	hamChuyenTien(){
+	 		hamA();
+	 		hamB();
+	 	}
+	 	
+	 	+ --> CronJob (QuartJob): cấu hình 1 chức năng sẽ thực thi 1 thời điểm nào đó
+	 	
+========================================== OOP trong Java =========================================================
+
++ Object: là khái niệm dùng để mô tả các thực thể trong thế giới thực thông tin rõ ràng cụ thể, phân biệt dc vs các thực thể khác --> đối tượng
+VD: 2 chiếc xe hơi khác nhau màu sắc, hãng xe, số chỗ ngồi
+
++ Class: là k/n trừu tượng dùng để chỉ 1 cái tập hợp các đối tượng có chung thuộc tính, pt
+VD: 2 chiếc xe hơi khác nhau màu sắc, hãng xe, số chỗ ngồi giống và khác nhau nhưng đều có thông tin, màu sắc, ..
+Class Car: color, model, nSeats
+--> K/n class, object chỉ mang tính chất tương đối 1 class cũng có thể là 1 object hay ngc lại trong các trường hợp khác nhau
+
+VD: Xe: xeXanh, xeVang,..
+	Phương tiện: xeHoi, xeDap, xeMay
+	
+--> CODE: class: attributes + methods
+	--> gọi hàm khởi tạo class
+		--> tạo ra đối tượng
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  
