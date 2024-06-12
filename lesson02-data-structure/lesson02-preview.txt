@@ -1,3 +1,63 @@
+Tạo ra java -executable file thông qua Java
+-->thực thi code
++Có file để tạo ra như class kiểu dữ liệu
++tạo file ddeeer chứa hàm main -> thực thi chương trình
+
+2.Cấu trức của chương trình
++cấu trúc dữ liệu
++giải thuật(hàm, phương thức)
+
+
+3.Kiểu dữ liệu
++KDL nguyên thủy(primitive type)
+->Lưu trữ dữ liệu (giá trị đơn)
+->Giá trị lưu trữ ở ô nhớ Stack
++KDL đối tượng (Object type)
+-->Lưu trữ giá liệu(đơn hoặc đa)
+-->giá trị lưu ở vùng nhớ HEAP
+	+KDL có sẵn của java : Integer, double,String ... ->HEAP - constant pool
+	+KDL tự tạo ra :Item,Employee ->HEAP - normal
+-->Tạo ra các hàm để xử lý
+	VD:Integer.parseInt,Double.parseDouble
+Vd: Item ita = new Item(1,"Item A1",55d);
+	Item : class - kiểu dữ liệu
+	+ita:biến có KDL là Item
+	+new Item (1,"Item A1",55d)
+	->giá trị của biến ita
+	->tạo ra 1 ô nhớ trên vùng nhớ HEAp
+	->tạo ra 1 đối tượng cho KDL Item
+	Tổng quát: giá trị của 1 biến KDL đối tượng ==> đối tượng
+	
+	+Boxing : int ->Integer, double ->Double
+	-->KDl nguyên thủy sang đổi tượng
+	+Unboxing :Integer ->int , Double ->double
+	
+4.Toán tử
++-*/
+++ -- ! ?: && || 
+5.Nhập xuất -> Scanner 
+6.Random
+
+7.Cấu trức điều liệu :if else switch case ternary operator
+
+8. Cấu trúc vòng lặp : for while do - while
+
+9.Cấu trúc dữ liệu mảng
+	+Giá trị lưu heap
+	+ index : [0 - length)
+	
+10. Từ khóa 
+	+final ở stack
+	final int a = 5;
+	a = 7; --> lỗi
+	
+	final Item = new Item (1,"A",11);
+	it = new Item(2."B",22)--> lỗi
+	it.name ="A1";
+	
+	+block scope
+	-> Khai báo 1 biến có phạm vi từ { đến } 
+
 kiểu dữ liệu 
 
 -->Là khái niệm dùng để ràng buộc , cho phép việc lưu trữ dự việt trong phạm vi nào 
