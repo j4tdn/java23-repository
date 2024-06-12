@@ -1,0 +1,89 @@
+1. Các hướng xây dựng, phát triển, giải quyết 1 bài toán trong lập trình
+
++ FOP(Functional Oriented Programming): Lập trình hướng chức năng(hàm)
+  --> Khi code 1 bài toán, xem bài toán như 1 chức năng
+  	  rồi chia nhỏ chức năng đó thành các chức năng nhỏ hơn để giải quyết
+  --> 1 bài toán là 1 hàm lớn --> chứa/gọi các hàm nhỏ hơn 
+  
+Hạn chế: Vì các hàm gọi lẫn nhau, nếu 1 hàm xảy ra lỗi kéo theo cả hệ thống lỗi
+		 Dữ liệu dùng chung, ko có phân quyền dữ liệu
+		 
+		 
++ OOP (Object Oriented Programming): Lập trình hướng đối tượng(chứa 1 hoặc nhiều thông tin bên trong)
+  --> System = Tập hợp các Object
+  --> Object = attribute(s) + method(s)
+  			 = data structure + function
+  			 
+VD: Bài toán quản lý cửa hàng thời trang
++ Bài toán sẽ có những đối tượng: 
++ Mặt Hàng
+  --> Lưu trữ: mã mặt hàng, tên mặt hàng, giá bán, số lượng, kích cỡ
+  --> Chức năng: liệt kê các mặt hàng, tìm kiếm, chọn để mua ...
++ Đơn hàng
+  --> Lưu trữ: mã đơn hàng, danh sách các mặt hàng, số lượng, tổng tiền, khách hàng ...
+  --> Chức năng: tạo đơn hàng, xuất hóa đơn, thanh toán offline/online ...
+
+
++ AOP (Aspect Object Programming): Lập trình hướng khía cạnh
+  --> Xây dựng, phát triển trong các thư viện, framework
+  --> khi gọi/ thực thi 1 chức năng, chức năng đó sẽ được thực thi tự động
+  	  kèm với 1/n chức năng(khía cạnh) khác theo cấu hình
+  	  
+VD: Ngôn ngữ JDBC/JPA-Hibernate: Database Connection
++ Chức năng chuyển/ nhận tiền qua các app ngân hàng, làm 2 việc
+
++ Đăng nhập
+
++ Người chuyển: Trừ số tiền từ tài khoản --> hamA()
++ Người nhận:   Nhận được số tiền --> hamB()
+--> Vấn đề: lỗi mạng, ứng dụng bị lỗi: số tiền chuyển bị trừ, người nhận lại chưa nhận được
+--> commit, rollback
+
+hamChuyenTien() {
+	hamA();
+	hamB();
+}
+
+
+--> Cấu hình sao đó để khi gọi hàm hamChuyenTien()
+--> Nếu có lỗi xảy ra thì gọi lệnh hàm rollback để trả về lại dữ liệu ban đầu
+--> Nếu thực thi OK --> commit dữ liệu
+
+
+--> CronJob(QuartJob): Cấu hình 1 chức năng sẽ được thực thi ở thời điểm nào đó
+
+
+
+
+
+
+
+
+==================================== OOP trong JAVA ================================
++ Object: là khái niệm dùng để mô tả các thực thể trong thế giới thực
+		  thông tin rõ ràng cụ thể, phân biệt được với các thực thể khác --> đối tượng
+		  VD: 2 chiếc xe hơi khác màu sắc, hãng xe, số chỗ ngồi
+		  
++ Class:  là 1 khái niệm trừu tượng dùng để chỉ tập hợp các đối tượng có chung thuộc tính, phương thức
+		  VD: 2 chiếc xe hơi khác màu sắc, hãng xe, số chỗ ngồi
+		  	-> mỗi đối tượng xe có thể có màu sắc, hãng xe, số chỗ ngồi giống/khác nhau
+		  	   nhưng đều có thông tin: màu sắc, hãng xe, số chỗ ngồi
+		  class Car: color, model, noSeats
+		  
+--> Khái niệm class, object chỉ mang tính chất tương đối
+	1 class cũng có thể là 1 object hay ngược lại trong các trường hợp khác nhau
+	
+VD: XeHoi: XeXanh, XeVang, XeDo
+	PhuongTien: XeHoi, XeDap, XeMay
+	
+--> CODE: Class: attributes + methods
+		  --> gọi hàm khởi tạo từ Class
+		  	  --> tạo ra Object
+
+
+
+
+
+
+
+  
