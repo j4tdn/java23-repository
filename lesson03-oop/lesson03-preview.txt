@@ -1,0 +1,50 @@
+1. Các hướng xây dựng, phát triển, giải quyết 1 bài toán trong lập trình
+
++ FOP - Functional oriented programming: Lập trình hướng chức năng (hàm)
+	--> Khi code 1 bài toán, xem bài toán như là 1 chức năng
+		sau đó chia nhỏ chức năng đó thành các chức năng nhỏ hơn để giải quyết
+	--> 1 bài toán là 1 hàm lớn, hàm lớn thực thi/ chứa các hàm nhỏ hơn
+	
+Hạn chế: Vì các hàm gọi lẫn nhau, nếu như 1 hàm xảy ra lỗi -> kéo theo cả hệ thống 
+		 Dữ liệu dùng chung, ko có phân quyền dữ liệu
+		 
++ OOP - Object oriented programming: Lập trình hướng đối tượng ( chứa 1 hoặc nhiều thông tin bên trong)
+	object - là một vùng nhớ heap 
+	--> System = tập hợp các object
+	--> Object = attribute(s) + method(s)
+			   = data-structure + function
+	VD: Bài toán quản lý cửa hàng thời trang 
++ Bài toán sẽ có những đối tượng 
++ Mặt hàng 
+    -> lưu trữ: mã mặt hàng, tên mặt hàng, giá bán, giá mua, số lượng, kích cỡ
+    -> Chức năng: liệt kê các mặt hàng, tìm kiếm, chọn để bán...
+ + Đơn hàng:
+    -> lưu trữ: mã đơn hàng, danh sách mặt hàng, số lượng, tổng tiền, khách hàng
+    -> chức năng: tạo đơn hàng, xuất hoá đơn, thanh toán offline/ online
+    
+ + AOP (Aspect oriented programming): Lập trình hướng khía cạnh
+ 	--> Xây dựng, phát triển trong các thư viện, framework
+ 	--> khi gọi/ thực thi 1 chức năng, chức năng đó sẽ được thực thi tự động
+ 		kèm với 1/n chức năng (khía cạnh) khác theo cấu hình
+ 		
+ VD: Ngôn ngữ JDBC/JPA- Hibernate: Data connection
+   + Chức năng chuyển/ nhận tiền qua các app ngân hàng , làm 2 việc
+   
+   + Đăng nhập
+   + Người chuyển: Trừ số tiền từ tài khoản
+   + Người nhận: Nhận được số tiền
+   --> Vấn đề: Lỗi mạng, ứng dụng bị lỗi: số tiền ng chuyển bị trừ, ng nhận lại chưa nhận được
+   --> commit, rollBack
+   
+ 
+ hamChuyenTien() {
+ 	hamA();
+ 	hamB();
+ }
+ /*
+ --> CronJob( QuartJob): Cấu hình 1 chức năng sẽ được thực thi ở thời điểm nào đó
+  -> k liên quan aop
+ */
+ --> cấu hình để khi gọi hamChuyenTien(), nếu có lỗi xảy ra thì gọi lệnh hàm rollBack() để trả về dữ liệu ban đầu
+ 	nếu thực thi ok --> commit() lưu dữ liệu
+ 

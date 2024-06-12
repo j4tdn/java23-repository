@@ -1,6 +1,75 @@
+1. Tạo ra Java - executable file thông qua Java
+--> thực thi code 
++ Có file để tạo ra như 1 class/Kiểu dữ liệu
++ Có file để tạo ra chứa hàm main -> thực thi chương trình 
+
+2. Cấu trúc của 1 chương trình 
++ Cấu trúc dữ liệu
++ Giải thuật( hàm, phương thức)
+
+3. Kiểu dữ liệu
++ Kiểu nguyên thuỷ (Primitive)
+	--> Lưu trữ dữ liệu (giá trị đơn)
+	--> Giá trị lưu ở vùng nhớ STACK
++ Kiểu đối tượng (Object)
+	--> Lưu trữ dữ liệu (giá trị đơn/đa)
+	--> Giá trị lưu ở vùng nhớ HEAP
+	   + KDL có sẵn của Java: Integer, Double, String,... -> HEAP - constant pool
+	   + KDL tự tạo ra: Item, Employee -> HEAP - normal
+	--> Tạo ra các hàm để xử lý
+		VD: Integer: parseInt(),...
+		
+VD: ITem itA = new Item(1, "ItemA1", 55d)
+	+ ITem: class - kiểu dữ liệu
+	+ itA: biến có KDL là Item
+	+ new Item(1, "Item A", 55d);
+		--> Giá trị của biến itA
+		--> Tạo ra một ô nhớ trên vùng nhớ HEAP
+		--> Tạo ra 1 đối tượng cho KDL Item
+	Tổng quát: giá trị của 1 biến KDL đôi tượng ==> đối tượng
+
++ Boxing: int -> Integer, double - Double
+	--> KDL nguyên thuỷ sang đối tượng
++ Unboxing: Integer -> int, Double -> double
+
+4. Toán tử
+   + - * /
+   ++ -- ! ?: && || 
+   
+5. Nhập xuất -> Scanner
+
+6. Random
+
+7. Cấu trúc điều khiển: if else switch case ternary operator
+
+8. Cấu trúc vòng lặp: for while do-while
+
+9. Cấu trúc dữ liệu - array
+ 	+ heap
+ 	+ index [0-length)
+ 	
+10. Từ khoá
+ + final ở stack
+  final int a = 5;
+  a = 7 -> lỗi
+  final Item it = new Item(1, "A", 11d);
+  it = new Item(2, "B", 22d); --> lỗi
+  it.Name = "A1"; --> ko lỗi
+
+
++ block scope 
+  -> khai báo 1 biến có phạm vi từ { đến }
+
+  
+
+
+
+
+
+--------------------------------------------------------------------------------------
 kiểu dữ liệu
 
---> là khái niệm dùng để ràng buộcm cho phép việc lưu trữ dữ liệu trong phạm vị nào
+--> là khái niệm dùng để ràng buộc cho phép việc lưu trữ dữ liệu trong phạm vị nào
 --> ví dụ lưu chuỗi --> cần sử dụng kdl chuỗi 
 -->       lưu số--> cần sử dụng kdl số
 
@@ -15,3 +84,35 @@ trong lập trình có 2 loại kd
  
   -> không quan tâm đến kdl lúc khai báo , dù là bất kỳ giá trị nào đều lưu được hết
   --> var/let x = "hello"; x = 5;
+  
+  
+  ========== OOP trong Java ===========
+  
+  + Object: là khái niệm dùng để mô tả các thực thể trong thế giới thực 
+  			thông tin rõ ràng, cụ thể, phân biệt được với các thực thể khác --> đối tượng
+  			
+  		VD : 2 chiếc xe hơi khác nhau về màu sắc, hãng xe, số chỗ ngồi,...
+  		
+  + Class: là khái niệm trừu tượng dùng để chỉ tập hợp các đối tượng có chung thuộc tính, phương thức
+  
+  		VD: 2 chiếc xe hơi khác màu sắc, hãng xe, chỗ ngồi,...
+  		-> mỗi đối tượng xe có thể có màu sắc, hãng xe, số chỗ ngồi giống/ khác nhau
+  			nhưng đều có thông tin "màu sắc", "hãng xe", "số chỗ ngồi",...
+  		class Car: color, model, numberOfSeats,...
+  ==> Khái niệm Class/ Object chỉ mang tính tương đối, một Class cũng có thể là 1 Object hoặc ngược lại 
+  	  trong các trường hợp khác nhau
+  
+  		VD: Xe: xeXanh, xeVang, xeDo,...
+  			PhuongTien: XeHoi, XeDap, XeMay,...
+  			
+  	--> CODE: Class: attributes + methods
+  	 		--> gọi hàm khởi tạo từ class
+  	 				-> tạo ra object
+  		
+  
+  
+  
+  
+  
+  
+  
