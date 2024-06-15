@@ -13,7 +13,7 @@ public class Ex02Boxing {
 		Integer o3 = null;
 		
 		// Từ version của JDK 1.5 --> Hỗ trợ auto-boxing, un-boxing
-		// boxing: biến KDL nguyên thủy chuyển thành biến KDL đối tượng
+		// boxing: biến KDL nguyên thủy chuyển thành biến KDL đối tượng ( int -> Integer )
 		// unboxing: biến KDL đối tượng chuyển thành biến KDL nguyên thủy
 		p1 = o1;  // p1 = o1.value(o1.intValue()) (bị lỗi NullPointerException) khi o1 đang là NULL
 		o1 = p1;  // o1.value = p1

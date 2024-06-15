@@ -6,7 +6,7 @@ public class Ex01Final {
 	
 	public static void main(String[] args) {
 		// Toán tử = hoạt động ở --> STACK
-		// Final --> Final ở STACK
+		// Final --> Final ở STACK 
 		//       --> Khi 1 biến có từ khóa final --> ko thể gán lại giá trị cho nó ở STACK
 		//                                       --> ko thể dùng toán tử =
 		

@@ -1,3 +1,80 @@
+1.Tạo ra Java - excutable filr thông qua Java
+  --> thực thi code
++ có file để tạo ra như class kiểu dữ liệu
++ có file để tạo ra chứa hàm main -> thực thi run chương trình
+
+2. Cấu trúc của 1 chương trình
++ Cấu trúc dữ liệu
++ Giải thuật ( hàm, phương thức)
+
+3. Kiểu dữ liệu 
++ KDL nguyên thủy (primitive type) :
+  --> lưu trữ dữ liệu .. vd: int( khi biến luôn có giá trị sẽ dùng int )  ( giá trị đơn )
+  --> giá trị lưu ở vùng nhớ STACK
+  
+
++ KDL đối tượng (object type)
+  --> lưu trữ dữ liệu ( giá trị đơn, đa)
+  --> giá trị lưu ở vùng nhớ HEAP 
+      + KDL có sẵn của Java: Integer (khi biến lúc có giá trị lúc khong sẽ dùng Integer), Double, String .. --> lưu ở HEAP - constant pool
+      + KDL tự tạo ra: Item, Employee  --> lưu ở HEAP - normal
+  --> Tạo ra các để xử lí
+      VD: Integer, parseInt, Double.parseDouble
+ 
+ 
+ VD: Item itA = new Item(1, "Item A1", 55d);
+    + Item: class - kiểu dữ liệu 
+    + itA: biến có KDL là Item
+    + new Item(1, "Item A1", 55d)
+      --> giá trị của biến itA
+      --> tạo ra 1 ô nhớ trên vùng nhớ HEAP
+      --> tạo ra 1 đối tượng cho KDL Item
+    Tổng quát: giá trị của 1 biến KDL đối tượng --> đối tượng
+    
++ Boxing: int -> Integer , double -> Double
+  --> KDL nguyên thủy sag đối tượng
+  Unboxing: ngược lại
+  
+4. Toán tử
++-*/  ++ -- ?: && ||
+
+5. Nhập xuất -> Scanner
+
+6. Random
+
+7. Cấu trúc điều kiện: If else switch case ternary operator
+
+8. Cấu trúc vòng lặp: For While Do-While
+
+9. Cấu trúc dữ liệu mảng
+ + lưu ở HEAP
+ + index: [0-length)
+ 
+10. Từ khóa
+  + final ở STACK
+  final int a = 5;
+  a = 7; --> lỗi
+  
+  final Item it = new Item(1, "A", 11);
+  it = new Item (2, "B", 22); --> lỗi
+  it.name = "A1";
+  
+  
++ block scope 
+ -> Khai báo 1 biến có phạm vi từ { đến }
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------
 Kiểu dữ liệu
 --> Là khái niệm dùng để ràng buộc, cho phép việc lưu trữ dữ liệu trong phạm vi nào
 --> Ví dụ lưu chuỗi --> cần sử dụng KDL chuỗi
