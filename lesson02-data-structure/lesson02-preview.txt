@@ -1,0 +1,76 @@
+1: Tạo ra Java--- executable file thông qua Java
+ ---> Thực thi code
+ Có file để tạo ra như class kiểu dữ liệu
+ CÓ file để tạo ra chứa hàm main  --> thực thi chương trình
+
+
+2 Cấu trúc của 1 chương trình
++Cấu trúc dữ liệu
++ giải thuật (hàm,phương thức)
+
+
+3. Kiểu dữ liệu
++KDL nguyên thủy(primitive type)
+--->Lưu trữ dữ liệu(giá trị đơn)
+--->Gía trị lưu ở vùng nhớ stack
+
++KDL đối tượng (object type)
+--->Lưu trữ dữ liệu (giá trị đơn,đa)
+---> Gía trị lưu ở vùng nhớ HEAP
+    + KDL có sẵn của Java: Integer, Double, String ...-> HEAP - constant pool
+    + KDL tự tạo ra: Item, Employee -> HEAP- normal
+ ---> Tạo ra các hàm để xử lý
+  Vd: Integer.parseInt, Double.parseDouble...
+  
+  Vd: Item itA = new Item(1,"Item A1",55d);
+  + Item: class - Kiểu dữ liệu
+  + itA: biến có KDL là Item
+  + new Item(1,"Item A1",55d)
+  ---> Gía trị của biến itA
+  ---> Tạo ra 1 ô nhớ trên vùng nhớ HEAP
+  ---> Tạo ra 1 đối tượng cho KDL Item
+  
+  Tổng quát: Gía trị của 1 biến KDL đối tượng gọi là ===> 1 đối tượng
+  
+  4. Phân biệt int và Integer
+--->
+
+
+
+
+
+
+5. Boxing và Unboxing:
+  Boxing ---> chuyển từ nguyên thủy sang đối tượng 
+      Vd:  int -->Integer , double ---> Double
+      
+      Unboxing: chuyển từ đối tượng sang nguyên thủy
+      Vd: Integer --> int, Double --> double
+      
+      
+ 6: Toán tử
+                     +-*\
+      ++ -- ! ?:  &&  ||
+      
+ 7.Nhập xuất  --> Scanner 
+ 
+ 8. Random
+ 
+ 9. Cấu trúc điểu khiển: if else, switch case ternary operator
+ 
+10. Cấu trúc vòng lặp
+
+11. biến lưu ở stack k thể cập nhật địa chỉ,....
+
+12.Từ khóa
++final ở stack
+  final int a = 7;
+  a = 5; ---> lỗi
+  
+  final Item itA = new Item(1, "A", 11);
+   itA = new Item(2, "B", 22); ----> lỗi
+   itA.name = "A1" -- đúng
+   
+ + block scope
+ -----> Khai báo 1 biến có phạm vi từ { } (trong dấu ngoặc nhọn}
+ 

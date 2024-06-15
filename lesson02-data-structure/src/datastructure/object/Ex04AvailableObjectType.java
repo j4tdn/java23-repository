@@ -35,9 +35,9 @@ public class Ex04AvailableObjectType {
 		String x2 = "php";
 		String x3 = "java";
 
-		System.out.println("i1 -->" + i1);
+		System.out.println("i1 -->" + x1.hashCode());
 		System.out.println("d1 -->" + d1);
-		System.out.println("s1 -->" + s1);
+		System.out.println("s1 -->" + x3.hashCode());
 
 		/*
 		 * Với KDL đối tượng
@@ -45,8 +45,9 @@ public class Ex04AvailableObjectType {
 		 * 1: do mình tạo ra: -->để khởi tạo 1 đối tượng,luôn gọi hàm khởi tạo,sử dụng
 		 * từ khóa new
 		 * 
-		 * 2.Có sẵn của Java:Integer,Double,Long,String,Character,Boolean,Byte... -->Lưu
-		 * ý:các class này,class của nó chỉ có 1 thuộc tính duy nhất. --> Có 2 cách:
+		 * 2.Có sẵn của Java:Integer,Double,Long,String,Character,Boolean,Byte... -->
+		 * Lưu ý:các class này,class của nó chỉ có 1 thuộc tính duy nhất.
+		 *  --> Có 2 cách:
 		 * +Gọi hàm khởi tạo,dùng từ khóa new -->Lưu trữ ở vùng nhớ HEAP -->Luôn tạo ra
 		 * ô nhớ mới +Gán giá trị trực tiếp cho biến KDL đối tượng --> Lưu trữ ở vùng
 		 * nhớ HEAP --> constant pool(nơi chứa immutable Object) --> Kiểm tra giá trị
