@@ -28,7 +28,7 @@ public class Ex01BasicOopDemo {
 		c3.setPrice(6000d);
 		
 		// Cập nhật gấp đôi giá bán cho xe c1
-		// c1.price = c1.price * 2;
+		// c1.price = 123; // c1.setPrice(c1.getPrice() * 2)
 		// c1.setPrice(c1.getPrice() * 2);
 		c1.doublePrice();
 		
