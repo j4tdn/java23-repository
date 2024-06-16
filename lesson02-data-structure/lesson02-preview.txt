@@ -1,0 +1,62 @@
+1. Tao ra Java - executable file thong qua Java
+--> thuc thi code
++ Co file de tao ra nhu class KDL
++ Co file de tao ra chua ham main -> thuc thi chuong trinh
+
+2. Cau truc cua 1 chuong trinh
++ Cau truc du lieu
++ Giai thuat(ham, phuong thuc)
+
+3. Kieu du lieu
++ KDL nguyen thuy(primitive type)
+ --> Luu tru du lieu(gia tri don)
+ --> Gia tri luu o vung nho STACK
+ 
++ KDL doi tuong(object type)
+  --> Luu tru du lieu(gia tri don)
+  --> Gia tri luu o vung nho STACK
+      + KDL co san cua Java: Integer, Double, String ... -> HEAP - constant pool
+      + KDL tu tao ra: Item, Employee -> HEAP - normal
+  --> Tao ra cac ham de xu ly
+      VD: Integer.parseInt, Double.parseDouble
+      
+VD: Item itA = new Item(1, "Item A1", 55d);
+    + Item: class - KDL
+    + itA: bien co KDL la Item
+    + new Item(1, "Item A1", 55d);
+      --> gia tri cua bien itA
+      --> tao ra 1 o nho tren vung nho HEAP
+      --> tao ra 1 doi tuong cho KDL Item
+    Tong quat: gia tri cua 1 bien KDL doi tuong ==> doi tuong
+    
++ Boxing: int -> Integer, double -> Double
+  --> KDL nguyen thuy sang doi tuong
++ Unboxing: Integer -> int, Double -> double
+
+4. Toan tu
+   + - * /
+   ++ -- ! ?: && ||
+   
+5. Nhap xuat -> Scanner
+
+6. Tao du lieu ngau nhien -> Random
+
+7. Cau truc dieu khien: if else, switch case, ternary operator
+
+8. Cau truc vong lap: for, while, do while
+
+9. Cau truc du lieu mang
+   + HEAP
+   + index: [0, length)
+   
+10. Tu khoa
++ final o STACK
+  final int a = 5;
+  a = 7; --> error
+  
+  final Item it = new Item(1, "A", 11);
+  it = new Item(2, "B", 22); --> error
+  it.name = "A1";
+  
++ block scope
+  -> khai bao 1 bien co pham vi tu { den }

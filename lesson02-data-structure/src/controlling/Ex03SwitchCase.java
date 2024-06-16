@@ -76,7 +76,7 @@ public class Ex03SwitchCase {
 		
 		System.out.println("\n===================\n");
 		
-		//C3: switch/case/default return
+		//C3: switch/case/default return data
 		wdAsString = switch(wdAsNumber) {
 		    case 2,3,4,5,6 -> "Weekday";
 		    case 7,8 -> "Weekend day"; 
