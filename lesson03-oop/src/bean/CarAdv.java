@@ -4,12 +4,13 @@ package bean;
   Car là 1 class
   Car là 1 KDL
  */
-public class Car {
+public class CarAdv {
 
 	// Attribute - thuộc tính
 	// Mỗi đối tượng được tạo ra từ class Car --> luôn có 4 thông tin
 	// Mỗi giá trị của KDL Car luôn có 4 thông tin
-	private String model; // hãng xe, dùng chung giá trị cho tất cả các đối tượng
+	public static String model; // hãng xe, dùng chung giá trị cho tất cả đối tượng
+	
 	private String name; // tên xe
 	private String color; // màu xe
 	private Double price; // giá xe
@@ -18,19 +19,17 @@ public class Car {
 	// Tạo ra đối tượng cho class Car
 	
 	// Constructor with no parameter
-	public Car() {
+	public CarAdv() {
 		
 	}
 	
 	// Constructor with all parameters
-	public Car(String model, String name, String color, Double price) {
+	public CarAdv(String name, String color, Double price) {
 		this.name = name;
 		this.color = color;
 		this.price = price;
 	}
-	public void setModel(String model) {
-		this.model = model;
-	}
+	
 	
 	// c1.name = A22;
 	// c1.setName("A22");

@@ -78,3 +78,81 @@ Ex: Ngôn ngữ JDBC/JPA-Hibernate: Database Connection
  		--> gọi hàm khởi tạo từ class
  		--> tạo ra Object
  		
+=============================================================
+Class
+-------------
++ Attribute
+--> Thông thường sẽ khai báo private
+--> Lý do: nếu để public thì sẽ được truy cập từ bất cứ nơi nào
+          rơi vào hạn chế của FOP, không phân quyền dữ liệu quản lý cho từng đối tượng
+    Vấn đề:
+ --> Tạo 1 class ra, dùng nó ở nhiều nơi cho bài toán
+ 	private --> không truy cập được
+ 	getter --> truy cập lấy giá trị của thuộc tính
+ 	setter --> truy cập gán, cập nhật lại giá trị của thuộc tính mà không làm mất đi cấu trúc dữ 
+ 				liệu của class
+ 	class A {
+ 		private List<Item> items = new ArrayList<>(); // dynamic array
+ 		private List<Item> items = new ArrayList<>();
+ 		
+ 		public List<Item> getItems() {
+ 			return items;
+ 		}
+ 		
+ 		public void add(Item item) {
+ 			item.add(item);
+ 		}
+ 	}
+ 	
++ Constructor: hàm khởi tạo
+	--> khởi tạo đối tượng cho class, thông qua từ khóa 'new'
+	--> tạo ra 1 ô nhớ tại vùng nhớ HEAP	
+	
++ getter/setter
+	--> lấy/cập nhật giá trị cho thuộc tính của đối tượng
+	--> yêu cầu đối tượng đó phải tồn tại, có giá trị ở HEAP rồi
+	
++ toString
+	--> được gọi tự động khi in ra biến của class
+	
+------------------------
+Từ khóa static
+--> static attribute
+	// non-static: thuộc phạm vi đối tượng
+	// static:	   thuộc phạm vi class, dùng chung cho tất cả đối tượng của class
+
+--> static method
+	// non-static: nếu hàm phụ thuộc vào đối tượng đang gọi
+	//           : với mỗi đối tượng khác nhau, khi gọi hàm kết quả có thể khác nhau
+	
+	// static    : nếu hàm không phụ thuộc vào đối tượng đang gọi
+	             : dùng bất kỳ đối tượng nào gọi cũng không ảnh hưởng đến kết quả của hàm
+	             
+--> Thứ tự khởi tạo trước sau của static/non attribute, method
+	Lúc runtime, các class khởi tạo trước -> tạo ra đối tượng từ class
+	--> static method/attribut sẽ được khởi tạo trước
+		--> non-static method/attribute sẽ được khởi tạo khi có tạo ra đối tượng
+	
+	
+--> static class
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	 		
