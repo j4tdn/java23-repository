@@ -7,36 +7,40 @@ public class Ex08PrimeNumber {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Input Number: ");
-		int n = sc.nextInt();
-		int i;
+		String n = sc.nextLine();
+		int count = 0;
 		do {
-			 i = 2; 
-			if (n % i == 0) {
-				System.out.println(+n + " is not a prime");
+			if (isNumber(n)) {
+				if (isPrime(Integer.parseInt(n))) {
+					System.out.println(n + " is the prime number");
+					break;
+				} else
+					System.out.println(n + " is not the prime number");
 				break;
+			}
+		} while (count < 5);
+		count++;
+	}
+
+	public static boolean isPrime(int n) {
+		int i = 2;
+		do {
+			if (n % i == 0) {
+				return false;
 			} else
-				System.out.println(+n + " is a prime");
-			break;
-		} while( i< n - 1);
-		i++;
-		
+				i++;
+			return true;
+		} while (i < n);
+
+	}
+
+	public static boolean isNumber(String n) {
+		try {
+
+			int N = Integer.parseInt(n);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 }
-
-//public static void main(String[] args) {
-
-//	Scanner sc = new Scanner(System.in);
-//	System.out.print("Input Number = ");
-//	String n = sc.nextLine();
-//	if(!checkString(n)) System.out.println("Available Number");
-//	else System.out.println("Inavailable Number");
-//	Prime(n);
-//	System.out.println(+n.length()+" is a prime");
-//	System.out.println(n.length()+" is not a prime");
-//}
-//private static boolean checkString(String n) {
-//	for(int i = 0; i < n.length(); i++)
-//		if(n.charAt(i) < 48 || n.charAt(i) > 57 ) 
-//			return false;
-//	return true;
-//}
