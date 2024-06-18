@@ -1,0 +1,8 @@
+1.1 Các hướng xây dựng, phát triển,giải quyết 1 bài toán trong lập trình
+
++FOP(Functional Object Programming): Lập trình hướng chức năng
+--> Khi code 1 bài toán, xem bài toán như alf 1 chức năng
+ rồi  chia nhỏ chức năng đó thành các chức năng nhỏ hơn đề giải quyết
+ --> 1 bài toán là 1 hàm lớn
+ bài toán quản  lý cửa hàng thời trang
+ + mặt hàng
