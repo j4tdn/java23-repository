@@ -34,13 +34,12 @@ public class App {
 		Order o3 = new Order(c2, new ItemDetail[] {
 				new ItemDetail(i4, 1),
 		}, LocalDateTime.of(2021, 5, 8, 9, 28, 32));
-
+		
+		System.out.println("Order 1: " + OrderUtils.export(o1));
+		System.out.println("Order 2: " + OrderUtils.export(o2));
+		System.out.println("Order 3: " + OrderUtils.export(o3));
+		
 		// Viết phương thức export trong class Order: no-parameter
-		
-		System.out.println("Order 1: " + o1.export());
-		System.out.println("Order 2: " + o2.export());
-		System.out.println("Order 3: " + o3.export());
-		
 		// Viết phương thức export trong một class khác: export(order)
 		
 		
