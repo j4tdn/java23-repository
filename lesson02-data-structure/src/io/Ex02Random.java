@@ -24,4 +24,4 @@ public class Ex02Random {
 		// Chọn 2 sinh viên ngẫu nhiên - ko được trùng nhau
 		
 	}
-	
+}

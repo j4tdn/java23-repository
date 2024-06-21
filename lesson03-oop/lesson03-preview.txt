@@ -1,0 +1,126 @@
+1. Các hướng xây dựng, phát triển, giải quyết 1 bài toán trong lập trình
+
++ FOP(Functional Object Programming): Lập trình hướng chức năng, hàm
+	--> Khi code 1 bài toán, xem bài toán như 1 chức năng
+	rồi chia nhỏ chức năng đó thành cách chức năng nhỏ hơn để giải quyết
+	--> 1 bài toán là 1 hàm lớn -> chứa/gọi các hàm nhỏ hơn
+	
+Hạn chế: Vì các hàm gọi lẫn nhau, nếu 1 hàm xảy ra lỗi kéo theo cả hệ thống
+		DỮ liệu dùng chung, k có phân quyền dữ liệu
+		
++ OOP(Object Oriented Programming): Lập trình hướng đối tượng( chứa 1 hoặc nhiều thông tin bên trong)
+	--> System = Tập hợp các Object
+	--> Object = Attribute (s) + method (s)
+				= data structure + function
+VD: Bài toán quản lý cửa hàng thời trang
++ Bài toán sẽ có những đối tượng:
+ + Mặt hàng
+ 	--> Lưu trữ: mã mặt hàng, tên mặt hàng, giá bán, giá mua, số lượng, kích cỡ
+ 	--> Chức năng: liệt kê các mặt hàng, tìm kiếm, chọn để bán ...
+ + Đơn hàng
+ 	--> Lưu trữ: mã đơn hàng, danh sách các mặt hàng, số lượng, tổn tiền, khách hàng...
+ 	--> Chức năng: tạo đơn hàng, xuất hoá đơn, thanh toán offline/online ....
+ 
+ + AOP (Aspect Object Programming): Lập trình hướng khía cạnh
+ 	--> Xây dựng phát triển trong các thư viện, framework
+ 	--> Khi gọi/thực thi 1 chức năng, chức năng đó sẽ được thực thi tự động kèm với 1/n
+ 	chức năng (khía cạnh) khác theo cấu hình
+ 	
+ VD: Ngôn ngữ JDBC/JPA-Hibernate: Database Connection
+ + Chức năng chuyển/nhận tiền qua các app ngân hàng, làm 2 việc
+ 
+ + Đăng nhập
+ 
+ + Người chuyển: Trừ só tiền từ tài khoản --> ham A()
+ + Người nhận: Nhận được số tiền --> ham B()
+ --> Vấn đề: lỗi mạng, ứng dụng bị lỗi: số tiền từ người chuyển đã bị trừ, ng nhận chưa nhận được
+ --> commit, rollback
+ 
+ hamChuyenTien () {
+ 	hamA();
+ 	hamB();
+ }
+ 
+ --> CronJob (QuảrtJob): Cấu hình 1 chức năng sẽ được thực thi ở thời điểm nào đó
+ 
+ --> Cấu hình sao đó để khi gọi hàm hamChuyenTien ()
+ --> nếu có lỗi xảy ra thì gọi lệnh hàm rollback đến trả về lại dữ liệu ban đầu
+ --> nếu thực thi ok --> commit dữ liệu
+ 
+ 
+ 
+ 
+ 
+ 
+ ================ OOP trong Java ======================================
+ + Object: là khái niệm dùng để mô tả các thực thể trong thế giới thực thông tin
+ 			rõ ràng cụ thể, phân biệt được với các thực thể khác --> đối tượng
+ 			VD: 2 chiếc xe hơi khác màu sắc, hãng xe, số chỗ ngồi
+ + Class : là khái niệm trừu tượng dùng để chỉ tập hợp các đối tượng có chung thuộc tính, phương thức
+ 			VD: 2 chiếc xe hơi khác màu sắc, hãng xe, số chỗ ngồi
+ 			-> mỗi đối tượng xe có thể có màu sắc, hãng xe, số chỗ ngồi giống khác nhau nhưng đều
+ 			có thông tin: màu sắc, hãng xe, số chỗ ngồi
+ 			class Car: color, model, noSeats
+ --> khái niệm class, object chỉ mang tính tương đối
+ 1 class cũng có thể là 1 object hay ngược lại trong các trường hợp khác nhua
+ 
+ VD: XeHoi: XeXanh, XeVang, XeDo
+ PhuongTien: XeHoi, XeDap, XeMay
+ 
+ --> Code: Class: attribute + methods
+ 					--> gọi hàm khởi tạo từ class
+ 						--> tạo ra Object
+ 						
+ Class
+ ----------------------------
+ + Attribute
+ 	--> Thong thuong se khai bao la private
+ 	--> Ly do: neu de public thi se dc truy cap tu bat cu noi nao roi vao han che cua FOP,
+ 		k phan quyen quan ly cho tung doi tuong
+ 		Van de: tao 1 class ra, dung no o nhieu noi choh bai toan
+ 				private -> k truy cap dc
+ 				getter -> truy cap lay gia tri cua thuoc tinh
+ 				setter -> truy cap gan, cap nhat lai gia tri cua thuoc tinh ma ko lam mat di cau truc du lieu cua class
+ 				class A {
+ 					public List<Item> item = new ArrayList <>();// dynamic array
+ 					private List<Item> item = new ArrayList <>();
+ 					
+ 					public List<Item> getItem() {
+ 						return items;
+ 					}
+ 					public void add(Item item) {
+ 						items.add(item);
+ 						}
+ 				}
+ 				--> A a1 = new A();
+ 				--> a1.items = Arrays.asList(...) --> items -> fixed-length array
+ 				--> a1.getItems() 
+ 				--> a1.add(...)
+ + constructor: ham khoi tao
+ 	--> khoi tao doi tuong cho class thong qua tu khoa new
+ 	--> tao ra 1 o nho tai vung nho heap
+ 
+ + getter/setter
+ --> lay cap nhat gia tri cho htuoc tinh cua doi tuong
+ --> doi tuong do phai ton tai, co gia tri o HEAP roi
+ 
+ + toString
+ --> duoc goi tu dong khi in ra bien cua class
+ 
+ --------------------------------------------------------
+Tu khoa static
+--> static class
+--> static attribute
+
+
+
+--> static method
+	// non-static: neu ham phu thuoc vao doi tuong dang goi 
+				: voi moi doi tuong khac nhau, khi goi ham ket qua co the khac nhau
+	// static: ham k phu thuoc vao doi tuong dang goi
+			: dung bat ky doi tuong nao goi cung k anh huong den ket qua cua ham 
+			
+--> thu tu khoi tao truoc sau cua static/non-static, attribute, method
+	luc runtime class khoi tao truoc -> tao ra doi tuong tu class
+	--> static method/attribute se dc khoi tao
+		--> non-static method/attribute se dc khoi tao khi no tao ra doi tuong
