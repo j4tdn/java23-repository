@@ -3,22 +3,22 @@ package bean;
  	Car là 1 class
  		là 1 KDL
  */
-public class Car {
+public class CarAdv {
 	// attribute(thuộc tính)
 	// mỗi đối tượng dc tạo ra từ class (KDL) car có 4 thông tin
-	private String model;
+	public static String model;
 	private String name;
 	private String color;
 	private Double price; //giá xe
 	
 	
 	// Constructor with no parameter
-	public Car() {
+	public CarAdv() {
 	}
 	
 	// Constructor with all parameter
-	public Car(String model, String name, String color, Double price) {
-		this.model = model;
+	public CarAdv(String name, String color, Double price) {
+		//this.model = model;   model đã được khai báo static(dùng chung) nên ko cần truyền cho từng đối tượng
 		this.name = name;
 		this.color = color;
 		this.price = price;
@@ -27,10 +27,6 @@ public class Car {
 	
 	public String getModel() {
 		return model;
-	}
-
-	public void setModel(String model) {
-		this.model = model;
 	}
 
 	// c1.setName("A22")

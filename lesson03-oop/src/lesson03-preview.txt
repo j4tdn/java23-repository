@@ -56,6 +56,27 @@ VD: Xe: xeXanh, xeVang,..
 --> CODE: class: attributes + methods
 	--> gọi hàm khởi tạo class
 		--> tạo ra đối tượng
+		
+		
+---------------------------------------------------------------
+Từ khóa static:
+	--> static attribute
+		// non-static:  thuộc phạm vi đối tượng	--> bắt buộc gọi qua đối tượng
+		// static    :	thuộc phạm vi class	-->	có thể gọi qua đối tượng thuộc class, gọi qua class
+		 			 :	nên gọi qua class, ko nên gọi qua đối tượng(Warning)
+	
+	--> static method
+		// non-static: 	nếu hàm phụ thuôc vào đối tượng đang gọi
+					 :  với mỗi đối tượng khác nhau, khi gọi hàm kết quả có thể khác nhau
+		
+		// static	 :  nếu hàm ko phụ thuôc vào đối tượng đang gọi
+					 :  dùng bất kỳ đối tượng nào gọi cũng ko ảnh hưởng đến kết quả của hàm
+		
+---> thứ tự khởi tạo trước sau của static/non static  attribute, method
+	 lúc runtime class (class dc gọi) khởi tạo trước  -> tạo ra đối tượng từ class			 
+		 -->  static method/attribute sẽ dc khởi tạo trước			
+		 -->  non-static method/attribute sẽ khởi tạo khi tạo ra đối tượng 
+	--> static class
  
 
 
