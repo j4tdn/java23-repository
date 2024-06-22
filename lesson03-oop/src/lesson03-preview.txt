@@ -1,0 +1,89 @@
+1. Các hướng xây dựng, phát triển, giải quyết 1 bài toán trong lập trình.
+
++ FOP (Fundamental Object Programming): Lập trình hướng chức năng
+ --> Khi code 1 bài toán, xem như 1 chức năng.
+ --> Chia nhỏ các chứng năng
+ 
+ Hạn chế: vì các hàm gọi lẫn nhau, nếu lỗi 1 -> lỗi cả hệ thống.
+ 	không phân quyền.
+ 	
+ + OOP (Object Oriented Programming): Lập trình hướng đối tượng
+ --> System = tập hợp các Objects
+ --> Objects = attribute(s) + method(s)
+ 			= data structure + function
+ 			
+ VD: bài toán quản lý cửa hàng thời trang 
+ + có các đối tượng:
+ + Mặt hàng:
+ --> lưu trữ: mã mặt hàng, tên mặt hàng, giá bán, ...
+ --> Chức năng: liệt kê mặt hàng, tìm kiếm, ...,
+ + Đơn hàng:
+  --> lưu trữ: mã đơn hàng, tên đơn hàng, tổng tiền, ...
+  --> chức năng: nhập xuất đơn hàng, thanh toán.
+  
+ + AOP (Aspect object programming): Lập trình hướng khía cạnh
+ --> xây dựng phát triển trong các thư viện, frmw
+ --> khi gọi 1 cn, chức năng đó sẽ được thực thi tự động với 1 cn khác theo cấu hình.
+ 
+ VD: Ngôn ngữ JDBC/JPA-Hiberate: Database Connection
+ + Chức năng chuyển/ nhận tiền qua app.
+ 
+ + Đăng nhập
+ + Ng chuyển: trừ số tiền -> hamA();
+ + Ng nhận: cộng tiền -> hamB();
+ --> vấn đề: lỗi mạng, 0 trừ cộng tiền
+ --> commit, rollback,
+ 
+ CronJob (QuartJob): Cấu hình 1 chức năng thực thi tại 1 thời điểm nào đó
+ 
+ 
+ -------------------OOP TRONG JAVA ---------------------------
++Object: là khái niệm dùng để mô tả thực thể trong thế giới thực, thông tin rõ ràng, cụ thể, phân biệt được -> đối tượng
+ 		VD: 2 chiếc xe hơi khác màu, hãng xe
++Class: là khái niệm trừu tượng dùng để chỉ tập hợp các đối tượng chung thuộc tính
+	VD: 2 chiếc xe hơi khác màu, hãng xe, số chỗ
+	->là 2 đối tượng khác nhau
+--> class, object chỉ mang tính chất tương đối
+-> 1 class có thể là 1 obj và ngc lại
+
+-> CODE: Class 
+ 
+ Class
+ -------------
+ + Attribute 
+ -> thông thường sẽ khai báo private
+ -> Lý do: nếu public thì sẽ là FOP -> không phân quyền
+ 	Vấn đề: tạo 1 class ra, dùng ở nhiều nơi cho bài toán.
+ 			private -> ko truy cập được
+ 			getter -> truy cập lấy giá trị
+ 			setter -> truy cập gán, cập nhập.
+ 			
+ + Constructor: hàm khởi tạo
+ --> khởi tạo đối tượng cho class thông qua new
+ --> tạo ra 1 ô nhớ ở HEAP
+ --> A a1 = new A();
+ 
+ + Getter/Setter:
+ --> lấy/ cập nhập giá trị đối tượng (đối tượng phải tồn tại, có giá trị ở HEAP rồi)
+ 
+ + toString():
+ --> được gọi tự động khi in ra biến class.
+ 
+ Từ khoá Static:
+ - static attribute: 
+ 	-> non-static: thuộc phạm vi đối tượng
+ 	-> static: thuộc phạm vi class, dùng chung cho đối tượng
+ 	
+ - static method:
+ 	-> non-static: nếu hàm phụ thuộc vào đối tượng đang gọi.
+ 		-> với mỗi đối tượng khác nhau, khi gọi hàm kết quả có thể sẽ khác nhau.
+ 	-> static: nếu hàn không phụ thuộc vào đối tượng đang gọi
+ 		-> dùng bất kỳ đối tượng nào cũng không ảnh hưởng đến kết quả.
+ 
+ --> thứ tự khởi tạo trước sau của static/non attribute, method
+ 	lúc runtime class khởi tạo trước -> tạo ra đối tượng từ class
+ 	--> static method/ attribute sẽ được khởi tạo trước
+ 		--> non-static method/ attribute sẽ được khởi khi có tạo ra đối tượng mới		
+ 
+ - static class
+ 

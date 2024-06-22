@@ -1,3 +1,53 @@
+1.Tạo java -> executable file thông qua java
+--> thực thi code
+--> file đuôi .java -> có hàm main!!
+
+2.Cấu trúc 1 chương trình:
+- Cấu trúc dữ liệu
+- Giải thuật (Hàm, thủ tục)
+
+3.Kiểu dữ liệu:
+- Primitive value: int, string, ..., saved on Stack
+- Object value: 
+	+ KDL có sẵn: String, Integer, ..., saved on HEAP, constant pool -> Boxing: int -> Integer (tự động) (Primitive -> Object)
+	+ KDL tự tạo ra: Item, Employee, ..., saved on HEAP, normal
+VD: Item itA = new Item(1, "ABC", 55d)
+	+ Item: KDL, class
+	+ itA: tên có KDL là ITEM	
+	+ new Item(): giá trị biến itA
+	
+*Constant pool: Lưu dữ liệu không trùng nhau, nếu trùng thì lấy dữ liệu ở constant pool.
+
+4.Nhập xuất:
+
+5.Toán tử:
+
+6.Random:
+
+7.If else, Switch case, ternary operator ...:
+
+8.For, While, Do while:
+
+9.Cấu trúc mảng:
++ HEAP:
++ Index: [0-length)
+
+10.Từ khoá:
++ Final: ở stack (only) 
+VD:	final int a = 5;
+	a = 7 -> Lỗi
+
+VD:	final Item i = new Item(1, "ABC");
+	i = new Item(); ->> lỗi
+	i.name = "BCA";
+
++ Block scope: Khai báo 1 biến có giá trị từ { }
+
+
+
+
+---------------------------
+
 //Cấu trúc tạo hàm:
 		//[Access Modifier] [static] data-return-type name(){}
 		
@@ -18,3 +68,4 @@
 		
 		//non-static:
 		new Ex01TestMainMethod().printNumberTriangle();
+		
