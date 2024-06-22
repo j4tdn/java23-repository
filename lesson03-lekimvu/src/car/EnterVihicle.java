@@ -18,7 +18,7 @@ public class EnterVihicle {
 		System.out.println("Input capacity car: ");
 		Double capacity = sc.nextDouble();
 		vehicle.setCapacity(capacity);
-
+		
 		System.out.println("Input price car: ");
 		Double price = sc.nextDouble();
 		vehicle.setPrice(price);
@@ -32,15 +32,26 @@ public class EnterVihicle {
 	}
 
 	public static void Show(Vehicle vehicle) {
-		System.out.println("owner:" + vehicle.getOwner() +"\n transportation:" + vehicle.getTransportation()
-				+"\n capacity:" + vehicle.getCapacity() +"\n price:" + vehicle.getPrice() +"\n moneyTax: " +vehicle.moneyTax(percent));
+//		System.out.println("owner:" + vehicle.getOwner() +"\n transportation:" + vehicle.getTransportation()
+//				+"\n capacity:" + vehicle.getCapacity() +"\n price:" + vehicle.getPrice() +"\n moneyTax: " +vehicle.moneyTax(percent));
+		System.out.printf("%-20s %-20s %-20s %-20s %-20s\n", "Owner", "Transportation", "Capacity", "Price",
+				"MoneyTax");
+		System.out.println("======================================================"
+				+ "=============================================");
+
+		System.out.printf("%-20s %-20s %-20.0f %-20.2f %-20.2f\n", vehicle.getOwner(), vehicle.getTransportation(),
+				vehicle.getCapacity(), vehicle.getPrice(), vehicle.moneyTax(percent));
 
 	}
 
 	public static void main(String[] args) {
 		Vehicle v1 = new Vehicle();
+		Vehicle v2 = new Vehicle();
 		InputValue(v1);
 		Show(v1);
+		InputValue(v2);
+		Show(v2);
 	}
 
 }
+ 
