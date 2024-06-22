@@ -93,8 +93,8 @@ trong lập trình có 2 loại kd
   			
   		VD : 2 chiếc xe hơi khác nhau về màu sắc, hãng xe, số chỗ ngồi,...
   		
-  + Class: là khái niệm trừu tượng dùng để chỉ tập hợp các đối tượng có chung thuộc tính, phương thức
-  
+  + Class: là khái niệm trừu tư ợng dùng để chỉ tập hợp các đối tượng có chung thuộc tính, phương thức
+      
   		VD: 2 chiếc xe hơi khác màu sắc, hãng xe, chỗ ngồi,...
   		-> mỗi đối tượng xe có thể có màu sắc, hãng xe, số chỗ ngồi giống/ khác nhau
   			nhưng đều có thông tin "màu sắc", "hãng xe", "số chỗ ngồi",...

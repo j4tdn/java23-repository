@@ -16,7 +16,7 @@ public class Ex01BasicOopDemo {
 		c1.setPrice(456789d);
 		System.out.println(c1);
 		c2.doublePrice();
-		System.out.println(c2);
+		System.out.println(c2);   
 		
 		/*
 		 FOP: data( no restriction, tất cả đều truy cập được, ko phân quyền)
