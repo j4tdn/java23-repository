@@ -70,3 +70,62 @@ VD: XeHoi: Xexanh, XeVang, XeDo
 ----> CODE: Class: attributes + methods
 			--> gọi hàm khởi tạo từ class
 				--> tạo ra object
+				
+Class
+--------------------------
++Attribute
+	--> Thông thường sẽ khai báo là private
+	--> Lý do: nếu để public thì sẽ đc truy cập từ bất cứ nơi nào
+			   rơi vào hạn chế của FOP, ko phân quyền dữ liệu quản lý cho từng đối tượng
+		Vấn đề: tạo 1 class ra, dùng nó ở nhiều nơi cho bài toán
+				private -> ko truy cập đc
+				getter -> truy cập lấy giá trị của thuộc tính
+				setter -> truy cập gán, cập nhập lại giá trị của thuộc tính mà ko làm mất đi 
+				class A{
+					public List<Item> items = new ArrayList<>(); // dynamic array
+					private List<Item> items = new ArrayList<>();
+					
+					public List<Item> getItems(){
+						return items;
+					}
+					
+					public void add(Item item){
+						item.add(item);
+					}
+				}
+				
++ constructor: hàm khởi tạo
+	--> khởi tạo đối tượng cho class, thông qua từ khóa new
+	--> tạo ra 1 ô nhớ tại vùng nhớ HEAP 
+	
+				--> A a1 = new A();
+				--> a1.items = Arrays.asList(...); --> items -> fixed-length array
+				--> a1.add(...);
+				
++ getter/setter				
+	--> lấy/ cập nhập giá trị cho thuộc tính của đối tượng
+	--> đối tượng đó phải tồn tại, có giá trị ở HEAP rồi
+
++ toString
+	--> được gọi tự động in ra biến của class
+
+---------------------------------
+Từ khóa static
+--> static attribute
+	// non-static: thuộc phạm vi đối tượng
+	// static	 : thuộc phạm vi class, dùng chung cho tất cả các đối tượng của class
+
+--> static method
+	// non-static: nếu hàm phụ thuộc vào đối tượng đang gọi
+				 : với mỗi đối tượng khác nhau, khi gọi hàm kết quả có thể khác nhau
+				 
+	// static	 : nếu hàm không phụ thuộc vào đối tượng đang gọi
+				 : dùng bất kỳ đối tượng nào gọi cũng không ảnh hưởng đến kết quả của hàm
+	
+--> thứ tự khởi tạo trước sau của static/non attribute, method
+	lúc runtime class khởi tạo trước -> tạo ra đối tượng từ class 
+	--> static method/attribute sẽ được khởi tạo trước
+		--> non-static method/attribute sẽ được khởi tạo khi có tạo ra đối tượng
+
+--> static class	
+					   
