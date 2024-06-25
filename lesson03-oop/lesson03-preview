@@ -1,0 +1,120 @@
+1. Các hướng xây dựng, phát triển, giải quyết 1 bài toán trong lập trình 
+
++ FOP(Functional Object Programing): Lập trình hướng chức năng(hàm)
+  --> Khi code 1 bài toán, xem bài toán như là 1 chức năng 
+      rồi chia nhỏ chức năng đó thành cách chức năng nhỏ để giải quyết
+  --> 1 bài toán là 1 hàm lớn -> chứa/gọi các hàm nhỏ hơn
+  
+  Hạn chế: Vì các hàm gọi lẫn nhau, nếu 1 hàm xảy ra lỗi kéo theo cả hệ thống 
+           Dữ liệu dùng chung, ko có phân quyền dữ liệu
+           
+           
++ OOP(Object Oriented Programing): Lập trình hướng đối tượng(chứa 1 hoặc nhiều thông tin bên trong) 
+  --> System = Tập hợp các Object 
+  --> Object = attribute(s) + method(s)
+             = data structure + function
+             
+VD: Bài toán quản lý cửa hàng thời trang 
++ Bài toán sẽ có những đối tượng:
++ Mặt Hàng
+  --> Lưu trữ: mã mặt hàng, tên mặt hàng, giá bán, giá mua, số lượng, kích cỡ
+  --> Chức năng: liệt kê các mặt hàng, tìm kiếm, chọn để bán ...
++ Đơn Hàng 
+  --> Lưu trữ: mã đơn hàng, danh sách các mặt hàng, số lượng, tổng tiền, khách hàng
+  --> Chức năng: tạo đơn hàng, xuất hóa đơn, thanh toán offline/oneline ...
+
++ AOP(Aspect Object Programing): Lập trình hướng khía cạnh 
+  --> xây dựng phát triển trong các thư viện, framwork
+  --> khi gọi/thực thi 1 chức năng, chức năng đó sẽ được thực thi tự động
+      kém với 1/n chức năng(khía cạnh) khác theo cấu hình
+
+VD: Ngôn ngữ JDBC/JPA-Hibernate: Database Connection
++ Chức năng chuyển/nhận tiền qua các app ngân hàng, làm 2 việc
+
++ Đăng nhập
++ Người chuyển: Trừ tiền từ tài khoản --> hamA()
++ Người nhận:   Nhận được số tiền --> hamB()
+--> Vấn đề: lỗi mạng, ứng dụng bị lỗi: số tiền từ người chuyển bị trừ, ng nhận lại chưa nhận được
+--> commit, rollback
+
+hamChuyenTien(){
+ hamA();
+ hamB();
+ }
+ 
+--> cấu hình sao đó khi ogij hàm hamChuyenTien()
+--> nếu có lỗi xảy ra thì gọi lệnh hàm rollback đến trả về lại giữ liệu ban đầu
+--> nếu thực thi ok -> commit lưu dữ liệu
+
+
++--> CronJob(QuartJob): Cấu hình 1 chức năng sẽ được thực thi ở thời điểm nào đó
+      
+      
+      
+========= OOP trong Java ===========
++ Object: là khái niệm dừng đẻ mô tả các thực thể trong thế giới thực
+          thông tin rõ ràng cụ thể, phân biệt vs các thực thể khác --> đối tượng
+          VD: 2 chiếc xe hơi khác màu sắc, hãng xe, số chỗ ngồi
+          
++ Class: là khái niệm trừu tượng dùng để chỉ tập hợp các đối tượng có chung thuộc tính, phương thức
+        VD: 2 chiwcs xe hơi khác màu sắc, hãng xe, số chỗ ngồi
+            -> mỗi đối tượng xe có thể có màu sắc, hãng xe, số chỗ ngồi giống nhau
+            nhưng đều có thông tin: màu sắc, hãng xe, số chỗ ngồi 
+            class Car: color, model, noSeats
+--> khái niệm class, object chỉ mang tính chất tương đối
+    1 class cũng có thể là 1 object hay ngược lại trong các trươngf hợp khác nhau 
+    
+VD: XeHoi: XeXanh, XeVang, XeDo
+   PhuongTien: XeHoi, XeDap, XeMay
+   
+--> CODE: Class: attribute + methods
+         --> gọi hàm khỏi tạo từ class
+         --> tạo ra Object
+      
+Class
+-------------------------
++Attribute 
+--> Thông thường sẽ khai báo là private
+--> Lý do: nếu để public thì sẽ được truy cập từ bất kỳ nơi nào
+           rơi vào hạn chế của FOP, ko phân quyền dữ liệu quản lý cho từng đối tượng
+   Vấn đề: Tạo 1 class ra, dùng nó ở nhiều nơi cho bài toán
+           private -> ko truy cập được
+           getter -> truy cập lấy giá trị của thuộc tính
+           setter -> truy cập gán, cập nhật lại giá trị của thuộc tính mà không làm mất đi cấu trúc dữ liệu cảu class
+           class A{
+             public List<Item> items = new ArrayList<>();
+             private List<Item> items = new ArrayList<>();
+             
+             
+             public List<Item> getItems(){
+             }
+             
+             public void add(Item item) {
+                items.add(item);
+             }           
+           }
+           
++ constructor: hàm khởi tạo
+  --> khởi tạo đối tượng cho class, thông qua từ khóa new
+  --> tạo ra 1 ô nhớ tại vùng nhớ heap
+           
+           --> A a1 = new A();
+               a1.items = Arrays.asList(...); items  -> fixed-length array
+               a1.add(..);
+
++ getter/setter
+  --> lấy/cập nhật giá trị cho thuộc tính của đối tượng
+  --> đối tượng đó phải tồn tại, có giá trị ở HEAP rồi
+  
++ toString 
+ --> được gọi tự động khi in ra biến của class
+ 
+ ------------------
+ Từ khóa static
+ -->static attribute
+ -->static method
+ -->static class
+
+
+
+
