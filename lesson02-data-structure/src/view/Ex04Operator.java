@@ -6,13 +6,13 @@ public class Ex04Operator {
 		//toán tử = -->gán giá trị vế phải cho vế trái
 		int a = 4;
 		int b = 2;
-		int zz = 8;
+		int c = 8;
 		
 		//toán tử == --> so sánh VT và VP kết quả trả về KDL boolean(true/false)
 		// VT = VP --> thực hiện VP trước, được kết quả gán cho VT
 		boolean e1 = (a == b);
-		boolean e2 = (a * b == z);
-		boolean e3 = (a != z);
+		boolean e2 = (a * b == c);
+		boolean e3 = (a != c);
 		
 		System.out.println("e1 -->" +e1);
 		System.out.println("e2 -->" +e2);

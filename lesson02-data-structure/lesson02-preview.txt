@@ -1,6 +1,83 @@
-Kiểu dữ liệu
-	--> là khái niệm dùng để ràng buộc, cho phép việc lưu trữ dữ liệu trong phạm vi nào
-	--> Ví dụ lưu chuỗi --> cần sử dụng KDL chuỗi
-	--> lưu số --> cần sử dụng KDL số
+1.tạo ra java - executable file thông qua java
+-->thự thi code
++có file để tạo ra như class kiểu dữ liệu
++có file để tạo ra chứa hàm main -> thực thi chương trình
+
+2. Cấu trục của 1 chương trình 
++cấu trúc dữ liệu
++Giải thuật (hàm, phương thức)
+
+3.Kiểu dữ liệu
++KDL nguyên thủy(primitive type)
+ -->lưu trữ dữ liệu(giá trị đơn)
+ -->Giá trị lưu ở vùng nhớ STACK
+ 
++KDL đối tượng(object type)
+ -->Lưu trữ dữ liệu(giá trị đơn, đa)
+ --> Giá trị lưu ở vùng nhớ HEAP
+ 	+ KDl có sẵn của Java: Integer, Double, String ... -> HEAP - constant pool
+ 	+ KDL tự tạo ra: Item, Employee -> HEAP - normal
+ --> Tạo ra các hàm để xử lý
+ 	 VD: Integer.parseInt, Double.parseDouble
+VD: Item itA = new Item(1, "Item A1", 55d);
+	+Item: class - kiểu dữ liệu
+	+itA:biến có KDL là Item
+	+new Item(1, "Item A1", 55d)
+		--> giá trị của biến itA
+		-->tạo ra 1 ô nhớ trên vùng nhớ HEAP
+		-->tạo ra 1 đối tượng cho KDL Item
+	Tổng quát: giá trị của 1 biến KDL đối tượng ==> đối tượng
 	
-	trong lập trình có 2 loại kiểu dữ liệu
++Boxing: int -> Integer, doublue - Double
+	--> KDL nguyên thủy sang đối tượng
++Unboxing:Integer ->int, Doublue - double
+
+4. Toán tử
++-*/
+++ -- ! ?: && ||
+
+5. Nhập xuất -> Scanner
+
+6  Random
+
+7. Cấu trúc điều kiện: if else switch case ternary operator
+
+8. Cấu trúc vòng lặp:for while do-while
+
+9. Cấu trúc dữ liệu mảng
+	+ heap
+	+ index: [0-length]
+
+10. Từ khóa
++ final ở stack
+	final int a = 5;
+	a = 7; --> lỗi
+	
+	final Item it = new Item(1, "A", 11);
+	it = new Item(2, "B", 22);
+	it.name = "A1";
+	
++ Block scope
+	-> khai báo 1 biến có phạm vi từ { đến }
+
+
+
+
+
+
+
+
+
+------------------------------------------
+Kiểu dữ liệu 
+--> là khái niệm dùng để ràng buộc, cho phép lưu trữ dữ liệu trong phạm vi nào
+--> ví dụ lưu chuỗi --> cần sử dụng KDL chuỗi 
+--> lưu số --> cần sử dụng KDL số
+  
+  trong lập trình có 2 loại kiệu dữ liệu 
+  +static data syple 
+  --> khi có giá trị gì cần lưu chính xác trong KDL gì đó
+  VD: chuỗi --> String 
+      số --> int 
+  + dynamic( loosely) data type 
+       không quan tâm đến kdl
