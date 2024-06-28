@@ -1,0 +1,52 @@
+1. Các hướng xây dựng, phát triển , giải quyết 1 bài toán trong lập trình 
+
++ FOP (Functional Oriented Programming ) : Lập trình hướng chức năng (hàm)
+ --> Khi code 1 bài toán , xem bài toán như 1 chức năng rồi chia nhỏ chức năng đó thành các chức năng nhỏ hơn
+ 
+ --> 1 bài toán là 1 hàm lớn -> chứa/gọi các hàm nhỏ hơn
+ 
+ Hạn chế : Vì các hàm gọi lẫn nhau, nếu 1 hàm xảy ra lỗi kéo theo cả hệ thống 
+          Dữ liệu dùng chung , không có phân quyền dữ liệu
+          
++ OOP (object Oriented Programming) : Lập trình hướng đối tượng 
+ --> System = Tâpj hợp các Ọbject
+ --> Object = attribute(s) + method(s)
+ 			= data structure + function
+VD: Bài toán qly cửa hàng thời trang
+
++ Bài toán của mình sẽ có những đối tượng: 
++ Măt hàng, loại hàng,...
+  --> Lưu trữ : Mã mặt hàng, Giá bán, số lượng , ....
+  --> Chức năng : Liệt kê các mặt hàng , tìm kiếm , chọn để  mua,..
+ + Đơn hàng
+  --> Lưu trữ : mã đơn hàng , danh sách các mặt hàng, số lương , ..
+  --> Chức năng : tọa đơn hàng, xuất hóa đơn, thanh toán onl/off,..
+ 
+ + AOP (Aspect Object Programming) : Lập trình hướng khía cạnh
+  --> xây dựng phát triển trong các thư viện , framework
+  --> khi gọi thực thi 1 chức năng sẽ được thực thi tự động kèm với 1/n chức năng (khía cạnh)
+  
+  
+  ==========OOP trong java================
+  + Object : là khái niệm dùng để mô tả các thực thể trong thế giới thực thông tin rõ ràng cụ thể, phân biệt được với các thực thể khác --> Đối tượng
+           VD: 2 chiếc xe hơi khác màu sắc , hãng xe, số chỗ ngồi
+  + Class: là khái niệm trừu tượng dùng để chỉ tập hợp các đối tượng có chung thuộc tính , phương thức 
+          --> mỗi đối tượng xe có thể có màu sắc , hãng xe , số chỗ ngồi giống khác nhau 
+          nhưng đều có thông tin : màu sắc, hãng xe, số chỗ ngồi
+         VD class car: color , model,..
+  --> Khái niệm class , object chỉ mamng tính chất tương đối
+  1 class cũng có thể là 1 object hay ngược lại trong các trường hợp khác nhau 
+  VD
+  + XeHoi: XeVang, XeXanh, XeDo
+  + PhuongTien: XeHOi, XeDap, XeMay
+  
+  ----> CODE : Class: attributes + methods
+              --> gọi hàm khởi tạo Từ class
+                --> tạo ra từ Object
+                
+CLASS 
+----------------------   
++ Attribute 
+ --> Thông thường sẽ khai báo là private 
+ --> Lý do : nếu public thì sẽ truy cập từ bất cứ nơi nào 
+ 			rơi vào hạn chế của FOP , không phân quyền dữ liệu quản lý cho từng đối tượng
