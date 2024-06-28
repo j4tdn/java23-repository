@@ -29,5 +29,8 @@ public class EX05IdeaOfStaticMethod {
 		}
 		return true;
 	}
+	private static void printfHello() {
+		System.out.println("Today");
+	}
 	
 }
