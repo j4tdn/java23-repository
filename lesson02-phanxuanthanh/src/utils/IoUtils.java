@@ -17,12 +17,12 @@ khi 1 đoạn code/ hàm có thể được sử dụng ở nhiều chỗ
 */
 
 public class IoUtils {
-	
+
 	private static Scanner ip = new Scanner(System.in);
-	
+
 	private IoUtils() {
 	}
-
+	
 	public static int input(int maxWrongTimes) {
 		System.out.println("Enter N = ");
 
@@ -43,6 +43,26 @@ public class IoUtils {
 		return Integer.parseInt(text);
 	}
 	
+	public static int input1(String variableName, int minInclusive, int maxExclusive) {
+		System.out.println("Enter " + variableName + " = ");
+
+		int n = 0;
+		String text = "";
+
+		while (true) {
+			text = ip.nextLine();
+			if (isNumber(text)) {
+				n = Integer.parseInt(text);
+				if (n >= minInclusive && n < maxExclusive) {
+					break;
+				}
+			}
+			System.out.println("Invalid number["+ minInclusive + "," +maxExclusive + ") , enter again N = ");
+		}
+
+		return Integer.parseInt(text);
+	}
+
 	private static boolean isNumber(String text) {
 		if (text == null || text.isEmpty()) {
 			return false;
@@ -55,5 +75,5 @@ public class IoUtils {
 		}
 		return true;
 	}
-	
+
 }
