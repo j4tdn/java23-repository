@@ -18,8 +18,28 @@ import java.util.Scanner;
 public class IoUtils {
 
 	private static Scanner ip = new Scanner(System.in);
-	
+
 	private IoUtils() {
+	}
+
+	public static int input(String variableName, int minInclusive, int maxExclusive) {
+		int n = 0;
+		String text = "";
+
+		System.out.print("Enter " + variableName + " = ");
+		while (true) {
+			text = ip.nextLine();
+			if (isNumber(text)) {
+				n = Integer.parseInt(text);
+				if (n >= minInclusive && n < maxExclusive) {
+					break;
+				}
+			}
+			System.out.print("Invalid number[" + minInclusive + ", " + maxExclusive + "), please enter again "
+					+ variableName + " = ");
+		}
+
+		return n;
 	}
 
 	public static int input(int maxWrongTimes) {
@@ -42,7 +62,7 @@ public class IoUtils {
 
 		return Integer.parseInt(text);
 	}
-	
+
 	private static boolean isNumber(String text) {
 		if (text == null || text.isEmpty()) {
 			return false;
