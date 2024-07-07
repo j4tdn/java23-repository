@@ -46,6 +46,30 @@ public class IoUtils {
 		return Integer.parseInt(text); // parseInt de convert tu text qua int
 	}
 	
+	public static int input(String variableName, int minInclusive, int maxExclusive) {
+		
+		int n = 0;
+		String text = "";
+		
+		System.out.print("Enter " + variableName + " = ");
+		
+		// Kiem tra den khi nao text nhap vao la 1 chuoi so --> goi ham parseInt de
+		// convert tu text qua int
+		while (true) {
+			text = ip.nextLine(); // nhap text = so
+			if (isNumber(text)) { // check co phai so hay khong
+				n = Integer.parseInt(text);
+				if (n >= minInclusive && n < maxExclusive) {
+					break; // so thi break ra khoi vong lap
+				}
+					
+			}
+			System.out.print("Invalid number [" + minInclusive + "," +maxExclusive+"). Please enter again!\nEnter" + variableName + "= "); // khong phai so thi xuon day, xong bat dau lai vong lap	
+		}
+		
+		return Integer.parseInt(text); // parseInt de convert tu text qua int
+	}
+	
 	private static boolean isNumber(String text) {
 		if(text == null || text.isEmpty()) {
 			return false;
@@ -58,5 +82,5 @@ public class IoUtils {
 		}
 		return true;
 	}
-	
+
 }

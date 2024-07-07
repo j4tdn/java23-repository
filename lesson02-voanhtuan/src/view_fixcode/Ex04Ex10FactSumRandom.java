@@ -1,4 +1,4 @@
-package view_260624;
+package view_fixcode;
 
 import java.util.Arrays;
 import java.util.Random;
