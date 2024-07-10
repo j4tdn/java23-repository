@@ -1,0 +1,25 @@
+1. Tính chất đóng gói- encapsulation
+Định nghĩa
+
+-> tính chất đóng gói được thể hiện qua các access modifier
+	--> khi 1 thuộc tính, phương thức có access modifier...
+	
+	+ private: đóng gói trong phạm vi class
+	
+	+ public: sử dụng được ở mọi class, package trong dự án
+	
+	+ protected: đóng gói trong phạm vi package
+			   : có thể sử dụng, cho phép kế thừa ở class con
+			     bên ngoài package hiện tại
+			     
+	+ default: đóng gói trong phạm vi package
+			 : ko được sử dụng bên ngoài package
+ 
+ + Ví dụ 
+ 	. view
+ 		--> ...
+ 	. service
+ 		--> ..., public
+ 	. dao
+ 		--> ..., public
+ 
