@@ -1,0 +1,38 @@
+2. Tính chất đa hình = Polymorphism
+Định nghĩa:
+-- Tính chất đa hình có 2 loại 
+
+2.1 Đa hình trong phương thức
+-- Một phương thức, có nhiều hình thái chức năng trong từng trường hợp khác nhau, phương thức đó có thính đa hình
+VD: Phương thức tính tổng 
+   + Tổng các số nguyên: 2, 3, n
+   + Tông các số thực: 2, 3, n
+
+Áp dụng trong coding
++Overloading
+ -- 1/N phương thức được gọi là overloading nếu 
+    + thuộc chung 1 class
+    + Trùng tên
+    + Khác
+     --> số lượng tham số truyền vào
+     --> khác kiểu dữ liệu truyền vào của tham số
++Overriding
+     --> Được sử dụng trong tính chất thừa kế
+     --> KHi 1 lớp con kế thừa từ lớp cha
+        + Sử dụng các hàm cho phép kế thừa từ lớp cha
+        + Hoặc là override lại sử dụng cho riêng class hiện tại
+        
+VD: Object#toString --> mặc định in ra tên package.class@hash
+    Khi in 1 biến đối tượng, tự động gọi hàm toString thay vì in ra package.class@hash
+    mình sẽ override lại để in ra giá trị thực tế các tt của đối tượng
+
+2.2 Đa hình trong đối tượng
+--> Một đối tượng, có nhiều hình thái chức năng trong từng trường hợp khác nhau, đối tượng đó có tính đa hình
+VD1: Đối tượng con người, có chức năng giao tiếp
+   + Ở nhà -->
+   + Đi học -->
+   + Đi làm -->
+VD2: Đối tượng hình học, có chức năng tính diện tích
+   + Hình vuông -->
+   + Hình hộp chữ nhật -->
+   + Hình tròn -->
