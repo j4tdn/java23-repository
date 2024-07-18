@@ -24,6 +24,9 @@ package polymorphism.object;
   
  */
 public class Shape {
+	//Vấn đề 1 :Khi đó tạo hàm cals , paint ở kdl cha hoàn toàn chưa biết nội dung
+	//		: body chưa biết , thừa
+	//Vấn đề 2
 	void callS() {
 		System.out.println("Shape#cals --> unknown");
 	}
