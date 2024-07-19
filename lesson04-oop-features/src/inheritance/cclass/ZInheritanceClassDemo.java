@@ -29,10 +29,12 @@ public class ZInheritanceClassDemo {
 	
 	public static void main(String[] args) {
 		Book[] books = mockData();
-		
+
 		generate("Liệt kê các sách thuộc nxb Nhi Đồng", findBooksByPublisher(books, "Nhi Dong"));
-		
-		System.out.println("Billing --> " + billing());
+
+		generate("Liệt kê các sách có giảm giá > 2%", findBooksWithDiscount(books));
+
+		System.out.println("Billing --> " + billing(books[0], books[1]));
 	}
 	
 	private static double billing(Book... booksToBeCalted) {
@@ -86,13 +88,13 @@ public class ZInheritanceClassDemo {
 	
 	private static Book[] mockData() {
 		return new Book[] {
-				// new TextBook(1, "TB1", 12d, "Nhi Dong", false, 1d),
-				// new TextBook(2, "TB2", 16d, "Ha Noi", false, 5d),
+				new TextBook(1, "TB1", 12d, "Nhi Dong", false, 1d),
+				new TextBook(2, "TB2", 16d, "Ha Noi", false, 5d),
 				new ReferenceBook(3, "RF3", 40d, "Nhi Dong", 2d),
 				new ReferenceBook(4, "RF4", 22d, "Da Nang", 8d),
 				new ReferenceBook(5, "RF5", 36d, "Nhi Dong", 3d),
-				// new TextBook(6, "TB6", 62d, "Nhi Dong", false, 10d),
-				// new TextBook(7, "TB7", 26d, "Da Nang", false, 8d)
+				new TextBook(6, "TB6", 62d, "Nhi Dong", false, 10d),
+				new TextBook(7, "TB7", 26d, "Da Nang", false, 8d)
 		};
 	}
 	
