@@ -1,0 +1,16 @@
+1.   Tính chất đóng gói = Encapsulation
+=> Định nghĩa
+--> Tính chất đóng gọi được thể hiện qua các acces modifier(public,private,protected,default(k có access modifer)
+--> Khi một thuộc tính, phương thức access modifier....
+
+ + private: đóng gói trong phạm vi của class
+
+ + public: sử dụng ở bất kỳ class, package trong dự án
+
+ + protected: đóng gói trong phạm vi của package
+            : có thể sử dụng,cho phép kế thừa ở class con bên ngoài package hiện tại
+
+ + K khai báo: đóng gói trong phạm vi của package
+             : k được sử dụng bên ngoài package 
+             
++ Ngoại lệ: ....
