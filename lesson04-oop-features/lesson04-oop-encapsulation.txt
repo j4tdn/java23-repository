@@ -4,6 +4,7 @@ Tính chất đóng gói = Encapsulation
 -> Khi một thuộc tính, phương thức có access modifier ...
 + private: đóng gói (chỉ được sử dụng) trong phạm vi của class
 + public: sư dụng ở bất kỳ class, package nào trong dự án
+		: access modifier mặc định của abstract interface 
 + protected: đóng gói trong phạm vi của package
 		   : có thể sử dụng, cho phép kế thừa ở các class con bên ngoài package hiện tại 
 		   

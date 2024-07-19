@@ -1,0 +1,45 @@
+3. Tính chất thừa kế (Inheritance)
+Định nghĩa:
+--> Khi trong code analise có  TYPE(class/interface/abstract class) có các thuộc tính | & phương
+thức chunhg --> tạo ra KDL cha sau đó cho các KDL con thừa kế, thực thi
+
++ Class extends Class
+  --> Khi các KDL con có chung thuộc tính
+  --> Class con không bắt buộc phải override các method từ class cha
+  --> ** Chứa các hàm bình thường (có body)
+==> Class chỉ được phép extends duy nhất từ 1 [Abstract]Class
+  
++ Class implements Interface
+  --> Khi các KDL con có chung thuộc tính
+  --> các phương thức[trừu tượng] đó bắt buộc phải override ở KDL con
+  --> ** Chứa các hàm trừu tượng (không body)
+==> Class có thể implements nhiều Interface
+  
++ Class extends Abstract_Class
+  --> Khi các KDL con có chung thuộc tính | & thương thức
+  --> Các phương thức có 1 số bắt buộc 1 số không
+  --> ** Chứa các hàm bình thường (có body) và hàm trừu tượng (không có body)
+  
++ Interface extends Interface
+  --> Interface con có thể thừa kế(thêm) các hàm trừu tượng từ Interface cha
+  
++ Abstrack_Class implements Interface
+  --> Không bắt buộc phải override các hàm trừu tượng từ Interdace
+  --> Câc abstract method từ interface trở thánh các abstract methods trong Abstract_Class
+  
+---- Trong Java có hỗ trợ tính chất đa thừa kế hay không ----
++ Thừa kế : Class con extends Class cha
++ Thực thi: Class con implements Interface cha
+--> Tương đương - Trong Java 1 class con có thẻ thừa kế (extends) từ nhiều class cha được không?
+--> Không
+--> Vì khi 1 class con extends từ 1 class cha
+	--> không bắt buộc override hàm từ class cha
+	
+	+ Ví dụ Father có hàm cooking , Mother cũng có hàm cooking
+	+ Child extends Father, Mother đồng thời không override
+	+ child.cooking() sẽ không biết thừa kế , gọi từ class cha/mẹ nào
+	
+=========================================================================
+Từ Java 8 trở đi, có 1 vài cập nhật chi Interface
++ JDK 1.0 - 1.7 --> Interface chỉ được chứa hàm trừu tượng
++ JDK 1.8		--> Interface có thể chứa hàm trừu tượng và hàm bình thường
