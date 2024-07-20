@@ -1,0 +1,16 @@
+1. Tinh chat dong goi = Encapsulation
+Dinh nghia: 
+-> Tinh chat dong goi duoc the hien qua access modifier (public, private, protected, default
+-> Khi mot thuoc tinh, phuong thuc co access modifier ...
+
++ private: dong goi(chi duoc su dung) trong pham vi cua class
+
++ public: su dung o bat ky class, package nao trong du an
+
++ protected: dong goi trong pham vi cua package
+			:co the su dung, cho phep ke thua o class con ben ngoai package hien tai
+			
++ _			: dong goi trong pham vi cua package
+			: k duoc su dung ben ngoai package
++ Ngoai le:
+

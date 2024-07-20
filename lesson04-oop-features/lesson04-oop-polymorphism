@@ -1,0 +1,39 @@
+2. Tinh chat da hinh = polymorphism
+Dinh nghia: 
+--> tinh chat da hinh co 2 loai:
+
+1. Da hinh trong phuong thuc: 
+--> mot phuong thuc, co nhieu hinh thai chuc nang trong tung truong hop khac nhau, phuong thuc do co tinh da hinh
+VD: Phuong thuc tinh tong
+	+ Tong cac so nguyen: 2 , 3 , n
+	+ Tong cac so thuc: 2, 3, n
+	
+AP dung trong coding:
++ Overloading
+---> 2/N phuong thuc duoc goi la overloading neu
+		+ Thuoc chung 1 class 
+		+ Trung ten bat buoc
+		+ Khac
+		--> So luong tham so truyen vao
+		--> Kieu du lieu truyen vao cua tham so
++ Overriding:
+	--> duoc su dung trong tinh chat thua ke
+	--> khi 1 lop con ke thua tu lop cha:
+		+ Su dug cac ham cho phep ke thua tu lop cha
+		+ Hoac la override lai su dung rieng cho class hien tai
+		
+VD: Object#toString: in ra ten package.class@hash
+	Khi in 1 bien doi tuong, tu dong goi ham toString thay vi in ra pakage.class@hash
+	minh se override lai de in gia tri thuc te cac thuoc tinh cua doi tuong
+
+2. Da hinh trong doi tuong (di kem voi thua ke):
+Dinh nghia: 
+--> mot doi tuong, co nhieu hinh thai chuc nang trong tung truong hop khac nhau, phuong thuc do co tinh da hinh
+VD: Doi Tuong con nguoi, co chuc nang giao tiep:
+	+ O nha -->
+	+ Di hoc -->
+	+ Di lam -->
+VD 2: Doi tuong hnh hoc co chuc nang tinh dien tich:
+	+ Hinh vuong -->
+	+ HInh hop chu nhat -->
+	+ Hinh tron -->

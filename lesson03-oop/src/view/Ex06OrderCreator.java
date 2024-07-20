@@ -8,5 +8,7 @@ public class Ex06OrderCreator {
 		
 	}
 	
-	public void test01 ()
+	public void test01 () {
+		
+	}
 }
