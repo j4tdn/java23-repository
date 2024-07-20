@@ -7,16 +7,8 @@ public class InTest01 {
 	protected static int n3;	
 	static int n4;
 	
-	private void test01() {
-		
-	};	
-	public void test02() {
-		
-	};	
-	protected void test03() {
-		
-	};	
-	void test04() {
-		
-	};	
+	private static void test01() {}
+	public static void test02() {}
+	protected static void test03() {}
+	static void test04() {}
 }

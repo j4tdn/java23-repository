@@ -7,8 +7,7 @@ public interface Shape {
 	 Hàm k có body --> hàm trừu tượng (abstract method) --> bắt buộc override ở lớp con
 	 */
 	
-	//các hàm trừu tượng
-	void calS();
+	void calS(); // --> compile public abstract void calS();
 	
 	void paint();
 }

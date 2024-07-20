@@ -12,21 +12,23 @@ public class ZPoTest {
 	 */
 	
 	public static void main(String[] args) {
+		// A a1 = new A()
+		
 		Shape shape = new Shape();
 		shape.paint();
-		shape.callS();
+		shape.calS();
 		
 		System.out.println();
 		
 		Circle circle = new Circle();
 		circle.paint();
-		circle.callS();
+		circle.calS();
 		
 		System.out.println();
 		
 		Square square = new Square();
 		square.paint();
-		square.callS();
+		square.calS();
 		
 		System.out.println("\nĐa hình trong đối tượng -- 'shape' --\n");
 		
@@ -42,12 +44,12 @@ public class ZPoTest {
 		
 		Shape s1 = new Circle();
 		s1.paint();
-		s1.callS();
+		s1.calS();
 		
 		// Tương tự với s2
 		Shape s2 = new Square();
 		s2.paint();
-		s2.callS();
+		s2.calS();
 		
 		s1 = s2;
 		
@@ -63,6 +65,7 @@ public class ZPoTest {
 		 --> Vì class con ngoài việc kế thừa còn có thể tạo ra các hàm, biến mới
 		 --> Nếu Con c1 = new Cha()
 		 	 Sau đó lấy c1 gọi hàm mới của Con, lúc runtime ko thể tìm thấy trong class Cha
+		 	 Thay vì đợi đến khi gọi ko tìm thấy báo lỗi
 		 	 --> Báo lỗi lúc gán Con = Cha
 		 
 		 2. Vì sao mình phải dùng đa hình trong đói tượng

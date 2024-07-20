@@ -1,7 +1,7 @@
-package inheritance.cclas;
+package inheritance.cclass;
 
 public class Book {
-
+	
 	private Integer id;
 	private String name;
 	private Double salesPrice;
@@ -53,6 +53,4 @@ public class Book {
 	public String toString() {
 		return "Book [id=" + id + ", name=" + name + ", salesPrice=" + salesPrice + ", publisher=" + publisher + "]";
 	}
-
-	
 }

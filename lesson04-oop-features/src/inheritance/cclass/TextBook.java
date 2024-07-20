@@ -1,4 +1,4 @@
-package inheritance.cclas;
+package inheritance.cclass;
 
 public class TextBook extends Book {
 
@@ -6,12 +6,12 @@ public class TextBook extends Book {
 	private Double discount;
 
 	public TextBook() {
-
 	}
 
-	
+	//H1
 	//new TextBook(1, "TB-1", 12d, "Nhi Dong", true, 0d);
-	public TextBook(Integer id, String name, Double salesPrice, String publisher, Boolean isNew, Double discount) {
+	public TextBook(Integer id, String name, Double salesPrice, 
+					String publisher, Boolean isNew, Double discount) {
 		// this: đại diện cho đối tượng, ô nhớ hiện tại ở heap khi gọi hàm non static
 			// : khi thừa kế từ cha, các hàm, thuộc tính của cha đã nằm trong con
 			//	 ==> gọi được các hàm của chính nó và cha
@@ -19,10 +19,10 @@ public class TextBook extends Book {
 	
 		super(id, name, salesPrice, publisher); //phải để super ở trên cùng
 		
-//		super.setId(id);
-//		super.setId(id);
-//		super.setSalesPrice(salesPrice);
-//		super.setPublisher(publisher);
+//		 super.setId(id); // this.id = id
+//		 super.setName(name); // this.name = name
+//		 super.setSalesPrice(salesPrice); // this.salesPrice = salesPrice
+//		 super.setPublisher(publisher); // this.publisher = publisher
 		
 		this.isNew = isNew;
 		this.discount = discount;

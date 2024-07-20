@@ -1,4 +1,4 @@
-package inheritance.cclas;
+package inheritance.cclass;
 
 import java.util.Arrays;
 
@@ -41,7 +41,7 @@ public class ZInheritanceClassDemo {
 				findBooksWithDiscount(books)
 		);
 		
-		System.out.println("billing --> "+ billing(books));
+		System.out.println("billing --> "+  billing(books[0], books[1]));
 	}
 	
 	//Giải lập bài toán mua sách, tính tiền

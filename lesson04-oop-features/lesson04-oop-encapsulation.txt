@@ -2,10 +2,14 @@
 Định nghĩa
 --> Tính chất đóng gói được thể hiện qua các access modifier(public, private, protected, )
 --> Khi một thuộc tính, phương thức có access modifier...
+
 + private: đóng gói (chỉ được sử dụng) trong phạm vi của class
+
 + public: sử dụng ở bất kỳ class, pakage nào trong dự án
+		: access modifiler mặc định của abstract method trong interface
+		
 + protected: đóng gói trong phạm vi của package
-		   : có thể sử dụnng, cho phép kế thừa ở class con bên ngoài package hiện 
+		   : có thể sử dụnng, cho phép kế thừa ở class con bên ngoài package hiện tại
 		   
 + ___	   : đóng gói trong phạm vi của package
 		   : không được sử dụng bên ngoài package

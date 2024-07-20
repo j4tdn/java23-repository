@@ -35,7 +35,7 @@ public class Shape {
 	// Muốn: Hàm ở cha ko có body, bắt buộc override ở con
 	// Cha -> interface
 	
-	void callS() {
+	void calS() {
 		System.out.println("Shape#calS --> unknown");
 	};
 	

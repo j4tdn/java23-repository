@@ -2,7 +2,7 @@ package polymorphism.object;
 
 public class Circle extends Shape {
 	@Override //có override cũng được, k có cũng được, nhưng nên có để biết
-	void callS() {
+	void calS() {
 		System.out.println("Circle#calS ...");
 	}
 

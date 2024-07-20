@@ -1,0 +1,44 @@
+3. Tính chất thừa kế (Inheritance)
+Định nghĩa:
+--> Khi trong code analyse có TYPE(class/interface/absract class)
+có các thuộc tính | & phương thức chung --> tạo ra KDL cha sau đó cho các KDL con thừa kế, thực thi
+
++ Class extends Class
+  --> Khi KDL con có chung thuộc tính
+  --> Class con ko bắt buộ phải override các method từ Class cha
+  --> ** Chức các hàm bình thường(body)
+==> Class chỉ được phép extends duy nhất từ 1 [Abstract] Class 
+  
++ Class implement Interface
+  --> Khi các KDL con có chung phương thức
+  --> Các phương thức[trừu tượng] đó bắt buộc phải  override ở KDL con
+  --> ** Chứa các hàm trừu tượng(no body)
+==> Class có thể implements nhiều Interface
+  
++ Class extends Abstract_Class
+  --> Khi các KDL con có chung thuộc tính | & phương thức
+  --> Các phương thức có 1 số bắt buộc 1 số là không
+  --> ** Chức năng các hàm bình thường(body) và hàm trừu tượng(no body)
+
++ Interface extends Interface //lâu lâu mới dùng
+  --> Interface con có thể thừa kế(thêm) các hàm trừu tượng từ Interface cha
+  
++ Abstract_Class implements Interface
+  --> không bắt buộc phải override các hàm trừu tượng từ Interface
+  --> Các abstract methods từ interface trở thành các abstract methods trong Abstract_Class
+
+----- Trong Java có hỗ trợ tính chất đa thừa kế hay không -----
++ Thừa kế: Class con extends Class cha
++ Thực thi: Class con implement Interface cha
+--> Tương đương - Trong Java class con có thể thừa kế(extends) từ nhiều class cha được không?
+	--> Không!
+	--> Vì khi 1 class con extends từ 1 class cha ko bắt buộc phải Overide từ class cha
+		+ Ví dụ Father có hàm cooking, Mother cũng có hàm cooking
+		+ Child extends Father, Mother đồng thời ko override
+		+ child.cooking() sẽ không biết thừa kế, gọi từ class cha/mẹ nào
+		
+============================================================================
+Từ Java08 trở đi, có 1 vài cập nhật cho interface
++ JDK 1.0 - 1.7 --> interface chỉ được phép chứa hàm trừu tượng
++ >~ JDK 1.8	--> interface có thể chứa hàm trừu tượng và hàm bình thường
+		

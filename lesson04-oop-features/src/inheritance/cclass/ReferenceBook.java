@@ -1,8 +1,8 @@
-package inheritance.cclas;
+package inheritance.cclass;
 
 public class ReferenceBook extends Book {
 
-	private Double tax;
+private Double tax;
 	
 	public ReferenceBook() {
 	}
@@ -22,11 +22,11 @@ public class ReferenceBook extends Book {
 	
 	@Override
 	public String toString() {
-		return "TextBook [id =" + getId() 
-				+ ", name=" + getName() 
-				+ ", salesPrice=" + getSalesPrice() 
-				+ ", publisher=" + getPublisher() 
-				+ ", tax=" + getTax() + "]";
+		return "TextBook [id=" + getId() 
+		    + ", name=" + getName() 
+			+ ", salesPrice=" + getSalesPrice() 
+			+ ", publisher=" + getPublisher() 
+			+ ", tax=" + getTax() + "]";
 	}
 	
 }
