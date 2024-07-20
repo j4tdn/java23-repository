@@ -1,0 +1,9 @@
+4. Tính chất trừu tượng (abstruction)
+Định nghĩa
+--> Tính chất trừu tượng được thể hiện qua các
++ class: là khái niệm trừu tượng dùng để chỉ 1 tập hợp các đối tượng có chung thuộc tính phương thức
++ abstrac_class/interface: chứa các hàm trừu tượng chứa idea có chung, sau đó sẽ được override sau
+
+>~ JDK 1.8
++ Funtional Interface
++ Strategy Pattern

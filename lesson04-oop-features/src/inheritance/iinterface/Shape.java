@@ -8,7 +8,7 @@ public interface Shape {
 	 Hàm ko có body --> hàm trừu tượng(abstract method) --> bắt buộc overide ở lớp con
 	 */
 	
-	void calS();
+	void calS(); // compile public abstract void calS();
 	
 	void paint();
 }
