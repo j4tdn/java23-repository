@@ -6,4 +6,9 @@
 
 >~ JDK 1.8
 + Functional Interface
+
+Interface: abstract method ~~ normal methods (default, static, private)
+
+
+
 + Strategy Pattern
