@@ -6,4 +6,14 @@
 
 >~ JDK 1.8
 + Funtional Interface
+
+Interface: abstact method ~~ normal methods(default, static, private)
+--> Để khởi tạo 1 đối tượng cho interface:
+	==> Implementation Class / Anonymous class
+	
+Funtional Interface: là interface có duy nhất 1 hàm trừu tượng
+--> Để khởi tạo 1 đối tượng cho interface:
+	==> Implementation Class/ Anonymous Class / Anonymous function(lambda expression)
+
+>> TODO	
 + Strategy Pattern

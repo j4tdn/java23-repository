@@ -33,7 +33,7 @@ public class Ex03IdeaOfStaticAttribute {
 		// --> Tất cả các đối tượng của class Car phải sử dụng chung 1 giá trị cho model
 		
 		// Trong class, nếu muốn thuộc tính nào sử dụng chung cho tất cả các đối tượng --> static
-		// 				nếu thuộc tính mà quản lý riêng thì
+		// 				nếu thuộc tính mà quản lý riêng cho từng đối tượng --> non- statica
 	}
 	
 }

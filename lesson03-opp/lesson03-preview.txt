@@ -75,12 +75,12 @@ Class
 --------------------------
 +Attribute
 	--> Thông thường sẽ khai báo là private
-	--> Lý do: nếu để public thì sẽ đc truy cập từ bất cứ nơi nào
-			   rơi vào hạn chế của FOP, ko phân quyền dữ liệu quản lý cho từng đối tượng
-		Vấn đề: tạo 1 class ra, dùng nó ở nhiều nơi cho bài toán
-				private -> ko truy cập đc
-				getter -> truy cập lấy giá trị của thuộc tính
-				setter -> truy cập gán, cập nhập lại giá trị của thuộc tính mà ko làm mất đi 
+		--> Lý do: nếu để public thì sẽ đc truy cập từ bất cứ nơi nào
+				   rơi vào hạn chế của FOP, ko phân quyền dữ liệu quản lý cho từng đối tượng
+			Vấn đề: tạo 1 class ra, dùng nó ở nhiều nơi cho bài toán
+					private -> ko truy cập đc
+					getter -> truy cập lấy giá trị của thuộc tính
+					setter -> truy cập gán, cập nhập lại giá trị của thuộc tính mà ko làm mất đi cấu trúc dữ liệu của class
 				class A{
 					public List<Item> items = new ArrayList<>(); // dynamic array
 					private List<Item> items = new ArrayList<>();
