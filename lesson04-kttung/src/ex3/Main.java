@@ -13,6 +13,7 @@ public class Main {
                 System.out.print(number + " ");
                 number = number * (i - j) / (j + 1);
             }
+            
             System.out.println();
         }
     }
