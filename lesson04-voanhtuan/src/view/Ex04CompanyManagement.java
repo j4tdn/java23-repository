@@ -4,7 +4,7 @@ import bean.DepartmentHead;
 import bean.Director;
 import bean.Staff;
 
-public class Ex03CompanyManagement {
+public class Ex04CompanyManagement {
 
 	public static void main(String[] args) {
         Director director = new Director("Vo Anh Tuan", "01/01/1970", 10, 3);
