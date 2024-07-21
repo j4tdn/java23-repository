@@ -2,6 +2,7 @@ package ex1;
 
 import java.util.Scanner;
 
+
 public class Main {
 	public static void main(String[] args) {
 		SinhVien sv1 = new SinhVien(1, "Khiếu Thanh Tùng", 7.5, 8.0);
