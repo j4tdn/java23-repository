@@ -56,6 +56,4 @@ public class Ex02ElementArrangement {
 			System.out.print(numbersAfter[i] + ", ");
 		}
 	}
-	
-	
 }

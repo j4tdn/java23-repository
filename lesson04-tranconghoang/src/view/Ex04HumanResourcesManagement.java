@@ -1,5 +1,6 @@
 package view;
 
+import java.lang.module.FindException;
 import java.util.Arrays;
 
 import bean.CompanyPersonnel;
@@ -21,8 +22,10 @@ public class Ex04HumanResourcesManagement {
 		Employee e5 = new Employee("Jenifer", "13/6/2000", 5.5d, "Room 5", m2);
 		Employee e6 = new Employee("Tom", "1/3/2003", 5.5d, "Room 6", m2);
 		
+		Manager[] mn = {m1, m2};
 		CompanyPersonnel[] cp = {d1, m1, m2, e1, e2, e3, e4, e5, e6};
 		generate("1. Thông tin nhân sự công ty", cp);
+		//findEmployeesByManager(cp, mn);
 		System.out.println("3. Mức lương của nhân sự công ty");
 		printSalaryOfCompanyPersonel(cp);
 				
@@ -34,7 +37,14 @@ public class Ex04HumanResourcesManagement {
 			System.out.println("  + " + cp);
 		System.out.println("}\n");
 	}
-	
+	/*
+	private static void findEmployeesByManager(CompanyPersonnel[] cpl, Manager[] mn) {
+		for(CompanyPersonnel cp: cpl)
+			if(cp instanceof Employee)
+				if(((Employee) cp).getManager().equals(mn))
+					System.out.println(cp.getName());
+	}
+	 */
 	private static void printSalaryOfCompanyPersonel(CompanyPersonnel[] cpl) {
 		int i = 0;
 		for(CompanyPersonnel cp: cpl)
