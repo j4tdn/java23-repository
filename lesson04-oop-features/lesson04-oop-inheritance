@@ -1,0 +1,34 @@
+3. Tính chất thừa kế (Inheritance)
+Định nghĩa: 
+--> Khi trong code analyse có TYPE(Class/Interface/Abstract class)
+có các thuộc tính | & phương thức chung
+--> Tạo ra KDL cha sau đó cho KDL con thừa kế, thực thi.
+
++ Class extends Class
+	--> Khi các KDL con có chung thuộc tính.
+	--> Class con không bắt buộc phải override methods từ cha
+	--> ** Chứa các hàm bình thường (body)
+==> Class chỉ được phép extends duy nhất từ 1 AbstractClass
+	
++ Class implement Interface
+	--> Khi các KDL con có chung phương thức.
+	--> Các phương thức đó bắt buộc phải override ở KDL con.
+	--> ** Chứa các hàm trừu tượng (no body)
+==> Class có thể implements nhiều Interface.	
+	
++ Class extends Abstract_Class
+	--> Khi các KDL con có chung thuộc tính | & phương thức
+	--> Các phương thức có 1 số bắt buộc 1 số không
+	--> ** Chứa các hàm bình thường (body) và hàm trừu tượng (no body)
+	
+- Interface extends Interface
+	
+-- Trong java có hỗ trợ tính chất đa thừa kế không --
++ Thừa kế: Class con extends Class cha
++ Thực thi: Class con implement Interface cha
+--> Tương đương - Trong Java class con có thể extends từ nhiều class cha ? 
+--> Không
+
+
+
+	
