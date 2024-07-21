@@ -12,11 +12,10 @@ public class ZInheritanceAbstractClassDemo {
 			
 		@Override
 		void login() {
-			// TODO Auto-generated method stub
-			
+System.out.println("E3#login");			
 		}
 		
 		
-}
+		};
 }
 }

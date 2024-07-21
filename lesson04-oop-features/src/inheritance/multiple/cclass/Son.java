@@ -1,6 +1,14 @@
 package inheritance.multiple.cclass;
 
-public class Son //implements //GrandFather 
-{
+public class Son implements GrandMother {
 
+	@Override
+	public void eating() {
+		
+	}
+
+	@Override
+	public void Gaming() {
+		
+	}
 }

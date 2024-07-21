@@ -1,8 +1,8 @@
 package inheritance.multiple.cclass;
 
-public class GrandFather {
+public interface GrandFather {
 
-	void Eating() {
+	void eating();
 		
+	void drinking();
 	}
-}

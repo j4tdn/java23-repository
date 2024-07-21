@@ -1,5 +1,10 @@
 package inheritance.multiple.cclass;
 
-public class Daughter {
+public abstract class Daughter 	implements GrandMother {
 
+	//gaming
+	@Override
+	public void eating() {
+System.out.println("Grandmother#Eating");		
+	}
 }
