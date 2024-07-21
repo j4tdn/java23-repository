@@ -7,13 +7,15 @@
 	+ private: đóng gói trong phạm vi class
 	
 	+ public: sử dụng được ở mọi class, package trong dự án
-	
+			: access modifier mặc định của abstract method trong interface				
 	+ protected: đóng gói trong phạm vi package
 			   : có thể sử dụng, cho phép kế thừa ở class con
 			     bên ngoài package hiện tại
 			     
 	+ default: đóng gói trong phạm vi package
 			 : ko được sử dụng bên ngoài package
+			 
+			 : 
  
  + Ví dụ 
  	. view

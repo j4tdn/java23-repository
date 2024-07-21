@@ -23,6 +23,13 @@ package polymorphism.object;
  
  */
 public class Shape {
+	// Vấn đề 1 : Khi tạo hàm calS, paint ở KDL cha hoàn toàn chưa biết nội dung 
+	// 			: body chưa biết, thừa 
+	// Vấn đề 2 :  Khi class con kế thừa từ class cha, k bắt buộc phải override
+	// 				hàm ở class cha
+	
+	// Muốn: Hàm ở cha không có body, bắt buộc override ở con
+	// Cha  -> interface
 	void calS() {
 		System.out.println("Shape#calS --> unknown");
 	}
