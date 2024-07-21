@@ -2,7 +2,7 @@ package ex03pascaltriangle;
 
 public class PascalTriangle {
 	 public static void printPascalTriangle(int n) {
-	        // Create an array to store previous row
+	        
 	        int[] previousRow = new int[n + 1];
 	        
 	        for (int line = 0; line <= n; line++) {	            
