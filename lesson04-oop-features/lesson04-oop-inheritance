@@ -12,7 +12,7 @@ có các thuộc tính | & phương thức chung
 	
 + Class implement Interface
 	--> Khi các KDL con có chung phương thức.
-	--> Các phương thức đó bắt buộc phải override ở KDL con.
+	--> Các phương thức [trừu tượng] đó bắt buộc phải override ở KDL con.
 	--> ** Chứa các hàm trừu tượng (no body)
 ==> Class có thể implements nhiều Interface.	
 	
@@ -21,13 +21,25 @@ có các thuộc tính | & phương thức chung
 	--> Các phương thức có 1 số bắt buộc 1 số không
 	--> ** Chứa các hàm bình thường (body) và hàm trừu tượng (no body)
 	
-- Interface extends Interface
++ Interface extends Interface
+	--> Interface con có thể thừa kế(thêm) các hàm trừu tượng từ Interface cha.
+	
++ AbstractClass implements Interface
+	--> Không bắt buộc phải override các hàm trừu tượng
+	--> Các abstract methods từ Interface trở thành các abstract methods trong absClass
+	
 	
 -- Trong java có hỗ trợ tính chất đa thừa kế không --
 + Thừa kế: Class con extends Class cha
 + Thực thi: Class con implement Interface cha
 --> Tương đương - Trong Java class con có thể extends từ nhiều class cha ? 
 --> Không
+--> Vì khi 1 clas con extends từ 1 class cha 0 bắt buộc override
+	+ Father có cooking, Mother có cooking
+	+ Child extends 2 cái mà 0 override -> cooknig 0 biết lấy của ai
+----------------------------------------------------------
+Từ Java08 trở đi
+Interface cho phép chứa hàm trừu tượng và hàm bình thường.
 
 
 

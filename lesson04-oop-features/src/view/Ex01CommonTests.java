@@ -1,5 +1,8 @@
 package view;
 
+import java.time.Duration;
+import java.util.Date;
+
 import inheritance.iinterface.Circle;
 import inheritance.iinterface.Shape;
 
@@ -8,6 +11,7 @@ public class Ex01CommonTests {
 		Shape shape = new Circle();
 		shape.calS(); //tự động public
 		
+		Date a = new Date();
 		
 	}
 }
