@@ -2,6 +2,7 @@ package datastructure.primitive;
 
 public class Ex02PassVariableViaMethod {
 
+<<<<<<< HEAD
 	public static void main(String[] args) {
 		// biến khai báo bên trong hàm --> biến cục bộ
 		// phạm vi sử dụng trong hàm chứa nó
@@ -32,4 +33,6 @@ public class Ex02PassVariableViaMethod {
 		return a + b;
 	}
 	
+=======
+>>>>>>> 65502e16054e06b41ca9f743d981ac070b42078a
 }
