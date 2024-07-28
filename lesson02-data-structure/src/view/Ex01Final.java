@@ -29,5 +29,7 @@ public class Ex01Final {
 		// item1 = item2; // item1(H2), item2(H2)
 		item1.salesPrice = 222;
 		
+		System.out.println(item1);
+		
 	}
 }
