@@ -7,3 +7,10 @@
 >~ JDK 1.8
 + Functional Interface
 + Strategy Pattern
+
+Interface: abstract methods ~~ normal methods( default, static, private)
+-->Để khởi tạo đối tượng cho interface: 
+	==> Implementation Class/ Anonymous Class
+
+Functional Interface: là interface có duy nhất 1 hàm trừu tượng
+	==> Implementation Class / Anonymous class/ anonymous function (lambda expression)
