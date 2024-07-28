@@ -7,7 +7,7 @@ public class EX03 {
 	public static void main(String[] args) {
 		Scanner ip = new Scanner(System.in);
 		
-		System.out.println("Enter number of rows");
+		System.out.println("Nhập số hàng");
 		int n = ip.nextInt();
 		int[][] pascal = new int[n + 1][n + 1];
 		
