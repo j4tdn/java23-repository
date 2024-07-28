@@ -3,7 +3,7 @@
 -- Tính chất đa hình có 2 loại 
 
 2.1 Đa hình trong phương thức
--- Một phương thức, có nhiều hình thái chức năng trong từng trường hợp khác nhau, phương thức đó có thính đa hình
+-- Một phương thức, có nhiều hình thái chức năng trong từng trường hợp khác nhau, phương thức đó có tính đa hình
 VD: Phương thức tính tổng 
    + Tổng các số nguyên: 2, 3, n
    + Tông các số thực: 2, 3, n
