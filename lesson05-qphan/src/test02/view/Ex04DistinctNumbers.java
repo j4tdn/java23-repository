@@ -2,7 +2,7 @@ package test02.view;
 
 import java.util.Arrays;
 
-public class Ex04Sum {
+public class Ex04DistinctNumbers {
 	
 	public static void main(String[] args) {
 		// int[] a = {1, 5, 8, 9, 2, 5, 9}
