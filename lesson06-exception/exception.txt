@@ -1,0 +1,15 @@
+Checked (compile) Exception
+--> Khi code bị exception này --> bắt buộc phải xử lý tại compile
+--> Class là Exception hoặc con của nó đi ra từ IOException
+
+UnChecked (Runtime) Exception
+--> Khi code bị exception này --> không bắt buộc phải xử lý tại compile
+							  --> nên xử lý vì có thể lỗi tại runtime
+--> Class là Exception hoặc con của nó đi ra từ RuntimeException
+
+
+Khối Finally
++ Là block code để thực thi những đoạn code quan trọng như close connection, stream, save file...
++ Lưu được thực thi dù exception có xảy ra hay không
+
++ Được sử dụng để "cleanup" code khi xảy ra ngoại lệ hoặc đóng chương trình
