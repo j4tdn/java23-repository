@@ -1,6 +1,8 @@
 package validate_trycatch_throwthrows;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -22,13 +24,13 @@ public class Ex07Finally {
 		writeFile("java23_test.txt", employees);
 	}
 	
-	private static void writeFile(String path, String[] employees) {
+	private static void writeFile(String path, String[] employees) throws IOException {
 		File file = new File(path);
 		if(!file.exists()) {
 			System.out.println("File " +file.getName() + "is not existed");
 		return;
 		}
-           FileWrite fw = new FileWrite(file);		
+           FileWriter fw = new FileWriter(file);		
            for(String employee :employees) {
         	   
            }
