@@ -1,0 +1,50 @@
+3. Tính chất thừa kế(Inheritance)
+Định nghĩa: 
+--> Khi trong code analyse có TYPE (class/interface/abstract class)
+có các thuộc tính|| Phương thức chung --> tạo ra KDL cha sau đó cho các KDL con thừa kế, thực thi
+
++ Class extends class
+--> Khi các KDL con có chung thuộc tính 
+--> Class con ko bắt buộc phải override các method từ Class cha
+--> ** Chỉ chứa các hàm bth (body)
+==> Class chỉ được phép extends duy nhất từ 1 [Abstract] class
+
++Class implement Interface
+--> Khi các KDL có chung phương thức 
+--> Các phương thức đó bắt buộc phải được override ở KDL con
+--> ** Chứa các hàm trừu tượng (no body)
+==> Class có thể implements nhiều Interface
+
+
++ Class extends Abstract_Class
+--> Khi các KDL con có chung thuộc tính | & phương thức
+--> Các Phương thức có 1 số bắt buộc 1 số là ko
+--> ** Chứa các hàm bth (body) và hàm trừu tượng (nobody)
+
++ Interface extends Interface
+--> Interface con có thể thừa kế (thêm) các hàm trừu tượng từ Interface cha
+
++ Abstract_Class implements Interface
+--> 
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Trong JAVA có hỗ trọ tính chất đa thừa kế không
++ Thừa kế: Class con extends Class cha
++ Thực thi: Class con Implement Interface cha
+--> Tương đương - Trong Java class con có thể thừa kế (extends) từ nhiều class cha được ko ?
+--> Không 
+--> / Mấu chốt của vấn đề Java: 	Java ko hỗ trợ đa thừa kế
+	// Vì khi 1 class con extends từ 1 class cha
+	// --> ko bắt buộc phải override hàm từ class cha
+	
+	
+	// Ví dụ Father có hàm cooking, Mother cũng có hàm cooking
+	// Child extends Father, Mother đồng thời ko override
+	// child.cooking() sẽ ko biết thừa kế, gọi từ class cha/mẹ nào
+========================================================================================================================
+Tu Java 08 tro di, co 1 vai cat nhap cho interface
++ JDK 1.0 -1.7 --> interface chi dc phep chua ham truu tuong
++ JDK 1.8 --> interface co the chua ham truu tuong va ham bth
+
+	

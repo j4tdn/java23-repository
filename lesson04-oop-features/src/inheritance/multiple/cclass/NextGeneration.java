@@ -1,12 +1,6 @@
 package inheritance.multiple.cclass;
 
-public class Son implements GrandMother{
-
-	@Override
-	public void eating() {
-		
-		
-	}
+public class NextGeneration extends Daughter{
 
 	@Override
 	public void gaming() {

@@ -1,5 +1,11 @@
 package inheritance.abstractclass;
 
-public class StandardEmailService {
+public class StandardEmailService extends EmailService{
 
+	@Override
+	void login() {
+		System.out.println("StandarEmailService#login ...");
+		
+	}
+	
 }

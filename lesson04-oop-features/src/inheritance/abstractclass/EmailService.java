@@ -1,5 +1,10 @@
 package inheritance.abstractclass;
 
-public class EmailService {
-
+public abstract class EmailService {
+	abstract void login();
+		
+	
+	void login2Steps () {
+		
+	}
 }

@@ -1,0 +1,19 @@
+. Tính chất trừu tượng (abstraction)
+Định nghĩa:
+--> Tính chất trừu tương được thể hiện qua các: 
++ class: là khái niệm trừu tượng dùng để chỉ 1 tập hợp các đối tượng có chung thuộc tính phương thức
++ abstract class/ interface: chứa các hàm trừu tượng chứa idea có chung, sau đó viết override sau
+
+
+JDK 1.8
++ Function Interface
+
+Interface: abstract methods -- normal method (default, static, private)
+--> Để khởi tạo 1 đối tượng cho interface: Implementation class/ Anonymous class
+
+Functional Interface: là interface có duy nhất 1 hàm trừu tượng
+Implementation class/ Anonymous class / Anonymous function (lambda expression)
+
+
+
++ Strategy Pattern

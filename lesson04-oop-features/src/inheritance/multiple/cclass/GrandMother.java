@@ -1,5 +1,5 @@
 package inheritance.multiple.cclass;
 
-public class GrandMother {
-
+public interface GrandMother extends Ancestor{
+	void gaming (); // + Ancestor#eating
 }

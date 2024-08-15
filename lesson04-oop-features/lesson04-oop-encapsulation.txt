@@ -6,7 +6,7 @@ Dinh nghia:
 + private: dong goi(chi duoc su dung) trong pham vi cua class
 
 + public: su dung o bat ky class, package nao trong du an
-
+		: access modifier mặc định của abstract method trong interface
 + protected: dong goi trong pham vi cua package
 			:co the su dung, cho phep ke thua o class con ben ngoai package hien tai
 			
