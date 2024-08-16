@@ -39,6 +39,7 @@ public class ZPoTest {
 		Shape s1 = new Circle();
 		s1.paint();
 		s1.calS();
+		
 		System.out.println();
 		// Tương tự với s2
 		Shape s2 = new Square();
