@@ -1,5 +1,6 @@
 package datetime;
 
+import java.util.Calendar;
 import java.util.Date;
 import static utils.DateUtils.*;
 public class Ex03DateFormat {
@@ -25,6 +26,9 @@ public class Ex03DateFormat {
 		System.out.println("str1(calendar) --> : " + toCalendar(str1, "dd/MM/yyyy HH:mm"));
 		
 		System.out.println("\n");
-		
+		Calendar c1 = Calendar.getInstance();
+		System.out.println("c1: " + c1);
+		System.out.println("c1(string) --> " + format(c1, DEFAULT_DATE_PATTERN));
+		System.out.println("c1(date) --> " + toDate(c1));
 	}
 }

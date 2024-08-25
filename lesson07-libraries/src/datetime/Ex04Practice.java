@@ -31,7 +31,7 @@ public class Ex04Practice {
 		// 21.04.2024
 		
 		System.out.println(
-				"1. In thong tin ngay thang nam voi DatFormatter:"
+				"1. In thong tin ngay thang nam voi DateFormatter: "
 				+ c.getActualMaximum(Calendar.DAY_OF_MONTH));
 		
 		System.out.println(

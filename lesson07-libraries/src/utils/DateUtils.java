@@ -61,7 +61,7 @@ public class DateUtils {
 	
 	// Date là 1 thuộc tính trong class calendar
 	
-	private static Date toDate(Calendar c) {
+	public static Date toDate(Calendar c) {
 		return c.getTime();
 	}
 	
