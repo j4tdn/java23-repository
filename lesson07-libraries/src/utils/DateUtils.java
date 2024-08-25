@@ -72,6 +72,11 @@ public class DateUtils {
 		return toCalendar(toDate(str, pattern));
 	}
 
+	public static String opt(long value, String unit) {
+		if(value <=0 )
+			return "";
+	return value +" " + unit + (value >1 ?"(s)" : "")+ " "; 	
+	}
 	// string -> df.parse -> date -> c.setTime -> calendar
 	// calendar -> c.getTime -> date -> d.format -> string
 	// string: pattern
