@@ -1,0 +1,8 @@
+Checked (Compile) Exception
+-- > Khi code bị exception này --> bắt buộc phải xử lý tạii compile
+--> Class là Exception hoặc con của nó đi ra từ IOException
+
+Unchecked (Runtime) Exception
+--> Khi code bị exception này -->bắt buộc phải xử lý tạii compile
+							  --> nên xử lý vì có thể lỗi tại runtime
+-- > Class là RuntimeException hoặc là con của nó

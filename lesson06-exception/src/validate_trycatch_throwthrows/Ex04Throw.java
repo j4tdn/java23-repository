@@ -34,6 +34,18 @@ public class Ex04Throw {
 	  Tại thời điểm compile, hàm divide ném ra ArithmeticException
 	  chỗ gọi hàm divde k bắt buộc phải xử lý (ném đi chỗ khác, try/catch)
 	  
+	  ArithmeticException
+	  IOException
+	  
+	  throws Unchecked Exception --> vô nghĩa
+	  throws Checked Exception --> nơi gọi phải bắt buộc xử lý
+	  --> throws tại chỗ khai báo hàm
+	  
+	  throw khi biết chính xác nguyên nhân exception do đâu
+	  --> throw new E...
+	  E  Checked Exception  --> throws ở phần khai báo hàm
+	  	 Unchecked Exception --> không cần
+	  
 	 */
 	private static int divide(int a, int b) {
 		if (b== 0) {
