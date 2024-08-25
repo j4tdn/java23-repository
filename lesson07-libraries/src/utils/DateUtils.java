@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 public class DateUtils {
 	
@@ -15,6 +16,13 @@ public class DateUtils {
 	private static final GregorianCalendar GC = new GregorianCalendar();
 	
 	private DateUtils() {
+	}
+	
+	public static String opt(long value, String unit) {
+		if (value <= 0) {
+			return "";
+		}
+		return value + " " + unit + (value > 1 ? "(s)" : "") + " ";
 	}
 	
 	public static void printf(Calendar[] cals, String pattern) {
@@ -37,6 +45,12 @@ public class DateUtils {
 	
 	public static boolean isLeapYear(int year) {
 		return GC.isLeapYear(year);
+	}
+	
+	public static String format(Calendar c, String pattern, TimeZone tz) {
+		DateFormat df = new SimpleDateFormat(pattern);
+		df.setTimeZone(tz);
+		return df.format(toDate(c));
 	}
 	
 	public static String format(Calendar c, String pattern) {
