@@ -15,11 +15,7 @@ public class Ex03 {
 		Calendar c = Calendar.getInstance();
 		Scanner sc = new Scanner(System.in);
 		LocalDate today = LocalDate.now();
-		// Xem thời gian ở khu vực bất kỳ
-		ZoneId zD1 = ZoneId.of("Europe/London");
-		LocalTime time1 = LocalTime.now(zD1);
-		System.out.println(time1);
-
+		
 //		 	Ngày cuối cùng của tháng hiện tại 
 		int lastday = c.getActualMaximum(Calendar.DATE);
 		System.out.println("The last day of month: " + lastday);
