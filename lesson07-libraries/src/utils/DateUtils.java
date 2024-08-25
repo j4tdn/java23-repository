@@ -5,13 +5,38 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class DateUtils {
 	
 	public static final String DEFAULT_DATE_PATTERN = "dd.MM.yyyy"; 
 	public static final String DEFAULT_DATE_TIME_PATTERN = "dd.MM.yyyy HH:mm:ss";
 	
+	private static final GregorianCalendar GC = new GregorianCalendar();
+	
 	private DateUtils() {
+	}
+	
+	public static void printf(Calendar[] cals, String pattern) {
+		for (Calendar c: cals) {
+			System.out.println("--> " + format(c, pattern));
+		}
+	}
+	
+	public static Calendar cloneAndSet(Calendar c, int field, int value) {
+		Calendar cloned = clone(c);
+		cloned.set(field, value);
+		return cloned;
+	}
+	
+	public static Calendar clone(Calendar c) {
+		Calendar cloned = Calendar.getInstance();
+		cloned.setTimeInMillis(c.getTimeInMillis());
+		return cloned;
+	}
+	
+	public static boolean isLeapYear(int year) {
+		return GC.isLeapYear(year);
 	}
 	
 	public static String format(Calendar c, String pattern) {
@@ -51,9 +76,8 @@ public class DateUtils {
 	}
 	
 	// string -> df.parse -> date -> c.setTime -> calendar
-	
 	// calendar -> c.getTime -> date -> d.format -> string
 
 	// string: pattern
-	
+	// date là 1 thuộc tính trong class
 }
