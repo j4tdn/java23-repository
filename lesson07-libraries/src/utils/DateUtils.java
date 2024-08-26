@@ -16,10 +16,20 @@ public class DateUtils {
 	private DateUtils() {
 		
 	}
+	public static Calendar cloneAndSet(Calendar c, int field, int value) {
+		Calendar cloned = clone(c);
+		cloned.set(field, value);
+		return cloned;
+	}
 	public static Calendar clone(Calendar c) {
 		Calendar cloned = Calendar.getInstance();
 		cloned.setTimeInMillis(c.getTimeInMillis());
 		return cloned;
+	}
+	public static void printf(Calendar[] cals,String pattern) {
+		for(Calendar c: cals) {
+			System.out.println("-->"+ format(c, pattern));
+		}
 	}
 	
 	public static String format(Calendar c,String pattern) {
