@@ -1,58 +1,48 @@
 package view;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Ex03 {
 	public static void main(String[] args) {
-		System.out.println("Nhập địa chỉ email");
-		System.out.println("======================================");
-		String email = checkEmail();
-		System.out.println("======================================");
+		checkEmail();
 	}
-	private static String checkEmail() {
+
+	private static void checkEmail() {
 		Scanner ip = new Scanner(System.in);
-		String mail = "";
-		
-		try {
-			while(true) {
-				mail = ip.nextLine();
-				validateEmail(mail);
+		String email = "";
+		while (true) {
+			try {
+				System.out.println("======================================");
+				System.out.print("Nhập địa chỉ email: ");
+				email = ip.nextLine();
+				validateEmail(email);
+
+				System.out.println("Địa chỉ Email hợp lệ: " + email);
+				System.out.println("======================================");
+				System.out.println();
 				break;
+			} catch (Exception e) {
+				System.out.println("Lỗi: " + e.getMessage());
 			}
-			
-		}catch (Exception e) {
-			System.out.println("Lỗi: "+e.getMessage());
-			ip.nextLine();
 		}
 		ip.close();
-		return mail;
 	}
-	
-	private static void validateEmail(String password) throws Exception {
-		
-		 if (password.length() < 8) {
-	            throw new Exception("Mật khẩu phải có ít nhất 8 ký tự.");
-	        }
 
-	        // Kiểm tra có ít nhất một chữ cái hoa
-	        if (!password.chars().anyMatch(Character::isUpperCase)) {
-	            throw new Exception("Mật khẩu phải chứa ít nhất một chữ cái hoa.");
-	        }
-
-	        // Kiểm tra có ít nhất một chữ cái thường
-	        if (!password.chars().anyMatch(Character::isLowerCase)) {
-	            throw new Exception("Mật khẩu phải chứa ít nhất một chữ cái thường.");
-	        }
-
-	        // Kiểm tra có ít nhất một chữ số
-	        if (!password.chars().anyMatch(Character::isDigit)) {
-	            throw new Exception("Mật khẩu phải chứa ít nhất một chữ số.");
-	        }
-
-	        // Kiểm tra có ít nhất một ký tự đặc biệt
-	        String specialCharacters = "!@#$%^&*()-_+=<>?/"; // Danh sách ký tự đặc biệt
-	        if (password.chars().noneMatch(ch -> specialCharacters.indexOf(ch) >= 0)) {
-	            throw new Exception("Mật khẩu phải chứa ít nhất một ký tự đặc biệt.");
-	        }
+	private static void validateEmail(String email) throws Exception {
+		String prefixRegex = "^[a-zA-Z0-9]+([._-]?[a-zA-Z0-9]+)*$";
+		String domainRegex = "^[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$";
+		String[] parts = email.split("@");
+		if (parts.length != 2) {
+			throw new Exception("Email không hợp lệ. Email phải chứa đúng một ký tự '@'.");
+		}
+		String prefix = parts[0];
+		String domain = parts[1];
+		if (!Pattern.matches(prefixRegex, prefix)) {
+			throw new Exception("Email không hợp lệ. Prefix không đúng định dạng.");
+		}
+		if (!Pattern.matches(domainRegex, domain)) {
+			throw new Exception("Email không hợp lệ. Domain không đúng định dạng.");
+		}
 	}
 }
