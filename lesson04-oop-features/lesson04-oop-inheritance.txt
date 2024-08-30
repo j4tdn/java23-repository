@@ -1,0 +1,48 @@
+3. Tính chất thừa kế(Inheritance)
+- Định nghĩa:
+--> Khi trong code analyse có các TYPE(class/interface/abstract class)
+có các thuộc tính | & phương thức chung 
+--> tạo ra KDL cha sau đó cho các KDL con thừa kế, thực thi
+
++ Class extend Class
+  --> Khi các KDL con có chung thuộc tính
+  --> Class con không bắt buộc phải override các method từ Class cha
+  --> ** Chứa các hàm bình thường(body)
+==> Class chỉ được phép extends duy nhất từ 1 [Abstract] class
+  
++ Class implements Interface
+  --> Khi các KDL con có chung phương thức
+  --> Các phương thức[Trừu Tượng] đó bắt buộc phảo override ở KDL con
+  --> ** Chứa các hàm trừu tượng(no body)
+==> Class có thể implements nhiều Interface
+  
++ Class extends Abstract_Class
+  --> Khi các KDL con có chung thuộc tính | & phương thức
+  --> Các phương thức có 1 số bắt buộc 1 số là không
+  --> ** Chứa các hàm bình thường(body) và hàm trừu tượng(no body)
+  
++ Interface extends Interface
+  --> Interface con có thể thừa kế(thêm) các hàm trừu tượng từ Interface cha
+  
++ Abstract_Class implements Interface
+  --> Không bắt byộc override các hàm trừu tượng từ Interface
+  --> Các abstract methods từ Interface trở thành các abstract methods trong Astract_Class
+  
+---- Trong JAVA có hỗ trợ tính chất đa thừa kế hay không ----
++ Thừa kế : Khi Class con extends Class cha
++ Thực thi: Class con implements Interface cha
+--> Tương đương - Trong JAVA class con có thể thừa kế(extends) từ nhiều class cha được không?
+--> KHÔNG
+	--> Vì khi 1 class con extends từ 1 class cha không bắt buộc phải override hàm từ class cha
+		+ Ví dụ Father có hàm cooking, Mother cũng có hàm cooking
+			+ Child extends Father, Mother đồng thời không overriđe
+			+ child.cooking() sẽ không biết thừa kế, gọi từ class cha/mẹ nào
+			
+==========================================================================================
+Từ Java08 trở đi, có 1 vài cập nhật cho Interface
++ JDK 1.0 - 1.7 --> interface chỉ được phép chứa hàm trừu tượng
++ >~ JDK 1.8    --> interface có thể chứa hàm trừu tượng và hàm bình thường
+
+
+		
+
