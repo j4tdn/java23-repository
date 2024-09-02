@@ -48,35 +48,35 @@ public class Ex01IfElse {
 		 
 		 
 		 //dùng biến này để 
-//		 float roundeAvgPoint = bdAvgPoint.floatValue();
-//		 System.out.println("bdAvgPoint:"+bdAvgPoint);
-//		 
-//		 String ranking = "Yếu";
-//		 
-//		 if(roundeAvgPoint <5) {
-//			 ranking = "Yếu";
-//		 }else if ( roundeAvgPoint <8) {
-//			 ranking ="Trung bình";
-//		 }else {
-//			 ranking ="Giỏi";
-//		 }
-//		 System.out.println("ranking"+ranking);
-//		 
-//		 
-		 private static String getRank(	float roundeAvgPoint) {
-			 if(roundeAvgPoint <5) {
-				 return "Yếu";
-			 }
-			 if(roundeAvgPoint <6.5) {
-				 return "Trung Bình"
-			 }
-			 if(roundeAvgPoint <8 ) {
-				 return "Khá";
-			 }
-			 return "Giỏi";
+		 float roundeAvgPoint = bdAvgPoint.floatValue();
+		 System.out.println("bdAvgPoint:"+bdAvgPoint);
+		 
+		 String ranking = "Yếu";
+		 
+		 if(roundeAvgPoint <5) {
+			 ranking = "Yếu";
+		 }else if ( roundeAvgPoint <8) {
+			 ranking ="Trung bình";
+		 }else {
+			 ranking ="Giỏi";
+		 }
+		 System.out.println("ranking"+ranking);
+	}
+		 
+		 private static String getRank(float roundedAvgPoint) {
+				if (roundedAvgPoint < 5) {
+					return "Yếu";
+				}
+				if (roundedAvgPoint < 6.5) {
+					return  "Trung bình";
+				} 
+				if (roundedAvgPoint < 8) {
+					return "Khá";
+				}
+				return "Giỏi";
 		 }
 		 
 		 
-		 ip.close();
+		
 	}
-}
+

@@ -52,26 +52,56 @@ public class ZInheritanceClassDemo {
 		}
 		return total;
 	}
-
 	
-	private  static Book[]mockData(){
+	private static Book[] findBooksWithDiscount(Book[] books) {
+		Book[] result = new Book[books.length];
+		int count = 0;
+		for (Book book: books) {
+			// Cha lúc runtime có thể Con #1 #2
+			// Muốn dùng thuộc tính của con kiểm tra lúc runtime là con #.
+			// Ép kiểu sang rồi dùng
+			
+			// book lúc runtime có thể là TextBook hoặc ReferenceBook
+			// book.getClass() --> lúc runtime book là ai(yêu cầu book != null)
+			// if (book != null && book.getClass() == TextBook.class) {
+			if (book instanceof TextBook tbook) {
+				if (tbook.getDiscount() > 5d) {
+					result[count++] = book;
+				}
+			}
+		}
+		return Arrays.copyOfRange(result, 0, count);
+	}
+	
+	private static Book[] findBooksByPublisher(Book[] books, String givenPubl) {
+		Book[] result = new Book[books.length];
+		int count = 0;
+		for (Book book: books) {
+			if (givenPubl.equals(book.getPublisher())) {
+				result[count++] = book;
+			}
+		}
+		return Arrays.copyOfRange(result, 0, count);
+	}
+	
+	private static Book[] mockData() {
 		return new Book[] {
-				new TextBook(1, "TB-1", 12d, "Nhi Dong",false, 0d),
-				new TextBook(2, "TB-2", 16d, "Ha Noi", false, 5d),
-				new ReferenceBook(3,"Rf3",40d,"Nhi Dong",2d),
-				new ReferenceBook(4,"Rf4",40d,"Da Nang",8d),
-				new ReferenceBook(5,"Rf5",40d,"Nhi Dong",3d),
-				new TextBook(6, "TB-6", 62d, "Nhi Dong", false, 10d),
-			    new TextBook(7, "TB-7", 26d, "Da Nang", false, 0d)
+			new TextBook(1, "TB1", 12d, "Nhi Dong", false, 1d),
+			new TextBook(2, "TB2", 16d, "Ha Noi", false, 5d),
+			new ReferenceBook(3, "RF3", 40d, "Nhi Dong", 2d),
+			new ReferenceBook(4, "RF4", 22d, "Da Nang", 8d),
+			new ReferenceBook(5, "RF5", 36d, "Nhi Dong", 3d),
+			new TextBook(6, "TB6", 62d, "Nhi Dong", false, 10d),
+			new TextBook(7, "TB7", 26d, "Da nang", false, 8d)
 		};
+	}
 	
-}
-	private static void generate(String prefix,Book[]books) {
-		System.out.println(prefix+"-->{");
-		for (Book book :books) {
-			System.out.println(" + "+book);
+	private static void generate(String prefix, Book[] books) {
+		System.out.println(prefix + " --> {");
+		for (Book book: books) {
+			System.out.println("   + " + book);
 		}
 		System.out.println("}\n");
 	}
-
+	
 }
