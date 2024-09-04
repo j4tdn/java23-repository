@@ -17,6 +17,13 @@ public class DateUtils {
 	private DateUtils() {
 	}
 	
+	public static String otp(long value, String unit) {
+		if(value <= 0) {
+			return "";
+		}
+		return value + " " + unit + (value > 1 ? "(s)" : "") + " ";
+	}
+	
 	public static void printf(Calendar[] cals, String partern) {
 		for(Calendar c: cals) {
 			System.out.println("--> " + format(c, partern));
