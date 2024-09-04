@@ -16,6 +16,7 @@ public class Ex01SingletonPatternDemo {
 	 */
 	
 	// ItemService, ItemServiceImpl
+	// ItemDao, HibernateItemDao
 	
 	public static void main(String[] args) {
 		
