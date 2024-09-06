@@ -18,85 +18,67 @@ public class User2 {
 	private LocalDate startedDate;
 	private String address;
 	
-	// Sử dụng Builder để tạo ra đối tượng cho User1
+	public static User2 of(Integer id, String name) {
+		User2 user2 = new User2();
+		user2.id = id;
+		user2.name = name;
+		return user2;
+	}
+	
 	private User2() {
 	}
 	
-	private User2(Builder builder) {
+	// setter(s)
+	public User2 id(Integer id) {
+		this.id = id;
+		return this;
 	}
-	
-	// Setter(s)
-	
-	
-	
-	// Getter(s)
-//	public Integer getId() {
-//		return id;
-//	}
-//
-//	public String getName() {
-//		return name;
-//	}
-//
-//	public Integer getAge() {
-//		return age;
-//	}
-//
-//	public LocalDate getStartedDate() {
-//		return startedDate;
-//	}
-//
-//	public String getAddress() {
-//		return address;
-//	}
+
+	public User2 name(String name) {
+		this.name = name;
+		return this;
+	}
+
+	public User2 age(Integer age) {
+		this.age = age;
+		return this;
+	}
+
+	public User2 startedDate(LocalDate startedDate) {
+		this.startedDate = startedDate;
+		return this;
+	}
+
+	public User2 address(String address) {
+		this.address = address;
+		return this;
+	}
+
+	// getter(s)
+	public Integer getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public LocalDate getStartedDate() {
+		return startedDate;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
 	@Override
 	public String toString() {
-		return "User1 [id=" + id + ", name=" + name + ", age=" + age + ", startedDate=" + startedDate + ", address="
+		return "User2 [id=" + id + ", name=" + name + ", age=" + age + ", startedDate=" + startedDate + ", address="
 				+ address + "]";
-	}
-	// user1.Builder
-	public static class Builder {
-		private Integer id;
-		private String name;
-		private Integer age;
-		private LocalDate startedDate;
-		private String address;
-		
-		
-		
-		// Chỉ sử dụng trong phạm vi của Builder, User1
-		private Builder() {
-		}
-
-		public Builder withId(Integer id) {
-			this.id = id;
-			return this;
-		}
-
-		public Builder withName(String name) {
-			this.name = name;
-			return this;
-		}
-
-		public Builder withAge(Integer age) {
-			this.age = age;
-			return this;
-		}
-
-		public Builder withStartedDate(LocalDate startedDate) {
-			this.startedDate = startedDate;
-			return this;
-		}
-
-		public Builder withAddress(String address) {
-			this.address = address;
-			return this;
-		}
-		
-		public User1 build() {
-			
-		}
-		
 	}
 	
 	

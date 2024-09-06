@@ -54,6 +54,10 @@ public class DateUtils {
 		return df.format(toDate(c));
 	}
 	
+	public static String format(Calendar c, String pattern) {
+		return format(toDate(c), pattern);
+	}
+	
 	public static String format(Date date, String pattern) {
 		DateFormat df = new SimpleDateFormat(pattern);
 		return df.format(date);

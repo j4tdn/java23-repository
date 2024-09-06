@@ -24,9 +24,30 @@ public class User1 {
 	}
 	
 	private User1(Builder builder) {
+		this.id = builder.id;
+		this.name = builder.name;
+		this.age = builder.age;
+		this.startedDate = builder.startedDate;
+		this.address = builder.address;
 	}
 	
-	// Chỉ dùng getter ko dùng setter
+	/**
+	 * Khởi tạo Builder cho User 1
+	 * @return
+	 */
+//	public static Builder builder() {
+//		return new Builder();
+//	}
+	
+	/**
+	 * Khởi tạo Builder cho User 1
+	 * @return
+	 */
+	public static Builder builder(Integer id) {
+		return new Builder(id);
+	}
+
+	// Chỉ có getter, ko có setter(nhờ Builder set ban đầu)
 	public Integer getId() {
 		return id;
 	}
@@ -46,12 +67,13 @@ public class User1 {
 	public String getAddress() {
 		return address;
 	}
+
 	@Override
 	public String toString() {
 		return "User1 [id=" + id + ", name=" + name + ", age=" + age + ", startedDate=" + startedDate + ", address="
 				+ address + "]";
 	}
-	// user1.Builder
+	
 	public static class Builder {
 		private Integer id;
 		private String name;
@@ -59,10 +81,12 @@ public class User1 {
 		private LocalDate startedDate;
 		private String address;
 		
+		// Chỉ sử trong phạm vi của Builder, User1
+		// private Builder() {
+		// }
 		
-		
-		// Chỉ sử dụng trong phạm vi của Builder, User1
-		private Builder() {
+		private Builder(Integer id) {
+			this.id = id;
 		}
 
 		public Builder withId(Integer id) {
@@ -91,10 +115,8 @@ public class User1 {
 		}
 		
 		public User1 build() {
-			
+			return new User1(this);
 		}
-		
 	}
-	
 	
 }
