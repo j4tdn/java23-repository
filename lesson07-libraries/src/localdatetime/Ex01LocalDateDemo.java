@@ -48,8 +48,9 @@ public class Ex01LocalDateDemo {
 		
 	}
 	private  String opt(long value, String unit) {
-		if(value <=0 )
+		if(value <=0 ) {
 			return "";
+		}
 	return value +" " + unit + (value >1 ?"(s)" : "")+ " "; 	
 	}
 }

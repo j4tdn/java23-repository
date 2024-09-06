@@ -1,10 +1,9 @@
 package localdatetime;
 
-import utils.DateUtils;
+import static utils.DateUtils.*;
 import java.time.Duration;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-
 public class Ex02LocalDateTimeDemo {
 
 	public static void main(String[] args) {
@@ -18,8 +17,11 @@ public class Ex02LocalDateTimeDemo {
 	
 	Duration duration = Duration.between(ltime1, ltime2);
 	System.out.println("duration: " +duration);
-	System.out.println("duration details: " 
-			+opt(duration.g));
+	System.out.println("duration details: " +
+			opt(duration.toHoursPart(),"hour")+ 
+			opt(duration.toMinutesPart(),"minutue") + 
+			 opt(duration.toSecondsPart(), "second")
+			);
 	
 	
 	}

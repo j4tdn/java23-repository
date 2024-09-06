@@ -59,5 +59,7 @@ public class Ex05Duration {
 			+seconds + "second(s)");
 				
 				
+			
 	}
+	
 }
