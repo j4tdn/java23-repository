@@ -15,7 +15,10 @@ public class Ex01DecimalFormat {
 	 * Lam tron: thay doi KQ ban dau Dinh dang: ko thay doi KQ ban dau, chi in ra KQ
 	 * do o dinh dang nay, kia
 	 * 
-	 * #: so(optional) 0: so(required) ,: phan nguyen .: phan thap phan
+	 * #: so(optional) 
+	 * 0: so(required) 
+	 * ,: phan nguyen 
+	 * .: phan thap phan
 	 */
 	public static void main(String[] args) {
 		double[] values = { 22.185d, 787.2d, 1234d, 8686.5877d };
