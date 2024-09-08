@@ -13,7 +13,7 @@ public class Ex03StringPractical {
 	  6. Kiểm tra chuỗi s1 có phải là chuỗi bắt đầu || kết thúc trong chuỗi s không
 	  7. Thay thế chuỗi s1 bằng chuỗi s2 trong chuỗi s
 	  8. Loại bỏ các khoảng trắng thừa của chuỗi s3
-	  9. Tạo chuỗi con của chuỗi s bắt đầu từ vị trí 2
+	  9. Tạo chuỗi con của chuỗi s bắt đầu từ vị trí 2 : substring
 	  10. Xác định chuỗi s2 có tồn tại trong chuỗi s1 hay ko
 	 */
 	public static void main(String[] args) {
@@ -35,6 +35,21 @@ public class Ex03StringPractical {
 		System.out.println("Vị trí cuối cùng của / --> " + song.lastIndexOf("/"));
 		System.out.println("Vị trí cuối cùng của . --> " + song.lastIndexOf("."));
 		System.out.println("Tên bài hát --> " + song.subSequence(song.lastIndexOf("/") + 1, song.lastIndexOf("."))); // [a,b)
+		
+		String s3 = "SGK123";
+		System.out.println("6. Kiểm tra chuỗi bắt đầu --> " + s3.startsWith("SGK"));
+		System.out.println("6. Kiểm tra chuỗi kết thúc --> " + s3.startsWith("123"));
+		
+		System.out.println("\ns: " + s);
+		System.out.println("s replace: " + s.replace("hello", "hi"));
+		
+		s3 = "     welcome       to     new   class";
+		// Loại bỏ tất cả khaorng trắng ở 2 đầu trim, strip
+		// Còn lại, thay thế nhiều khoảng trắng = 1 khoảng trắng
+		System.out.println("\ns3: " + s3);
+		System.out.println("s3 remove space: |||" + s3.strip().replaceAll("\\s+", " "));
+		
+		System.out.println("10. existing --> " + s3.contains("welcome"));
 	}
 	
 	private static void printSLetters(String s) {
