@@ -1,5 +1,6 @@
 package utils;
 
+import java.sql.Time;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -7,6 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
+import java.util.TimeZone;
 
 public class DateUtils {
 	
@@ -49,6 +51,12 @@ public class DateUtils {
 		return df.format(date);
 	}
 	
+	public static String format(Calendar c, String pattern, TimeZone tz) {
+		DateFormat df = new SimpleDateFormat(pattern);
+		df.setTimeZone(tz);
+		return df.format(toDate(c));
+	}
+	
 	public static Date toDate(String str, String pattern) {
 		DateFormat df = new SimpleDateFormat(pattern);
 		Date date = null;
@@ -72,6 +80,14 @@ public class DateUtils {
 	
 	public static Calendar toCalendar(String str, String pattern) {
 		return toCalendar(toDate(str, pattern));
+	}
+	
+	// ex02
+	public static String opt(long value, String unit) {
+		if (value <= 0) {
+			return "";
+		}
+		return value + " " + unit + (value > 1 ? "(s)" : "") + " ";
 	}
 	
 	// string   -> df.parse  -> date -> c.setTime -> calendar
