@@ -12,6 +12,7 @@ public class Ex03StringPractical {
 	 4. Duyệt từng ký tự, từ trong chuỗi
 	 5. Tìm vị trí - chỉ số xuất hiện đầu tiên, cuối cùng của ký tự "a" trong chuỗi s
 	 6. Kiểm tra chuỗi s1 có phải là chuỗi bắt đầu || chuỗi kết thúc
+	 7. Thay thế chuỗi s1 bằng chuỗi s2 trong chuỗi s
 	 */
 	public static void main(String[] args) {
 		String s = "hello - welcome to K23 class";
@@ -36,7 +37,23 @@ public class Ex03StringPractical {
 		System.out.println("Vị trí cuối cùng của '.' : --> " + song.indexOf('.'));
 		System.out.println("Tên bài hát-->"
 				+ song.substring(song.lastIndexOf("/") + 1, song.lastIndexOf("."))); //[a, b)
+		
+		String s3 = "SGK123";
+		System.out.println("6. Kiểm tra chuỗi bắt đầu --> " + s3.startsWith("SGK"));
 
-
+		System.out.println("6. Kiểm tra chuỗi kết thúc --> " + s3.endsWith("123"));
+		System.out.println("\ns: " + s);
+		System.out.println("s replace : " + s.replace("hello" , "hi"));
+		
+		s3 = "   welcome   to new   class     ";
+		System.out.println("s3 : " + s3);
+		System.out.println("s3 : "+  "|||"+ s3.strip().replaceAll("\\s+", " ")+ "|||");
+		
+		System.out.println("s : " + s);
+		System.out.println("s subsequence: " + s.substring(2));
+		System.out.println("does s contain \"welcome\": " + s.contains("welcome"));
+		
+		
+		
 	}
 }
