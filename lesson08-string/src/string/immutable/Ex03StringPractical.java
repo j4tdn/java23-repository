@@ -37,16 +37,35 @@ public class Ex03StringPractical {
 		printSWords(s);
 		System.out.println("\n");
 
-		for(int i = 0; i<s.length();i++) {
-              if(s.charAt(i) ==a) {
-            	  System.out.println(i);
-              }
-	}
+//		C6
+		String S3 = "SGK123";
+		System.out.println("6. Kiểm tra chuỗi bắt đầu: " +S3.startsWith("SGK"));
+		System.out.println("6. Kiểm tra chuỗi kết thúc: " +S3.endsWith("123"));
+		
+//		C7
+		System.out.println("\ns: " +s);
+		System.out.println("s replace: " +s.replace("hello", "hi"));
+		
+		S3 = " welcome    to  new  class";
+		System.out.println("\ns3:  " +S3);
+		System.out.println("s3 remove space:" +S3.replaceAll("\\s+ ", " "));
+ 
+     
      }
+     
+     
+     
      private static void printSWords(String s) { //C4
     	 String[] word = s.split("[\\s-]+");
      for(String string:word) {
     	 System.out.println("String[] --->" +string);
      }
      }
-     }
+     
+//     private static void SNT() {
+//     }
+}
+
+
+
+
