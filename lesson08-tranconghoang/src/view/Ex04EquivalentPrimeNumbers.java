@@ -1,32 +1,34 @@
 package view;
 
+import java.util.Arrays;
+
 public class Ex04EquivalentPrimeNumbers {
 
 	public static void main(String[] args) {
 
-		int n = 60;
-		int m = 30;
-		if(isEquivalentPrimeNumbers(n, m))
-			System.out.println("YES");
-		else
-			System.out.println("NO");
+		System.out.println(isEquivalentPrimeNumbers(75, 15));
 	}
 
-	private static boolean isPrimeNumber(int n) {
-		for (int i = 2; i < Math.sqrt(n); i++)
+	private static boolean isPrimeNumber(long n) {
+		for (int i = 2; i <= Math.sqrt(n); i++)
 			if (n % i == 0)
 				return false;
 		return n > 1;
 	}
 
-	private static boolean isEquivalentPrimeNumbers(int a, int b) {
-		for(int i = 2; i < Math.sqrt(a); i++)
-			for(int j = 2; j < Math.sqrt(b); j++)
-				if(isPrimeNumber(i) && isPrimeNumber(j)) 
-					if(a % i == 0 && b % j == 0)
-						if(i == j)
-							return true;
-		return false;
+	private static boolean isEquivalentPrimeNumbers(long n1, long n2) {
+		return Arrays.equals(getDividedPrime(n1), getDividedPrime(n2));
 	}
-
+	
+	private static long[] getDividedPrime(long number) {
+		long[] result = new long[(int) number];
+		int count = 0;
+		for(long i = 2; i < number; i++) {
+			if(isPrimeNumber(i) && number % i == 0)
+				result[count++] = i;
+		}
+		long[] result2 = Arrays.copyOfRange(result, 0, count);
+		System.out.println("So nguyen to cua " + number + " --> " + Arrays.toString(result2));
+		return result2;
+	}
 }
