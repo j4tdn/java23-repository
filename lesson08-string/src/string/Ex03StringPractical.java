@@ -14,7 +14,7 @@ public class Ex03StringPractical {
      7.  Thay thế chuỗi s1 bằng chuỗi s2 trong  chuỗi s
      8.  Loại bỏ các khoảng trắng thừa của chuỗi s3
      9.  Tạo chuỗi con của chuỗi s bắt đầu từ vị trí số 2
-    10. Xác định chuỗi s2 có tồn tại trong chuỗi s1 hay không
+    10.  Xác định chuỗi s2 có tồn tại trong chuỗi s1 hay không
     
 	 */
 
@@ -26,7 +26,7 @@ public class Ex03StringPractical {
 		System.out.println("1. Chiều dài chuỗi s --> " + s.length());
 		// s = s + s1; // s = s.concat(s1)
 		String s2 = String.join(" ", s, s1);
-		System.out.println("2. Nối chuối s --> " + s2);
+		System.out.println("2. Nối chuỗi s --> " + s2);
 		
 		System.out.println("3. Lấy kí tự tại vị trí có index=3 --> " + s.charAt(3));
 		
@@ -39,6 +39,17 @@ public class Ex03StringPractical {
 		System.out.println("Vị trí cuối cùng của . --> " + song.lastIndexOf("."));
 		System.out.println("Tên bài hát --> " 
 				+ song.substring(song.lastIndexOf("/") + 1, song.lastIndexOf("."))); // [a, b)
+		
+		String s3 = "SGK123";
+		System.out.println("6. Kiểm tra chuỗi bắt đầu --> " + s3.startsWith("SGK"));
+		System.out.println("6. Kiểm tra chuỗi kết thúc --> " + s3.endsWith("123"));
+		
+		System.out.println("\ns: " + s);
+		System.out.println(" s replace: " + s.replace("hello", "hi"));
+		
+		s3 = "    welcome    to     new     class    ";
+		System.out.println("\ns3: " + s3);
+		System.out.println("s3 remove space: |||" + s3.strip().replaceAll("\\s+", "x`"));
 	}
 	
 	private static void printSWords(String s) {
