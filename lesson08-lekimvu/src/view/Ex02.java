@@ -31,7 +31,7 @@ public class Ex02 {
 //	   }catch (Exception e) {
 //		 TODO: handle exception
 	private static String capitalizeWords(String s) {
-		String[] words = s.split("\\s+"); // Split the input string by whitespace
+		String[] words = s.split("\\s+"); 
 		StringBuilder capitalizedString = new StringBuilder();
 
 		for (String word : words) {

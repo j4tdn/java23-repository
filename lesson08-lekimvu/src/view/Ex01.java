@@ -1,4 +1,4 @@
-package view;
+	package view;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
