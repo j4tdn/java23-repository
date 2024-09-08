@@ -35,6 +35,11 @@ public class Ex03StringPractial {
 		System.out.println("Vị trí cuối cùng của / --> " + song.lastIndexOf("/"));
 		System.out.println("Vị trí cuối cùng của . --> " + song.lastIndexOf("."));
 		System.out.println("Tên bài hát: " + song.substring(song.lastIndexOf("/") + 1,song.lastIndexOf(".")));
+		String s3 = "    welcome to new class";
+		// 
+		System.out.println("\ns3: " + s3);
+		System.out.println("s3 remove space " + s3.strip().replaceAll("\\s+"," "));
+		System.out.println();
 	}
 	private static void printSWords(String s) {
 		String[] words =  s.split("[\\s-]+");
