@@ -10,6 +10,7 @@ public class Ex02NameFormat {
 		
 		Scanner ip = new Scanner(System.in);
 		String inputName = "";
+		
 		do {
 			System.out.println("Nhập họ tên : ");
 			inputName = ip.nextLine().trim();
@@ -17,6 +18,7 @@ public class Ex02NameFormat {
 			else System.out.println("Họ tên không hợp lệ !");
 		}
 		while (true);
+		
 		String[] splittedName = inputName.split("\\s+");
 		
 		StringBuilder formatName = new StringBuilder();
