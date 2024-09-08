@@ -39,12 +39,32 @@ public class Ex03StringPratical {
 		System.out.println("Ví trí cuối cùng của dấu . --> " + song.lastIndexOf("."));
 		System.out.println("6. Tên bài hát --> " 
 		+ song.substring(song.lastIndexOf("/")+1, song.lastIndexOf(".")));
-	
-	}
+		
+		String s3 = "SGK123";
+		System.out.println("6. Kiểm tra chuỗi bắt đầu --> " +  s3.startsWith("SGK"));
+		System.out.println("6. Kiểm tra chuỗi kết thúc --> " +  s3.endsWith("123"));
+		
+		System.out.print("7. ");
+		System.out.println("\ns: " + s);
+		System.out.println("s replace: " + s.replaceAll("hello", "hi"));
+		
+		s3 = "	welcome		tocome new class	";
+//		 Loại bỏ tất cả khoản trắng thừa ở 2 đầu trim, strip
+//		 Còn lại sẽ thay thế nhiều khoản trắng bằng 1 khoản trắng
+		System.out.println("\ns3: " + s3);
+		System.out.println("s3 remove space: ||| " + s3.strip().replaceAll("\\s+", " ")+ "||||");
+		
+		System.out.println("9. Tạo chuỗi con từ vị trí số 2: "+ s3.substring(2));
+		
+		System.out.println("10. existing --> " + s3.contains("welcome"));
+		
+		
+	}	
 	
 	private static void printSword(String s) {
 		String[] words = s.split("[\\s-]+");
 		System.out.println("S words: " + Arrays.toString(words));
+		
 	}
 	
 	private static void printSLetters(String s) {
