@@ -16,6 +16,12 @@ public class DateUtils {
 	private DateUtils() {
 		
 	}
+	public static String opt(long value, String unit) {
+		if (value <= 0) {
+			return "";
+		}
+		return value + " " + unit + (value> 1 ? "(s)" : "") + " ";
+	}
 	public static void printf(Calendar[] cals, String pattern) {
 		for ( Calendar c : cals) {
 			System.out.println(" ---> " + format(c, pattern));
