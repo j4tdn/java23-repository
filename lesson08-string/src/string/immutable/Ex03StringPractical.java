@@ -38,6 +38,26 @@ public class Ex03StringPractical {
 		System.out.println("Vị trí cuối cùng của . --> " + song.lastIndexOf("."));
 		System.out.println("Tên bài hát --> " 
 				+ song.substring(song.lastIndexOf("/") + 1, song.lastIndexOf("."))); // [a, b)
+	    
+		String s3 ="SGK";
+		System.out.println("6. Kiểm tra chuỗi bắt đầu --> "+ s3.startsWith("SGK"));
+		System.out.println("6. Kiểm tra chuỗi kết thúc --> "+ s3.endsWith("123"));
+  	 
+        System.out.println("\ns: "+ s);
+        System.out.println("s replace: "+s.replace("hello", "hi"));
+        
+        s3 = "welcome     to new   class    ";
+        // Loại bỏ tất cả khoảng trắng ở 2 đầu trim, strip 
+        // Còn lại, thay thế nhiều khoảng trắng = 1 khoảng trắng 
+        System.out.println("\ns3 :" + s3);
+        System.out.println("s3 remove space :"+ s3.strip().replaceAll("\\s+"," "));
+	
+     // Tạo chuỗi con của chuỗi s bắt đầu từ vị trí số 2
+     	String sub = s.substring(2);
+     	System.out.println("\nsub string --> " + sub);
+	   
+     	
+     	System.out.println("existing --> "+ s3.contains("welcome"));
 	}
 	
 	// [ab]+
