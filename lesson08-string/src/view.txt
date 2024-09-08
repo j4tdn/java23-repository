@@ -1,0 +1,8 @@
+String s1 = new String("")
+String s2 = "Hello"
+
+(Tương tự các primitive value khác)
+--> Khác nhau: khi new -> tạo ra 1 ô nhớ mới tại HEAP
+			 khi gán -> tìm các constant pool có giá trị tương tự -> gán vào ô nhớ đó
+			 		-> nếu không có tạo ô nhớ mới
+--> Giống nhau: Đều immutable -> khi tạo ra luôn có ô nhớ mới
