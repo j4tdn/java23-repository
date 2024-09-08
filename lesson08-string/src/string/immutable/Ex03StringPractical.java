@@ -37,6 +37,21 @@ public class Ex03StringPractical {
 		System.out.println("Vi tri cuoi cung cua / --> " + song.lastIndexOf("/"));
 		System.out.println("Vi tri dau tien cua . --> " + song.lastIndexOf("."));
 		System.out.println("Ten bai hat --> " + song.substring(song.lastIndexOf("/") + 1, song.lastIndexOf(".")));
+		
+		String s3 = "SGK123";
+		System.out.println("6. Kiem tra chuoi bat dau --> " + s3.startsWith("SGK"));
+		System.out.println("6. Kiem tra chuoi ket thuc --> " + s3.endsWith("123"));
+		
+		System.out.println("\ns: " + s);
+		System.out.println("s replace: " + s.replace("hello", "hi"));
+		
+		s3 = "    welcome       to  new   class   ";
+		// Loai bo tat ca khoang trang o 2 dau strim, strip
+		// Con lai, tha the nhieu khoang trang = 1 khoang trang
+		System.out.println("\ns3: " + s3);
+		System.out.println("s3 remove space: |||" + s3.strip().replaceAll("\\s+", " "));
+		
+		System.out.println("existing --> " + s3.contains("welcome"));
 	}
 	private static void printSWords(String s) {
 		String[] words = s.split("[\\s-]+");
