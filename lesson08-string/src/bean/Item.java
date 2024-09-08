@@ -6,7 +6,6 @@ public class Item {
 	private String name;
 
 	public Item() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Item(Integer id, String name) {

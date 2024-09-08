@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Ex03StringPractical {
 
 	/*
-	 * 
+	  
 	 1.  Tính chiều dài của chuỗi s
      2.  Nối chuỗi s1 vào chuỗi s
      3.  Lấy một ký tự tại vị trí index(3) trong chuỗi s
