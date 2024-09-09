@@ -39,6 +39,10 @@ public class Ex01String {
 		System.out.println(Reverse);
 		
 		System.out.println("==============");
+		
 		System.out.println("In ra chuỗi đảo ngược theo từ");
+		for(int i= words.length -1;i>=0;i--) {
+			System.out.println(words[i]+(i ==0 ? " ":" "));
+		}
 	}
 }
