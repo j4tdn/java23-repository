@@ -19,7 +19,7 @@ public class Test04 {
 		System.out.println("Nhập mật khẩu: ");
 		String password = ip.nextLine();
 		
-		if (checkPassword(password, user)) {
+		if (!checkPassword(password, user)) {
 			System.out.println("Đăng kí thất bại! Vui lòng nhập mật khẩu khác");
 		} else {
 			System.out.println("Đăng kí tài khoản thành công");
