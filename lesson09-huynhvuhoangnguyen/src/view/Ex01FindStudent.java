@@ -50,54 +50,47 @@ public class Ex01FindStudent {
 	}
 	
 	private static Student[] findRestudyStudent(Student[] students) {
-		
-		boolean[] visited = new boolean[students.length];
+		int[] idCounts = new int[students.length];
 		int resturdyCount = 0;
-
+		
 		for(int i = 0; i < students.length; i++) {
-			if(visited[i]) {
-				continue;
-			}
-			
 			int id = students[i].getId();
 			if(students[i].getGrade() == 'F') {
-				int count = 0;
 				for(int j = 0; j < students.length; j++) {
-					if(students[j].getId() == id) {
-						count++;
-						visited[j] = true;
+					if(students[i].getId() == id) {
+						idCounts[i]++;
 					}
 				}
-				
-				if(count > 1) {
-					resturdyCount++;
-				}
+			}
+		}
+		
+		for(int i = 0; i < students.length; i++) {
+			if(idCounts[i] > 1 && students[i].getGrade() == 'F') {
+				resturdyCount++;
 			}
 		}
 		
 		Student[] resturdyStudents = new Student[resturdyCount];
 		int index = 0;
-		
 		for(int i = 0; i < students.length; i++) {
-			if(visited[i]) {
-				continue;
-			}
-			
 			int id = students[i].getId();
-			if(students[i].getGrade() == 'F') {
-				int count = 0;
+			if(idCounts[i] > 1 && students[i].getGrade() == 'F') {
+				boolean added = false;
 				for(int j = 0; j < students.length; j++) {
-					if(students[j].getId() == id) {
-						count++;
-						visited[j] = true;
+					if(resturdyStudents[j].getId() == id) {
+						added = true;
+						break;
 					}
 				}
-				if(count > 1) {
+				
+				if(!added) {
 					resturdyStudents[index++] = students[i];
 				}
 			}
 		}
+		
 		return resturdyStudents;
+		
 	}
 	
 }
