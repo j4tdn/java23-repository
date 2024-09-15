@@ -20,9 +20,7 @@ public class Ex04StringExercises {
 		System.out.println("mp3 songs: " + Arrays.toString(getMp3Songs(songs)));
 		
 		// StringBuilder, StringBuffer, Thread
-		// Video
-		
-		
+		// Video		
 	}
 	
 	private static String[] getMp3Songs(String[] songs) {
