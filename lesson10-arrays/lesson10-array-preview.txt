@@ -1,0 +1,13 @@
+Mục đích của phần xử lý mảng
+
++ Khai báo, khởi tạo mảng
+
++ Duyệt mảng
+
++ Xử lý các dạng logic với tập hợp các phần tử
+
++ Ôn lại phần Strategy Pattern
+
++ Thuật toán sắp xếp
+  --> Sử dụng thuật toán truyền thống
+  --> Áp dụng sort function có sẵn
