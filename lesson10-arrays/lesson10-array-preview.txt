@@ -11,3 +11,4 @@ Mục đích của phần xử lý mảng
 + Thuật toán sắp xếp
 	--> Sử dụng thuật toán truyền thống
 	--> áp dụng sort function của java có sẵn
+	
