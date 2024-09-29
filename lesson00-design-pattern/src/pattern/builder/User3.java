@@ -3,12 +3,12 @@ package pattern.builder;
 import java.time.LocalDate;
 
 /*
- Builder Pattern
+Builder Pattern
  
- Cách 2: Trả về 1 mutable object, ko sử dụng class Builder
+Cách 2: Trả về 1 mutable object, ko sử dụng class Builder
  
- Mutable: . gán xong --> cập nhật ô nhớ hiện tại
- */
+Mutable: . gán xong --> cập nhật ô nhớ hiện tại
+*/
 
 public class User3 {
 
