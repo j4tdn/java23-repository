@@ -1,5 +1,5 @@
 package view.iinterface.inital;
-
+//function interface
 public interface InTest {
 
 	boolean test (int number);
