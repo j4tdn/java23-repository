@@ -1,7 +1,6 @@
 package sorting.buble;
 
 import java.util.Arrays;
-
 import functional.IntComparator;
 
 public class Ex01BubbleSortInt {
