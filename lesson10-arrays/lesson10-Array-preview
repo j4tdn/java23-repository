@@ -1,0 +1,13 @@
+Mục đích của phần sử lý mản
+
++khai báo, khởi tạo mảng
++duyệt mảng
+
+xử lý các dạng logic vs tập hợp các phần tử
+
++Ôn lại phần Strategy Pattern
+
++Thuật toán sắp xếp
+
+-->Sử dụng thuật toán truyền thống
+-->Áp dụng sort function function có sẵn
