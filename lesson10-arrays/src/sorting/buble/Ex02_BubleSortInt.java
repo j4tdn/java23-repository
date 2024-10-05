@@ -26,8 +26,7 @@ public class Ex02_BubleSortInt {
 	public static void main(String[] args) {
 //		String[] elements = {"a123", "z45","c1","k6","d28"};
 //	Ví dụ trường hợp mảng có phần tử Null thì ta k thể dùng hàm compare to để so sánh 
-		String[] elements = {null, "a123",null,"z45",null,"c1",null,"k6","d28"};
-		
+		String[] elements = {null, "a123",null,"12","z45",null,"123","c1",null,"k6","d28"};
 		System.out.println("element: " +Arrays.toString(elements));
 				
 		bubleSort(elements, (s1, s2) -> {
@@ -38,6 +37,9 @@ public class Ex02_BubleSortInt {
 			if(s2 == null) {
 				return 1;
 			}
+//			if() {
+				
+//			}
 			// non-null values --> desc
 			return s2.compareTo(s1);
 		});
@@ -60,6 +62,8 @@ public class Ex02_BubleSortInt {
               System.out.println("elements(null last,desc" +Arrays.toString(elements));
        
        }
+	
+	
            
            
 		
