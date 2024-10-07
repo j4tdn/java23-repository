@@ -20,7 +20,7 @@ public class Ex01TimeZoneDemo {
  * 
  */
 	
-		printAvailableTimeZones();
+//		printAvailableTimeZones();
 		
 	}
 }

@@ -16,12 +16,12 @@ public class Ex04StringExercises {
 //		viết hàm tìm các bài mp3 trong ổ đĩa
 	}
 	
-	private static String[] checkMp3C1(String[] song) {
-		String[] mp3Songs = new String[song.length];
+	private static String[] checkMp3C1(String[] songs) {
+		String[] mp3Songs = new String[songs.length];
            int count = 0;
-		for(String songs:song) {
-			if(songs.contains("mp3")) {
-             mp3Songs[count++];
+		for(String song:songs) {
+			if(song.contains("mp3")) {
+             mp3Songs[count++] = song;
 			}
 		}
 		return mp3Songs;
