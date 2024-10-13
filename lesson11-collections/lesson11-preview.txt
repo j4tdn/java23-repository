@@ -1,0 +1,15 @@
+1. Collection#List
+
+Collection: realease từ version 1.5
+Generic Type: release từ version 1.5
+--> KDL đại diện cho kiểu đối tượng, ko hỗ trợ KDL nguyên thủy
+--> Khi khai báo 1KDL trong collection ví dụ là List có thể truyền tham số
+là KDL đối tượng từ version 1.5
+
+Raw Type
+--> Khi class/interface có tham số là 1 generic type ví dụ List<T> yêu
+cầu khi sử dụng KDL List thì phải truyền tham số là KDL đối tượng cho T
+ví dụ là List<Integer> List<Item> List<Object>
++ nếu có truyền tham số cho generic type --> ok
++ nếu ko truyền tham số thì sử dụng KDL mặc định là Object(chưa phải là
+1 KDL cụ thể --> raw type(rất dễ bị lỗi tại runtime) --> warnings
