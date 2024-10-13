@@ -11,7 +11,7 @@ public class Ex05OperationsT {
 	 Viết chương trình
 	 + Tìm các phần tử chẵn trong mãng
 	 + Tìn các phần tử là bội của 5 trong mảng
-	 + Tìm các phần tử là số nguyên 
+	 + Tìm các phần tử là số nguyên tố
 	 
 	 */
 

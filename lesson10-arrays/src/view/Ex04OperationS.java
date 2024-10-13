@@ -1,6 +1,6 @@
 package view;
 
-import functional.Operator;
+import functional.IntOperator;
 
 public class Ex04OperationS {
 
@@ -27,9 +27,9 @@ public class Ex04OperationS {
 		// Sử dụng Strategy Pattern: Áp dụng khi muốn truyền tham số là một biểu thức
 		// qua hàm
 
-		Operator sumOpt = (a, b) -> a + b;
+		IntOperator sumOpt = (a, b) -> a + b;
 
-		Operator mulOpt = new Operator() {
+		IntOperator mulOpt = new IntOperator() {
 
 			@Override
 			public int strategy(int a, int b) {
@@ -63,17 +63,16 @@ public class Ex04OperationS {
 	// Truyền tham số qua hàm
 
 	// Strategy Pattern: Pattern giúp mình có thể truyền tham số là 1 hành vi (biểu
-	// thức, hàm thực thi)
-	// qua hàm
+	// thức, hàm thực thi) qua hàm
 
+	
 	// Operator op = sumOpt // H1
-	private static int process(int[] elements, int initial, Operator op) {
+	private static int process(int[] elements, int initial, IntOperator op) {
 		int result = initial;
 
 		for (int element : elements) {
 			result = op.strategy(result, element);
 		}
-
 		return result;
 	}
 
@@ -83,7 +82,6 @@ public class Ex04OperationS {
 		for (int element : elements) {
 			sum += element;
 		}
-
 		return sum;
 	}
 
@@ -93,7 +91,6 @@ public class Ex04OperationS {
 		for (int element : elements) {
 			mul *= element;
 		}
-
 		return mul;
 	}
 
@@ -105,7 +102,6 @@ public class Ex04OperationS {
 				max = element;
 			}
 		}
-
 		return max;
 	}
 
@@ -117,7 +113,6 @@ public class Ex04OperationS {
 				min = element;
 			}
 		}
-
 		return min;
 	}
 

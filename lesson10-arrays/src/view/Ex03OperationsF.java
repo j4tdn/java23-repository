@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Ex03OperationsF {
 
 	/*
-	 Mảng: fixed-length
+	 Mảng(Array): fixed-length
 	 --> Không thể thêm/xóa 1/n phần tử trong mảng
 	 --> Thực tế: yêu cầu thêm/xóa mình vẫn phải xử lý
 	 -->		: kết quả 100% phải trả về mảng mới

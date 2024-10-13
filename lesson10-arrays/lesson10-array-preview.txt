@@ -1,3 +1,33 @@
+Trong Java, sắp xếp với Arrays sử dụng
+
+	+ Arrays.sort(int[]) - tham số là mảng KDL nguyên thủy
+						 - chỉ hỗ trợ sắp xếp tăng dần
+	
+	+ Arrays.sort(Object[]) - tham số là mảng KDL đối tượng
+							- bất kỳ KDL đối tượng nào yêu cầu KDL đối tượng 
+							đó phải là con của Comparable<...> để quy ước tăng/giảm dần
+							- tự xử lý null values
+							- note: tất cả các KDL đối tượng có sẵn của Java
+									đều dã được implements Comparable và override hàm compareTo
+	  Hạn chế: override compareTo của Comparable để đưa ra công thức asc/desc
+	  		   nhưng với mảng X chỉ hỗ trợ một kiểu sắp xếp
+	  		   VD: muốn tăng dần theo id, override tăng theo id
+	  		   			giảm dần theo name, override giảm theo name
+	  		   	   -->  công thức tăng theo id không còn hoạt động
+	  		   	   
+	
+	+ Arrays.sort(T[], Comparator<T>)
+	  - T[]: mảng đối tượng
+	  - Comparator<T>: là 1 functional interface có hàm trừu tượng là 
+	  				   int compare(T1, T2)
+	  				   --> áp dụng 100% giống IntComp, StringComp, ItemComp
+	  - Với mảng đối tượng sắp xếp theo nhiều công thức khác nhau
+	  - Sắp xếp tămg/giảm dựa vào Comparator strategy --> ko dùng Comparable ...
+
+
+
+
+==================================================
 Mục đích của phần xử lý mảng (Arrays)
 
 + Khai báo, khởi tạo mảng
@@ -22,3 +52,16 @@ dần theo yêu cầu
 	   VD: Sắp xếp id tăng dần trong mảng Item
 	   			   name giảm dần
 	   			   salesPrice tăng dần, name giảm dần 
+
+*Quick Sort
+
+B1. Chọn ra 1 pivot value (phần tử chốt)
+	+ Chọn phần tử đầu tiên
+	+ Chọn phần tử cuối cùng
+	+ Chọn phần tử giữa
+	+ tối ưu: chọn phần tử có giá trị tiến đến trung bình các phần tử trong mảng
+	--> Tìm cách hoán vị các phần tử nhỏ hơn trong mảng về bên trái
+									 lớn					   phải
+
+B2: Tạo ra 2 biến leftmark, rightmark đặt ở vị trí đầu, cuối mảng
+	--> Mục đích								 
