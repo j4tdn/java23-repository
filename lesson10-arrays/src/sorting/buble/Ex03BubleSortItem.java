@@ -6,12 +6,12 @@ import org.w3c.dom.css.CSSRule;
 
 import bean.Item;
 import functional.ItemComparator;
-import model.DateModel;
+import model.DataModel;
 
 public class Ex03BubleSortItem {
 // so sánh thuộc tính theo đối tượng
 	public static void main(String[] args) {
-		Item[] items = DateModel.mockItems();
+		Item[] items = DataModel.mockItems();
 		printf("Initial items",items);
 // Sắp xếp tăng dần theo id
 // Sắp xếp tăng dần theo name

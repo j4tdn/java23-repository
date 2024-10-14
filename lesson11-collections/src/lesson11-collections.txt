@@ -1,0 +1,29 @@
+ 1: Collection#List
+ 
+ List là danh sách chứa các phần tử trùng nhau và k giới hạn
+ Set:  là danh sách chứa các phần tử k trùng nhau và k giới hạn
+ Map:
+ 
+ Collection: release từ version 1.5
+ Generic Type: release từ version 1.5
+ ----> Khi khai báo 1 KDL trong collection ví dụ là List có thể truyền tham số 
+ Là KDL đối tượng từ version 1.5
+ 
+ Raw Type
+ --> Khi class/interface có tham số là 1 generic type 
+ Ví dụ: List<T>   yêu cầu khi sử dụng KDL List thì phải truyền tham số là KDL đối tượng cho T
+ Ví dụ: List<Integer>, List<Item>, List<Object>
+ 
++ Nếu có truyền tham số cho generic type --> ok
++ Nếu ko truyền tham số thì sử dụng KDL mặc định là Object(Raw type-KDL thô)(chưa phải là
++ KDL cụ thể --> Raw type(rất dễ bị lỗi tại runtime) --> warning
+
+
+
+=================================================
+List là KDL truyền vào là 1 KDL đối tượng -> Vậy vì sao k thể truyền vào KDL nguyên thủy? 
+Vì List/Set/Map/Collection có 1 tham số truyền vào là generic type mà generic type chỉ có thể truyền vào là 1 KDL đối tượng
+
+
+Khởi tạo ArrayList: --> new ArrayList, Arrays.asList, List.of
+add,get,set,remove,removeIf,contains,sort,itterate,shuffle

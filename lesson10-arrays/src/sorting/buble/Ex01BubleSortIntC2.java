@@ -43,7 +43,8 @@ public class Ex01BubleSortIntC2 {
 			}
 		}
 	}
-	
+	// 		int[] elements = {1 , 5, 9, 4 , 6, 11};
+
 	private static void bubleSortAsc(int[] elements) {
 		// duyệt từng round
 		for(int i = 0; i < elements.length; i++) { // số round

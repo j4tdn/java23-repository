@@ -6,7 +6,7 @@ import functional.StringComparator;
 
 public class Ex01SortingInsertionInt {
 
-	
+	// duyệt round i = 1 và j = 0 tới j < tổng các phần tử 
 	public static void main(String[] args) {
 		String[] elements = {null,"a123",null,null,"z45","c1",null,"k6"};		
 //		String[] elements = {"a123","z45","c1","k6"};		

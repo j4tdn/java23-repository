@@ -2,14 +2,14 @@ package bean;
 
 import java.time.LocalDate;
 
-public class Item implements Comparable<Item> {
+public class Item {
 
 	private Integer id;
 	private String name;
 	private Double salesPrice;
 	private LocalDate expiredDate;
 	private Integer storeId;
-	
+
 	public Item() {
 
 	}
@@ -20,8 +20,6 @@ public class Item implements Comparable<Item> {
 		this.salesPrice = salesPrice;
 	}
 
-	
-	
 	public Item(Integer id, String name, Double salesPrice, LocalDate expiredDate, Integer storeId) {
 		this.id = id;
 		this.name = name;
@@ -53,8 +51,6 @@ public class Item implements Comparable<Item> {
 	public void setSalesPrice(Double salesPrice) {
 		this.salesPrice = salesPrice;
 	}
-	
-	
 
 	public LocalDate getExpiredDate() {
 		return expiredDate;
@@ -72,20 +68,23 @@ public class Item implements Comparable<Item> {
 		this.storeId = storeId;
 	}
 
+	// Mặc định equals --> compare theo dia chỉ
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (!(o instanceof Item)) {
+			return false;
+		}
+		Item that = (Item) o;
+		return getId() == that.getId();
+	}
+
 	@Override
 	public String toString() {
 		return "Item [id=" + id + ", name=" + name + ", salesPrice=" + salesPrice + ", expiredDate=" + expiredDate
 				+ ", storeId=" + storeId + "]";
 	}
 
-	// this.compareTo(item
-	@Override
-	public int compareTo(Item item) {
-               Item i1 = this;
-               Item i2 = item;
-		return Double.compare(i1.getSalesPrice(), i2.getSalesPrice());
-	}
-
-	
-	
 }

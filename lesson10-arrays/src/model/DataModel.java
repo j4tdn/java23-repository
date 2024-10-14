@@ -5,11 +5,11 @@ import java.time.format.DateTimeFormatter;
 
 import bean.Item;
 
-public class DateModel {
+public class DataModel {
 
 	private static DateTimeFormatter df = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 	
-	private DateModel() {
+	private DataModel() {
 	}
  
 	
