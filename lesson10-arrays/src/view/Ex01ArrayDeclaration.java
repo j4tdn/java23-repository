@@ -49,7 +49,6 @@ public class Ex01ArrayDeclaration {
 	private static void modify(int[] elements) {
 		elements[1] = 999;
 	}
-
 	private static int[] generateNumbers() {
 		return new int[] { 1, 2, 3, 4, 5 };
 
