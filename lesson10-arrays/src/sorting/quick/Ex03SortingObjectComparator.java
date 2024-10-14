@@ -1,11 +1,15 @@
 package sorting.quick;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
 public class Ex03SortingObjectComparator {
 	
 	public static void main(String[] args) {
+		
+		ArrayList<E>
+		
 		String[] elements = {null, "a123", null, "z45", "c1", "k6", null, "d28", null};
 		
 		System.out.println("origin --> " + Arrays.toString(elements));
