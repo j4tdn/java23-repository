@@ -1,0 +1,23 @@
+Mục đích của phần xử lí mạng
+
++ Khai báo, khởi tạo mảng
+
++ Duyệt mảng
+
++ Xử lí các dạng logic với tập hợp các phần tử
+
++ Ôn lại phần Strategy Pattern
+
++ Thuật toán sắp xếp
+  --> Sử dụng thuật toán truyền thống
+  --> Áp dụng sort function có sẵn
+  
++ Sắp xếp là tìm cách duyệt, hoán vị các phần tử trong danh sách để đảm bảo các phần tử là tăng/giảm dần theo yêu cầu
+--> Thuật toán: Bubble, Insertion, Selection, Quick Sort
+--> Sắp xếp cho
+    1. Mảng số nguyên/số thực(kdl nguyên thủy) tăng/giảm dần
+    2. Mảng kdl đối tượng(String/Integer) có sẵn - nullable
+    3. Mảng kdl đối tượng tự tạo ra
+       VD: Sắp xếp id tăng dần trong mảng Item
+                   name giảm dần
+                   salesPrice tăng dần, name giảm dần
