@@ -5,14 +5,13 @@ public class Item {
 	private Integer itemId;
 	private String name;
 	private Integer salesrice;
-	private Integer storeId;
+	private String storeId;
 	
 	public Item() {
 
 	}
 
-	public Item(Integer itemId, String name, Integer salesrice, Integer storeId) {
-		super();
+	public Item(Integer itemId, String name, Integer salesrice, String storeId) {
 		this.itemId = itemId;
 		this.name = name;
 		this.salesrice = salesrice;
@@ -43,11 +42,11 @@ public class Item {
 		this.salesrice = salesrice;
 	}
 
-	public Integer getStoreId() {
+	public String getStoreId() {
 		return storeId;
 	}
 
-	public void setStoreId(Integer storeId) {
+	public void setStoreId(String storeId) {
 		this.storeId = storeId;
 	}
 	

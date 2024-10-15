@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import functional.SortFunction;
 
-public class Ex04 {
+public class Ex04Comparable {
 
 	public static void main(String[] args) {
 		String[] elements = { "-2", "-6", "10", null, "4", "8", null, "Special", "a", "c", "b", "xx" };
