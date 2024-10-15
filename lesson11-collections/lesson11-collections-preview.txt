@@ -13,3 +13,15 @@ List<Object>....
 + nếu có truyền tham số cho generic type --> ok
 + nếu ko truyền tham số thì sử dụng KDL mặc định là Object (chưa phải là 1 KDL cụ thể--> raw 
 type (rất dễ bị lỗi tại runtime)) --> warning
+
+/*
+	Khởi tạo: new ArrayList, Arrays.asList, List.of
+	Basic operations SOT: add, get, set, remove, removeIf, iterate , contains, sort, shuffle
+*/
+
+/*
+	size: Số lượng phần tử của ArrayList
+	length(capacity): sức chứa của Array bên trong ArrayList
+				    : sức chứa mặc định = 10
+	cứ 1 lần add mới phần tử nếu size = capacity --> grow
+*/

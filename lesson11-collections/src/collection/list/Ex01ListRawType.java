@@ -19,7 +19,7 @@ public class Ex01ListRawType {
 		// list1 có thể chứa bất kỳ KDL đối tượng nào
 		List list1 = new ArrayList();
 		list1.add(4);
-		list1.add("five"); // có thể bị runtime error
+		list1.add("five"); // could be runtime error
 		list1.add(6);
 		// hoạt động tốt ở compile
 		// dễ bị lỗi tại runtime ClassCastException
@@ -37,13 +37,20 @@ public class Ex01ListRawType {
 		list2.add(5);
 		// list2.add("five"); // compile error
 		list2.add(6);
-
 		for (Integer e2 : list2) {
 			System.out.print((e2 * 2) + " ");
 		}
 
+		System.out.println("\n\n Từ version 1.7\n");
+		
 		// Từ version 1.7
 		List<Integer> list3 = new ArrayList<>();
+		list2.add(4);
+		list2.add(5);
+		list2.add(6);
+		for(Integer e3: list3) {
+			System.out.print(e3 * 2 + " ");
+		}
 	}
 
 }

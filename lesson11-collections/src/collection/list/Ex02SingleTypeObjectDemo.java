@@ -58,14 +58,19 @@ public class Ex02SingleTypeObjectDemo {
 			return Character.isDigit(lastLetter) 
 					&& Integer.parseInt(String.valueOf(lastLetter)) > 5;
 		});
+		
+		// Contains
+		System.out.println("X3 contains --> " + elements.contains("A92"));
+		System.out.println("X3 contains --> " + elements.contains("X23"));
 
 		System.out.println("Size: " + elements.size()); // phân biệt size và length
 
 		// in ra danh sách
-		// for-index
-//				for(int i = 0; i < elements.size(); i++) {
-//					System.out.println(elements.get(i));
-//				}
+		// for each, for-index
+		
+//		for (int i = 0; i < elements.size(); i++) {
+//			System.out.println(elements.get(i));
+//		}
 
 		// forEach có sẵn trong List --> strategy pattern
 		System.out.print("elements: ");
