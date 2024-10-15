@@ -1,0 +1,21 @@
+1. Collection#List
+
+Collection: Release từ version 1.5
+Generic Type: release từ version 1.5
+ --> Khi khai báo 1 KDL trong collection ví dụ là List có thể truyền tham số
+ là KDL đối tượng từ version 1.5
+ 
+ Raw Type 
+ --> Khi một class/interface (type) có tham số là 1 generic type ví dụ List<T> yêu cầu
+ khi sử dụng KDL List thì phải truyền tham số là KDL đối tượng cho T
+ ví dụ là List<Integer> List<Item> List<Object>
+ + nếu có truyền tham số cho generic type --> ok
+ + nếu không truyền tham số thì sử dụng KDL mặc định là Object (chưa phải
+ là một KDL cụ thể --> raw type (Rất dễ bị lỗi runtime)) --> warning
+ 
+List<Integer> list3 = new ArrayList<>();
+
+list3 lúc compile KDL là List<Integer> -> gọi tới các hàm của List<Integer> nhưng được ArrayList override lại
+ -> Khi đổi ArrayList thành LinkedList(ví dụ) thì các hàm list3 thực thi vẫn chạy nhưng nó sẽ chạy
+các hàm được LinkedList override (runtime)
+
