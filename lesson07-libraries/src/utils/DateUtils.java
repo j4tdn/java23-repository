@@ -1,4 +1,4 @@
-package datetime;
+package utils;
 
 import java.text.ParseException;
 import java.util.Calendar;
@@ -14,12 +14,20 @@ public class DateUtils {
     private static final GregorianCalendar GC = new GregorianCalendar();
     private DateUtils() {
     }
-
-    public static String toString(Calendar c, String pattern) {
-        return toString(toDate(c), pattern);
+    
+    public static Calendar clone (Calendar c) {
+    	Calendar cloned = Calendar.getInstance();
+    	cloned.setTimeInMillis(c.getTimeInMillis());
+    	return cloned;
+    }
+    public static boolean isLeapYear (int year) {
+    	return GC.isLeapYear(year);
+    }
+    public static String format(Calendar c, String pattern) {
+        return format(toDate(c), pattern);
     }
 
-    public static String toString(Date date, String pattern) {
+    public static String format(Date date, String pattern) {
         DateFormat df = new SimpleDateFormat(pattern);
         return df.format(date);
     }
@@ -57,5 +65,6 @@ public class DateUtils {
     
     // string -> df.parse -> date -> c.setTime -> calendar
     // calendar -> c.getTime -> date -> d.format -> string
+	// String : pattern 
 }
 
