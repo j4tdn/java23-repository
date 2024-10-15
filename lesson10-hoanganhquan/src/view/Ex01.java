@@ -5,10 +5,13 @@ import java.util.Arrays;
 public class Ex01 {
 
 		public static void main (String[] args) {
-			int[] n = {1,2,3,4,3,1};
+			int[] n1 = {1,2,3,4,3,1};
+			int[] n2 = {7, 8, 8, 8, 6, 2, 5, 1};
 		
-			System.out.println("result --> " + Arrays.toString(removeDupElements(n)));
-			equals(n);
+			System.out.println("result --> " + Arrays.toString(removeDupElements(n2)));
+			equals(n1);
+			
+			System.out.println("Số lớn thứ 3 trong mảng -->" + findThirdLargest(n2));
 		}
 		
 		private static int[] removeDupElements(int[] n) {
@@ -54,4 +57,20 @@ public class Ex01 {
 			System.out.println(s);
 		}
 		
+		public static int findThirdLargest(int[] arr) {
+		    Arrays.sort(arr);
+		    int count = 0;
+		    int lastLargest = Integer.MIN_VALUE;
+
+		    for (int i = arr.length - 1; i >= 0; i--) {
+		        if (arr[i] != lastLargest) {
+		            count++;
+		            lastLargest = arr[i];
+		        }
+		        if (count == 3) {
+		            return arr[i];
+		        }
+		    }
+		    return -1; 
+		}
 }
