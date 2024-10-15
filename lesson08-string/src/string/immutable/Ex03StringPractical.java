@@ -39,6 +39,18 @@ public class Ex03StringPractical {
 		System.out.println("vị trí cuối cùng .: " + song.lastIndexOf("."));
 		System.out.println("tên bài hát: " + song.substring(song.lastIndexOf("/") + 1, song.lastIndexOf(".")));
 
+		// 8. loại bỏ khoảng trắng
+		// trim, strip xoá khoảng trắng 2 đầu
+		// còn lại replace nhiều khoảng trắng thành 1
+		String s3 = "   welcome   to  new     class    ";
+		System.out.println("\ns3: " + s3);
+		System.out.println("s3 remove space: |||" + s3.strip().replaceAll("\\s+", "\s") + "|||");
+
+		// 9.chuỗi con
+		String s4 = s3.substring(2);
+
+		//10. tồn tại:
+		System.out.println("existing --> " + s3.contains("welcome"));
 	}
 
 	private static void printSWords(String s) {

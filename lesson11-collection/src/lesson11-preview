@@ -1,0 +1,6 @@
+1. List
+Raw Type
+--> Khi class/interface có tham số là genericType
+List<Integer>, List<Item>
++ nếu có truyền tham số cho genreicType -> Ok
++ nếu ko -> phải sử dụng Object -> raw type -> dễ bị lỗi runtime

@@ -1,0 +1,12 @@
+-a. Sắp xếp với arrays sử dụng
+
+Arrays.sort(int[]) - tham số là mảng KDL nguyên thuỷ
+					- chỉ hỗ trợ xếp tăng dần
+					
+Arrays.sort(Object[]) - tham số object
+					  - bất kỳ KDL nào con của Comparable<...> để quy 
+					  tăng or giảm
+					  - tự xử lý null
+					  
+	Hạn chế: override compareTo của Comparable để đưa công thức asc/desc
+	
