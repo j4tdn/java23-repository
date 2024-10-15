@@ -60,6 +60,8 @@ public class Ex02SingleTypeObjectDemo {
 						&& Integer.parseInt(String.valueOf(lastLetter)) > 4;
 		});
 		
+		System.out.println("X3 contains --> " + elements.contains("X3z"));
+		
 		System.out.println("Size: " + elements.size()); // phân biệt size và length
 		
 		// in ra danh sách
