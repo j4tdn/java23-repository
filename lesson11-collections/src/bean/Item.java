@@ -2,7 +2,7 @@ package bean;
 
 import java.time.LocalDate;
 
-public class Item implements Comparable<Item>{
+public class Item {
 
 	private Integer id;
 	private String name;
@@ -70,18 +70,17 @@ public class Item implements Comparable<Item>{
 		this.storeId = storeId;
 	}
 
-	// this.compareTo(item)
-	// strategy: if(t.compareTo(s) > 0) --> swap
+	// mac dinh equals --> compare theo dia chi
+	// override --> compare theo gia tri cua tt ma minh chon
+	//          --> 2 items equal voi nhau khi trung id
 	@Override
-	public int compareTo(Item item) {
-		Item i1 = this;
-		Item i2 = item;
-		
-		// yeu cau 1: tang dan theo salesPrice
-		// return Double.compare(i1.getSalesPrice(), i2.getSalesPrice());
-		
-		// yeu cau 2: giam dan theo expiredDate
-		return i2.getExpiredDate().compareTo(i1.getExpiredDate());
+	public boolean equals(Object o) {
+		if(this == o)
+			return true;
+		if(!(o instanceof Item))
+			return false;
+		Item that = (Item)o;
+		return getId() == that.getId();
 	}
 	
 	@Override

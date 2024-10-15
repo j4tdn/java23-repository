@@ -83,8 +83,8 @@ public class Ex02BubleSortString {
 	
 	private static void bubbleSort(String[] elements, StringComparator stringComp) {
 		int length = elements.length;
-		for(int i = 0; i < elements.length; i++)  // so round
-			for(int j = 0; j < elements.length - i - 1; j++)
+		for(int i = 0; i < length; i++)  // so round
+			for(int j = 0; j < length - i - 1; j++)
 				if(stringComp.strategy(elements[j], elements[j + 1]) > 0) {
 					String temp = elements[j];
 					elements[j] = elements[j + 1];
