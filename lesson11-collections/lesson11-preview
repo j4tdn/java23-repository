@@ -1,0 +1,10 @@
+collection list
+
+collection release từ v1.5
+gerenic type release từ v1.5 
+raw type:
+	khi một class/interface có tham số là generic type ví dụ List<T> 
+	yêu cầu khi mình dùng kiểu dữ liệu list --> cần truyền tham số có KDL là T 
+	vd: List<Integer> List<Item>
+	nếu không truyền vào một KDL cụ thể thì nó sẽ sử dụng kiểu dữ liệu cơ bản gọi là raw type 
+generic type chỉ đại diện cho KDL đối tượng và không hỗ trợ cho KDL nguyên thuỷ  
