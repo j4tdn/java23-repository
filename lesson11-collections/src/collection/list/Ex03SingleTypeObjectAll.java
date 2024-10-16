@@ -23,20 +23,20 @@ public class Ex03SingleTypeObjectAll {
 		list2.add(7);
 		list2.add(8);
 		
-		generateInts("list1", list1);
-		generateInts("list2", list2);
+		generate("list1", list1);
+		generate("list2", list2);
 		
 		List<Integer> list3 = new ArrayList<>();		
 		list3.addAll(list2);
-		generateInts("list3", list3);
+		generate("list3", list3);
 		
 		List<Integer> list4 = new ArrayList<>();
 		list4.retainAll(list1);
-		generateInts("list4", list4);
+		generate("list4", list4);
 		
 		List<Integer> list5 = new ArrayList<>();
 		list5.removeAll(list2);
-		generateInts("list5", list5);
+		generate("list5", list5);
 	}
 	
 }

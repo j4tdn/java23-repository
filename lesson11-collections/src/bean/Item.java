@@ -66,7 +66,13 @@ public class Item {
 	public void setStoreId(Integer storeId) {
 		this.storeId = storeId;
 	}
-
+	
+	
+	
+	// mặc định equals --> compare theo địa chỉ
+	// override --> compare theo giá trị của tt mà mình chọn
+	//          --> 2 items equal với nhau khi trùng id
+	
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) {
@@ -81,11 +87,9 @@ public class Item {
 		return getId() == that.getId();
 	}
 	
-	
 	@Override
 	public String toString() {
 		return "Item [id=" + id + ", name=" + name + ", salesPrice=" + salesPrice + ", expiredDate=" + expiredDate
 				+ ", storeId=" + storeId + "]";
 	}
-
 }
