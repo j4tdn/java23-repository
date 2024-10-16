@@ -35,13 +35,5 @@ public class Ex01YearOfBirth {
 		int age = Year.now().getValue() - yob + 1;
 		System.out.println("===> Your age = " + age);
 	}
-	
-	/*
-	 Exception in thread "main" java.lang.NumberFormatException: For input string: "abc"
-	   at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
-	   at java.base/java.lang.Integer.parseInt(Integer.java:668)
-	   at java.base/java.lang.Integer.parseInt(Integer.java:786)
-	   at validate_trycatch_throwthrows.Ex01YearOfBirth.main(Ex01YearOfBirth.java:29)
-	 */
-	
 }
+
