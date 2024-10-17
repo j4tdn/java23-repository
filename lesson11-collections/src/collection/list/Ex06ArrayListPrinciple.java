@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import bean.Item;
-import jdk.internal.util.ArraysSupport;
 
 public class Ex06ArrayListPrinciple {
 	
