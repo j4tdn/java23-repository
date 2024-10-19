@@ -55,6 +55,8 @@ public class Ex02SingleTypeObjectDemo {
 						&& Integer.parseInt(String.valueOf(lastOne)) > 5;
 		});
 		
+		System.out.println("X3 contains --> " + elements.contains("X3"));
+		
 		System.out.println("size: " + elements.size()); // phân biệt size và length
 		
 		// In ra danh sách
