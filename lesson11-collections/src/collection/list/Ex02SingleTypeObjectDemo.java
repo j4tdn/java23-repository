@@ -1,9 +1,7 @@
 package collection.list;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.function.Consumer;
 
 // SOT: Single Type Object: Integer, String, Double, LocalDate
 public class Ex02SingleTypeObjectDemo {

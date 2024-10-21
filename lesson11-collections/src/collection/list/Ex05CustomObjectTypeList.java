@@ -1,7 +1,6 @@
 package collection.list;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -33,10 +32,10 @@ public class Ex05CustomObjectTypeList {
 			return item2.getSalesPrice().compareTo(item1.getSalesPrice());
 		});
 		
-		CollectionUtils.generateItems("Item sorted(id asc)", items);
+		CollectionUtils.generate("Item sorted(id asc)", items);
 		
 		Collections.shuffle(items);
-		CollectionUtils.generateItems("Item shuffle", items);
+		CollectionUtils.generate("Item shuffle", items);
 		
 		
 		// khởi tạo new ArrayList, Arrays.asList, List.of
