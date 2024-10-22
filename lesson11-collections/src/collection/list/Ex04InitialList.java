@@ -7,7 +7,7 @@ import java.util.List;
 import static utils.CollectionUtils.*;
 
 public class Ex04InitialList {
-
+	
 	public static void main(String[] args) {
 		// Các cách để tạo ra List<T>
 		
@@ -23,25 +23,26 @@ public class Ex04InitialList {
 		// return về 1 danh sách với fixed size
 		// không hỗ trợ thêm/xóa
 		// hỗ trợ: get/set
-		List<String> list2 = Arrays.asList("a2","b2","c2");
+		List<String> list2 = Arrays.asList("a2", "b2", null, "c2");
 		System.out.println("list2(runtime) --> " + list2.getClass());
-//		list2.add("d2"); //UnsupportedOperationException
+		// list2.add("d2"); //UnsupportedOperationException
 		list2.set(0, "a20");
 		
 		// Cách 3: List.of
-		// return về 1 immutable list, yêu cầu các phần từ phải !null
-			// vd: List<String> list3 = List.of("a3", "b3", "c3", null, "d3");
+		// return về 1 immutable list, yêu cầu các ptu phải !null
 		// không hỗ trợ thêm/sửa/xóa
 		// hỗ trợ get
 		List<String> list3 = List.of("a3", "b3", "c3", "d3");
 		System.out.println("list3(runtime) --> " + list3.getClass());
-//		list3.set(1, "b33"); //UnsupportedOperationException
+		// list3.set(1, "b33"); // UnsupportedOperationException
 		
-		System.out.println("\n===========================\n");
+		System.out.println("\n======================\n");
 		
-		generateString("list1(new ArrayList)", list1);
-		generateString("list2(Array.asList)", list2);
-		generateString("list3(Array.asList)", list3);
+		generate("list1(new ArrayList)", list1);
+		generate("list2(Arrays.asList)", list2);
+		generate("list3(Arrays.asList)", list3);
+		
+		
 	}
 	
 }

@@ -1,12 +1,13 @@
 package collection.list;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import bean.Item;
 
 public class Ex06ArrayListPrinciple {
-
+	
 	public static void main(String[] args) {
 		
 		/*
@@ -80,15 +81,16 @@ public class Ex06ArrayListPrinciple {
 		// Ô nhớ có tt elementData = {}
 		List<Item> items = new ArrayList<>();
 		
-		// B2: thêm mới 1 phần tử
+		// B2: Thêm mới 1 phần tử
 		
-		// Trong lần đầu tiên thmê phần tử vào
-		// Tạo elementData mảng 10 phần tử
+		// Trong lần đầu tiên thêm phần tử vào
+		// Tạo elementData mảng 10 phần tử(default capacity)
 		// Đưa pt đầu tiên vào
+		// tăng size
 		items.add(item1);
 		
 		// Khi add các pt tiếp theo
-		// kiểm tra size đã = (vượt qua elementsData.length) chưa?
+		// kiểm tra size đã =(vượt qua elementsData.length) chưa
 		// nếu vượt --> grow
 		// chưa đưa pt mới vào
 		// tăng size
@@ -99,19 +101,19 @@ public class Ex06ArrayListPrinciple {
 		
 		items.add(item11);
 		
-		// size: Số lượng phần tử của ArrayList
+		// size: số lượng phần tử của ArrayList
 		// length(capacity): sức chứa của Array bên trong ArrayList
-		//				   : sức chứa mặc định = 10
+		//                 : sức chưa mặc định = 10
 		// cứ 1 lần add mới phần tử nếu size = capacity --> grow
+		
 		
 		// new ArrayList --> tạo 1 mảng rỗng
 		List<String> x = new ArrayList<String>();
 		
 		// new ArrayList<>(8) --> tạo 1 mảng gồm 8 phần tử
 		// khi biết được ArrayList này có số lượng phần tử tối đa là bao nhiêu
-		// tạo duy nhất 1 mảng elementData, khoit cần grow, copy
+		// tạo duy nhất 1 mảng elementData, khỏi cần grow, copy
 		List<String> elements = new ArrayList<String>(80);
-		
 	}
 	
 }
