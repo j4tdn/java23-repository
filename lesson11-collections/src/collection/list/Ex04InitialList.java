@@ -37,9 +37,9 @@ public class Ex04InitialList {
 		System.out.println("list3 runtime -> " + list3.getClass());
 		
 		System.out.println("\n===============================\n");
-		generateStrings("list1(new Array List)", list1);
-		generateStrings("list2(Arrays.asList)", list2);
-		generateStrings("list3(List.of)", list3);
+		generate("list1(new Array List)", list1);
+		generate("list2(Arrays.asList)", list2);
+		generate("list3(List.of)", list3);
 
 	}
 }

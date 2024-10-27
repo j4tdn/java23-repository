@@ -65,12 +65,6 @@ public class Item implements Comparable<Item>{
 		this.storeId = storeId;
 	}
 
-	@Override
-	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", salesPrice=" + salesPrice + ", expiredDate=" + expiredDate
-				+ ", storeId=" + storeId + "]";
-	}
-
 	// mặc định equals --> compare theo địa chỉ
 	// override --> compare theo giá trị của tt mình chọn
 		//		--> 2 items equal với nhau khi trùng id
@@ -94,9 +88,15 @@ public class Item implements Comparable<Item>{
 //		return Double.compare(i1.getSalesPrice(), i2.getSalesPrice());
 	
 		// Yêu cầu 2: giảm dần theo expiredDate
-		return i2.getExpiredDate().compareTo(i1.getExpiredDate());
+		// generic extends comparable --> get id asc
+		return i1.getId().compareTo(i2.getId());
 	}
 
+	@Override
+	public String toString() {
+		return "Item [id=" + id + ", name=" + name + ", salesPrice=" + salesPrice + ", expiredDate=" + expiredDate
+				+ ", storeId=" + storeId + "]";
+	}
 	
 	
 }

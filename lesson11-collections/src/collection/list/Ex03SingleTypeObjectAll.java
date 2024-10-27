@@ -20,11 +20,11 @@ public class Ex03SingleTypeObjectAll {
 		list2.add(7);
 		list2.add(8);
 		
-		generateInts("list1", list1);
-		generateInts("list2", list2);
+		generate("list1", list1);
+		generate("list2", list2);
 		
 		List<Integer> list3 = new ArrayList<>(list1);
 		list3.removeAll(list2);
-		generateInts("Kết quả hiệu 2 danh sách", list3);
+		generate("Kết quả hiệu 2 danh sách", list3);
 	}
 }
