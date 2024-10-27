@@ -1,9 +1,11 @@
 package bean;
 
+import java.time.LocalDate;
+
 public class Transaction {
     private int id;
     private Trader trader;
-    private String createdItem;
+    private LocalDate  createdItem;
     private double value;
 
     
@@ -27,12 +29,13 @@ public class Transaction {
 	}
 
 
-	public String getCreatedItem() {
+
+	public LocalDate getCreatedItem() {
 		return createdItem;
 	}
 
 
-	public void setCreatedItem(String createdItem) {
+	public void setCreatedItem(LocalDate createdItem) {
 		this.createdItem = createdItem;
 	}
 
@@ -47,10 +50,10 @@ public class Transaction {
 	}
 
 
-	public Transaction(int id, Trader trader, String createdItem, double value) {
+	public Transaction(int id, Trader trader, LocalDate localDate, double value) {
         this.id = id;
         this.trader = trader;
-        this.createdItem = createdItem;
+        this.createdItem = localDate;
         this.value = value;
     }
 
