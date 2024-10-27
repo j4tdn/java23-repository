@@ -36,8 +36,8 @@ public class Ex04InitialList {
 		
 		System.out.println("========================");
 		
-		generateString("list1(new ArrayList", list1);
-		generateString("list2(Arrays.asList)", list2);
-		generateString("list3(Arrays.asList)", list3);
+		generate("list1(new ArrayList", list1);
+		generate("list2(Arrays.asList)", list2);
+		generate("list3(Arrays.asList)", list3);
 	}
 }

@@ -36,11 +36,11 @@ public class Ex05CustomObjectTypeList {
 			return item1.getSalesPrice().compareTo(item2.getSalesPrice());
 		});
 		
-		CollectionUtils.generateItems("items sorted(id asc)", items);
+		CollectionUtils.generate("items sorted(id asc)", items);
 		
 		Collections.shuffle(items);
 		
-		CollectionUtils.generateItems("shuffle", items);
+		CollectionUtils.generate("shuffle", items);
 		
 		// khoi tao new ArrayList, Array.asList, List.of
 		// add, get, remove, removeIf, iterate, contains, sort, shuffle
