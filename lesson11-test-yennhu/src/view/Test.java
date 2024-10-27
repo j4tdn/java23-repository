@@ -42,7 +42,10 @@ public class Test {
 		
 		// 4.
 		System.out.println("   --> 4. Find all traders from Cambridge and sort them by name desc.\n" + foundTradersFromDaNang(traders));
-		
+
+		// 7.
+		System.out.println("   --> 7. Count the number of traders in Hue: " + foundTradersFromHue(traders));
+	
 	}
 	private static Set<String> foundCities(List<Trader> traders) {
 		Set<String> cities = new HashSet<>();
@@ -69,7 +72,7 @@ public class Test {
 		List<Trader> tradersCity = new ArrayList<>();
 		for(Trader t: traders) {
 			if(t.getCity() == "DaNang") {
-				traders.add(t);
+				tradersCity.add(t);
 			}
 		}
 		tradersCity.sort((t1, t2) -> {
@@ -77,6 +80,18 @@ public class Test {
 		});
 		return tradersCity;
 	}
+	
+	private static int foundTradersFromHue(List<Trader> traders) {
+		int count = 0;
+		List<Trader> tradersCity = new ArrayList<>();
+		for(Trader t: traders) {
+			if(t.getCity() == "Hue") {
+				count++;
+			}
+		}
+		return count;
+	}
+	
 	
 	private static List<Transaction> foundValue(List<Transaction> transactions) {
 		List<Transaction> transaction300 = new ArrayList<>();
