@@ -1,5 +1,7 @@
 package pattern.builder;
 
+import java.time.LocalDate;
+
 public class User {
 	private Integer id;
 	private String name;
@@ -12,12 +14,11 @@ public class User {
 	}
 
 	public User(Integer id, String name, Integer age ) {
-	
 		this.id = id;
 		this.name = name;
 		this.age = age;
-	
 	}
+	
 
 	public Integer getId() {
 		return id;

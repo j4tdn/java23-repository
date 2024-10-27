@@ -26,7 +26,7 @@ public class Ex01DecimalFormat {
 		System.out.println("value -->" + Arrays.toString(values));
 		
 		Locale.setDefault(new Locale("vi", "VN")); // dia diem dan mach
-		
+		System.out.println("default --> " + Locale.getDefault());
 		
 		DecimalFormat df = new DecimalFormat("#,###.00");
 		for (double value: values) {

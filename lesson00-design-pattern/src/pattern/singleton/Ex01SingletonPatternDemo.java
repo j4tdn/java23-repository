@@ -21,7 +21,7 @@ public class Ex01SingletonPatternDemo {
 		System.out.println("d1 hashcode --> " + System.identityHashCode(d1));
 		
 		KDate d2 =  KDate.getInstance();
-		d2.setYear(2);
+		d2.setYear(4);
 		System.out.println("d1 value --> " +d2);
 		System.out.println("d1 hashcode --> " + System.identityHashCode(d2));
 		

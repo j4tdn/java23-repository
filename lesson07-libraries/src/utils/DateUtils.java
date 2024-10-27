@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.TimeZone;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -15,6 +16,14 @@ public class DateUtils {
     private DateUtils() {
     }
     
+    public static String opt (long value, String unit) {
+		if(value <= 0) {
+			return "";
+			
+		}
+		return value + " " + unit + (value > 1 ? "(s)" : "") + " ";
+	}
+    
     public static Calendar clone (Calendar c) {
     	Calendar cloned = Calendar.getInstance();
     	cloned.setTimeInMillis(c.getTimeInMillis());
@@ -22,6 +31,11 @@ public class DateUtils {
     }
     public static boolean isLeapYear (int year) {
     	return GC.isLeapYear(year);
+    }
+    public static String format (Calendar c, String pattern, TimeZone tz) {
+    	DateFormat df = new SimpleDateFormat(pattern);
+    	df.setTimeZone(tz);
+    	return df.format(toDate(c));
     }
     public static String format(Calendar c, String pattern) {
         return format(toDate(c), pattern);
