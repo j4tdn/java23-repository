@@ -30,11 +30,13 @@ public class Ex05CustomObjectTypeList {
 	    	return item2.getSalesPrice().compareTo(item1.getSalesPrice()); // giảm dần theo salesPrices
 	    });
 	    
-	    generateItems("Sorting Asc(tăng dần)", items);
+//	    generateItems("Sorting Asc(tăng dần)", items);
+	    generate("Sorting Asc(tăng dần)", items);
 	    
 	    //shuffle: xáo trộn
 	Collections.shuffle(items);
-	generateItems("Shuffle", items);
+//	generateItems("Shuffle", items);
+	generate("Shuffle", items);
 	    //Khởi tạo ArrayList: --> new ArrayList, Arrays.asList, List.of
 //	    add,get,set,remove,removeIf,contains,sort,itterate,shuffle
 

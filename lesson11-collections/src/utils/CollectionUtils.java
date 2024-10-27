@@ -10,6 +10,12 @@ public class CollectionUtils {
 		
 	}
  
+	public static<T> void generate(String prefix, Collection<T> collection) {
+		System.out.println(prefix+ " --> ");
+		collection.forEach(e -> System.out.println(e + " "));
+		System.out.println("\n");
+	}
+	
 	public static void generateInts(String prefix, Collection<Integer> collection) {
 		System.out.println(prefix+ " --> ");
 		collection.forEach(e -> System.out.println(e + " "));

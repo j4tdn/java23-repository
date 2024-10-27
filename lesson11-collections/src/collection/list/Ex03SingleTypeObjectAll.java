@@ -25,17 +25,21 @@ public class Ex03SingleTypeObjectAll {
 //		list2.add(8);
 		List<Integer> list2 = List.of(4,5,6,7,8);
 		
-		generateInts("list1",list1);
-		generateInts("list2",list2);
+//		generateInts("list1",list1);
+//		generateInts("list2",list2);
+		generate("list1",list1);
+		generate("list2",list2);
 		
 		List<Integer> list3 = new ArrayList<>(list1);
 		list3.addAll(list2);
 		
-		generateInts("Kêt quả HỢP 2 danh sách", list3);
+//		generateInts("Kêt quả HỢP 2 danh sách", list3);
+		generate("Kêt quả HỢP 2 danh sách", list3);
 		
 		List<Integer> list4 = new ArrayList<>(list1);
 		list4.retainAll(list2);
-		generateInts("Ket qua GIAO 2 danh sach", list4);
+//		generateInts("Ket qua GIAO 2 danh sach", list4);
+		generate("Ket qua GIAO 2 danh sach", list4);
 		
 		
 

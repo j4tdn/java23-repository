@@ -1,8 +1,9 @@
 package bean;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
-public class Item {
+public class Item implements Comparable<Item> {
 
 	private Integer id;
 	private String name;
@@ -79,6 +80,17 @@ public class Item {
 		}
 		Item that = (Item) o;
 		return getId() == that.getId();
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(getId());
+	}
+	
+	@Override
+	public int compareTo(Item o) {
+		return getId().compareTo(o.getId());
+
 	}
 
 	@Override

@@ -25,5 +25,7 @@ List là KDL truyền vào là 1 KDL đối tượng -> Vậy vì sao k thể tr
 Vì List/Set/Map/Collection có 1 tham số truyền vào là generic type mà generic type chỉ có thể truyền vào là 1 KDL đối tượng
 
 
-Khởi tạo ArrayList: --> new ArrayList, Arrays.asList, List.of
-add,get,set,remove,removeIf,contains,sort,itterate,shuffle
+Khởi tạo ArrayList: --> new ArrayList, Arrays.asList(có thêm sửa xóa),List.of(immutable value)
+ add,get,set,remove,removeIf,contains,sort,itterate,shuffle
+ 
+ Các hàm hỗ trợ sort: Arrays.sort, Collection.sort, List.sort(Comparator<T>)
