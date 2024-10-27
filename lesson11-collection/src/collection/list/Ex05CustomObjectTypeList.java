@@ -49,11 +49,11 @@ public class Ex05CustomObjectTypeList {
 			return item2.getSalesPrice().compareTo(item1.getSalesPrice());
 		});
 		
-		CollectionUtils.generateItems("item sorted(id asc)", items);
+		CollectionUtils.generate("item sorted(id asc)", items);
 		
 		Collections.shuffle(items);
 		
-		CollectionUtils.generateItems("shuffle", items);
+		CollectionUtils.generate("shuffle", items);
 		
 		// khởi tạo new ArrayList, Arrays.asList, List.of
 		// add, get, set, remove, removeIf, iterate, contains, sort, shuffle
