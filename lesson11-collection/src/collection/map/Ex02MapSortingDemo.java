@@ -1,4 +1,4 @@
-package view.map;
+package collection.map;
 
 import java.util.ArrayList;
 import java.util.Comparator;
