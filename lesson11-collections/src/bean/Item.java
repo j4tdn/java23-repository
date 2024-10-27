@@ -1,6 +1,7 @@
 package bean;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Item {
 	
@@ -91,5 +92,10 @@ public class Item {
 	public String toString() {
 		return "Item [id=" + id + ", name=" + name + ", salesPrice=" + salesPrice + ", expiredDate=" + expiredDate
 				+ ", storeId=" + storeId + "]";
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(getId());
 	}
 }
