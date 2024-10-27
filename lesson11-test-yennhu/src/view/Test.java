@@ -38,7 +38,7 @@ public class Test {
 		System.out.println("   --> 2. Find all transactions have value greater than 300 and sort them by trader’s city\n" + foundValue(transactions));
 		
 		// 3.
-		System.out.println("   --> 3. What are all the unique cities where the traders work ?\n" + foundCities(traders));
+		System.out.println("  --> 3. What are all the unique cities where the traders work ?\n" + foundCities(traders));
 		
 		// 4.
 		System.out.println("   --> 4. Find all traders from Cambridge and sort them by name desc.\n" + foundTradersFromDaNang(traders));
