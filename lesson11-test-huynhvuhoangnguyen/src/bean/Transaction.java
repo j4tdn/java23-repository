@@ -1,5 +1,7 @@
 package bean;
 
+import java.util.Objects;
+
 public class Transaction {
 
 	private int id;
@@ -48,6 +50,7 @@ public class Transaction {
 	public void setValue(double value) {
 		this.value = value;
 	}
+	
 
 	@Override
 	public String toString() {
