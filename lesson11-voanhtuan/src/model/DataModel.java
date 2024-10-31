@@ -43,8 +43,8 @@ public class DataModel {
     public static List<Word> generateWords(){
     	return List.of(
     		new Word("apple", "quả táo", "noun", "Một loại trái cây"),
-            new Word("run", "chạy", "verb", "Khi đôi chân chuyển động với tốc độ nhanh"),
-            new Word("beautiful", "đẹp", "adjective", "Cách nhìn tích cực với một sự vật, hiện tượng")
+    		new Word("run", "chạy", "verb", "Khi đôi chân chuyển động với tốc độ nhanh"),
+    		new Word("beautiful", "đẹp", "adjective", "Cách nhìn tích cực với một sự vật, hiện tượng")
     	);
     }
     
@@ -53,10 +53,10 @@ public class DataModel {
         return new HashMap<>(Map.of(
         	"Ăn uống", 300000.0,
         	"Giải trí", 600000.0,
-            "Mua sắm quần áo", 700000.0,
-            "Điện thoại", 1500000.0,
-            "Đi lại", 200000.0,          
-            "Tiền thuê nhà", 500000.0
+        	"Mua sắm quần áo", 700000.0,
+        	"Điện thoại", 1500000.0,
+        	"Đi lại", 200000.0,
+        	"Tiền thuê nhà", 500000.0
         ));
     }
     
