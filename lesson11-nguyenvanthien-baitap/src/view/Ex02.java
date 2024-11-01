@@ -30,7 +30,7 @@ public class Ex02 {
 			System.out.println("5.  CD theo mã tăng dần");
 //            System.out.println("6.  Danh sách CD");
 
-			System.out.print("Chọn chức năng (1-7): ");
+			System.out.print("Chọn chức năng (1-6): ");
 
 			int choice = scanner.nextInt();
 			scanner.nextLine();
@@ -38,7 +38,7 @@ public class Ex02 {
 			Runnable action = actions.get(choice);
 			if (action != null) {
 				action.run();
-				if (choice == 7)
+				if (choice == 6)
 					break;
 			} else {
 				System.out.println("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
@@ -47,17 +47,17 @@ public class Ex02 {
 	}
 
 	public static void addCD(CDManager cdManager, Scanner scanner) {
-		System.out.print("Nhập mã CD: ");
+		System.out.print("Nhập mã cd ");
 		int id = scanner.nextInt();
 		scanner.nextLine();
 
-		System.out.print("Nhập loại CD: ");
+		System.out.print("Nhập loại cd ");
 		String type = scanner.nextLine();
 
-		System.out.print("Nhập tên ca sĩ: ");
+		System.out.print("Nhập tên ca sĩ ");
 		String artist = scanner.nextLine();
 
-		System.out.print("Nhập số bài hát: ");
+		System.out.print("Nhập số bài hát ");
 		int songCount = scanner.nextInt();
 
 		System.out.print("Nhập giá thành: ");
@@ -65,18 +65,18 @@ public class Ex02 {
 
 		CD newCD = new CD(id, type, artist, songCount, price);
 		if (cdManager.addCD(newCD)) {
-			System.out.println("Thêm CD mới thành công.");
+			System.out.println("Thêm CD mới thành công");
 		} else {
-			System.out.println("Mã CD đã tồn tại. Thêm CD thất bại.");
+			System.out.println("Mã CD đã tồn tại");
 		}
 	}
 
 	public static void displayCDCount(CDManager cdManager) {
-		System.out.println("Tổng số lượng CD: " + cdManager.getCDCount());
+		System.out.println("Tổng số lượng CD " + cdManager.getCDCount());
 	}
 
 	public static void displayTotalPrice(CDManager cdManager) {
-		System.out.println("Tổng giá trị của các CD: " + cdManager.getTotalPrice() + " USD");
+		System.out.println("Tổng giá trị của các CD " + cdManager.getTotalPrice() + " USD");
 	}
 
 	public static void sortCDsByPrice(CDManager cdManager) {

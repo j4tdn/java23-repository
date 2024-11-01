@@ -19,7 +19,6 @@ public class Ex04 {
 
 
 		while (true) {
-			System.out.println("\n=== Từ Điển ===");
 			System.out.println("1. Thêm từ");
 			System.out.println("2. Tra cứu ");
 
@@ -32,22 +31,22 @@ public class Ex04 {
 				if (choice == 3)
 					break;
 			} else {
-				System.out.println("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
+				System.out.println("Lựa chọn không hợp lệ. Vui lòng chọn lại");
 			}
 		}
 	}
 
 	public static void addNewWord(Dictionary dictionary, Scanner scanner) {
-		System.out.print("Nhập từ: ");
+		System.out.print("Nhập từ ");
 		String word = scanner.nextLine();
 
-		System.out.print("Nhập nghĩa: ");
+		System.out.print("Nhập nghĩa ");
 		String meaning = scanner.nextLine();
 
-		System.out.print("Nhập loại từ: ");
+		System.out.print("Nhập loại từ ");
 		String type = scanner.nextLine();
 
-		System.out.print("Nhập ghi chú: ");
+		System.out.print("Nhập ghi chú ");
 		String note = scanner.nextLine();
 
 		Word newWord = new Word(word, meaning, type, note);
@@ -56,14 +55,14 @@ public class Ex04 {
 	}
 
 	public static void lookupWord(Dictionary dictionary, Scanner scanner) {
-		System.out.print("Nhập từ cần tra: ");
+		System.out.print("Nhập từ cần tra ");
 		String word = scanner.nextLine();
 
 		Word foundWord = dictionary.lookup(word);
 		if (foundWord != null) {
-			System.out.println("Kết quả tra cứu:\n" + foundWord);
+			System.out.println("Kết quả tra cứu\n" + foundWord);
 		} else {
-			System.out.println("Từ này không có trong từ điển.");
+			System.out.println("Từ này không có trong từ điển");
 		}
 	}
 
