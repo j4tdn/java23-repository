@@ -1,0 +1,6 @@
+1. Collection#List
+
+Collection: release từ version 1.5
+Generic Type: release từ version 1.5
+
+--> Khi khai báo 1 KDL trong collection ví dụ là List có thể truyền tham sô là KDL đối tượng từ version 1.5
