@@ -27,16 +27,16 @@ public class Ex05ExpenseDemo {
 		
 		List<Map.Entry<String, Double>> entryListByKey = new ArrayList<>(expenses.entrySet());
         entryListByKey.sort((e1, e2) -> e1.getKey().compareTo(e2.getKey()));
-        System.out.println("Sắp xếp các khoản chi theo thứ tự tăng dần của các khoản chi tiêu (key):");
+        System.out.println("   - Sắp xếp các khoản chi theo thứ tự tăng dần của các khoản chi tiêu (key):");
         for (Map.Entry<String, Double> entry : entryListByKey) {
-            System.out.println("  " + entry);
+            System.out.println(entry);
         }
 
         List<Map.Entry<String, Double>> entryListByValue = new ArrayList<>(expenses.entrySet());
         entryListByValue.sort((e1, e2) -> e2.getValue().compareTo(e1.getValue()));
-        System.out.println("Sắp xếp các khoản chi theo thứ tự giảm dần bởi số tiền (value):");
+        System.out.println("   \n- Sắp xếp các khoản chi theo thứ tự giảm dần bởi số tiền (value):");
         for (Map.Entry<String, Double> entry : entryListByValue) {
-            System.out.println("  " + entry);
+            System.out.println(entry);
         }
 	}
 	
@@ -59,16 +59,5 @@ public class Ex05ExpenseDemo {
 	    }
 	    return result; 
 	}
-	
-	private static Map<String, Double> sortExpensesKey(Map<String, Double> exs) {
-	    List<Entry<String, Double>> entryList = new ArrayList<>(exs.entrySet());
-	    Collections.sort(entryList, (e1, e2) -> e2.getKey().compareTo(e1.getKey()));
-	    Map<String, Double> sortedMap = new LinkedHashMap<>(); 
-	    for (Entry<String, Double> entry : entryList) {
-	        sortedMap.put(entry.getKey(), entry.getValue());
-	    }
-	    return sortedMap;
-	}
-
 
 }
