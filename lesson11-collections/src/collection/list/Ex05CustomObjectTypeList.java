@@ -28,9 +28,10 @@ public class Ex05CustomObjectTypeList {
 		System.out.println("size after remove --> " + items.size());
 		
 		// sắp xếp items tăng dần theo id
-		items.sort((item1, item2) -> {
-			return item2.getSalesPrice().compareTo(item1.getSalesPrice());
-		});
+//		items.sort((item1, item2) -> {
+//			return item2.getSalesPrice().compareTo(item1.getSalesPrice());
+//		});
+		items.sort(Ex05CustomObjectTypeList::sortSalesPriceDesc);
 		
 		CollectionUtils.generate("Item sorted(id asc)", items);
 		
@@ -41,6 +42,10 @@ public class Ex05CustomObjectTypeList {
 		// khởi tạo new ArrayList, Arrays.asList, List.of
 		// add, get, set, remove, removeIf, iterate, contains, sort, 
 		
+	}
+	
+	private static int sortSalesPriceDesc(Item item1, Item item2) {
+		return item2.getSalesPrice().compareTo(item1.getSalesPrice());
 	}
 	
 }
