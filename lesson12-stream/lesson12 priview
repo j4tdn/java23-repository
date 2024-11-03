@@ -1,0 +1,24 @@
+1. Khái niệm về 
++ Functional Interface
++ Anonymous Fuction = Lambda Expression
+
+2. Strategy/ Builder Pattern
+
+3. Phân biệt Collection/ Stream
+
+4. Lambda Expression, Method Reference, Constructor Reference 
+
+5. Câu hỏi về Stream 
++ Source --> Stream --> Thao tác --> convert sang KDL khác 
++ Có bao nhiêu loại operation trong Stream 
+  --> Intermediate: gọi hàm xong vẫn trả về Stream 
+  ==> filter, map , flatMap, sortred, limit, skip, ...
+  --> Terminal : gọi xon chuyẻn sang hàm khác 
+  ==> forEach, allMath, anyMatch, findFirst, findAny, nonMatch 
+  ==> collection(Collectors.to)
+  ==> toList
+  ==> count, reduce
+  + Vì sao khi sử lí xong không lưu ở Stream mà convert sang kiểu khác 
+  --> Traversable once
+  
+  + Internal I
