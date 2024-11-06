@@ -38,14 +38,14 @@ public class DataModel {
 	
 	public static List<Apple> getApples() {
 		return List.of(
-			new Apple(1, "red", 22d, "Da Nang"),
+			new Apple(1, "red", 22d, "Thai Binh"),
 			new Apple(2, "red", 18d, "Da Nang"),
 			new Apple(3, "green", 40d, "Quang Nam"),
 			new Apple(4, "red", 22d, "Da Nang"),
-			new Apple(5, "red", 66d, "Da Nang"),
+			new Apple(5, "red", 66d, "Lao Cai"),
 			new Apple(6, "green", 22d, "Quang Tri"),
 			new Apple(7, "red", 44d, "Da Nang"),
-			new Apple(8, "yellow", 22d, "Bac Ninh")
+			new Apple(8, "yellow", 22d, "Tuyen Quang")
 		);
 	}
 	

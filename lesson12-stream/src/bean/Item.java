@@ -1,0 +1,84 @@
+package bean;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class Item {
+
+	private Integer id;
+	private String name;
+	private BigDecimal salesPrice;
+	private LocalDate expireDate;
+	
+	public Item() {
+	}
+
+	public Item(Integer id, String name, BigDecimal salesPrice, LocalDate expireDate) {
+		this.id = id;
+		this.name = name;
+		this.salesPrice = salesPrice;
+		this.expireDate = expireDate;
+	}
+	
+	public Item(Integer id) {
+		this.id = id;
+	}
+	
+	public Item(String line) {
+
+		var tokens = line.split(", ");
+		this.id = Integer.parseInt(tokens[0]);
+		this.name = tokens[1];
+		this.salesPrice = new BigDecimal(tokens[2]);
+		this.expireDate = LocalDate.parse(tokens[3], DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+	}
+	
+	public Item(Integer id, LocalDate expireDate) {
+		this.id = id;
+		this.expireDate = expireDate;
+	}
+	
+	public static Item init() {
+		return new Item();
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public BigDecimal getSalesPrice() {
+		return salesPrice;
+	}
+
+	public void setSalesPrice(BigDecimal salesPrice) {
+		this.salesPrice = salesPrice;
+	}
+
+	public LocalDate getExpireDate() {
+		return expireDate;
+	}
+
+	public void setExpireDate(LocalDate expireDate) {
+		this.expireDate = expireDate;
+	}
+	
+	@Override
+	public String toString() {
+		return "Item [id=" + id + ", name=" + name + ", salesPrice=" + salesPrice + ", expireDate=" + expireDate + "]";
+	}
+	
+}
