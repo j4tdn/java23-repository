@@ -38,9 +38,7 @@ public class Ex05CustomObjectTypeList {
 
 		CollectionUtils.generate("item sorted (id asc)", items);
 		// sắp xếp items giảm dần theo salesPrice
-		items.sort((item1, item2) -> {
-			return item2.getSalesPrice().compareTo(item1.getSalesPrice());
-		});
+		items.sort(Ex05CustomObjectTypeList::sortSalesPriceDesc);
 		
 		CollectionUtils.generate("item sorted (salesPrice desc)", items);
 		
@@ -53,5 +51,9 @@ public class Ex05CustomObjectTypeList {
 		// add, get, set, remove, removeIf, iterate, contains, sort, shuffle
 		
 		
+	}
+	
+	private static int sortSalesPriceDesc(Item i1, Item i2) {
+		return i2.getSalesPrice().compareTo(i1.getSalesPrice());
 	}
 }
