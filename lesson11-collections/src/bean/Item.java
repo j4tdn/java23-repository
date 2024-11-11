@@ -14,7 +14,7 @@ public class Item implements Comparable<Item>{
 	public Item() {
 		
 	}
-
+	
 	public Item(Integer id, String name, Double salesPrice) {
 		super();
 		this.id = id;
