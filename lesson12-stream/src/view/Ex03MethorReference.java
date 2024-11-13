@@ -9,7 +9,7 @@ import model.DataModel;
 
 import static utils.CollectionUtils.*;
 
-public class Ex03MethodReference {
+public class Ex03MethorReference {
 
 	public static void main(String[] args) {
 
