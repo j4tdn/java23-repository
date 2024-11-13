@@ -37,6 +37,14 @@ public class Ex07ComposingFunction {
 		);
 		
 		CollectionUtils.generate("1. Sắp xếp danh sách các quả táo tăng dần theo weight", inventory);
+		
+		// strategy pattern
+		// local variable
+		// method reference
+		// constructor reference
+		// composing function
+		
+		// --> stream
 	}
 
 }
