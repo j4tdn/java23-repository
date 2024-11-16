@@ -26,6 +26,6 @@ Vì List/Set/Map/Collection có 1 tham số truyền vào là generic type mà g
 
 
 Khởi tạo ArrayList: --> new ArrayList, Arrays.asList(có thêm sửa xóa),List.of(immutable value)
- add,get,set,remove,removeIf,contains,sort,itterate,shuffle
+ add,get,set,remove,removeIf,contains,sort,itterate,shuffle --> collection
  
  Các hàm hỗ trợ sort: Arrays.sort, Collection.sort, List.sort(Comparator<T>)
