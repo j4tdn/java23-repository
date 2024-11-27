@@ -1,0 +1,76 @@
+package view.stream;
+
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import static utils.CollectionUtils.*;
+
+public class Ex04StreamFilter {
+	
+	/*
+	 Cho danh sách các số nguyên
+	 + Tìm các phần tử say âm 'B' trong danh sách
+	 + Unique
+	 	- Tạo danh sách các phần tử không trùng nhau từ danh sách đã cho
+	 	  -> Vd: 1 2 2 3 3 4 -> 1 2 3 4
+	 	- Lấy ra các phần tử là duy nhất trong danh sách
+	 	  -> Vd: 1 2 2 3 3 4 -> 1 4
+	 + Lấy 5 phần tử cuối cùng trong danh sách
+	 + Lấy 3 phần tử đầu tiên trong danh sách
+	 
+	 */
+
+	public static void main(String[] args) {
+		
+		var elements = List.of("A", "B", "B","B", "C", "C", "D", "D", "E");
+		
+		generate("1. Tìm các phần tử chẵn trong danh sách", 
+					elements.stream()
+				   .filter(e -> e.compareTo("B") > 0)
+				   .collect(Collectors.toSet()));
+
+		generate("2.1 Tạo ra danh sách các phần tử không trùng nhau", 
+				elements.stream()
+				.distinct()
+				.toList());			// prefer toSet(hashcode, equals)
+		
+		// Map<K, V>
+		// K: thuộc tính muốn group by
+		// V: List<T> chứa các phần tử có trùng K
+		
+		// counting
+		// Map<K, Long>
+		// K: thuộc tính muốn group by
+		// V: số lượng phần tử trong list
+		
+		// Function<T, R> function = e -> e; ==> Function.identity
+		
+		List<String> uniqueElements = elements.stream()
+		.collect(Collectors.groupingBy(Function.identity(), Collectors.counting())) // Map<String, Long>
+		.entrySet()	// Set<Entry<String, Long>>
+		.stream()	// Stream<Entry<String, Long>>
+		.filter(e -> e.getValue() == 1)	// Stream<Entry<String, Long>>
+		.map(Entry::getKey)	// Stream<String>
+		.toList();	// List<Entry<String, Long>>
+		
+		generate("2.2 Lấy ra các phần tử là duy nhất trong danh sách", 
+				uniqueElements);
+		
+		// có n phần tử --> lấy 5 phần tử cuối ==> skip n-5
+		// 20 --> 5 cuối --> skip 15
+		
+		generate("3. Lấy 5 phần tử cuối trong danh sách", 
+				elements.stream()
+				.skip(elements.size() - 5)
+				.toList());
+
+		generate("4. Lấy 3 phần tử đầu tiên trong danh sách", 
+				elements.stream()
+				.limit(3)
+				.toList());
+		
+	}
+	
+}
