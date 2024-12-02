@@ -11,7 +11,7 @@ public class Ex01IfElse {
 		
 		 Random rd = new Random();
 		 int number = rd.nextInt(5,20);
-		System.out.println("number ==>"+number);
+		 System.out.println("number ==>"+number);
 		 
 		 //expression : number %2 ==0
 		//if(isEven ==true )<-->if(isEven)
