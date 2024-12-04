@@ -1,6 +1,7 @@
 package model;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +21,7 @@ public class DataModel {
 		models.put("Thừa Thiên Huế", 75);
 		models.put("Quảng Trị", 74);
 		models.put("Quảng Bình", 73);
+		models.put("Quảng Ninh", 43);
 		return models;
 	}
 	
@@ -31,7 +33,7 @@ public class DataModel {
 			new Dish("4", "D4", 86d, Kind.FISH, false),
 			new Dish("5", "D5", 22d, Kind.MEAT, false),
 			new Dish("6", "D6", 707d, Kind.MEAT, false),
-			new Dish("7", "D2", 101d, Kind.EGG, false),
+			new Dish("7", "D2", 101d, Kind.OTHER, true),
 			new Dish("8", "D8", 292d, Kind.OTHER, true)
 		);
 	}
