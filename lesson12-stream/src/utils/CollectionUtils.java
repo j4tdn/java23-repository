@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class CollectionUtils {
 
@@ -28,6 +29,10 @@ public class CollectionUtils {
 		System.out.println(prefix + " --> ");
 		collection.forEach(e -> System.out.println(" +   " + e));
 		System.out.println("\n");
+	}
+	
+	public static <T> void generate(String prefix, Stream<T> stream) {
+	    generate(prefix, stream.toList());
 	}
 	
 }

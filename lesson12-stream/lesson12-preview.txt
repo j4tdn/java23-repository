@@ -1,0 +1,32 @@
+1. Khái niệm về 
++ Functional Interface
++ Anonymous Function = Lambda Expression
+
+2. Strategy/Builder Patter
+
+3. Phân biệt Collection/Stream
+
+4. Lambda Expression, Method Reference, Constructor Reference
+
+5. Câu hỏi về Stream
+
++ Source --> Stream --> thao tác --> convert sang KDL khác
+
++ Có bao nhiêu loại operation trong Steam
+  --> Intermediate: gọi hàm xong vẫn trả về Stream
+  	  ==> filter, map, flatMap, sorted, limit, skip ...
+  	  
+  --> Terminal: gọi xong chuyển sang hàm khác
+      ==> forEach, allMatch, anyMatch, findFirst, findAny, nonMatch
+      ==> collect(Collector.to...)
+      ==> toList
+      ==> count, reduce
+
++ Vì sao khi xử lý xong không lưu trong Stream mà convert sang kiểu khác
+  --> Traversable once
+  
++ Internal Iteration
+
+6. Primitive Stream: IntStream, DoubleStream, LongStream <--> Stream<T>
++ Tập các phần tử nguyên thủy
++ Thêm những hàm riêng cho việc xử lý số như max, min, sum, avg
