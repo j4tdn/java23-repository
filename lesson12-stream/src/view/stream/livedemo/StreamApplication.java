@@ -33,7 +33,7 @@ public class StreamApplication {
 	     
 	     CollectionUtils.generate("Ex03 What are all the unique cities where the traders work",
 	    		 transactions.stream()
-	    		 .map(t -> t.getTraderId())
+	    		 .map(t -> t.getTraderCity())
 	    		 .distinct()
 	    		 .toList()
 	    		 );
