@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
+import bean.Apple;
 import bean.Item;
 import utils.CollectionUtils;
 
@@ -41,4 +42,5 @@ public class Ex06FileReader {
 			result.add(funt.apply(element));
 		return result;
 	}
+	
 }

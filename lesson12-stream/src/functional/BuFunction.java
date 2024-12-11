@@ -1,6 +1,6 @@
 package functional;
-
+@FunctionalInterface
 public interface BuFunction<T, U, S, V, R> {
 
-	void apply(T t, U u, S s, V v);
+	R apply(T t, U u, S s, V v);
 }

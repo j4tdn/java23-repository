@@ -3,37 +3,45 @@ package bean;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Objects;
 
 public class Item {
 
 	private Integer id;
 	private String name;
-	private LocalDate expiredDate;
 	private BigDecimal salesPrice;
-	
+	private LocalDate expiredDate;
+
 	public Item() {
 	}
 
-	public Item convert(String lines) {
-		var tokens = lines.split(", ");
+	public Item(Integer id) {
+		this.id = id;
+	}
+
+	public Item(String line) {
+		var tokens = line.split(", ");
 		this.id = Integer.parseInt(tokens[0]);
 		this.name = tokens[1];
-		this.expiredDate = LocalDate.parse(tokens[2], DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-		this.salesPrice = new BigDecimal(tokens[3]);
+		this.salesPrice = new BigDecimal(tokens[2]);
+		this.expiredDate = LocalDate.parse(tokens[3], DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 	}
-	
-	public Item(Integer id, String name, LocalDate expiredDate, BigDecimal salesPrice) {
+
+	public Item(Integer id, LocalDate expiredDate) {
+		this.id = id;
+		this.expiredDate = expiredDate;
+	}
+
+	public Item(Integer id, String name, BigDecimal salesPrice, LocalDate expiredDate) {
 		this.id = id;
 		this.name = name;
-		this.expiredDate = expiredDate;
 		this.salesPrice = salesPrice;
+		this.expiredDate = expiredDate;
 	}
 
 	public static Item init() {
 		return new Item();
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -50,14 +58,6 @@ public class Item {
 		this.name = name;
 	}
 
-	public LocalDate getExpiredDate() {
-		return expiredDate;
-	}
-
-	public void setExpiredDate(LocalDate expiredDate) {
-		this.expiredDate = expiredDate;
-	}
-
 	public BigDecimal getSalesPrice() {
 		return salesPrice;
 	}
@@ -66,24 +66,17 @@ public class Item {
 		this.salesPrice = salesPrice;
 	}
 
-	@Override
-	public boolean equals(Object o) {
-		if(this == o)
-			return true;
-		if(!(o instanceof Item))
-			return false;
-		Item that = (Item)o;
-		return getId() == that.getId();
-	}
-	@Override
-	public int hashCode() {
-		return Objects.hash(getId());
-	}
-	
-	@Override
-	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", expiredDate=" + expiredDate + ", salesPrice=" + salesPrice
-				+ "]";
+	public LocalDate getExpiredDate() {
+		return expiredDate;
 	}
 
+	public void setExpiredDate(LocalDate expiredDate) {
+		this.expiredDate = expiredDate;
+	}
+
+	@Override
+	public String toString() {
+		return "Item [id=" + id + ", name=" + name + ", salesPrice=" + salesPrice + ", expiredDate=" + expiredDate
+				+ "]";
+	}
 }

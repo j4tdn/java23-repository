@@ -14,12 +14,35 @@ import utils.CollectionUtils;
 public class Ex04ConstructorReference {
 
 	/*
-	 1.
+	 1. Method Reference
+	 + Bất kỳ lambda nào, mình để có thể chuyển sang method reference
+	 + Static, Non-Static method reference
 	 
-	 2. 
+	 2. Constructor Reference
+	 + Để lambda có thể chuyển sang Constructor Reference thì
+	   yêu cầu body của lambda trả về một đối tượng được tạo ra
+	   từ constructor của class
+	   
 	 
+	 Sử dụng lambda khi nào
+	 ======================
+	 + Khai báo hàm hoặc dùng hàm có sẵn, hàm có tham số là
+	   functional interface --> tạo đối tượng cho FI đó -->
+	   dùng lambda để code ngắn gọn
 	 
+	 + Áp dụng trong strategy pattern
+	 
+	 Functional Interface có sẵn của Java
+	 ====================================
+	 Predicate<T>  : T -> boolean
+	 Function<T, R>: T -> R
+	 BiFunction<T, U, R>: (T, U) -> R
+	 Supplier<T>   : () -> T
+	 Comparator<T> : (T, T) -> int
 	 */
+	
+	// Ví dụ: có hàm có tham số là Supplier<T>, khi gọi
+	// hàm thì phải tạo ra đối tượng của Supplier để truyền vào
 	
 	public static void main(String[] args) {
 		

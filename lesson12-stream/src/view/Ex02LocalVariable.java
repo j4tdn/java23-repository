@@ -25,6 +25,7 @@ public class Ex02LocalVariable {
 			sum += apple.getWeight();
 		// 1. lambda
 		inventory.forEach(apple -> {
+		//  thực tế pass biến sum qua hàm accept
 //			sum += apple.getWeight(); 
 		});
 		

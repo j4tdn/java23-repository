@@ -17,19 +17,26 @@ public class Ex03MethodReference {
 		var inventory = DataModel.getApples();
 		
 		// Lambda
-		// Function<Apple, Integer>
+		// Function<Apple, Integer> fId = (Apple apple) -> apple.getId();
+		// Function<Apple, Integer> fId = Ex03MethodReference::convert;
+		
+		// Chuyển sang method reference
+		
+		// Cách 1: static method reference -> có công thức
+		// Cách 2: non-static method reference --> chỉ có 1 số dạng và học thuộc
+		// Dạng 1: (T t) -> t.getMethod() ==> T::getMethod
 		
 		generate(
 				"1. Lấy ra id của tất cả các apple đỏ", 
-				// transform(inventory, apple -> apple.getId()));
-				// transform(inventory, Ex03MethodReference.convertToId);
+				// transform(inventory, apple -> apple.getId()))
+				// transform(inventory, Ex03MethodReference::convertToId)
 				transform(inventory, Apple::getId)
 				);
 		
 		generate(
 				"1. Lấy ra xuất xứ của tất cả các apple đỏ", 
-				// transform(inventory, apple -> apple.getOrigin()));
-				// transform(inventory, Ex03MethodReference.convertToOrigin);
+				// transform(inventory, apple -> apple.getOrigin()))
+				// transform(inventory, Ex03MethodReference::convertToOrigin)
 				transform(inventory, Apple::getOrigin)
 				);
 		
