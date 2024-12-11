@@ -1,0 +1,97 @@
+package view.stream;
+
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import static utils.CollectionUtils.*;
+public class Ex04StreamFilter {
+
+	/*
+	  Cho danh sách các số nguyên
+	  + Tìm các phần tử sau âm B trong danh sách
+	  + Unique
+	  	. Tạo ra danh sách các phần tử mà ko trùng nhau
+	  	từ danh sách đã cho
+	  	--> VD: 1 2 2 3 3 4 --> 1 2 3 4
+	  	
+	  	. Lấy ra các phần tử là duy nhất trong danh sách
+	  	--> VD: 1 2 2 3 3 4 --> 1 4
+	  	
+	  	+ Lấy 5 phần tử cuối cùng trong danh sách
+	  	+ Lấy 3 phần tử đầu tiên trong danh sách
+	 */
+	
+	public static void main(String[] args) {
+		var elements = List.of("A", "B", "B", "B", "C", "C", "D", "D", "E");
+			
+		generate("1. Tìm các phần tử chẵn trong danh sách", 
+				elements.stream()
+				   .filter(e -> e.compareTo("B") > 0)
+				   .collect(Collectors.toSet()));
+		
+		generate("2.1 Cách 1: Tạo ra danh sách các phần tử ko trùng nhau", 
+				elements.stream()
+				   .collect(Collectors.toSet())); // prefer toSet(hashcode, equals)
+		
+		generate("2.1 Cách 2: Tạo ra danh sách các phần tử ko trùng nhau", 
+				elements.stream()
+				.distinct() // loại bỏ phần tử không trùng nhau
+				.toList()); //prefer toSet(hashcode, equals)
+		
+		
+		// 2.2 : Lấy ra các phần tử là duy nhất trong danh sách
+		
+		
+		// Map<K, V>
+		// K: Thuộc tính muốn group by
+		// V: List<T> chứa các phần tử có trùng K
+		
+		// counting
+		// Map<K, Long>
+		// K: thuộc tính muốn group by
+		// V: Số lượng phần tử trong list
+		
+		// Function<T, R> function = e -> e; => Function.identity()
+		
+		/*  {
+		      + A=1
+			  + B=3
+			  + C=2
+			  + D=2
+			  + E=1
+			}
+		 */
+		List<String> uniqueElements  = elements.stream() //Stream<String>
+		.collect(Collectors.groupingBy(Function.identity(), Collectors.counting())) // Map<String, Long>
+		.entrySet() // Set<Entry<String, Long>>
+		.stream() // Stream<Entry<String, Long>>
+		.filter(e -> e.getValue() == 1) // Stream<Entry<String, Long>>
+		.map(Entry::getKey) // Stream<String>
+		.toList(); // List<String>
+		generate(
+				"2.2 Lấy ra các phần tử là duy nhất trong danh sách", 
+				uniqueElements);
+		
+		// Cách 1: elements.subList(0, 0);
+		// Cách 2: dùng stream
+		// n --> lấy 5 cuối ==> skip n - 5
+		// 20 --> 5 cuối --> skip 15
+
+		generate(
+				"3. Lấy 5 phần tử cuối cùng trong danh sách", 
+				elements.stream()
+				.skip(elements.size() - 5)
+				.toList()
+		);
+		
+		generate(
+				"4. Lấy 3 phần tử đầu tiên trong danh sách", 
+				elements.stream()
+				.limit(3)
+				.toList()
+		);
+		
+	}
+}
