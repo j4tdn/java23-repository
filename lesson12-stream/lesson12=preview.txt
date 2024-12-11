@@ -1,0 +1,15 @@
+1.khái niệm về 
+	+function Interface
+	+anonymus function 
+2.Strategy/Builder Pattern 
+3.phân biệt collection/ stream 
+4.lamda expression, method reference, constructor reference
+5.Câu hỏi về stream:
+	+source --> stream --> thao tác --> convert sang KDL khác 
+	+Có bao nhiêu loại operation trong stream 
+	--> Intermediate: gọi hàm xong trả về stream 
+		=>filter, map, flatmap, sorted, limit, skip ... 
+	-->Terminal: gọi xong chuyển qua hàm khác 
+		=>forEach, allMarch, anyMath, findFirt, findAny, nonMath
+		=>collect 
+ 
