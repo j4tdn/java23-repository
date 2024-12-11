@@ -11,6 +11,18 @@ public class CollectionUtils {
 		
 	}
  
+	public static<T> void generate(String prefix, int[] elements) {
+        generate(prefix, List.of(elements));
+}
+	
+	public static<T> void generate(String prefix, Object elements) {
+        generate(prefix, List.of(elements));
+}
+	
+	public static<T> void generate(String prefix, long elements) {
+        generate(prefix, List.of(elements));
+}
+	
 	public static<T> void generate(String prefix, String[] elements) {
 	        generate(prefix, List.of(elements));
 	}

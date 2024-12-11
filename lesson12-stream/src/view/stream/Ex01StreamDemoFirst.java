@@ -29,6 +29,7 @@ public class Ex01StreamDemoFirst {
 		 
 		CollectionUtils.generate("các đĩa thức ăn có lượng calo > 250", highCalorMenu);
 		
+		// for if d
 		// Dùng toSet mặc định sẽ là HashSet 
 		
 		Set<String> nameOfDishes = menu.stream() // Stream<Dish>
