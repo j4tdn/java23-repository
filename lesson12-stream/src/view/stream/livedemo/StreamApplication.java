@@ -6,45 +6,42 @@ import java.util.stream.Collectors;
 
 import bean.Transaction;
 import model.DataModel;
-
+import utils.CollectionUtils;
+import static utils.CollectionUtils.*;
 public class StreamApplication {
 
 	public static void main(String[] args) {
 		var transactions = DataModel.getTransactions();
 		
-		generate("1. Find all transactions in the year 2024 and sort them by value (small to high)",
+		CollectionUtils.generate("1. Find all transactions in the year 2024 and sort them by value (small to high)",
 				transactions.stream()
 				.filter(t -> t.getCreatedTime().toLocalDate().getYear() == 2024)
 				.sorted(Comparator.comparing(Transaction::getValue))
 				.toList()
 				);
 		
-		generate("2. Find all transactions have value greater than 300 and sort them by trader’s city",
+		CollectionUtils.generate("2. Find all transactions have value greater than 300 and sort them by trader’s city",
 				transactions.stream()
 				.filter(t -> t.getValue() > 300)
 				.sorted(Comparator.comparing(Transaction::getTraderCity))
 				.toList()
 				);
 		
-		generate("3. What are all the unique cities where the traders work ?",
+		CollectionUtils.generate("3. What are all the unique cities where the traders work ?",
 				transactions.stream()
 				.map(Transaction::getTraderCity)
 				.collect(Collectors.toSet())
 				);
 		
-		generate("4. Find all traders from Cambridge and sort them by name desc",
+		CollectionUtils.generate("4. Find all traders from Cambridge and sort them by name desc",
 				transactions.stream()
 				.filter(t -> t.getTraderCity().equals("Cambridge"))
 				.sorted(Comparator.comparing(Transaction::getTraderName).reversed())
 				.toList()
 				);
 		
-		generate("5. Return a string of all traders’ names sorted alphabetically.",
-				transactions.stream()
-				.sorted(Comparator.comparing(Transaction::getTraderName))
-				.map(Transaction::getTraderName)
-				.toList()
-				);
+		
+		
 		
 		generate("6. Are any traders based in Milan ?",
 				transactions.stream()
@@ -57,14 +54,7 @@ public class StreamApplication {
 				.count()
 				);
 		
-		generate("8. Print all transactions’ values from the traders living in Cambridge.",
-				transactions.stream()
-				.filter(t -> t.getTraderCity().equals("Cambridge"))
-				.map(Transaction::getValue)
-				.toList()
-				);
-		
-		generate("8. Print all transactions’ values from the traders living in Cambridge.",
+		CollectionUtils.generate("8. Print all transactions’ values from the traders living in Cambridge.",
 				transactions.stream()
 				.filter(t -> t.getTraderCity().equals("Cambridge"))
 				.map(Transaction::getValue)
@@ -72,12 +62,8 @@ public class StreamApplication {
 				);
 		
 		
-	}
-	
-	private static <T> void generate(String question, Collection<T> elements) {
-		System.out.println(question + " --> {");
-		elements.forEach(element -> System.out.println("   + " + element));
-		System.out.println("}\n");
+		
+		
 	}
 	
 	private static <T> void generate(String question, boolean value) {
