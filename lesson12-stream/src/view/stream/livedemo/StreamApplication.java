@@ -40,6 +40,15 @@ public class StreamApplication {
 				.toList()
 				);
 		
+		String traderNames = transactions.stream()
+		        .map(Transaction::getTraderName) 
+		        .sorted() 
+		        .distinct() 
+		        .collect(Collectors.joining(", "));
+
+		generate("5. Return a string of all traders’ names sorted alphabetically",
+				traderNames);
+		
 		generate("6. Are any traders based in Milan ?",
 				transactions.stream()
 				.anyMatch(t -> t.getTraderCity().equals("Milan"))
@@ -75,6 +84,10 @@ public class StreamApplication {
 	}
 	
 	private static <T> void generate(String question, long value) {
+		System.out.println(question + " --> " + value + "\n");
+	}
+	
+	private static <T> void generate(String question, String value) {
 		System.out.println(question + " --> " + value + "\n");
 	}
 }
