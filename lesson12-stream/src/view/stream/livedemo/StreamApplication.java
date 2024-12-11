@@ -40,9 +40,6 @@ public class StreamApplication {
 				.toList()
 				);
 		
-		
-		
-		
 		generate("6. Are any traders based in Milan ?",
 				transactions.stream()
 				.anyMatch(t -> t.getTraderCity().equals("Milan"))
@@ -61,9 +58,16 @@ public class StreamApplication {
 				.toList()
 				);
 		
+		System.out.printf("9. What’s the highest value of all the transactions ? --> %s",
+				transactions.stream()
+				.mapToDouble(Transaction::getValue)
+				.max());
+				 
 		
-		
-		
+		System.out.printf("\n10. Find the transaction with the smallest value --> %s",
+				transactions.stream()
+				.mapToDouble(Transaction::getValue)
+				.min());
 	}
 	
 	private static <T> void generate(String question, boolean value) {
