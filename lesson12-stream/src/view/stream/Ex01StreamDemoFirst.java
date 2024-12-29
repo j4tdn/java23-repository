@@ -20,7 +20,8 @@ public class Ex01StreamDemoFirst {
 	 Các bước làm với stream
 	 B1. Chuyển đổi từ KDL source sang Stream<T>
 	 	--> source: List<T>, Set<T>, Map<K, V>
-	 
+	 	-->  	  : 
+	 	
 	 B2. Sử dụng các hàm bên trong Stream<T>
 	 	--> hàm: filter
 	 			 map
@@ -28,7 +29,9 @@ public class Ex01StreamDemoFirst {
 	 	--> gọi xong vẫn trả về Stream<T>
 	 			 
 	 B3. Chuyển đổi từ Stream<T> sang KDL target
-	 	--> hàm: collect, toArray
+	 	--> hàm: collect(toList, toSet, toCollection, toMap),
+	 	 		 toArray
+	 	 		 .toList() imutable non null list
 	 	--> target: List<T>, Set<T>, Array
 	 	--> gọi xong trả về KDL khác
 	 	
