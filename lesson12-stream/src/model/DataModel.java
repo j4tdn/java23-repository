@@ -17,7 +17,7 @@ public class DataModel {
 	private DataModel() {
 	}
 	
-	public static List<Transaction> getTransactions() {
+	public static List<Transaction> getTransactions() { 
 		Trader t1 = new Trader(1, "Trader T1", "Milan");
 		Trader t2 = new Trader(2, "Trader T2", "Cambridge");
 		Trader t3 = new Trader(3, "Trader T3", "London");
