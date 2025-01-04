@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 import bean.Trader;
 import bean.Transaction;
-
+import static java.util.Comparator.*;
 import static utils.CollectionUtils.*;
 import model.DataModel;
 
@@ -26,33 +26,31 @@ public class StreamApplication {
 				"2. Find all transactions have value greater than 300 and sort them by trader’s city",
 				transactions.stream()
                 .filter(t -> t.getValue() > 300)
-                .sorted(Comparator.comparing(t -> t.getTrader().getCity()))
+                .sorted(Comparator.comparing(Transaction::getTraderCity))
                 .toList()
          );
 				
 		generate("3. What are all the unique cities where the traders work?",
 				transactions.stream()
 				.map(t -> t.getTrader().getCity())
-				.distinct()
-				.toList()
+//				.distinct()
+//				.toList()
+				.collect(Collectors.toSet())
 		);
 		
 		generate("4. Find all traders from Cambridge and sort them by name desc.", 
 				transactions.stream()
+				.filter(t -> "Cambridge".equals(t.getTraderCity()))
 				.map(Transaction::getTrader)
-				.filter(t -> t.getCity().equals("Cambridge"))
 				.sorted(Comparator.comparing(Trader::getName).reversed())
-				// .distinct()
-				.toList()
+				.collect(Collectors.toSet())
 				);
 
 		System.out.println("5. Return a string of all traders’ names sorted alphabetically: " +
 				transactions.stream()
-		        .map(Transaction::getTrader)
-		        .map(Trader::getName)
+		        .map(Transaction::getTraderName)
 		        .distinct()
-		        .sorted()
-		        .collect(Collectors.joining(", "))
+		        .collect(Collectors.joining(", ", "[", "]"))
 		);
 
 		System.out.println("\n6. Are any traders based in Milan? " + 
@@ -62,15 +60,15 @@ public class StreamApplication {
 		
 		System.out.println("\n7. Count the number of traders in Milan: " + 
 				transactions.stream()
-				.filter(t -> t.getTrader().getCity().equals("Milan"))
 				.map(Transaction::getTrader)
 				.distinct()
+				.filter(t -> "Milan".equals(t.getCity()))
 				.count()
 		);
 		
 		generate("\n8. Print all transactions’ values from the traders living in Cambridge: ",
 				transactions.stream()
-				.filter(t -> t.getTrader().getCity().equals("Cambridge"))
+				.filter(t -> "Cambridge".equals(t.getTraderCity()))
 				.map(Transaction::getValue)
 				.toList()
 		);
