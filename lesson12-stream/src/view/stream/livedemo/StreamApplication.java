@@ -4,11 +4,8 @@ import static java.util.Comparator.*;
 import static java.util.stream.Collectors.*;
 import static utils.CollectionUtils.generate;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.function.BinaryOperator;
-import java.util.function.Function;
-import java.util.function.Predicate;
+import java.text.DecimalFormat;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import bean.Trader;
@@ -32,63 +29,68 @@ public class StreamApplication {
 				"2. Find all transactions have value greater than 2000 and sort them by trader’s city",
 				transactions.stream()
 							.filter(t -> t.getValue() > 2000)
-							.sorted(comparing(t -> t.getTraderCity()))
-			);
+							.sorted(comparing(Transaction::getTraderCity))
+							.toList());
 			
 			generate(
 				"3. What are all the unique cities where the traders work",
 				transactions.stream()
 							.map(t -> t.getTraderCity())
-							.distinct()
-							.toList()
+							.collect(toSet())
 			);
 			
 			generate(
 				"4. Find all traders from Cambridge and sort them by name desc.",
 				transactions.stream()
-							.map(t -> t.getTrader())
-							.filter(trader -> "Cambridge".equals(trader.getCity()))
-							.distinct()
-							.sorted(comparing(Trader::getName).reversed())
-							.toList()
+							.filter(t -> "Cambridge".equals(t.getTraderCity()))
+							.map(Transaction::getTrader)
+							.sorted(comparing(Trader::getName, reverseOrder()))
+							.collect(toSet())
 			);
 			
-			var tNames = transactions.stream()
-									 .map(Transaction::getTraderName)
-									 .distinct()
-									 .sorted()
-									 .collect(joining(", "));
 			System.out.printf("5. Return a string of all traders’ names sorted alphabetically --> %s\n\n"
-					, tNames);
+					, transactions.stream()
+					 .map(Transaction::getTraderName)
+					 .distinct()
+					 .sorted()
+					 .collect(joining(", ", "[", "]")));
 			
 			System.out.printf("6. Are any traders based in Milan --> %s\n\n",
 					transactions.stream()
-					.anyMatch(t -> t.getTraderCity().equals("Milan")));
+					.anyMatch(t -> "Milan".equals(t.getTraderCity())));
 			
 			System.out.printf("7 The number of traders in Milan --> %s\n\n",
 					transactions.stream()
-								.filter(t -> t.getTraderCity().equals("Cambridge"))
+								.map(Transaction::getTrader)
+								.distinct()
+								.filter(t -> "Milan".equals(t.getCity()))
 								.count());
 			
-			generate(
-				"8. All transactions's values from the traders living in Cambridge",
+			DecimalFormat df = new DecimalFormat("#,###");
+			System.out.printf(
+				"8. All transactions's values from the traders living in Cambridge --> %s\n\n",
 				transactions.stream()
-							.filter(t -> t.getTraderCity().equals("Cambridge"))
-							.map(Transaction::getValue)
-							.collect(toList())
+							.filter(t -> "Cambridge".equals(t.getTraderCity()))
+							.map(t -> df.format(t.getValue()))
+							.collect(Collectors.joining(" "))
 			);
 			
 			
 			System.out.printf("9. The highest value of all the transactions --> %s\n\n", 
-					transactions.stream()
-								.mapToDouble(Transaction::getValue)
-								.max()
-								.orElse(Double.MIN_VALUE));
+					df.format(
+							transactions.stream()
+							.mapToDouble(Transaction::getValue)
+							.max()
+							.orElseThrow()
+							)
+					);
 			
 			System.out.printf("10. The transaction with the smallest value --> %s\n\n", 
-					transactions.stream()
-								.min(comparingDouble(Transaction::getValue))
-								.orElse(null));
+					df.format(
+							transactions.stream()
+							.mapToDouble(Transaction::getValue)
+							.min()
+							.orElseThrow()));
 		
 	}
 	
