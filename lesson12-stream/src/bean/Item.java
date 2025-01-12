@@ -23,8 +23,8 @@ public class Item {
 		this.id = Integer.parseInt(tokens[0]);
 		this.name = tokens[1];
 		this.salesPrice = new BigDecimal(tokens[2]);
-		this.expiredDate = LocalDate.parse(tokens[3]);
-		DateTimeFormatter.ofPattern("dd.MM.yyyy");
+		this.expiredDate = LocalDate.parse(tokens[3],
+				DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 	}
 
 	public Item(Integer id, LocalDate expiredDate) {
