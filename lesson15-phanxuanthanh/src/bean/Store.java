@@ -16,6 +16,7 @@ public class Store {
 	private String desc;
 	private BigDecimal potential;
 	private Integer whId;
+	private BigDecimal storeTrend;
 
 	public Store() {
 	}
@@ -25,6 +26,14 @@ public class Store {
 		this.desc = desc;
 		this.potential = potential;
 		this.whId = whId;
+	}
+	
+	public void Store1(Integer id, String desc, BigDecimal potential, Integer whId, BigDecimal storeTrend) {
+		this.id = id;
+		this.desc = desc;
+		this.potential = potential;
+		this.whId = whId;
+		this.storeTrend = storeTrend;
 	}
 
 	public Integer getId() {
@@ -54,9 +63,17 @@ public class Store {
 	public Integer getWhId() {
 		return whId;
 	}
+	
+	public BigDecimal getStoreTrend() {
+		return storeTrend;
+	}
 
 	public void setWhId(Integer whId) {
 		this.whId = whId;
+	}
+	
+	public void setStoreTrend(BigDecimal storeTrend) {
+		this.storeTrend = storeTrend;
 	}
 
 	@Override
