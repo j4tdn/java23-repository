@@ -21,6 +21,7 @@ public class Ex01BasicOopDemo {
 		c2.setName("A22");//c2.setName("");
 //		c3.setPrice(c1.getPrice()*2);
 		c1.doublePrice();
+		c3.setPrice(c1.getPrice()*2);
 		//Cập nhật tên của xe c2 thành A22
 		//Cập nhât giá của xe c3 thành 6000
 		//Cập nhật giá gấp đôi giá bán cho xe c1

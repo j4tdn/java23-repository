@@ -21,7 +21,5 @@ public class Ex04SwpTest_UnuseMethod {
 	System.out.println("a1-->"+a1);
 	System.out.println("b2-->"+b2);
 	System.out.println("b3-->"+b3);
-	
-
 	}
 }

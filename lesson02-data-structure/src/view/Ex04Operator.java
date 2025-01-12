@@ -9,9 +9,9 @@ public class Ex04Operator {
 		int zz=8;
 		//Toán tử == --> so sánh giá trị vế phải vs vế trái trả về kdl boolean (true//false)
 		
-		boolean  e1 = (a == b);
-		boolean e2 =(a*b ==zz);
-		boolean e3 = (a !=zz);
+		boolean  e1 = (a == b);//f
+		boolean e2 =(a*b ==zz);//t
+		boolean e3 = (a !=zz);//t
 		System.out.println("e1-->"+e1);
 		System.out.println("e2 -->"+e2);
 		System.out.println("e3 -->"+e3);

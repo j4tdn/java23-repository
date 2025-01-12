@@ -5,5 +5,7 @@ public class Ex02ExternalClass {
 		Ex01TestMainMethod.printStarTriangle();
 		
 		Ex01TestMainMethod.printNumberTriangle();
+		
+		
 	}
 }
