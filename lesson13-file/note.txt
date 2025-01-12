@@ -1,0 +1,25 @@
+Thao tác với file
+
++ Đọc/ ghi file --> .txt, .xlsx, .properties
+Files.write...
+FileReader, BufferReader
+
++ Ghi file --> .txt, .xlsx, .pdf
+Files.readAllLines(..)
+FileWriter, BufferWriter
+
+==> Đọc và ghi từng dòng, mỗi dòng 1 String
+
+
+
+--> xml, json:
+
+==> Text
+
+==> Serializable
+
+Thao tác với cấu trúc file
+
++ Tạo file/ folder
++ Đổi tên, download/upload -> copy
++ Xoá file

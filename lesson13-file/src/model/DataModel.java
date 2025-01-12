@@ -1,12 +1,15 @@
 package model;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import bean.Apple;
+import bean.BankTransaction;
 import bean.Dish;
 import bean.Item;
 import bean.Store;
@@ -15,6 +18,23 @@ import common.Category;
 public class DataModel {
 	private DataModel() {
 
+	}
+
+	public static List<BankTransaction> mockBankTransaction() {
+		return List.of(
+				new BankTransaction("A1", "B1", bd("200"), time("02/03/2022 20:52:50"), true),
+				new BankTransaction("A2", "B2", bd("100"), time("01/03/2022 20:52:50"), true),
+				new BankTransaction("A3", "B3", bd("432"), time("18/03/2022 20:52:50"), false),
+				new BankTransaction("A4", "B4", bd("522"), time("02/03/2022 20:52:50"), false),
+				new BankTransaction("A5", "B5", bd("222"), time("03/03/2022 20:52:50"), true));
+	}
+	
+	public static BigDecimal bd(String value) {
+		return new BigDecimal(value);
+	}
+
+	public static LocalDateTime time(String value) {
+		return LocalDateTime.parse(value, DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
 	}
 
 	public static List<Item> mockItems() {
