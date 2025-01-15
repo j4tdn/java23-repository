@@ -36,9 +36,11 @@ public class WhAllocationDemo {
 		itemMapping.forEach((item, refItems) -> {
 			System.out.println("Item : " + item.getName());
 			calculationGap(refItems);
+		});
+		itemMapping.forEach((item, refItems) -> {
+			System.out.println("Item : " + item.getName());
 			calculateStoreDemand(refItems);
 		});
-		
 		
 		
 		
@@ -119,8 +121,12 @@ public class WhAllocationDemo {
 				.flatMap(List::stream)
 				.collect(Collectors.toList());
 		
-		Map<Store, BigDecimal> demand = new LinkedHashMap<>();
-		
+		Map<Store, BigDecimal> demands = new LinkedHashMap<>();
+		BigDecimal demandPerStore = new BigDecimal(0);
+		BigDecimal totalWeigth = new BigDecimal(0);
+		for (Store store : allStores) {
+			totalWeigth = totalWeigth.add(refWeight.get(store.getId()));
+		}
 		for (Store store : allStores) {
 			for (Map<Item, List<Store>> refItem : referenceItems) {
 				BigDecimal potential = refItem.values().stream()
@@ -129,23 +135,32 @@ public class WhAllocationDemo {
 												.map(rs -> rs.getPotential())
 												.findFirst()
 												.orElse(null);
-				
+				BigDecimal weigth = refWeight.get(refItem.keySet().stream()
+												.filter(rs->rs.getId() == store.getId())
+												.map(rs -> rs.getId())
+												.findFirst().orElse(null)
+												);
+				demandPerStore = demandPerStore.add(potential.multiply(weigth));
 			}
-			
+			demandPerStore = demandPerStore.divide(totalWeigth);
+			demands.put(store, demandPerStore);
 		}
 		
+		
 		// phải duyệt từng store, -> sau đó mới duyệt qua từng refItem
-		
-		
-		
 
-		referenceItems.forEach(refItem -> {
-			generate("Filling gaps", refItem);
-		});
+			generateDemand("Calculating Demand: ", demands);
 		
 	}
 	
-
+	private static void generateDemand(String prefix, Map<Store, BigDecimal> demands) {
+		System.out.println(prefix + "{");
+		demands.forEach((store, bd) -> {
+			System.out.println("Item: " + store);
+			System.out.println("Store: " + bd);
+		});
+		System.out.println("}\n");
+	}
 	
 	private static void generate(String prefix, Map<Item, List<Store>> maps) {
 		System.out.println(prefix + "{");
