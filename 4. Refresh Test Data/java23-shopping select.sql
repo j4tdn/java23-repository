@@ -18,6 +18,3 @@ SELECT * FROM t17_item_received_note;
 SELECT * FROM t18_item_received_note_detail;
 SELECT * FROM t19_provider;
 SELECT * FROM t20_item_group_backup;
-
-
-SELECT floor(rand()*3 + 1);

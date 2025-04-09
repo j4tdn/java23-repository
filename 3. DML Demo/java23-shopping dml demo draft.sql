@@ -7,6 +7,8 @@
 -- -- Sử dụng sql để import data từ excel, txt hoặc 'dùng lệnh sql' chạy tạo data
 -- -- Giúp xóa hết data rác, thêm lại data chuẩn bị để trình bày dự án
 
+SET GLOBAL log_bin_trust_function_creators = 1;
+
 -- draft
 SET FOREIGN_KEY_CHECKS = 0; -- disable fk
 SET FOREIGN_KEY_CHECKS = 1; -- enable fk

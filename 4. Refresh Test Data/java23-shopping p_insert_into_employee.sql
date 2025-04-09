@@ -34,19 +34,18 @@ BEGIN
             C08_PASSWORD,
             C08_ACCOUNT_STATUS,
             C08_ROLE_ID
-
         )
         VALUES(
 			running,
             concat('Nhân viên ', running),
             concat(running, '333'),
             concat('nv1', running, '@gmail.com'),
-            0, -- todo need to be adapted
+			elt(f_random(2), 0, 1),
             DATE_SUB(DATE_SUB(current_timestamp(), INTERVAL running YEAR), INTERVAL running DAY),
             concat('nv', running, if(running MOD 2 != 0,  'def', 'auto')),
             '$2a$12$w0bs0MW/O3nTyMhuv0r1jOjq2gOaxLxkZgms7u/khHRmtCh3S/Hpu',
             1,
-            2 -- todo need to be adapted
+            2 -- update manually
 		);
 		SET running = running + 1;
     END WHILE;
