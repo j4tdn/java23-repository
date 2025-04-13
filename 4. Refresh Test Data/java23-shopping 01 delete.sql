@@ -12,7 +12,6 @@ TRUNCATE TABLE t10_role;
 TRUNCATE TABLE t11_order_status;
 TRUNCATE TABLE t12_order_status_detail;
 TRUNCATE TABLE t13_payment_method;
-TRUNCATE TABLE t14_title;
 TRUNCATE TABLE t15_bill;
 TRUNCATE TABLE t16_order_detail;
 TRUNCATE TABLE t17_item_received_note;

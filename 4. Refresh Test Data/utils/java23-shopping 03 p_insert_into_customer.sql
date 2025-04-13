@@ -27,7 +27,7 @@ BEGIN
             concat('Khách Hàng ', running),
             concat(running, '123456789'),
             concat('kh', running, '@gmail.com'),
-            cast_to_bit(elt(f_random(2), 0, 1)),
+            f_cast_to_bit(elt(f_random(2), 0, 1)),
             DATE_SUB(DATE_SUB(current_timestamp(), INTERVAL running YEAR), INTERVAL running DAY),
             concat('Địa chỉ ', running),
             concat('kh', running, if(running MOD 2 != 0,  'def', 'auto')),

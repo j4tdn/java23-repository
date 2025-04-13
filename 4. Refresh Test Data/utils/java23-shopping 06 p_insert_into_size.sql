@@ -36,15 +36,3 @@ BEGIN
 		SET running = running + 1;
     END WHILE;
 END $$
-
-
-
-
-
-
-
-
-
-
-
-
