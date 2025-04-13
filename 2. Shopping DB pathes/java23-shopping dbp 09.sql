@@ -16,7 +16,8 @@ ALTER TABLE t07_customer DROP FOREIGN KEY FK_T07_T09;
  
  -- Cập nhật columns cho T08_EMPLOYEE
  ALTER TABLE t08_employee DROP COLUMN C08_ACCOUNT_ID;
- 
+
+SET GLOBAL log_bin_trust_function_creators = 1;
  
  ALTER TABLE t08_employee ADD C08_USERNAME VARCHAR(50) NOT NULL;
  ALTER TABLE t08_employee ADD C08_PASSWORD TEXT NOT NULL;
