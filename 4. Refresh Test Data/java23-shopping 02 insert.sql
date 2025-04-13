@@ -1,4 +1,3 @@
--- T04_ITEM_GROUP
 INSERT INTO T04_ITEM_GROUP(C04_ITEM_GROUP_ID, C04_ITEM_GROUP_NAME) VALUES
 (1, 'Áo'),
 (2, 'Quần'),
@@ -8,7 +7,9 @@ INSERT INTO T04_ITEM_GROUP(C04_ITEM_GROUP_ID, C04_ITEM_GROUP_NAME) VALUES
 (6, 'Thắt lưng'),
 (7, 'Túi xách');
 
--- T01_ITEM
+-- Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails 
+-- (`java23_shopping`.`t01_item`, CONSTRAINT `FK_REF_ITEM` FOREIGN KEY (`C01_REF_ITEM_ID`) REFERENCES `t01_item` (`C01_ITEM_ID`))	0.015 sec
+
 INSERT INTO T01_ITEM (C01_ITEM_ID, C01_ITEM_NAME, C01_ITEM_GROUP_ID, C01_REF_ITEM_ID) VALUES
 (1, 'Áo 1', 1, NULL),
 (2, 'Áo 2', 1, 1),
@@ -34,7 +35,7 @@ INSERT INTO T01_ITEM (C01_ITEM_ID, C01_ITEM_NAME, C01_ITEM_GROUP_ID, C01_REF_ITE
 -- T02_SIZE
 CALL p_insert_into_size();
 
--- T10_ROLE
+
 INSERT INTO T10_ROLE (C10_ROLE_ID, C10_ROLE_NAME) VALUES
 (1, 'Nhân viên giữ xe'),
 (2, 'Nhân viên giao hàng'),
@@ -47,18 +48,10 @@ INSERT INTO T10_ROLE (C10_ROLE_ID, C10_ROLE_NAME) VALUES
 
 -- T08_EMPLOYEE
 CALL p_insert_into_employee();
--- update role manually ....
+-- update manually
 
 -- T17_ITEM_RECEIVED_NOTE
 CALL p_insert_into_item_received_note();
-
--- T19_PROVIDER
-INSERT INTO T19_PROVIDER (C19_PROVIDER_ID, C19_PROVIDER_NAME, C19_PROVIDER_TAX) VALUES  
-(1, 'Nhà cung cấp A1', '12345'),  
-(2, 'Nhà cung cấp A2', '23456'),  
-(3, 'Nhà cung cấp A3', '34567'),  
-(4, 'Nhà cung cấp A4', '72727'),  
-(5, 'Nhà cung cấp A5', '28282');
 
 -- T18_ITEM_RECEIVED_NOTE_DETAIL
 INSERT INTO T18_ITEM_RECEIVED_NOTE_DETAIL(C18_IRN_ID, C18_ITEM_ID, C18_AMOUNT, C18_BUY_PRICE, C18_PROVIDER_ID)
@@ -74,6 +67,18 @@ INSERT INTO T18_ITEM_RECEIVED_NOTE_DETAIL(C18_IRN_ID, C18_ITEM_ID, C18_AMOUNT, C
 (3, 1, 777, 220, 2),
 (6, 5, 345, 460, 3),
 (9, 10, 656, 1300, 4);
+  
+-- T19_PROVIDER
+INSERT INTO T19_PROVIDER (C19_PROVIDER_ID, C19_PROVIDER_NAME, C19_PROVIDER_TAX) VALUES  
+(1, 'Nhà cung cấp A1', '12345'),  
+(2, 'Nhà cung cấp A2', '23456'),  
+(3, 'Nhà cung cấp A3', '34567'),  
+(4, 'Nhà cung cấp A4', '72727'),  
+(5, 'Nhà cung cấp A5', '28282');
+
+-- Tìm BUY_PRICE cho từng ITEM
+SELECT * FROM t17_item_received_note;
+SELECT * FROM t18_item_received_note_detail;
 
 
 -- 1. Tìm BUY_PRICE của phiếu nhập mới nhất cho từng mặt hàng
@@ -81,49 +86,48 @@ INSERT INTO T18_ITEM_RECEIVED_NOTE_DETAIL(C18_IRN_ID, C18_ITEM_ID, C18_AMOUNT, C
 
 -- Cách 1: Duyệt ngược lại
 -- common table expression
--- WITH CTE_ITEM_DETAIL AS (
--- 	SELECT t18.C18_ITEM_ID ITEM_ID,
---            t17.C17_IRN_TIME IRN_TIME,
---            t18.C18_BUY_PRICE BUY_PRICE
--- 	  FROM T18_ITEM_RECEIVED_NOTE_DETAIL t18
--- 	  JOIN T17_ITEM_RECEIVED_NOTE t17
--- 		ON t18.C18_IRN_ID = t17.C17_IRN_ID
--- ), CTE_ITEM_MAX_TIME AS (
--- 	SELECT ITEM_ID,
--- 		   MAX(IRN_TIME) IRN_MAX_TIME
--- 	  FROM CTE_ITEM_DETAIL
--- 	  GROUP BY ITEM_ID
--- )
--- SELECT t2.ITEM_ID ITEM_ID,
---        t2.BUY_PRICE BUY_PRICE
---   FROM CTE_ITEM_MAX_TIME t1
---   JOIN CTE_ITEM_DETAIL t2
---     ON t1.ITEM_ID = t2.ITEM_ID
---    AND t1.IRN_MAX_TIME = t2.IRN_TIME;
---    
--- -- Cách 2: Sắp xếp dữ liệu trên từng nhóm
--- WITH CTE_ITEM_DETAIL AS (
--- 	SELECT t18.C18_ITEM_ID ITEM_ID,
--- 	   t17.C17_IRN_TIME IRN_TIME,
--- 	   t18.C18_BUY_PRICE BUY_PRICE,
--- 	   ROW_NUMBER() OVER (
--- 			PARTITION BY t18.C18_ITEM_ID ORDER BY t17.C17_IRN_TIME DESC
--- 	   ) row_num
---   FROM T18_ITEM_RECEIVED_NOTE_DETAIL t18
---   JOIN T17_ITEM_RECEIVED_NOTE t17
--- 	ON t18.C18_IRN_ID = t17.C17_IRN_ID
--- )
--- SELECT ITEM_ID,
---        BUY_PRICE
---   FROM CTE_ITEM_DETAIL
---  WHERE row_num = 1;
---   
+WITH CTE_ITEM_DETAIL AS (
+	SELECT t18.C18_ITEM_ID ITEM_ID,
+           t17.C17_IRN_TIME IRN_TIME,
+           t18.C18_BUY_PRICE BUY_PRICE
+	  FROM T18_ITEM_RECEIVED_NOTE_DETAIL t18
+	  JOIN T17_ITEM_RECEIVED_NOTE t17
+		ON t18.C18_IRN_ID = t17.C17_IRN_ID
+), CTE_ITEM_MAX_TIME AS (
+	SELECT ITEM_ID,
+		   MAX(IRN_TIME) IRN_MAX_TIME
+	  FROM CTE_ITEM_DETAIL
+	  GROUP BY ITEM_ID
+)
+SELECT t2.ITEM_ID ITEM_ID,
+       t2.BUY_PRICE BUY_PRICE
+  FROM CTE_ITEM_MAX_TIME t1
+  JOIN CTE_ITEM_DETAIL t2
+    ON t1.ITEM_ID = t2.ITEM_ID
+   AND t1.IRN_MAX_TIME = t2.IRN_TIME;
+   
+-- Cách 2: Sắp xếp dữ liệu trên từng nhóm
+WITH CTE_ITEM_DETAIL AS (
+	SELECT t18.C18_ITEM_ID ITEM_ID,
+	   t17.C17_IRN_TIME IRN_TIME,
+	   t18.C18_BUY_PRICE BUY_PRICE,
+	   ROW_NUMBER() OVER (
+			PARTITION BY t18.C18_ITEM_ID ORDER BY t17.C17_IRN_TIME DESC
+	   ) row_num
+  FROM T18_ITEM_RECEIVED_NOTE_DETAIL t18
+  JOIN T17_ITEM_RECEIVED_NOTE t17
+	ON t18.C18_IRN_ID = t17.C17_IRN_ID
+)
+SELECT ITEM_ID,
+       BUY_PRICE
+  FROM CTE_ITEM_DETAIL
+ WHERE row_num = 1;
 
--- -- 2. Tìm BUY_PRICE có giá bán cao nhất trong tất cả các phiếu hàng đã nhập cho từng mặt hàng
--- SELECT C18_ITEM_ID ITEM_ID,
---        MAX(C18_BUY_PRICE) BUY_PRICE
---   FROM T18_ITEM_RECEIVED_NOTE_DETAIL
---   GROUP BY C18_ITEM_ID;
+-- 2. Tìm BUY_PRICE có giá bán cao nhất trong tất cả các phiếu hàng đã nhập cho từng mặt hàng
+SELECT C18_ITEM_ID ITEM_ID,
+       MAX(C18_BUY_PRICE) BUY_PRICE
+  FROM T18_ITEM_RECEIVED_NOTE_DETAIL
+  GROUP BY C18_ITEM_ID;
 
 -- T03_ITEM_DETAIL
 INSERT INTO T03_ITEM_DETAIL(C03_ITEM_ID,C03_SIZE_ID,C03_COLOR,C03_SALES_PRICE,C03_AMOUNT)
@@ -154,23 +158,22 @@ WITH CTE_ITEM_INFO AS (
 	   AND t02.C02_SIZE_ID MOD 2 = 0
 )
 SELECT * FROM CTE_ITEM_DETAIL ORDER BY ITEM_ID, SIZE_ID;
+   
+ -- T05_GALLERY
+ INSERT INTO T05_GALLERY(C05_ITEM_ID, C05_COLOR, C05_IMAGE)
+ SELECT C01_ITEM_ID,
+		elt(f_random(5), 'RED', 'GREEN', 'BLUE', 'ORANGE', 'YELLOW') COLOR,
+        concat('flie://image/p_', C01_ITEM_ID, '.png')
+   FROM T01_ITEM;
 
--- T05_GALLERY
-INSERT INTO T05_GALLERY(C05_ITEM_ID, C05_COLOR, C05_IMAGE)
-SELECT C01_ITEM_ID,
-       elt(f_random(5), 'RED', 'GREEN', 'BLUE', 'ORANGE', 'YELLOW') COLOR,
-       concat('file://image/p_', C01_ITEM_ID, '.png')
-  FROM T01_ITEM;
-  
 -- T07_CUSTOMER
 CALL p_insert_into_customer();
-  
-  
+
 -- T13_PAYMENT_METHOD
 INSERT INTO T13_PAYMENT_METHOD(C13_PAYMENT_METHOD_NAME)
 VALUES ('Tiền mặt'),
-       ('Thẻ tín dụng'),
-	   ('Thẻ ghi nợ'),
+	   ('Thẻ tín dụng'),
+       ('Thẻ ghi nợ'),
        ('Ví điện tử');
        
 -- T06_ORDER
@@ -187,10 +190,10 @@ VALUES
 (7, 'R7', '258369747', 'Địa chỉ 7', 7, '2024-04-14 08:10:20', 4, 9),
 (8, 'R8', '258369748', 'Địa chỉ 8', 8, '2024-04-18 08:10:20', 4, 6),
 (9, 'R9', '258369749', 'Địa chỉ 9', 1, '2024-04-18 08:10:20', 4, 6),
-(10, 'R10', '558369741', 'Địa chỉ 10', 2, '2024-04-18 08:10:20', 4, 9),
-(11, 'R11', '68369741', 'Địa chỉ 11', 9, '2024-04-20 08:10:20', 3, 8),
-(12, 'R12', '758369741', 'Địa chỉ 12', 10, '2024-04-26 08:10:20', 3, 6),
-(13, 'R13', '858369741', 'Địa chỉ 13', 5, '2024-04-28 08:10:20', 1, 6);
+(10, 'R10', '258369714', 'Địa chỉ 10', 2, '2024-04-18 08:10:20', 4, 9),
+(11, 'R11', '258369724', 'Địa chỉ 11', 9, '2024-04-20 08:10:20', 3, 8),
+(12, 'R12', '258369734', 'Địa chỉ 12', 10, '2024-04-26 08:10:20', 3, 6),
+(13, 'R13', '258369794', 'Địa chỉ 13', 5, '2024-04-28 08:10:20', 1, 6);
 
 -- T16_ORDER_DETAIL
 INSERT INTO T16_ORDER_DETAIL (C16_ORDER_ID, C16_ITEM_DETAIL_ID, C16_AMOUNT)
@@ -230,22 +233,22 @@ VALUES
 (13, 14, 2);
 
 -- T15_BILL
-INSERT INTO T15_BILL(C15_BILL_ID,C15_DELIVERY_FEE,C15_TOTAL_OF_MONEY,C15_ORDER_ID)
+INSERT INTO T15_BILL(C15_BILL_ID, C15_DELIVERY_FEE, C15_TOTAL_OF_MONEY, C15_ORDER_ID)
 SELECT C06_ORDER_ID BILL_ID,
-       elt(f_random(5), 20, 28, 48, 56, 80) DELIVERY_FEE,
+	   elt(f_random(5), 20, 28, 48, 56, 80),
        SUM(t03.C03_SALES_PRICE * t16.C16_AMOUNT) TOTAL_OF_MONEY,
-       C06_ORDER_ID ORDER_ID
+       C06_ORDER_iD ORDER_ID
   FROM T06_ORDER t06
   JOIN T16_ORDER_DETAIL t16
     ON t06.C06_ORDER_ID = t16.C16_ORDER_ID
   JOIN T03_ITEM_DETAIL t03
     ON t16.C16_ITEM_DETAIL_ID = t03.C03_ITEM_DETAIL_ID
  GROUP BY t16.C16_ORDER_ID;
-
+ 
 -- T11_ORDER_STATUS
 INSERT INTO T11_ORDER_STATUS(C11_ORDER_STATUS_DESC)
-VALUES
-('Chờ xác nhận'),
+VALUES 
+('Chờ xử lý'),
 ('Đang đóng gói'),
 ('Đóng gói hoàn thành'),
 ('Đang giao hàng'),
@@ -253,70 +256,59 @@ VALUES
 ('Giao hàng thất bại'),
 ('Hủy đơn hàng');
 
-
 -- T12_ORDER_STATUS_DETAIL
 INSERT INTO T12_ORDER_STATUS_DETAIL(C12_ORDER_ID, C12_ORDER_STATUS_ID, C12_EMPLOYEE_ID, C12_LAST_UPDATED)
-
--- Đơn hàng từ 1-5 --> Giao hàng thành công(status từ 1 đến 5)
--- Nhân viên 3
 SELECT t06.C06_ORDER_ID ORDER_ID,
-       t11.C11_ORDER_STATUS_ID STATUS_ID,
+	   t11.C11_ORDER_STATUS_ID STATUS_ID,
        3 EMPLOYEE_ID,
-       DATE_SUB(current_timestamp(), INTERVAL (5 - t11.C11_ORDER_STATUS_ID) DAY) LAST_UPDATED
+       DATE_SUB(current_timestamp(), INTERVAL(5 - t11.C11_ORDER_STATUS_ID) DAY) LAST_UPDATED
   FROM T06_ORDER t06, T11_ORDER_STATUS t11
  WHERE t06.C06_ORDER_ID BETWEEN 1 AND 5
    AND t11.C11_ORDER_STATUS_ID BETWEEN 1 AND 5
-   
+
 UNION ALL
-   
--- Đơn hàng từ 6-8 --> Đóng gói thành công(status từ 1 đến 3)
+-- Đơn hàng từ 6-8 --> Đóng gói thành công (status từ 1 đến 3)
 -- Nhân viên 4
 SELECT t06.C06_ORDER_ID ORDER_ID,
-       t11.C11_ORDER_STATUS_ID STATUS_ID,
+	   t11.C11_ORDER_STATUS_ID STATUS_ID,
        4 EMPLOYEE_ID,
-       DATE_SUB(current_timestamp(), INTERVAL (3 - t11.C11_ORDER_STATUS_ID) DAY) LAST_UPDATED
+       DATE_SUB(current_timestamp(), INTERVAL(3 - t11.C11_ORDER_STATUS_ID) DAY) LAST_UPDATED
   FROM T06_ORDER t06, T11_ORDER_STATUS t11
  WHERE t06.C06_ORDER_ID BETWEEN 6 AND 8
    AND t11.C11_ORDER_STATUS_ID BETWEEN 1 AND 3
-   
+
 UNION ALL
 
--- Đơn hàng từ 9-10 --> Đang giao hàng(status từ 1 đến 4)
+-- Đơn hàng từ 9-10 --> Đóng gói thành công (status từ 1 đến 4)
 -- Nhân viên 5
 SELECT t06.C06_ORDER_ID ORDER_ID,
-       t11.C11_ORDER_STATUS_ID STATUS_ID,
+	   t11.C11_ORDER_STATUS_ID STATUS_ID,
        5 EMPLOYEE_ID,
-       DATE_SUB(current_timestamp(), INTERVAL (4 - t11.C11_ORDER_STATUS_ID) DAY) LAST_UPDATED
+       DATE_SUB(current_timestamp(), INTERVAL(4 - t11.C11_ORDER_STATUS_ID) DAY) LAST_UPDATED
   FROM T06_ORDER t06, T11_ORDER_STATUS t11
  WHERE t06.C06_ORDER_ID BETWEEN 9 AND 10
    AND t11.C11_ORDER_STATUS_ID BETWEEN 1 AND 4
-   
+
 UNION ALL
 
--- Đơn hàng từ 11-12 --> Hủy đơn hàng(status từ 1 và 7)
+-- Đơn hàng 11-12 --> Hủy đơn hàng (status 1 và 7)
 -- Nhân viên 7
 SELECT t06.C06_ORDER_ID ORDER_ID,
-       t11.C11_ORDER_STATUS_ID STATUS_ID,
+	   t11.C11_ORDER_STATUS_ID STATUS_ID,
        7 EMPLOYEE_ID,
-       DATE_SUB(current_timestamp(), INTERVAL (7 - t11.C11_ORDER_STATUS_ID) DAY) LAST_UPDATED
+       DATE_SUB(current_timestamp(), INTERVAL(7 - t11.C11_ORDER_STATUS_ID) DAY) LAST_UPDATED
   FROM T06_ORDER t06, T11_ORDER_STATUS t11
  WHERE t06.C06_ORDER_ID BETWEEN 11 AND 12
-   AND t11.C11_ORDER_STATUS_ID IN (1, 7)
-   
+   AND t11.C11_ORDER_STATUS_ID BETWEEN 1 AND 4
+
 UNION ALL
 
--- Đơn hàng 13 --> Giao hàng thất bại(status 1,2,3,4,6)
--- Nhân viên 8
+-- Đơn hàng 11-12 --> Hủy đơn hàng (status 1 và 7)
+-- Nhân viên 5
 SELECT t06.C06_ORDER_ID ORDER_ID,
-       t11.C11_ORDER_STATUS_ID STATUS_ID,
-       8 EMPLOYEE_ID,
-       DATE_SUB(current_timestamp(), INTERVAL (6 - t11.C11_ORDER_STATUS_ID) DAY) LAST_UPDATED
+	   t11.C11_ORDER_STATUS_ID STATUS_ID,
+       7 EMPLOYEE_ID,
+       DATE_SUB(current_timestamp(), INTERVAL(7 - t11.C11_ORDER_STATUS_ID) DAY) LAST_UPDATED
   FROM T06_ORDER t06, T11_ORDER_STATUS t11
- WHERE t06.C06_ORDER_ID = 13
-   AND t11.C11_ORDER_STATUS_ID IN (1, 2, 3, 4, 6);
-
-
-
-   
-   
-  
+ WHERE t06.C06_ORDER_ID BETWEEN 11 AND 12
+   AND t11.C11_ORDER_STATUS_ID BETWEEN 1 AND 4;
