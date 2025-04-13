@@ -1,11 +1,9 @@
 -- java23-shopping dbp 01.sql 
 -- TO4_ITEM_GROUP
 use java23_shopping;
-create table TO4_ITEM_GROUP(
-       CO4_ITEM_GROUP_ID int auto_increment primary key,
-       CO4_ITEM_GROUP_NAME varchar(255) not null,
-       constraint UNQ_CO2_ITEM_GROUP_NAME unique(CO4_ITEM_GROUP_NAME)
-      );
-      
-      
-       
+DROP TABLE IF EXISTS T04_ITEM_GROUP;
+CREATE TABLE T04_ITEM_GROUP(
+	C04_ITEM_GROUP_ID INT AUTO_INCREMENT PRIMARY KEY,
+	C04_ITEM_GROUP_NAME VARCHAR(255) NOT NULL,
+    CONSTRAINT UNQ_C02_ITEM_GROUP_NAME UNIQUE(C04_ITEM_GROUP_NAME)
+);
