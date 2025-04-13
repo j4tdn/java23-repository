@@ -12,7 +12,7 @@ CREATE DATABASE java23_shopping CHAR SET utf8mb4;
 -- T09_ACCOUNT, T10_ROLE
 
 -- java23-shopping dbp 04.sql
--- T14_TITLE, T08_EMPLOYEE, T07_CUSTOMER
+-- T14_TITLE, T08_EMPLOYEE, T07_CUSTOMERt13_payment_methodt13_payment_method
 
 -- java23-shopping dbp 05.sql
 -- T13_PAYMENT_METHOD, T06_ORDER, T15_BILL, T16_ORDER_DETAIL
