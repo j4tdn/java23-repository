@@ -1,4 +1,4 @@
-SET FOREIGN_KEY_CHECKS = 0; -- disable fk
+
 
 SELECT * FROM t01_item;
 SELECT * FROM t02_size;
@@ -8,12 +8,12 @@ SELECT * FROM t05_gallery;
 SELECT * FROM t06_order;
 SELECT * FROM t07_customer;
 SELECT * FROM t08_employee;
-SELECT * FROM t09_account;
+
 SELECT * FROM t10_role;
 SELECT * FROM t11_order_status;
 SELECT * FROM t12_order_status_detail;
 SELECT * FROM t13_payment_method;
-SELECT * FROM t14_title;
+
 SELECT * FROM t15_bill;
 SELECT * FROM t16_order_detail;
 SELECT * FROM t17_item_received_note;
@@ -27,5 +27,3 @@ SELECT * FROM t20_item_group_backup;
 
 
 
-
-SET FOREIGN_KEY_CHECKS = 1; -- enable fk

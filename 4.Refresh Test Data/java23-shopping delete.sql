@@ -13,15 +13,13 @@ TRUNCATE TABLE t10_role;
 TRUNCATE TABLE t11_order_status;
 TRUNCATE TABLE t12_order_status_detail;
 TRUNCATE TABLE t13_payment_method;
-TRUNCATE TABLE t14_title;
+
 TRUNCATE TABLE t15_bill;
 TRUNCATE TABLE t16_order_detail;
 TRUNCATE TABLE t17_item_received_note;
 TRUNCATE TABLE t18_item_received_note_detail;
 TRUNCATE TABLE t19_provider;
 TRUNCATE TABLE t20_item_group_backup;
-
-
 
 
 SET FOREIGN_KEY_CHECKS = 1; -- enable fk
