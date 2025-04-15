@@ -1,0 +1,44 @@
+-- java23-shopping dbp 08.sql
+-- process for removing account and title table
+
+
+-- Xóa ràng buộc FK từ bảng con T07 T08 đến T09_ACCOUNT
+ALTER TABLE t07_customer DROP FOREIGN KEY FK_T07_T09;
+
+ALTER TABLE t08_employee DROP FOREIGN KEY FK_T08_T09;
+
+-- Xóa bảng cha T09_ACCOUNT
+DROP TABLE t09_account;
+
+-- Cập nhật columns cho T07_CUSTOMER
+ALTER TABLE t07_customer DROP COLUMN C07_ACCOUNT_ID;
+
+ALTER TABLE t07_customer ADD C07_USERNAME VARCHAR(50) NOT NULL;
+ALTER TABLE t07_customer ADD C07_PASSWORD TEXT NOT NULL;
+ALTER TABLE t07_customer ADD C07_ACCOUNT_STATUS BIT(1) NOT NULL DEFAULT 1;
+ALTER TABLE t07_customer ADD CONSTRAINT UNQ_C07_USERNAME UNIQUE (C07_USERNAME);
+
+
+-- Cập nhật columns cho T08_EMPLOYEE
+ALTER TABLE t08_employee DROP COLUMN C08_ACCOUNT_ID;
+
+
+ALTER TABLE t08_employee ADD C08_USERNAME VARCHAR(50) NOT NULL;
+ALTER TABLE t08_employee ADD C08_PASSWORD TEXT NOT NULL;
+ALTER TABLE t08_employee ADD C08_ACCOUNT_STATUS BIT(1) NOT NULL DEFAULT 1;
+ALTER TABLE t08_employee ADD C08_ROLE_ID INT NOT NULL;
+ALTER TABLE t08_employee ADD CONSTRAINT UNQ_C08_USERNAME UNIQUE (C08_USERNAME);
+ALTER TABLE t08_employee ADD CONSTRAINT FK_T08_T10 FOREIGN KEY (C08_ROLE_ID) REFERENCES t10_role(C10_ROLE_ID);
+
+
+ALTER TABLE t08_employee DROP FOREIGN KEY FK_T08_T14;
+ALTER TABLE t08_employee DROP COLUMN C08_TITLE_ID;
+DROP TABLE t14_title;
+
+
+-- Cách khác 
+-- 1. Tạo backup table tương ứng
+-- 2. Copy dữ liệu qua
+-- 3. Xóa table hiện tại
+-- 4. Tạo table mới với columns update
+-- 5. Copy dữ liệu cũ qua table mới
