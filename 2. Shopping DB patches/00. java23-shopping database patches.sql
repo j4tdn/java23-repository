@@ -23,3 +23,11 @@ CREATE DATABASE java23_shopping CHAR SET utf8mb4;
 
 -- java23-shopping dbp 07.sql
 -- T17_ITEM_RECEIVED_NOTE, T18_ITEM_RECEIVED_NOTE_DETAIL, T19_PROVIDER
+
+-- todo: testing with diagram
+
+
+
+
+
+
