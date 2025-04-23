@@ -12,7 +12,7 @@
 -- 3. Liệt kê top 5 mặt hàng có giá bán cao nhất
 
 	SELECT * FROM t03_item_detail
-	ORDER BY C03_SALES_PRICE DESC
+	ORDER BY C03_SALES_PRICE DESC, C03_ITEM_DETAIL_ID
     LIMIT 5;
  
 -- 4. Liệt kê toàn bộ đơn hàng
@@ -47,36 +47,79 @@
 
 
 -- 10. Giảm giá 20% tất cả các mặt hàng trong ngày 25/11/2019
-
+WITH SALES_ITEMS AS (
+	SELECT t16.C16_ITEM_DETAIL_ID ITEM_DETAIL_ID
+	  FROM t06_order t06
+	  JOIN t16_order_detail t16
+		ON t06.C06_ORDER_ID = t16.C16_ORDER_ID
+	 WHERE cast(t06.C06_ORDER_TIME AS DATE) = '2024-04-18'
+)
+SELECT *,
+       '18.04.2024' SALES_DAY,
+       ROUND(t03.C03_SALES_PRICE * 0.77, 2) promotion
+  FROM t03_item_detail t03
+ WHERE EXISTS (SELECT 43
+				 FROM SALES_ITEMS si
+				WHERE si.ITEM_DETAIL_ID = t03.C03_ITEM_DETAIL_ID);
 
 -- 11. Liệt kê tất cả các màu sắc của sản phẩm có bán trong cửa hàng.
 
 
 
 -- 12. Liệt kê tất cả các mặt hàng (MaMH, TenMH, ThoiGianDatHang) được bán trong ngày 23/11/2019
-
+	SELECT DISTINCT t01.C01_ITEM_ID,
+	   t01.C01_ITEM_NAME,
+       t06.C06_ORDER_TIME
+   FROM t06_order t06
+   JOIN t16_order_detail t16 ON t06.C06_ORDER_ID = t16.C16_ORDER_ID
+   JOIN t03_item_detail t03 ON t16.C16_ITEM_DETAIL_ID = t03.C03_ITEM_DETAIL_ID
+   JOIN t01_item t01 ON t03.C03_ITEM_ID = t01.C01_ITEM_ID
+	WHERE cast(t06.C06_ORDER_TIME AS DATE) = '2024-04-18';
 -- 13. Liệt kê các mặt hàng có giá bán từ 100 - 300
-
+	SELECT *
+	FROM t03_item_detail
+	WHERE C03_SALES_PRICE BETWEEN 100 AND 300;
 
 
 -- 14. Liệt kê tất cả các mặt hàng thuộc loại hàng là 'Mũ' và 'Thắt lưng'
-
+	SELECT *
+  FROM T01_ITEM t01
+ WHERE EXISTS (SELECT 1
+                FROM T04_ITEM_GROUP t04
+			   WHERE (C04_ITEM_GROUP_NAME LIKE '%Thắt lưng%' OR C04_ITEM_GROUP_NAME LIKE '%Mũ%')
+                 AND t04.C04_ITEM_GROUP_ID = t01.C01_ITEM_GROUP_ID);
 
 
 -- 15. Liệt kê các đơn hàng được đặt trong ngày (28/11/2019, 14/12/2019)
-
+	SELECT *
+	FROM t06_order
+	WHERE cast(C06_ORDER_TIME as DATE) IN ('2024-04-18', '2024-04-12');
 
 -- 16. Sắp xếp các mặt hàng với giá bán tăng dần
-
+SELECT t01.C01_ITEM_ID ITEM_ID,
+	   t01.C01_ITEM_NAME ITEM_NAME,
+       avg(t03.C03_SALES_PRICE) AVG_SALES_PRICE
+  FROM t03_item_detail t03
+  JOIN t01_item t01 ON t03.C03_ITEM_ID = t01.C01_ITEM_ID
+  GROUP BY t01.C01_ITEM_ID,
+           t01.C01_ITEM_NAME
+  ORDER BY AVG_SALES_PRICE;
 
 
 -- 17. Sắp xếp các mặt hàng với giá mua giảm dần
-
+	SELECT t01.C01_ITEM_ID ITEM_ID,
+	   t01.C01_ITEM_NAME ITEM_NAME,
+	   MAX(C18_BUY_PRICE) BUY_PRICE
+   FROM T18_ITEM_RECEIVED_NOTE_DETAIL t18
+   JOIN t01_item t01 ON t18.C18_ITEM_ID = t01.C01_ITEM_ID
+   GROUP BY C18_ITEM_ID, t01.C01_ITEM_NAME
+   ORDER BY BUY_PRICE DESC;
 
 -- 18. Sắp xếp các mặt hàng với giá bán tăng dần, giá mua giảm dần
 
 -- 19. Đếm số lượng các mặt hàng trong hệ thống
-
+	SELECT count(*) FROM t01_item;
+	SELECT sum(C03_AMOUNT) FROM t03_item_detail;
 
 -- 20. Số lượng 'Giày da Nam' được bán trong ngày 23/11/2019
 
@@ -103,6 +146,13 @@
 -- 29. Liệt kê những mặt hàng có MaLoai = 2 và thuộc đơn hàng 100100
 
 -- 30. Tìm những mặt hàng có Mã Loại = 2 và đã được bán trong ngày 28/11
+	SELECT * FROM 
+		t01_item t01 
+        JOIN t03_item_detail t03 ON t03.C03_ITEM_ID = t01.C01_ITEM_ID
+        JOIN t16_order_detail t16 ON t16.C16_ITEM_DETAIL_ID = t03.C03_ITEM_DETAIL_ID
+        JOIN t06_order t06 ON t06.C06_ORDER_ID = t16.C16_ORDER_ID
+        WHERE cast(t06.C06_ORDER_TIME AS DATE) =str_to_date('10/04/2024', '%d/%m/%Y')
+        AND t01.C01_ITEM_GROUP_ID =1;
 
 -- 31. Liệt kê những mặt hàng là 'Mũ' không bán được trong ngày 14/02/2019
 
