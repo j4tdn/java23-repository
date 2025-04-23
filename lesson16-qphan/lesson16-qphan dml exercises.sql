@@ -206,27 +206,113 @@ SELECT t04.C04_ITEM_GROUP_ID,
  HAVING TOTAL_OF_ITEMS > 2000;
 
 -- 26. Hiển thị mặt hàng có số lượng nhiều nhất trong mỗi loại hàng
+WITH ITEM_DETAILS AS (
+	SELECT t04.*,
+       t03.*,
+       ROW_NUMBER() OVER (
+ 			PARTITION BY t04.C04_ITEM_GROUP_ID ORDER BY t03.C03_AMOUNT DESC, t03.C03_ITEM_DETAIL_ID
+ 	   ) row_num
+	  FROM t04_item_group t04
+	  JOIN t01_item t01 ON t01.C01_ITEM_GROUP_ID = t04.C04_ITEM_GROUP_ID
+	  JOIN t03_item_detail t03 ON t01.C01_ITEM_ID = t03.C03_ITEM_ID
+	 ORDER BY t03.C03_SALES_PRICE DESC, t03.C03_ITEM_DETAIL_ID
+)
+SELECT *
+  FROM ITEM_DETAILS
+ WHERE row_num = 1;
 
 -- 27. Hiển thị giá bán trung bình của mỗi loại hàng
+SELECT t04.C04_ITEM_GROUP_ID,
+       t04.C04_ITEM_GROUP_NAME,
+       ROUND(avg(t03.C03_SALES_PRICE), 2) AVG_SALES_PRICE
+  FROM t03_item_detail t03
+  JOIN t01_item t01 ON t03.C03_ITEM_ID = t01.C01_ITEM_ID
+  JOIN t04_item_group t04 ON t04.C04_ITEM_GROUP_ID = t01.C01_ITEM_GROUP_ID
+  GROUP BY t04.C04_ITEM_GROUP_ID,
+           t04.C04_ITEM_GROUP_NAME;
 
 -- 28. In ra 3 loại hàng có số lượng hàng còn lại nhiều nhất ở thời điểm hiện tại
+SELECT t04.C04_ITEM_GROUP_ID,
+       t04.C04_ITEM_GROUP_NAME,
+       SUM(t03.C03_AMOUNT) TOTAL_OF_ITEMS
+  FROM t03_item_detail t03
+  JOIN t01_item t01 ON t03.C03_ITEM_ID = t01.C01_ITEM_ID
+  JOIN t04_item_group t04 ON t04.C04_ITEM_GROUP_ID = t01.C01_ITEM_GROUP_ID
+  GROUP BY t04.C04_ITEM_GROUP_ID,
+           t04.C04_ITEM_GROUP_NAME
+  ORDER BY TOTAL_OF_ITEMS DESC, C04_ITEM_GROUP_ID
+  LIMIT 3;
 
 -- 29. Liệt kê những mặt hàng có MaLoai = 2 và thuộc đơn hàng 100100
+SELECT t01.*
+  FROM t01_item t01
+  JOIN t03_item_detail t03 ON t03.C03_ITEM_ID = t01.C01_ITEM_ID
+  JOIN t16_order_detail t16 ON t16.C16_ITEM_DETAIL_ID = t03.C03_ITEM_DETAIL_ID
+ WHERE t16.C16_ORDER_ID = 5
+   AND t01.C01_ITEM_GROUP_ID = 2;
+  
 
 -- 30. Tìm những mặt hàng có Mã Loại = 2 và đã được bán trong ngày 28/11
+SELECT t01.*
+  FROM t01_item t01
+  JOIN t03_item_detail t03 ON t03.C03_ITEM_ID = t01.C01_ITEM_ID
+  JOIN t16_order_detail t16 ON t16.C16_ITEM_DETAIL_ID = t03.C03_ITEM_DETAIL_ID
+  JOIN t06_order t06 ON t06.C06_ORDER_ID = t16.C16_ORDER_ID
+ WHERE cast(t06.C06_ORDER_TIME AS DATE) = str_to_date('10/04/2024', '%d/%m/%Y')
+   AND t01.C01_ITEM_GROUP_ID = 1;
 
 -- 31. Liệt kê những mặt hàng là 'Mũ' không bán được trong ngày 14/02/2019
+SELECT *
+  FROM t01_item t01
+  JOIN t04_item_group t04 ON t01.C01_ITEM_GROUP_ID = t04.C04_ITEM_GROUP_ID
+  WHERE t04.C04_ITEM_GROUP_NAME LIKE '%Mũ%'
+    AND NOT EXISTS (
+			SELECT 123
+			  FROM t03_item_detail t03
+			  JOIN t16_order_detail t16 ON t16.C16_ITEM_DETAIL_ID = t03.C03_ITEM_DETAIL_ID
+			  JOIN t06_order t06 ON t06.C06_ORDER_ID = t16.C16_ORDER_ID
+			 WHERE cast(t06.C06_ORDER_TIME AS DATE) = str_to_date('18/04/2024', '%d/%m/%Y')
+               AND t01.C01_ITEM_ID = t03.C03_ITEM_ID
+    );
 
 -- 32. Cập nhật giá bán của tất cả các mặt hàng thuộc loại hàng 'Áo' thành 199
+SELECT * FROM t03_item_detail WHERE C03_ITEM_ID IN (1,2,3,12);
+UPDATE t03_item_detail
+   SET C03_SALES_PRICE = 999
+ WHERE C03_ITEM_ID IN (
+	SELECT C01_ITEM_ID 
+      FROM t01_item t01
+      JOIN t04_item_group t04 ON t04.C04_ITEM_GROUP_ID = t01.C01_ITEM_GROUP_ID
+	 WHERE t04.C04_ITEM_GROUP_NAME LIKE '%Áo%'
+);
 
 -- 33. Backup data. Tạo table LoaiHang_SaoLuu(MaLoai, TenLoai)
 --     Sao chép dữ liệu từ bảng LoaiHang sang LoaiHang_SaoLuu
 
 -- 34. Liệt kê 2 sản phẩm (có số lượng tồn kho nhiều nhất) của loại hàng 'Áo' và 'Quần'
+-- 34. Liệt kê 2 sản phẩm (có số lượng tồn kho nhiều nhất) của mỗi loại hàng
+SELECT t01.C01_ITEM_ID ITEM_ID,
+       t01.C01_ITEM_NAME ITEM_NAME,
+       SUM(t03.C03_AMOUNT) AMOUNT
+  FROM t01_item t01
+  JOIN t04_item_group t04 ON t04.C04_ITEM_GROUP_ID = t01.C01_ITEM_GROUP_ID
+  JOIN t03_item_detail t03 ON t03.C03_ITEM_ID = t01.C01_ITEM_ID
+ WHERE t04.C04_ITEM_GROUP_NAME IN ('Áo', 'Quần')
+ GROUP BY t01.C01_ITEM_ID, C01_ITEM_NAME
+ ORDER BY AMOUNT DESC, C01_ITEM_ID
+ LIMIT 2;
+
 
 -- 35. Tính tổng tiền cho đơn hàng 02
     -- Với tổng tiền được tính bằng tổng các sản phẩm và số lượng của sản phẩm tương ứng
 
 -- 36. Xuất thông tin hóa đơn của đơn hàng 02 với thông tin như sau.
 	-- SoDH ChiTietDonHang           TongTien
-    -- 02   TenMH:GiaBan:SoLuong     100
+    -- 02   TenMH:KichCo:GiaBan:SoLuong     100
+SELECT t16.C16_ORDER_ID ORDER_ID,
+       group_concat(concat(t01.C01_ITEM_NAME, ',', t03.C03_SIZE_ID, ',', t03.C03_SALES_PRICE, ',', t16.C16_AMOUNT) SEPARATOR ':') ITEM_DETAILS,
+       SUM(t03.C03_SALES_PRICE * t16.C16_AMOUNT) TOTAL_OF_MONEY
+  FROM t01_item t01
+  JOIN t03_item_detail t03 ON t03.C03_ITEM_ID = t01.C01_ITEM_ID
+  JOIN t16_order_detail t16 ON t16.C16_ITEM_DETAIL_ID = t03.C03_ITEM_DETAIL_ID
+ GROUP BY t16.C16_ORDER_ID;
