@@ -148,7 +148,11 @@ WHERE EXISTS (
 ORDER BY t02.C02_EMPLOYEES_ID, t05.C05_PROJECT_ID;
 
 -- 3. Liệt kê các nhân viên có mức lương >= mức lương của người giám sát/quản lý trực tiếp nhân
--- viên đó
+SELECT t02.C02_EMPLOYEES_ID, t02.C02_NAME, t02.C02_SALARY, 
+       t02_2.C02_EMPLOYEES_ID AS SupervisorID, t02_2.C02_NAME AS SupervisorName, t02_2.C02_SALARY AS SupervisorSalary
+FROM T02_EMPLOYEES t02
+JOIN T02_EMPLOYEES t02_2 ON t02.C02_SUPERVISOR_ID = t02_2.C02_EMPLOYEES_ID
+WHERE t02.C02_SALARY >= t02_2.C02_SALARY;
 
 -- 4. Liệt kê các phòng ban có số lượng nhân viên lớn hơn *?*
 SELECT t01.C01_DEPARTMENT_ID, t01.C01_DEPARTMENT_NAME, COUNT(t02.C02_EMPLOYEES_ID) AS EmployeeCount
