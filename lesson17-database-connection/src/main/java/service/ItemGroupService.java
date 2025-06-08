@@ -44,6 +44,7 @@ public interface ItemGroupService {
 	 */
 	void save(ItemGroup group);
 	
+
 	/**
 	 * Save new item groups if not exists
 	 * 
@@ -58,5 +59,6 @@ public interface ItemGroupService {
 	 */
 	void merge(ItemGroup group);
 	
+
 	
 }

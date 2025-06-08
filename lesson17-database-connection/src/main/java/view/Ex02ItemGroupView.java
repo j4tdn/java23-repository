@@ -21,6 +21,7 @@ public class Ex02ItemGroupView {
 		itemGroupService.merge(
 				new ItemGroup(17, "Loại Hàng 17")
 		);
+		itemGroupService.save(new ItemGroup(8, "Balô"));
 		
 		System.out.println();
 		
@@ -33,4 +34,3 @@ public class Ex02ItemGroupView {
 		generate("4. Thống kê số lượng mặt hàng của từng loại hàng", itemGroupService.statisticItemGroups());
 	}
 	
-}

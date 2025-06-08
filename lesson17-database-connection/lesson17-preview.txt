@@ -64,6 +64,9 @@ rs = st.executeQuery(sql);
 pst = conn.prepareStatement(sql);
 // pst.setString(1, name);
 rs = pst.executeQuery();
+<<<<<<< HEAD
     
     
     
+=======
+>>>>>>> d957243 (lesson17-database-connection 08.06.2025)
