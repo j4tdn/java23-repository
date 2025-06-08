@@ -5,6 +5,8 @@ import service.ItemGroupServiceImpl;
 
 import static utils.PrintUtils.*;
 
+import java.util.List;
+
 import persistence.ItemGroup;
 
 public class Ex02ItemGroupView {
@@ -16,7 +18,9 @@ public class Ex02ItemGroupView {
 	}
 	
 	public static void main(String[] args) {
-		itemGroupService.save(new ItemGroup(8, "Balô"));
+		itemGroupService.merge(
+				new ItemGroup(17, "Loại Hàng 17")
+		);
 		
 		System.out.println();
 		

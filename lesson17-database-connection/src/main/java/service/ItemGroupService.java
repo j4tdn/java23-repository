@@ -44,5 +44,19 @@ public interface ItemGroupService {
 	 */
 	void save(ItemGroup group);
 	
+	/**
+	 * Save new item groups if not exists
+	 * 
+	 * @param groups the groups
+	 */
+	void save(List<ItemGroup> groups);
+	
+	/**
+	 * Merge new item group
+	 * 
+	 * @param group the group
+	 */
+	void merge(ItemGroup group);
+	
 	
 }

@@ -19,7 +19,7 @@ public class JdbcItemDao extends GenericDao implements ItemDao {
 	
 	@Override
 	public List<Item> getAll() {
-		return getElements(Q_GET_ALL, () -> {
+		return getElementsAsList(Q_GET_ALL, () -> {
 			Item item = null;
 			try {
 				item = new Item(rs.getInt("ITEM_ID"),rs.getString("ITEM_NAME"),

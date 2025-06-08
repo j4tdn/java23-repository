@@ -48,4 +48,16 @@ public class ItemGroupServiceImpl implements ItemGroupService {
 		}
 	}
 	
+	@Override
+	public void save(List<ItemGroup> groups) {
+		if (!groups.isEmpty()) {
+			itemGroupDao.save(groups);
+		}
+	}
+	
+	@Override
+	public void merge(ItemGroup group) {
+		Objects.requireNonNull(group, "group should not be null");
+		itemGroupDao.merge(group);
+	}
 }
