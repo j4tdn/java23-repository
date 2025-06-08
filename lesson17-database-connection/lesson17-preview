@@ -1,0 +1,66 @@
+MVC
+1. Model
+--> Nơi chứa các đối tượng thao tác với CSDL
+--> Package: dao (data access object) để tránh nhầm lẫn
+
+2. View
+--> Có thể là file java hoặc fe file phụ thuộc vào ngôn ngữ đang sử dụng
+--> Java: Render UI từ server trả về FE
+--> FE  : Render ở phía client
+
+3. Controller
+--> Nơi chứa các đối tượng nhận request từ view
+	- Truy vấn dữ liệu từ dao
+	- Xử lý logic nếu có
+	- Trả về view
+--> Package: controller: nhận và trả request
+		   : service   : xử lý logic và lấy dữ liệu từ dao
+		   
+Bài toán select -> executeQuery
+Bài toán update -> executeUpdate
+
+
+Các bước làm:
+1. Viết câu truy vấn (bỏ qua bước chuẩn bị nếu đơn giản)
+-- SELECT * FROM T04_ITEM_GROUP
+
+2. Tạo method trong DAO tương ứng (tạo interface/class dao nếu chưa có)
+-- Suy nghĩ xem method sẽ có
+   + KDL trả về là gì
+   + Tham số truyền vào là gì
+   + Đặt method đó ở dao interface/class nào cho hợp lý
+     ... Tạo abstract method trong interface
+	 ... Tạo implementation method trong class
+		 update/insert
+		 
+3. Tạo method trong service tương ứng (tạo interface/class service nếu chưa có)
+-- Dạng 1: service chỉ có nhiệm vụ là lấy dữ liệu từ dao
+   ... KDL trả về thường giống dao method đang gọi
+-- Dạng 2: service có nhiệm vụ lấy dữ liệu từ dao (1 hoặc nhiều method) và xử lý logic
+   ... KDL trả về phải suy nghĩ cho phù hợp với bài toán
+==> Validate dữ liệu đầu vào
+   
+4. Gọi service từ view
+
+
+* sql injection: 
+--> kỹ thuật tấn công cơ bản vào hệ thống bằng cách truyền giá trị vào cho tham số của câu lệnh SQL để làm cho câu lệnh SQL
+	luôn đúng và bỏ qua các điều kiện khác
+--> Thường xảy ra khi tham số truyền vào có là chuỗi (varchar/string)
+	
+	VD1: login(username, pasword) --> inject value cho user name || password để sql đúng --> trả về dữ liệu
+		--> trả về đối tượng != null --> có tồn tại user --> login thành công
+		
+	VD2: SELECT * FROM T04_ITEM_GROUP WHERE C04_ITEM_GROUP_NAME = 'x' OR '1=1'
+	
+* Giải quyết
+- sql không có tham số truyền vào: statement (sql hoàn chỉnh)
+- sql có tham số truyền vào: preparedStatement (sql có thể truyền tham số, set giá trị bởi jdbc)
+
+- Khác nhau giữa statement và preparedstatement
+	st = conn.createStatement();
+	rs = st.executeQuery(sql);
+
+	pst = conn.prepareStatement(sql);
+	//pst.setString(1, name);
+	rs = pst.executeQuery();
