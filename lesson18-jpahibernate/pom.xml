@@ -4,7 +4,11 @@
   <artifactId>lesson18-jpahibernate</artifactId>
   <version>1.0-SNAPSHOT</version>
   
+<<<<<<< HEAD
   <properties>
+=======
+    <properties>
+>>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 	  <com.mysql.version>9.3.0</com.mysql.version>
 	  <org.hibernate.version>6.6.13.Final</org.hibernate.version>
   </properties>
@@ -22,4 +26,8 @@
 		    <version>${com.mysql.version}</version>
 		</dependency>
   </dependencies>
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 </project>

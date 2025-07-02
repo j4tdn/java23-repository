@@ -30,4 +30,8 @@ public class Ex02ItemGroupView {
 		
 		System.out.println("\n==== Kết thúc chương trình ====");
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)

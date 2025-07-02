@@ -1,26 +1,20 @@
-package persistence;
 
-<<<<<<< HEAD
+package persistence.dto;
+
 import java.util.ArrayList;
 import java.util.List;
-=======
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-<<<<<<< HEAD
 import jakarta.persistence.NamedNativeQueries;
 import jakarta.persistence.NamedNativeQuery;
 import jakarta.persistence.OneToMany;
-=======
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "t04_item_group")
-<<<<<<< HEAD
 @NamedNativeQueries(
 	@NamedNativeQuery(
 		name = ItemGroup.Q_GET_ALL,
@@ -32,10 +26,6 @@ public class ItemGroup {
 	
 	public static final String Q_GET_ALL = "Q_GET_ALL";
 	
-=======
-public class ItemGroup {
-	
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 	@Id
 	@Column(name = "C04_ITEM_GROUP_ID")
 	private Integer id;
@@ -43,15 +33,12 @@ public class ItemGroup {
 	@Column(name = "C04_ITEM_GROUP_NAME")
 	private String name;
 	
-<<<<<<< HEAD
 	// OneToMany: Mặc định lazy fetch
 	
 	// mappedBy = "Tên của thuộc tính đã mapping quan hệ N-1 bên Entity 1"
 	@OneToMany(mappedBy = "group")
 	
 	private List<Item> items = new ArrayList<>();
-=======
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 	/**
 	 * Empty constructor
 	 */
@@ -82,7 +69,6 @@ public class ItemGroup {
 		this.name = name;
 	}
 	
-<<<<<<< HEAD
 	public List<Item> getItems() {
 		return items;
 	}
@@ -91,8 +77,6 @@ public class ItemGroup {
 		this.items = items;
 	}
 	
-=======
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) {
@@ -115,8 +99,4 @@ public class ItemGroup {
 	public String toString() {
 		return "ItemGroup [id=" + id + ", name=" + name + "]";
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)

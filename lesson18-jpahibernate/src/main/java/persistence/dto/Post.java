@@ -1,4 +1,4 @@
-package persistence;
+package persistence.dto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +8,7 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-<<<<<<< HEAD
 import jakarta.persistence.GenerationType;
-=======
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
@@ -22,20 +19,11 @@ import jakarta.persistence.Table;
 @Table(name = "t23_post")
 public class Post {
 
-<<<<<<< HEAD
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "C23_ID")
 	private Integer id;
 
-=======
-	
-	@Id
-	@GeneratedValue
-	@Column(name = "C23_ID")
-	private Integer id;
-	
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 	@Column(name = "C23_TITLE")
 	private String title;
 	
@@ -44,7 +32,6 @@ public class Post {
 			name = "t24_post_tag",
 			joinColumns = @JoinColumn(name = "C24_POST_ID", referencedColumnName = "C23_ID"),
 			inverseJoinColumns = @JoinColumn(name = "C24_TAG_ID", referencedColumnName = "C25_ID")
-<<<<<<< HEAD
 	)
 	private List<Tag> tags = new ArrayList<>();
 	
@@ -61,14 +48,6 @@ public class Post {
 	 * @param title the title
 	 */
 	public Post(String title) {
-=======
-			)
-	
-	private List<Tag> tags = new ArrayList<>();
-
-	public Post(Integer id, String title) {
-		this.id = id;
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 		this.title = title;
 	}
 
@@ -87,7 +66,6 @@ public class Post {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-<<<<<<< HEAD
 	
 	public List<Tag> getTags() {
 		return tags;
@@ -108,9 +86,6 @@ public class Post {
         tag.getPosts().remove(this);
     }
 	
-=======
-
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) {
@@ -128,17 +103,9 @@ public class Post {
 	public int hashCode() {
 		return Objects.hash(getId());
 	}
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 	@Override
 	public String toString() {
 		return "Post [id=" + id + ", title=" + title + "]";
 	}
-<<<<<<< HEAD
-=======
-	
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 }

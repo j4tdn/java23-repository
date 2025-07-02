@@ -19,4 +19,8 @@ public class Ex06ItemDetailView {
 		System.out.println("\n== End Ex06ItemDetailView ==");
 	}
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)

@@ -1,0 +1,10 @@
+Database Level
+- Khi 2 tables có quan hệ N-N ==> tạo table mới
+
+
+DAO(JPA/Hibernate) Level
+- Dạng 1: Table mới(N-N) chỉ chứa 2 columns là PK đồng thời cũng là FK liên kết 2 tables gốc: t24_post_tag
+  ==> ít gặp
+- Dạng 2: Table mới(N-N) chứa 2 columns đồng thời có thời có thêm các columns khác
+  ** 2.1: Khóa chính là 2 columns liên kết từ 2 tables gốc: t16_order_detail
+  ** 2.2: Khóa chính là 1 column mới, 2 columns kia thêm ràng buộc unique: t03_item_detail

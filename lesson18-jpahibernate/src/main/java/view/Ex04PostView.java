@@ -44,4 +44,8 @@ public class Ex04PostView {
 		post.addTag(tag2);
 		return post;
 	}
+<<<<<<< HEAD
 } 
+=======
+} 
+>>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)

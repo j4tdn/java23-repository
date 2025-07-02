@@ -48,7 +48,10 @@ public class ItemGroupServiceImpl implements ItemGroupService {
 		}
 	}
 	
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 	@Override
 	public void save(List<ItemGroup> groups) {
 		if (!groups.isEmpty()) {
