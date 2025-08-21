@@ -5,6 +5,7 @@ import java.util.function.Consumer;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
 
 import connection.DbConnection;
 
