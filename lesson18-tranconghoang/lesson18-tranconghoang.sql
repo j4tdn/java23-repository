@@ -1,0 +1,92 @@
+CREATE DATABASE java23_students;
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+
+CREATE TABLE T01_STUDENT (
+	C01_STUDENT_ID INT AUTO_INCREMENT PRIMARY KEY,
+    C01_STUDENT_NAME VARCHAR(255) NOT NULL,
+    C01_GENDER VARCHAR(50) NOT NULL,
+    C01_CLASS_ID INT NOT NULL,
+    CONSTRAINT FK_T01_T02 FOREIGN KEY (C01_CLASS_ID) REFERENCES T02_CLASS (C02_CLASS_ID)
+);
+
+CREATE TABLE T02_CLASS (
+	C02_CLASS_ID INT AUTO_INCREMENT PRIMARY KEY,
+    C02_CLASS_NAME VARCHAR(100) NOT NULL,
+    C02_TEACHER VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE T03_RESULT (
+	C03_STUDENT_ID INT NOT NULL,
+    C03_SUBJECT VARCHAR(50) NOT NULL,
+    C03_SCORE DECIMAL(3,1) NOT NULL,
+    PRIMARY KEY (C03_STUDENT_ID, C03_SUBJECT),
+    CONSTRAINT FK_T03_T01 FOREIGN KEY (C03_STUDENT_ID) REFERENCES T01_STUDENT (C01_STUDENT_ID)
+);
+
+INSERT INTO T02_CLASS (C02_CLASS_ID, C02_CLASS_NAME, C02_TEACHER) VALUES
+(1, '12A', 'Ha Cong Trung'),
+(2, '12B', 'Dang Tu Anh'),
+(3, '12C', 'Nguyen Van Tam');
+
+INSERT INTO T01_STUDENT (C01_STUDENT_ID, C01_STUDENT_NAME, C01_GENDER, C01_CLASS_ID) VALUES
+(1, 'Dinh Thi Ngoc', 'Female', 2),
+(2, 'Nguyen Thanh Hung', 'Male', 1),
+(3, 'Tran Mai Hoa', 'Female', 2),
+(4, 'Doan Quang Vinh', 'Male', 3),
+(5, 'Cao Anh Dao', 'Female', 3),
+(6, 'Tran Kim Tuyen', 'Male', 3);
+
+INSERT INTO T03_RESULT (C03_STUDENT_ID, C03_SUBJECT, C03_SCORE) VALUES
+(1, 'Math', 8.0),
+(1, 'Literature', 7.0),
+(1, 'History', 9.5),
+(2, 'Math', 6.8),
+(2, 'Literature', 4.9),
+(2, 'History', 8.2),
+(3, 'Math', 9.8),
+(3, 'Literature', 7.2),
+(3, 'History', 8.8),
+(4, 'Math', 7.5),
+(4, 'Literature', 8.1),
+(4, 'History', 6.9),
+(5, 'Math', 5.5),
+(5, 'Literature', 6.0),
+(5, 'History', 7.3),
+(6, 'Math', 8.4),
+(6, 'Literature', 7.7),
+(6, 'History', 9.0);
+
+
+
+
+-- Questions
+-- 1. 
+-- --> student_id and subject
+
+-- 3 queries
+-- List name, gender and teacher name of all students
+SELECT C01_STUDENT_NAME STUDENT_NAME, 
+       C01_GENDER GENDER, 
+       C02_TEACHER TEACHER
+FROM T01_STUDENT t1, T02_CLASS t2
+WHERE t1.C01_CLASS_ID = t2.C02_CLASS_ID;
+
+-- List teacher name and number of all student in class 12C
+SELECT t2.C02_TEACHER TEACHER,
+       COUNT(t1.C01_STUDENT_ID) NUMBER_OF_STUDENTS
+FROM T01_STUDENT t1
+JOIN T02_CLASS t2 ON t1.C01_CLASS_ID = t2.C02_CLASS_ID
+WHERE t2.C02_CLASS_NAME = '12C'
+GROUP BY t2.C02_TEACHER;
+
+-- List the class name and number of the students who have good at Math (score >=8) and good at Literature (score >=8)
+SELECT t2.C02_CLASS_NAME CLASS_NAME,
+	   COUNT(DISTINCT t1.C01_STUDENT_ID) NUMBER_OF_STUDENTS
+FROM T01_STUDENT t1
+JOIN T02_CLASS t2 ON t1.C01_CLASS_ID = t2.C02_CLASS_ID
+JOIN T03_RESULT t31 ON t1.C01_STUDENT_ID = t31.C03_STUDENT_ID
+JOIN T03_RESULT t32 ON t1.C01_STUDENT_ID = t32.C03_STUDENT_ID
+WHERE t31.C03_SUBJECT = 'Math' AND t31.C03_SCORE >= 8 AND t32.C03_SUBJECT = 'Literature' AND t32.C03_SCORE >= 8
+GROUP BY t2.C02_CLASS_NAME;
