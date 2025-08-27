@@ -24,7 +24,7 @@ public class Class {
     @Column(name = "C02_TEACHER")
     private String teacher;
 
-    // Quan hệ 1-N: Một lớp có nhiều học sinh
+    
     @OneToMany(mappedBy = "classEntity")
     private List<Student> students = new ArrayList<>();
 
@@ -89,6 +89,6 @@ public class Class {
 
     @Override
     public String toString() {
-        return "ClassEntity [id=" + id + ", name=" + name + ", teacher=" + teacher + "]";
+        return "Class [id=" + id + ", name=" + name + ", teacher=" + teacher + "]";
     }
 }

@@ -89,6 +89,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "StudentEntity [id=" + id + ", name=" + name + ", gender=" + gender + "]";
+        return "Student [id=" + id + ", name=" + name + ", gender=" + gender + "]";
     }
 }

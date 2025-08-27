@@ -9,16 +9,9 @@ public class HibernateStudentDao extends GenericDao<Student> implements StudentD
     private static final String Q_GET_BY_CLASS_ID = ""
             + "";
 
-    @Override
-    public List<Student> get(int classId) {
-        return openSession()
-                .createNativeQuery(Q_GET_BY_CLASS_ID, getEntityClass())
-                .setParameter("classId", classId)
-                .getResultList();
-    }
 
-    @Override
-    Class<Student> getEntityClass() {
-        return Student.class;
-    }
+	@Override
+	public List<Student> getByClassId() {
+		return null;
+	}
 }

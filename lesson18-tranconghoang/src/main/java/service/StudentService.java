@@ -11,5 +11,5 @@ public interface StudentService {
 	 * 
 	 * @return list of items
 	 */
-	List<Student> getAll();
+	List<Student> get(int id);
 }
