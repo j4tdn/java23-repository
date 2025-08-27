@@ -1,7 +1,5 @@
 package view;
 
-import static utils.PrintUtils.generate;
-
 import service.ItemGroupService;
 import service.ItemGroupServiceImpl;
 
@@ -16,22 +14,24 @@ public class Ex02ItemGroupView {
 	public static void main(String[] args) {
 		System.out.println("==== Bắt đầu chương trình ====\n");
 		
-		generate("1. Liệt kê tất cả các loại hàng", itemGroupService.getAll());
+		itemGroupService.testHibernateCache();
 		
-		final var group3 = itemGroupService.get(3);
+		// Với hàm merge, khi truyền object nếu chưa tồn tại thì nên để id là null
+		// Nếu có tồn tại thì mới truyền id vào
+		// itemGroupService.delete(Set.of(19, 20, 21));
 		
-		generate("2. Liệt kê loại hàng theo mã loại", group3);
+		// generate("1. Liệt kê tất cả các loại hàng", itemGroupService.getAll());
 		
-		generate("3. Liệt kê các mặt hàng của loại hàng group3", group3.getItems());
-		
-		generate("4. Liệt kê loại hàng theo tên loại", itemGroupService.get("Áo"));
-		
-		generate("5. Thống kê số lượng mặt hàng cho từng loại hàng", itemGroupService.statisticItemsOfEachGroup());
+//		final var group3 = itemGroupService.get(3);
+//		
+//		generate("2. Liệt kê loại hàng theo mã loại", group3);
+//		
+//		generate("3. Liệt kê các mặt hàng của loại hàng group3", group3.getItems());
+//		
+//		generate("4. Liệt kê loại hàng theo tên loại", itemGroupService.get("Áo"));
+//		
+//		generate("5. Thống kê số lượng mặt hàng cho từng loại hàng", itemGroupService.statisticItemsOfEachGroup());
 		
 		System.out.println("\n==== Kết thúc chương trình ====");
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)

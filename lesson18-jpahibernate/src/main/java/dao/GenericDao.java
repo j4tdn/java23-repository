@@ -37,8 +37,5 @@ abstract class GenericDao<T> {
 	}
 	
 	abstract Class<T> getEntityClass();
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
+

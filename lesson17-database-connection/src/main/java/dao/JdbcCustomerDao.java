@@ -3,7 +3,6 @@ package dao;
 import java.sql.SQLException;
 
 import persistence.Customer;
-import persistence.ItemGroup;
 import utils.SqlUtils;
 
 public class JdbcCustomerDao extends GenericDao implements CustomerDao {
@@ -60,8 +59,4 @@ public class JdbcCustomerDao extends GenericDao implements CustomerDao {
 					}
 				});
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)

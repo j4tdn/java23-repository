@@ -7,16 +7,12 @@ import java.util.Objects;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-<<<<<<< HEAD
 import jakarta.persistence.GenerationType;
-=======
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-<<<<<<< HEAD
 @Table(name = "t25_tag")
 public class Tag {
 
@@ -44,26 +40,6 @@ public class Tag {
 	 */
 	public Tag(String name) {
 		this.name = name;
-=======
-@Table(name = "T25_TAG")
-public class Tag {
-
-	
-	@Id
-	@GeneratedValue
-	@Column(name = "C25_ID")
-	private Integer id;
-	
-	@Column(name = "C25_NAME")
-	private String title;
-
-	@ManyToMany(mappedBy = "tags")
-	private List<Post> post = new ArrayList<>();
-	
-	public Tag(Integer id, String title) {
-		this.id = id;
-		this.title = title;
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 	}
 
 	public Integer getId() {
@@ -74,7 +50,6 @@ public class Tag {
 		this.id = id;
 	}
 
-<<<<<<< HEAD
 	public String getName() {
 		return name;
 	}
@@ -91,30 +66,11 @@ public class Tag {
 		this.posts = posts;
 	}
 
-=======
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public List<Post> getPost() {
-		return post;
-	}
-	
-	public void setPost(List<Post> post) {
-		this.post = post;
-	}
-	
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) {
 			return true;
 		}
-<<<<<<< HEAD
 
 		if (!(o instanceof Tag that)) {
 			return false;
@@ -123,33 +79,13 @@ public class Tag {
 		return Objects.equals(getId(), that.getId());
 	}
 
-=======
-		
-		if (!(o instanceof Tag that)) {
-			return false;
-		}
-		
-		return Objects.equals(getId(), that.getId());
-	}
-	
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId());
 	}
-<<<<<<< HEAD
 
 	@Override
 	public String toString() {
 		return "Tag [id=" + id + ", name=" + name + "]";
 	}
-=======
-	
-	@Override
-	public String toString() {
-		return "Tag [id=" + id + ", title=" + title + "]";
-	}
-	
-	
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 }

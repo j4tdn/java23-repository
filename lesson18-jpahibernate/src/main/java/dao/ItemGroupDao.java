@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.List;
+import java.util.Set;
 
 import persistence.ItemGroup;
 import persistence.dto.ItemGroupDto;
@@ -37,8 +38,37 @@ public interface ItemGroupDao {
 	 */
 	List<ItemGroupDto> statisticItemsOfEachGroup();
 
-<<<<<<< HEAD
+	/**
+	 * Save the new item group
+	 * 
+	 * @param group the group
+	 */
+	void save(ItemGroup group);
+
+	/**
+	 * Update the existing item group
+	 * 
+	 * @param group the group
+	 */
+	void update(ItemGroup group);
+
+	/**
+	 * Delete group by given groupId
+	 * 
+	 * @param groupId the group id
+	 */
+	void delete(int groupId);
+	
+	/**
+	 * Delete group by given groupIds(batch update)
+	 * 
+	 * @param groupIds the group ids
+	 */
+	void delete(Set<Integer> groupIds);
+	
+	/**
+	 * Testing 1st and 2nd level cache
+	 */
+	void testHibernateCache();
+
 }
-=======
-}
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)

@@ -17,8 +17,4 @@ public class Ex04OrderView {
 		generate("1. Liệt kê danh sách các ngày bán", orderService.getSalesDate());
 	}
 	
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)

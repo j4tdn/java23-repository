@@ -44,10 +44,6 @@ public interface ItemGroupService {
 	 */
 	void save(ItemGroup group);
 	
-<<<<<<< HEAD
-
-=======
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 	/**
 	 * Save new item groups if not exists
 	 * 
@@ -62,9 +58,5 @@ public interface ItemGroupService {
 	 */
 	void merge(ItemGroup group);
 	
-<<<<<<< HEAD
-
-=======
->>>>>>> 5c1e4eb (lesson18-jpahibernate-testing 02.07.2025)
 	
 }
