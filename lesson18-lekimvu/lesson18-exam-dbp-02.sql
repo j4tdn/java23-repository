@@ -15,7 +15,6 @@ VALUES
 (2,'12B', 'Tran Van Minh'),
 (3,'12C', 'Le Thi Hoa');
 
-select * from T03_Class;
 
 INSERT INTO T02_Result (T02_Student_Id, T02_subject, T02_score)
 VALUES

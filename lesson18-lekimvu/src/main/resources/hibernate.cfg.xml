@@ -1,13 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
 <hibernate-configuration>
 	<session-factory>
 		<!-- JDBC Properties -->
 		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/lesson18-exam</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/lesson18_exam</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password">Vu23102004@</property>
+		<property name="connection.password">Le23102004@</property>
 
 		<!-- Hibernate Properties -->
 		<!-- Configure display query language for JPA/Hibnerate -->
@@ -18,13 +20,15 @@
 
 		<!-- Set the current session context getCurrentSession -->
 		<property name="current_session_context_class">thread</property>
-
+	
 		<!-- 2nd level cache -->
-		<property name="hibernate.cache.use_second_level_cache">true</property> 
-			<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property> 
-			<property name="hibernate.cache.provider_configuration_file_resource_path">ehcache.xml</property>
-
+		<!-- <property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+		<property name="hibernate.cache.provider_configuration_file_resource_path">ehcache.xml</property> -->
+	
 		<!-- Entity Mapping -->
+		
+		
 		
 	</session-factory>
 
