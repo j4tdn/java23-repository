@@ -1,0 +1,88 @@
+CREATE DATABASE java23_lesson18;
+USE java23_lesson18;
+
+CREATE TABLE CLASS(
+	ID INT PRIMARY KEY NOT NULL,
+    NAME VARCHAR(255) NOT NULL,
+    TEACHER VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE STUDENT(
+	ID INT PRIMARY KEY NOT NULL,
+    NAME VARCHAR(255) NOT NULL,
+    GENDER VARCHAR(10) NOT NULL,
+	CLASS_ID INT NOT NULL,
+    CONSTRAINT CHECK_GENDER CHECK (GENDER IN ('Male', 'Female')),
+    CONSTRAINT FK_STUDENT_CLASS_ID FOREIGN KEY (CLASS_ID) REFERENCES CLASS(ID)
+);
+
+DROP TABLE IF EXISTS RESULT;
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+SET FOREIGN_KEY_CHECKS = 1;
+CREATE TABLE RESULT(
+    STUDENT_ID INT NOT NULL,
+    SUBJECT VARCHAR(255) NOT NULL,
+    SCORE FLOAT NOT NULL,
+    CONSTRAINT PK_RESULT PRIMARY KEY (STUDENT_ID, SUBJECT),
+    CONSTRAINT FK_RESULT_STUDENT_ID FOREIGN KEY (STUDENT_ID) REFERENCES STUDENT(ID)
+);
+
+INSERT INTO STUDENT(ID, NAME, GENDER, CLASS_ID)
+VALUES
+	(1, 'Dinh Thi Ngoc', 'Female', 2),
+    (2, 'Nguyen Thanh Hung', 'Male', 1),
+    (3, 'Tran Mai Hoa', 'Female', 2),
+    (4, 'Doan Quang Vinh', 'Male', 1),
+    (5, 'Cao Anh Dao', 'Female', 3),
+    (6, 'Tran Kim Tuyen', 'Male', 3);
+    
+INSERT INTO RESULT(STUDENT_ID, SUBJECT, SCORE)
+VALUES
+	(1, 'Math', 8),
+    (2, 'Literature', 7),
+    (3, 'History', 9.5),
+    (4, 'Math', 6.8),
+    (5, 'Literature', 4.9),
+    (6, 'History', 8.2),
+	(7, 'Math', 9.8),
+    (8, 'Literature', 7.2),
+    (9, 'History', 8.8);
+    
+INSERT INTO CLASS(ID,NAME,TEACHER)
+VALUES
+	(1, '12A', 'Ho Cong Trung'),
+	(2, '12B', 'Dang Tu Anh'),
+    (3, '12C', 'Nguyen Van Tam');
+
+
+-- Câu 1: (STUDENT_ID,SUBJECT)
+-- Câu 2: 
+SELECT s.NAME, s.GENDER, c.TEACHER
+FROM STUDENT s 
+JOIN CLASS c 
+ON s.ID = c.ID;
+
+-- Câu 3:
+SELECT TEACHER AS NAMETEACHER,
+		count(s.CLASS_ID) AS SoHocSinh
+FROM CLASS c
+JOIN STUDENT s
+ON c.ID = s.CLASS_ID
+WHERE c.NAME = '12C'
+GROUP BY c.TEACHER;
+-- Câu 4:
+SELECT 
+    c.NAME AS class_name,
+    COUNT(DISTINCT s.ID) AS total_students
+FROM STUDENT s
+JOIN CLASS c 
+    ON s.CLASS_ID = c.ID
+JOIN RESULT r1
+    ON s.ID = r1.STUDENT_ID AND r1.SUBJECT = 'Math'
+JOIN RESULT r2
+    ON s.ID = r2.STUDENT_ID AND r2.SUBJECT = 'Literature'
+WHERE r1.SCORE >= 8 
+  AND r2.SCORE >= 8
+GROUP BY c.NAME;
