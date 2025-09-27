@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="icon" href="../assets/images/header.png">
+		<title>Ex01 Familiar with HTML tags(elements)</title>
+		<meta charset="utf-8">
+
+		<style>
+
+			html{
+				scroll-behavior: smooth;
+			}
+			/*
+				a: chu kì lặp lại
+				b: vị trí bắt đầu (mặc định = 0)
+				   các elements bắt đầu từ 1
+				   => muốn bắt đầu css từ dòng đầu tiên => phải b = 1
+			*/
+
+			table[id="students"] tbody tr:nth-child(2n + 1) {
+				background: yellow;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		
+		<!-- Image elements -->
+
+		<table border="1" cellspacing="0" cellpadding="5">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Block #</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td><a href="#heading">HEADING elements</a></td>
+				</tr>
+
+				<tr>
+					<td>2</td>
+					<td><a href="#list">[Un]Order List elements</a></td>
+				</tr>
+
+				<tr>
+					<td>3</td>
+					<td><a href="#table">TABLE elements</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+
+		<img src="../assets/images/candies.jpg" alt="Candies" height="200px">
+		<img src="../assets/images/cupcake.png" alt="Candies" height="200px">
+		<img src="../assets/images/lemon.png" alt="Candies" height="200px">
+		<img src="../assets/images/candies.jpg" alt="Candies" height="200px">
+
+		<hr>
+
+		<!-- HEADING elements -->
+
+		<h1 id="heading">Coding is fun</h1>
+		<h2>Coding is fun</h2>
+		<h3>Coding is fun</h3>
+		<h4>Coding is fun</h4>
+		<h5>Coding is fun</h5>
+		<h6>Coding is fun</h6>
+
+		<!-- PARAGRAPH elements -->
+
+		<h3>Where does it come from?</h3>
+
+		<p align="justify">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+
+		<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their <em>exact</em> original form, accompanied by <strong>English</strong> versions from the 1914 translation by H. Rackham. <br>End of</p>
+
+		<!-- Block & Inline Elements -->
+
+		<!-- [Un]Order List -->
+
+		<h3 id="list">Java Web Course's lessons order</h3>
+		<ol>
+			<li>GIT</li>
+			<li>JavaCore</li>
+			<li>Database</li>
+			<li>Java Database Connectivity</li>
+			<li>JPA/Hibernate</li>
+		</ol>
+
+		<h3 id="table">Java Web Course's lessons order</h3>
+		<ul>
+			<li>Egg</li>
+			<li>Oil</li>
+			<li>Rice</li>
+			<li>Vegetable</li>
+		</ul>
+
+		<!-- Table elements -->
+		<table border="1" cellspacing="0" cellpadding="5" id="students">
+			<thead>
+				<tr>
+					<th rowspan="2">Name</th>
+					<th rowspan="2">Age</th>
+					<th rowspan="2">Eye Color</th>
+					<th colspan="2">Phone</th>
+				</tr>
+				<tr>
+					<th>Fax 1</th>
+					<th>Fax 2</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>Peter</td>
+					<td>24</td>
+					<td>Black</td>
+					<td>12312312312</td>
+					<td>34534353455</td>
+				</tr>
+
+				<tr>
+					<td>Jack</td>
+					<td>20</td>
+					<td>Blue</td>
+					<td>33342434234</td>
+					<td>23434222323</td>
+				</tr>
+
+				<tr>
+					<td>Noce</td>
+					<td>33</td>
+					<td>Red</td>
+					<td>34535353233</td>
+					<td>65867563454</td>
+				</tr>
+
+				<tr>
+					<td>Lyly</td>
+					<td>15</td>
+					<td>Green</td>
+					<td>07856435345</td>
+					<td>23372346544</td>
+				</tr>
+
+				<tr>
+					<td>Broad</td>
+					<td>55</td>
+					<td>Yellow</td>
+					<td>87643535366</td>
+					<td>65754534535</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+		
+		<h3>Footer</h3>
+
+		<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+
+		<hr>
+
+		<p>Copyright &#169; K23 &#129476; </p>
+
+	</body>
+</html>
