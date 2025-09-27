@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../assets/images/images/header.png" />
+    <title>Ex01 Familiar with HTML tags (element)</title>
+    <meta charset="utf-8" />
+    <style>
+
+      html{
+        scroll-behavior: smooth;
+      }
+      /*
+      a: chu kì lặp lại
+      b: Vị trí bắt đầu lặp lại (mặt định =0)
+      n: số chu kì lặp lại
+      => muốn bắt đầu từ css từ dòng đầu tiên => phải b=1
+      */
+      table[id="students"] tbody tr:nth-child(2n+1) {
+        background-color: lightblue;
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+    <h1>Ex01 Familiar with HTML tags (element)</h1>
+
+    <table border="1" cellspacing="0" cellpadding="10">
+
+      <thead>
+        <th>#</th>
+        <th>Block</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><a href="#heading">Heading elements</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><a href="#Unorder">[Un]order List elements</a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><a href="#students">Table elements</a></td>
+        </tr>
+    </table>
+
+
+    <hr>
+    <!-- Image elements  -->
+     <img src="../assets/images/images/candies.jpg" alt="Candies" height="200px">
+     <img src="../assets/images/images/cupcake.png" alt="Cupcake" height="200px">
+     <img src="../assets/images/images/lemon.png" alt="Lemon" height="200px">
+
+
+    <!-- HEADING  elements  -->
+    <h1 id="heading">Coding is fun h1</h1>
+
+    <h2>Coding is fun h2</h2>
+
+    <h3>Coding is fun h3</h3>
+
+    <h4>Coding is fun h4</h4>
+
+    <h5>Coding is fun h5</h5>
+
+    <h6>Coding is fun h6</h6>
+
+    <!-- Paragraph elements -->
+
+    <h3>Where does is come from ?</h3>
+
+    <p>
+      <b>Lorem</b> Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but
+      also the leap into electronic typesetting, remaining essentially
+      unchanged. It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently with desktop
+      publishing software like Aldus PageMaker including versions of Lorem
+      Ipsum.
+    </p>
+
+    <p align="justify">
+      It is a long established fact that a reader will be distracted by the
+      readable content of a page when looking at its layout. The point of using
+      Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+      as opposed to using 'Content here, content here', making it look like
+      readable <strong>English</strong>. Many desktop publishing packages and web page editors
+      now use Lorem Ipsum as their default model text, and a search for 'lorem
+      ipsum' will uncover many web sites still in their infancy. Various
+      versions have evolved over the years, sometimes by accident, sometimes on
+      purpose <em>(injected humour and the like)</em>.
+    </p>
+
+     <!-- Block & Inline Elements -->
+
+     <!-- Order List and Unorder List (dùng khi có các phần tử.Ex 1... 2... 3....) -->
+<!-- Stt -->
+     <h3 id="Unorder">Java Course's lessons order</h3>
+
+     <ol>
+        <li>Git</li>
+        <li>Java</li>
+        <li>DataBase</li>
+        <li>HTML</li>
+        <li>BE</li>
+     </ol>
+<!-- . đầu dòng -->
+     <h3>Food's Ingredients</h3>
+     <ul>
+        <li>Egs</li>
+        <li>Oli</li>
+        <li>Rice</li>
+        <li>Vegetable</li>
+     </ul>
+
+     <!-- Table elements -->
+     <!-- border tạo viền -->
+    <table  border="1" cellspacing="0" cellpadding="10" id="students">
+      <thead>
+        <tr>
+          <th rowspan="2">Naem</th>
+          <th rowspan="2">Age</th>
+          <th rowspan="2">Eye Color</th>
+          <th colspan="2">Phone</th>
+        </tr>
+          <th>Fax 1</th>
+          <th>Fax 2</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Peter</td>
+          <td>24</td>
+          <td>Black</td>
+          <td>123456</td>
+          <td>56789</td>
+        </tr>
+        <tr>
+          <td>Adam</td>
+          <td>22</td>
+          <td>Blue</td>
+          <td>123456</td>
+          <td>56789</td>
+        </tr>
+        <tr>
+          <td>Owen</td>
+          <td>24</td>
+          <td>Black</td>
+          <td>123456</td>
+          <td>56789</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <h3>Footer</h3>
+
+    <p align="justify">
+      It is a long established fact that a reader will be distracted by the
+      readable content of a page when looking at its layout. The point of using
+      Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+      as opposed to using 'Content here, content here', making it look like
+      readable <strong>English</strong>. Many desktop publishing packages and web page editors
+      now use Lorem Ipsum as their default model text, and a search for 'lorem
+      ipsum' will uncover many web sites still in their infancy. Various
+      versions have evolved over the years, sometimes by accident, sometimes on
+      purpose <em>(injected humour and the like)</em>.
+    </p>
+
+    <p align="justify">
+      It is a long established fact that a reader will be distracted by the
+      readable content of a page when looking at its layout. The point of using
+      Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+      as opposed to using 'Content here, content here', making it look like
+      readable <strong>English</strong>. Many desktop publishing packages and web page editors
+      now use Lorem Ipsum as their default model text, and a search for 'lorem
+      ipsum' will uncover many web sites still in their infancy. Various
+      versions have evolved over the years, sometimes by accident, sometimes on
+      purpose <em>(injected humour and the like)</em>.
+    </p>
+
+    <p align="justify">
+      It is a long established fact that a reader will be distracted by the
+      readable content of a page when looking at its layout. The point of using
+      Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+      as opposed to using 'Content here, content here', making it look like
+      readable <strong>English</strong>. Many desktop publishing packages and web page editors
+      now use Lorem Ipsum as their default model text, and a search for 'lorem
+      ipsum' will uncover many web sites still in their infancy. Various
+      versions have evolved over the years, sometimes by accident, sometimes on
+      purpose <em>(injected humour and the like)</em>.
+    </p>
+  </body>
+</html>
