@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="../assets/images/header.png">
+    <title>Ex01 Familiar with HTML tags(elements)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*
+
+        a: chu kì lặp lại
+        b: vị trí bắt đầu (defalt = 0)
+            các element bắt đầu từ 1
+            => muốn bắt đầu css từ donigf đầu tiên => phải b = 1
+        */
+        table[id="students"] tbody tr:nth-child(2n+1) {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADING ELEMENTS  -->
+
+    <h1>Coding is fun h1</h1>
+
+    <!-- Images elements (inline) -->
+
+    <table border="1" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Block #</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><a href="#heading">HEADING elements</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="#list">[Un]ordered list elements</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="#table">Tables element</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <img src="../assets/images/candies.jpg" alt="Candies" height="200px">
+    <img src="../assets/images/cupcake.png" alt="Candies" height="200px">
+    <img src="../assets/images/lemon.png" alt="Candies" height="200px">
+    <img src="../assets/images/cake.jpg" alt="Candies" height="200px">
+
+
+    <hr>
+
+    <h2 id="heading">Coding is fun h2</h2>
+
+    <h3>Coding is fun h3</h3>
+
+    <h4>Coding is fun h4</h4>
+
+    <h5>Coding is fun h5</h5>
+
+    <h6>Coding is fun h6</h6>
+
+    <!-- paragraph elements  -->
+
+    <h3>Lorem </h3>
+    <p align="justify">Lorem ipsum dolor si
+        t amet consectetur adipisicin
+        g elit. Dignissimos pariatur fu
+        giat reiciendis a veritatis minus
+        ab doloribus nisi soluta, debitis
+        optio, porro molestiae nihil sunt
+        dolorem, ipsam doloremque quos itaqu
+
+        e assumenda accusantium. Possimus te
+        mporibus sint maxime neque? Reicien
+        dis officiis, saepe doloribus impedi
+        t recusandae magni tenetur nesciunt
+        aspernatur iusto animi dolorum fuga c
+        upiditate nihil lib<br><br>ero provident temp
+        ore perferendis. Cumque<strong>HELLO</strong> ut quae nesc
+        iunt cupiditate officiis, rem dolor
+        in quidem repellendus asperiores, fa
+        cere at et. Sequi<em>HI</em> labore vero facere
+        iusto, tempora ea modi cumque? Maio
+        res tempore quaerat, magni aut illo
+        deleniti fuga velit possimus asper
+        natur, voluptates porro officia se
+        qui debitis? Accusamus, perspiciat
+        is amet.</p>
+
+
+    <!-- Block and Inline elements -->
+
+
+    <!-- [Un]ordered List -->
+
+    <h3 id="list">Ordered List</h3>
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Java</li>
+        <li>Python</li>
+    </ol>
+
+    <h3>Unordered List</h3>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Java</li>
+        <li>Python</li>
+    </ul>
+
+    <!-- table elements -->
+
+    <table id="table" border="1" cellspacing="0" cellpadding="5" id="students">
+        <thead>
+            <tr>
+                <th rowspan="2">Name</th>
+                <th rowspan="2">Age</th>
+                <th rowspan="2">Eye color</th>
+                <th colspan="2">Phone</th>
+            </tr>
+            <tr>
+                <th>Fax 1</th>
+                <th>Fax 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>eren</td>
+                <td>35</td>
+                <td>blue</td>
+                <td>123</td>
+                <td>4556</td>
+            </tr>
+            <tr>
+                <td>alan</td>
+                <td>35</td>
+                <td>Black</td>
+                <td>12452</td>
+                <td>4556</td>
+            </tr>
+            <tr>
+                <td>john</td>
+                <td>25</td>
+                <td>Black</td>
+                <td>244513624</td>
+                <td>124352</td>
+            </tr>
+            <tr>
+                <td>Helen</td>
+                <td>35</td>
+                <td>Black</td>
+                <td>123</td>
+                <td>4556</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h3>Footer</h3>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eos nisi cupiditate perspiciatis nulla
+        reprehenderit architecto adipisci ipsum quidem vitae, nam est suscipit veritatis excepturi dolorem libero quasi
+        rem
+        sapiente et incidunt eius deleniti quod? Ut quis nihil omnis numquam corporis, odit molestiae soluta expedita
+        facilis, laboriosam libero animi facere similique sequi quasi cupiditate eos harum dolorem, minima velit quidem.
+        Animi aspernatur facere eum placeat itaque fugiat ipsa obcaecati in vel eos odio eius, molestiae aliquam
+        temporibus
+        similique quam non ut maxime nemo. Placeat sit id consectetur, et dolor autem veniam, pariatur, explicabo
+        similique
+        nisi ipsa nesciunt. Expedita, assumenda iure. ipsum dolor sit, amet consectetur adipisicing elit. Sapiente harum
+        pariatur, neque beatae cupiditate
+        mollitia iure facilis corrupti in quisquam ipsam reprehenderit doloremque odio incidunt consectetur voluptatum
+        obcaecati fuga, quo culpa impedit numquam exercitationem dignissimos alias eveniet. Recusandae, similique qui
+        perspiciatis illo cupiditate reprehenderit praesentium temporibus, maxime, sapiente nobis minima.Lorem ipsum
+        dolor, sit amet consectetur adipisicing elit. Deserunt sequi repellendus esse praesentium veniam sapiente
+        dolorum ipsam error pariatur laudantium, qui consequatur repellat. Omnis corrupti assumenda aliquam eius saepe
+        accusantium voluptatibus voluptas pariatur, cupiditate veritatis recusandae in atque iusto dicta. Iure
+        aspernatur
+        accusantium nemo, cum voluptate suscipit excepturi! Quaerat quae, dolor nesciunt earum esse asperiores aut eius
+        explicabo doloremque laboriosam impedit quis, praesentium quia sapiente. Est vero itaque exercitationem aperiam!
+        A,
+        consequatur voluptates ad facilis, eum alias soluta totam sunt voluptate quidem ullam corporis tempora nemo? Ad
+        dolor officia suscipit eveniet maxime alias pariatur vitae. Ea ipsum doloribus quos. Officia non neque tenetur
+        quaerat expedita accusantium consequuntur, vitae omnis assumenda. Assumenda architecto quis inventore quas rerum
+        quae neque laudantium quibusdam, amet doloribus, quaerat similique fuga ratione nobis. Eius accusamus architecto
+        dicta praesentium voluptatem, quos libero aspernatur, eligendi magnam distinctio adipisci, iure explicabo quasi
+        vitae laboriosam? A odio culpa voluptate enim neque sint possimus mollitia doloribus? Tenetur beatae alias,
+        perspiciatis, recusandae eveniet vitae est impedit magnam temporibus commodi nisi illo voluptatibus cumque
+        veritatis
+        ea laborum quasi excepturi delectus fugiat? Magni voluptas adipisci, earum, eum dolore atque voluptatibus
+        consequuntur est sint nobis ratione quam et iusto. Sint amet dicta, alias non incidunt quibusdam, aut, harum
+        voluptas iusto beatae nobis! Tenetur, sunt hic rerum quas placeat maiores. Nam sint unde saepe illo debitis odio
+        voluptates quos mollitia, nemo omnis praesentium aliquam impedit possimus exercitationem deserunt assumenda,
+        nostrum
+        corrupti itaque iusto! Aliquid nostrum tempore amet soluta incidunt dignissimos deserunt? Enim eius eum modi
+        delectus ducimus omnis aspernatur aliquam dignissimos doloremque laboriosam ullam, quibusdam voluptatem sint
+        quae
+        alias animi qui? Repudiandae voluptatum corrupti minima at accusantium. Iste nesciunt consectetur eveniet
+        ducimus ut
+        numquam explicabo cum in ullam qui cumque labore enim, repellendus voluptatibus facilis, delectus perspiciatis
+        obcaecati! Mollitia modi minus nemo rerum veritatis distinctio possimus?</p>
+
+        <hr>
+
+        <p>Copyright&#10084; &#129728;</p>
+
+
+    </body>
+
+</html>
