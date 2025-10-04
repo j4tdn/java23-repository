@@ -1,3 +1,7 @@
+#heavy files
+*/video/
+video
+
 # Ignore .metadata folder
 .metadata
 
@@ -5,9 +9,6 @@
 *.project
 *.classpath
 *.settings
-
-# Ignore .gitignore in project
-*/.gitignore
 
 # Compiled class file
 */bin/
