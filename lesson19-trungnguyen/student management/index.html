@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Web Page</title>
+    <style>
+        th {
+            background-color: #444;
+            color: #fff;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) td {
+            background-color: #fff;
+        }
+
+        td,
+        th {
+            padding: 8px;
+            border: 1px solid #888;
+        }
+
+        tr:hover td {
+            background-color: #e0f7fa;
+        }
+
+        input[type="text"] {
+            border-radius: 20px;
+            height: 25px;
+        }
+
+        .pagination-btn {
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            border: 1px solid #888;
+            margin-right: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align:center; background-color: #444; color: #fff;">Student Web Page</h2>
+    <div style="text-decoration:underline; text-underline-offset: 10px;">Student Web App - Spring MVC</div>
+    <br>
+    <input type="text" placeholder="&#9728; Search">
+    <br><br>
+    <button onclick="window.location.href='form.html'">+ Add New Student</button>
+    <br><br>
+    <table border="1" cellpadding="8" cellspacing="0" width="80%">
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Class</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked></td>
+            <td>John Smith</td>
+            <td>12T8</td>
+            <td>
+                <button onclick="window.location.href='form.html'">&#9998;</button>
+                <button>&#10006;</button>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>Mina Tan</td>
+            <td>10X3</td>
+            <td>
+                <button onclick="window.location.href='form.html'">&#9998;</button>
+                <button>&#10006;</button>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked></td>
+            <td>Lee Ha</td>
+            <td>14T2</td>
+            <td>
+                <button onclick="window.location.href='form.html'">&#9998;</button>
+                <button>&#10006;</button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div>
+        <button class="pagination-btn">1</button>
+        <button class="pagination-btn"><b>2</b></button>
+        <button class="pagination-btn">3</button>
+    </div>
+</body>
+
+</html>
