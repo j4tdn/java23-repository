@@ -1,0 +1,28 @@
+.header {
+  padding: 30px;  
+        
+}
+
+.header-title {
+    width: 120px; 
+    height: auto;
+    text-align: center;
+    display: inline-block;
+    padding: 30px;              
+}
+
+.header.header-title image {
+    text-align: center;
+}
+
+.header.val {
+    text-align: left;
+    margin-left: 0;
+    padding: 10px 0;
+    margin-bottom: 20px;       
+
+}
+
+.header.val h2{
+    margin: 0;
+}
