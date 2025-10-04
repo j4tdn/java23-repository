@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Web Page</title>
+</head>
+<body style="font-family: Arial, sans-serif; background:#fff; margin:20px;">
+
+  <!-- Header -->
+  <div style="background:#444; color:#fff; padding:10px 0; text-align:center; font-weight:bold; border-radius:6px 6px 0 0;">
+    Student Web Page
+  </div>
+
+  <!-- Nội dung -->
+  <div style="padding:20px;">
+
+    <!-- Tiêu đề nhỏ -->
+    <div style="margin-bottom:10px; color:#333;">Student Web App - Spring MVC</div>
+
+    <!-- Search -->
+    <div style="margin-bottom:14px;">
+      <input type="text" placeholder="🔍 Search"
+             style="padding:8px 12px; font-size:14px; border:1px solid #aaa; border-radius:16px; width:200px;">
+    </div>
+
+    <!-- Add New Student -->
+    <div style="margin-bottom:18px;">
+      <a href="form.html" 
+         style="display:inline-block; border:1px solid #000; padding:8px 14px; border-radius:4px; text-decoration:none; color:#000; font-size:14px;">
+        ➕ Add New Student
+      </a>
+    </div>
+
+    <!-- Bảng -->
+    <table style="width:100%; border-collapse:collapse; text-align:left; font-size:14px;">
+      <thead>
+        <tr style="background:#999; color:#fff;">
+          <th style="padding:10px; border:1px solid #666; width:40px;">
+            <input type="checkbox">
+          </th>
+          <th style="padding:10px; border:1px solid #666;">Name</th>
+          <th style="padding:10px; border:1px solid #666;">Class</th>
+          <th style="padding:10px; border:1px solid #666; width:80px;">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#f2f2f2;">
+          <td style="padding:10px; border:1px solid #999; text-align:center;">
+            <input type="checkbox" checked>
+          </td>
+          <td style="padding:10px; border:1px solid #999;">John Smith</td>
+          <td style="padding:10px; border:1px solid #999;">12T8</td>
+          <td style="padding:10px; border:1px solid #999; text-align:center;">
+            <a href="form.html" style="margin-right:8px; text-decoration:none;">✏️</a>
+            <a href="#" style="text-decoration:none;">❌</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #999; text-align:center;">
+            <input type="checkbox">
+          </td>
+          <td style="padding:10px; border:1px solid #999;">Mina Tan</td>
+          <td style="padding:10px; border:1px solid #999;">10X3</td>
+          <td style="padding:10px; border:1px solid #999; text-align:center;">
+            <a href="form.html" style="margin-right:8px; text-decoration:none;">✏️</a>
+            <a href="#" style="text-decoration:none;">❌</a>
+          </td>
+        </tr>
+        <tr style="background:#f2f2f2;">
+          <td style="padding:10px; border:1px solid #999; text-align:center;">
+            <input type="checkbox" checked>
+          </td>
+          <td style="padding:10px; border:1px solid #999;">Lee Ha</td>
+          <td style="padding:10px; border:1px solid #999;">14T2</td>
+          <td style="padding:10px; border:1px solid #999; text-align:center;">
+            <a href="form.html" style="margin-right:8px; text-decoration:none;">✏️</a>
+            <a href="#" style="text-decoration:none;">❌</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Pagination -->
+    <div style="margin-top:16px; text-align:center;">
+      <a href="#" style="display:inline-block; border:1px solid #333; border-radius:50%; width:28px; height:28px; line-height:28px; margin:0 3px; text-decoration:none; color:#000;">1</a>
+      <a href="#" style="display:inline-block; border:1px solid #333; border-radius:50%; width:28px; height:28px; line-height:28px; margin:0 3px; text-decoration:none; color:#000; background:#ddd;">2</a>
+      <a href="#" style="display:inline-block; border:1px solid #333; border-radius:50%; width:28px; height:28px; line-height:28px; margin:0 3px; text-decoration:none; color:#000;">3</a>
+    </div>
+
+  </div>
+</body>
+</html>
