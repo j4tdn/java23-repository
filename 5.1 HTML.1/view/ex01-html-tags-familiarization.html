@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="icon" href="../assets/images/header.png">
+		<meta charset="utf-8">
+		<title>Ex01 Familiar with HTML tags(elements)</title>
+
+		<style>
+
+			html { 
+				scroll-behavior: smooth;
+			}
+
+			/*
+				a: chu kì lặp lại
+				b: vị trí bắt đầu (mặc định = 0)
+                   các element bắt đầu từ 1
+				   => muốn bắt đầu css từ dòng đầu tiên => phải b = 1
+
+			*/
+			table[id="students"] tbody tr:nth-child(2n + 1) {
+				background: violet;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<h1>Ex01 Familiar with HTML tags(elements)</h1>
+
+		<!-- Image elements(inline) -->
+
+		<table border="1" cellspacing="0" cellpadding="5">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Block #</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td><a href="#heading">HEADING elements</a></td>
+				</tr>
+
+				<tr>
+					<td>2</td>
+					<td><a href="#list">[Un]Order List elements</a></td>
+				</tr>
+
+				<tr>
+					<td>3</td>
+					<td><a href="#table">Table elements</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+
+		<img src="../assets/images/candies.jpg" alt="Candies" height="200">
+		<img src="../assets/images/cupcake.png" alt="Candies" height="200">
+		<img src="../assets/images/lemon.png" alt="Candies" height="200">
+		<img src="../assets/images/candies.jpg" alt="Candies" height="200">
+
+		<hr>
+
+		<!-- HEADING elements -->
+
+		<h1 id="heading">Coding is fun h1</h1>
+
+		<h2>Coding is fun h2</h2>
+
+		<h3>Coding is fun h3</h3>
+
+		<h4>Coding is fun h4</h4>
+
+		<h5>Coding is fun h5</h5>
+
+		<h6>Coding is fun h6</h6>
+
+		<hr>
+
+		<!-- Form elements -->
+
+		<h3>Welcome to Java23 WebApp</h3>
+
+		<form>
+			<table>
+				<tr>
+					<td><label>First Name:</label></td>
+					<td><input type="text" ></td>
+				</tr>
+
+				<tr>
+					<td><label>Last Name:</label></td>
+					<td><input type="text"></td>
+				</tr>
+
+				<tr>
+					<td><label>Gender:</label></td>
+					<td>
+						<label for="xma">Male</label> <input id="xma" type="radio" checked name="gender-group"> 
+						<label for="xfe">Female</label> <input id="xfe" type="radio" name="gender-group">
+					</td>
+				</tr>
+
+				<tr>
+					<td><label>Age:</label></td>
+					<td><input type="number" style="width: 48px;" min="15" max="60" value="18"></td>
+				</tr>
+
+				<tr>
+					<td><label>Password</label></td>
+					<td><input type="password" name=""></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td>
+						<!-- type="submit" auto reload page -->
+						<input type="submit" value="Send Request">
+						<input type="reset" value="Reset">
+					</td>
+				</tr>
+				
+
+			</table>
+		</form>
+
+		<hr>
+
+
+		<!-- Paragraph elements -->
+
+		<h3>Where does it come from?</h3>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+		<p align="justify">Contrary to popular belief, Lorem Ipsum is not simply random text. 
+		It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
+		Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, 
+		consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, 
+		discovered the undoubtable source.<br><br><strong>Lorem</strong> Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" 
+		(The Extremes of Good and Evil) by Cicero, written in <em>45 BC</em>. This book is a treatise on the theory of ethics, 
+		very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", 
+		comes from a line in section 1.10.32</p>
+
+		<!-- Block & Inline Elements -->
+
+		<!-- [Un]Order List -->
+
+		<h3 id="list">Java Web Course's lessons order</h3>
+		<ol>
+			<li>GIT</li>
+			<li>JavaCore</li>
+			<li>Database</li>
+			<li>Java Database Connectivity</li>
+			<li>JPA/Hibernate</li>
+		</ol>
+
+		<h3>Food's ingredients</h3>
+		<ul>
+			<li>Egg</li>
+			<li>Oil</li>
+			<li>Rice</li>
+			<li>Vegetable</li>
+		</ul>
+
+		<!-- Table elements -->
+
+		<table id="table" border="1" cellspacing="0" cellpadding="5" id="students">
+			<thead>
+				<tr>
+					<th rowspan="2">Name</th>
+					<th rowspan="2">Age</th>
+					<th rowspan="2">Eye Color</th>
+					<th colspan="2">Phone</th>
+				</tr>
+				<tr>
+					<th>Fax 1</th>
+					<th>Fax 2</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Peter</td>
+					<td>24</td>
+					<td>Black</td>
+					<td>147258963</td>
+					<td>123654789</td>
+				</tr>
+				<tr>
+					<td>Smith</td>
+					<td>16</td>
+					<td>Red</td>
+					<td>147258963</td>
+					<td>123654789</td>
+				</tr>
+				<tr>
+					<td>Susan</td>
+					<td>32</td>
+					<td>Black</td>
+					<td>147258963</td>
+					<td>123654789</td>
+				</tr>
+				<tr>
+					<td>Adam</td>
+					<td>24</td>
+					<td>Blue</td>
+					<td>159753852</td>
+					<td>123654789</td>
+				</tr>
+				<tr>
+					<td>Own</td>
+					<td>18</td>
+					<td>Black</td>
+					<td>147258963</td>
+					<td>123654789</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<br>
+
+		<video width="320" height="220" loop controls poster="../assets/images/cake.jpg" src="../assets/video/video.mp4"></video>
+
+		<audio width="320" controls src="../assets/audio/audio.mp3" ></audio>
+
+		<br>
+
+		<iframe width="320" height="220" src="https://www.youtube.com/embed/wui-1EYGuT4?si=XHG7-qEUUSKoDJBn" title="YouTube video Embed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+		<br>
+
+		<iframe width='320' height='440' src='https://embed.coggle.it/diagram/ZMn-e-KT-OtsGXeO/07fd3557072c5f7177c540bcf135abfd7e7a51995c919c9d85d76d731670bcd3' frameborder='0' allowfullscreen></iframe>
+
+		<hr>
+
+		<div>
+			<h3>Footer</h3>
+
+			<p><span style="color: red;">Lorem</span> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+
+		<hr>
+
+		<p>Copyright &#169; K23 &#129476;</p>
+
+	</body>
+</html>
