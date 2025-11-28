@@ -1,0 +1,28 @@
+
+header {
+    height: 66px;
+    background: #2b2b2b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 88px;
+}
+
+.navbar {
+    display: flex;
+    gap: 44px;           
+    font-size: 32px;     
+    font-family: "Corbel", sans-serif;
+}
+
+.logo {
+    margin-right: 44px;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    position: relative;
+}

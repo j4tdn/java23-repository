@@ -1,0 +1,14 @@
+.css-import {
+    list-style-type: square;
+}
+
+.block-test {
+    border: 3px dotted #6666ff;
+    
+    width: 200px;
+    height: 100px;
+
+    background-color: aliceblue;
+    color: black;
+
+}

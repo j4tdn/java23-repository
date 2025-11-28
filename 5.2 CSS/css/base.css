@@ -1,0 +1,88 @@
+:root{
+    --redw: #AB2000;
+}
+/* 
+    .woff format('woff') 
+    .ttf format('truetype')
+    .otf format('opentype')
+
+    font-family
+    font-style 
+*/
+@font-face {
+    font-family: "kaushan";
+    src: url('../webfonts/ScienceGothic-Bold.ttf') format("truetype"); 
+}
+
+
+/* ---------- common style---------- */
+
+.bg-green {
+    background-color: green;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+.bg-pink {
+    background-color: pink;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+/* --------------------- */
+
+.page-header {
+    color: blue;
+    text-transform: uppercase;
+
+    background-color: aqua;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    height:66px;
+    line-height: 66px;
+}
+
+.signature {
+    color: purple;
+    font-style: italic;
+    color: var(--redw);
+}
+
+/* 
+dấu * là ăn từng tag
+body là ăn toàn bộ thẻ con bên trong body, có thể nếu một thẻ đã có sẵn font  thì sẽ ko thay đổi */
+
+* {
+    font-family: kaushan, Tahoma, Geneva, sans-serif;
+    box-sizing: border-box;
+}
+
+
+.line-through {
+    text-decoration: line-through;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

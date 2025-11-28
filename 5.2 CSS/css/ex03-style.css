@@ -1,0 +1,52 @@
+.block {
+    border: 1px solid grey;
+}
+
+.block-xs {
+    width: 200px;
+    height: 120px;
+}
+
+.block-md {
+    width: 300px;
+    height: 180px;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+
+.c-left {
+    clear: left;
+}
+
+
+.c-right {
+    clear: right;
+}
+
+.container {
+    .block-sm-square {
+        width: 100px;
+        height: 100px;
+
+        /* float: left; */
+    }
+
+/* 
+    .block-sm-square:nth-last-child(-n+2) {
+        clear: left;
+    } */
+
+    .block-sm-square:nth-child(-n +3) {
+        float: left;
+    }
+    .block-sm-square:nth-child(n+4) {
+        clear: left;
+    }
+
+}

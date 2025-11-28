@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Internal CSS */
+        h2 {
+            color: blue;
+        }
+        p:last-of-type {
+            color: orange;
+            font-style: italic;
+        }
+
+        /* p[class="lorem2"] {
+            color: purple;
+            font-weight: bold;
+        } */
+         .lorem2 {
+            color: purple;
+            font-weight: bold;
+         }
+
+         .text-upper-case {
+            text-transform: uppercase;
+         }
+
+         #signature {
+            color:purple;
+            text-align: right;
+            font-size: 0.8em;
+         }
+    </style>
+
+    <link rel="stylesheet" href="../css/ex01-style.css">  
+</head><body>
+
+    <h2 style="color:red">Lesson 20: CSS Connection</h2>
+
+    <hr>
+    <p class="lorem2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, vel obcaecati!</p>
+
+    <p class="lorem2 text-upper-case">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, vel
+        obcaecati!</p>
+
+    <ul>
+        <li>Inline</li>
+        <li>Internal</li>
+        <li>External</li>
+    </ul>
+
+    <p id="signature">Signature</p>
+</body>
+</html>
