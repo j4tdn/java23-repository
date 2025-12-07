@@ -1,0 +1,99 @@
+:root {
+    --redw: #AB2000;
+}
+/*
+    .woff format('woff')
+    .otf format('opentype')
+    .ttf format('truetype')
+
+    font-family
+    font-style
+*/
+
+@font-face {
+    font-family: 'Kaushan';
+    src: url('../webfonts/KaushanScript-Regular.otf') format('opentype');
+}
+/* -----------common style-------------- */
+.bg-green {
+    background-color: green;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+.bg-pink {
+    background-color: pink;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.bg-yellow {
+    background-color: #ffff00;
+}
+
+.block-sm {
+    width: 100px;   
+    height: 100px;
+}
+
+.block-md {
+    width: 200px;   
+    height: 200px;
+}
+
+.mr-8px {
+    margin-right: 8px;
+}
+
+.mt-8px {
+    margin-top: 8px;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.invisible {
+    visibility: hidden !important;
+}
+
+/* ------------------------------------- */
+
+* {
+    font-family: Kaushan, Tahoma, Geneva, sans-serif;
+    box-sizing: border-box;
+}
+
+.page-header {
+    color: blue;
+    text-transform: uppercase;
+
+    background-color: greenyellow;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    height: 66px;
+    line-height: 66px;
+}
+
+.signature {
+    color: purple;
+    font-style: italic;
+    color: var(--redw);
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.clear-fix {
+    clear: both;
+}
