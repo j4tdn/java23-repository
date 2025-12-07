@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#page-header {
+    width: 100%;
+    height: 80px;
+    background: #000;
+}
+
+.page-logo img {
+    height: 45px;
+}
+
+.page-navigation {
+    display: flex;
+    gap: 50px;
+}
+
+.page-navigation li a {
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    transition: 0.3s;
+}
+
+.page-navigation li a:hover {
+    color: #f00;
+}
+
+
+#top-background {
+    width: 100%;
+    height: 600px;
+    background-image: url('E:/java23/5. Frontend/lesson20-tranconghoang exoticar/exoticar/images/banner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: #fff;
+    position: relative;
+    font-family: Arial, sans-serif;
+}
+
+
+.top-background-content {
+    position: relative;
+    z-index: 2;
+}
+
+.top-background-content h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.top-background-content p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.btn-red {
+    display: inline-block;
+    background-color: #cc0000;
+    color: #fff;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-red:hover {
+    background-color: #ff0000;
+}
