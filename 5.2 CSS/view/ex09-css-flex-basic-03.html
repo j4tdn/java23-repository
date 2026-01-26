@@ -1,0 +1,57 @@
+</html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ex09 - CSS Flex Basic 03</title>
+
+	<link rel="stylesheet" href="../css/base.css">
+	
+	<style>
+		hr {
+			margin: 50px 0;
+		}
+
+		/*
+			Khi apply flex cho container, thì mỗi item con sẽ tự động có thêm thuộc tính sau đây
+			container {
+				item {
+					flex: flex-grow, flex-shrink flex-basis;
+					flex: 0 1 auto;
+				}
+			}
+		*/
+
+		.container {
+			display: flex;
+			
+			width: 1200px;
+			height: 600px;
+			border: 2px dotted #88aa1b;
+			
+			
+
+			.item {
+				width: 120px;
+				height: 60px;
+
+				background: #7caa1e;
+				border: 1px solid #e7e8e9;
+			}
+		}
+	</style>
+</head>
+<body>
+	<h2 class="page-header">LESSON 20: CSS Flexbox</h2>
+	
+	<hr>
+
+	<div class="container">
+		<div class="item">Item A1</div>
+		<div class="item">Item A2</div>
+		<div class="item">Item A3</div>
+		<div class="item">Item A4</div>
+		<div class="item">Item A5</div>
+	</div>
+	
+</body>
+</html>

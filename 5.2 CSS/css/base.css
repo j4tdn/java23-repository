@@ -1,6 +1,11 @@
 :root {
 	--redw: #AB2000;
 }
+
+* {
+	box-sizing: border-box;
+}
+
 /*
 	.woff format('woff')
 	.otf format('opentype')
