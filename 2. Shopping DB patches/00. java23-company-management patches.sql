@@ -1,0 +1,136 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema java23_company_management
+-- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `java23_company_management` ;
+
+-- -----------------------------------------------------
+-- Schema java23_company_management
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `java23_company_management` DEFAULT CHARACTER SET utf8 ;
+USE `java23_company_management` ;
+
+-- -----------------------------------------------------
+-- Table `java23_company_management`.`T01_DEPARTMENT`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `java23_company_management`.`T01_DEPARTMENT` ;
+
+CREATE TABLE IF NOT EXISTS `java23_company_management`.`T01_DEPARTMENT` (
+  `C01_DEPARMENT_ID` INT NOT NULL AUTO_INCREMENT,
+  `C01_DEPARTMENT_NAME` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`C01_DEPARMENT_ID`),
+  UNIQUE INDEX `C01_DEPARTMENT_NAME_UNIQUE` (`C01_DEPARTMENT_NAME` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `java23_company_management`.`T03_EMPLOYEE`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `java23_company_management`.`T03_EMPLOYEE` ;
+
+CREATE TABLE IF NOT EXISTS `java23_company_management`.`T03_EMPLOYEE` (
+  `C03_EMPLOYEE_ID` INT NOT NULL AUTO_INCREMENT,
+  `C03_EMPLOYEE_NAME` VARCHAR(255) NOT NULL,
+  `C03_EMPLOYEE_ADDRESS` TEXT NOT NULL,
+  `C03_SALARY` INT NOT NULL,
+  `C03_GENDER` INT NOT NULL,
+  `C03_DATE_OF_BIRTH` DATE NOT NULL,
+  `C03_STARTED_AT` DATE NOT NULL,
+  `C03_DEPARTMENT_ID` INT NOT NULL,
+  `C03_MANAGER_ID` INT NULL,
+  PRIMARY KEY (`C03_EMPLOYEE_ID`),
+  INDEX `fk_T03_EMPLOYEE_T01_DEPARTMENT_idx` (`C03_DEPARTMENT_ID` ASC) VISIBLE,
+  INDEX `FK_T03_SELF_REF_idx` (`C03_MANAGER_ID` ASC) VISIBLE,
+  CONSTRAINT `FK_T03_T01`
+    FOREIGN KEY (`C03_DEPARTMENT_ID`)
+    REFERENCES `java23_company_management`.`T01_DEPARTMENT` (`C01_DEPARMENT_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `FK_T03_SELF_REF`
+    FOREIGN KEY (`C03_MANAGER_ID`)
+    REFERENCES `java23_company_management`.`T03_EMPLOYEE` (`C03_EMPLOYEE_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `java23_company_management`.`T02_PROJECT`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `java23_company_management`.`T02_PROJECT` ;
+
+CREATE TABLE IF NOT EXISTS `java23_company_management`.`T02_PROJECT` (
+  `C02_PROJECT_ID` INT NOT NULL AUTO_INCREMENT,
+  `C02_PROJECT_NAME` VARCHAR(255) NOT NULL,
+  `C02_START_DATE` DATE NOT NULL,
+  `C02_END_DATE` DATE NULL,
+  `C02_REVENUE` DOUBLE NULL,
+  `C02_PROJECT_LEAD_ID` INT NOT NULL,
+  PRIMARY KEY (`C02_PROJECT_ID`),
+  UNIQUE INDEX `C02_PROJECT_NAME_UNIQUE` (`C02_PROJECT_NAME` ASC) VISIBLE,
+  INDEX `FK_T02_T03_idx` (`C02_PROJECT_LEAD_ID` ASC) VISIBLE,
+  CONSTRAINT `FK_T02_T03`
+    FOREIGN KEY (`C02_PROJECT_LEAD_ID`)
+    REFERENCES `java23_company_management`.`T03_EMPLOYEE` (`C03_EMPLOYEE_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `java23_company_management`.`T04_PROJECT_MANAGEMENT`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `java23_company_management`.`T04_PROJECT_MANAGEMENT` ;
+
+CREATE TABLE IF NOT EXISTS `java23_company_management`.`T04_PROJECT_MANAGEMENT` (
+  `C04_PROJECT_ID` INT NOT NULL,
+  `C04_EMPLOYEE_ID` INT NOT NULL,
+  `C04_WORKING_HOURS` INT NOT NULL DEFAULT 0,
+  PRIMARY KEY (`C04_EMPLOYEE_ID`, `C04_PROJECT_ID`),
+  INDEX `fk_T02_PROJECT_has_T03_EMPLOYEE_T03_EMPLOYEE1_idx` (`C04_EMPLOYEE_ID` ASC) VISIBLE,
+  INDEX `fk_T02_PROJECT_has_T03_EMPLOYEE_T02_PROJECT1_idx` (`C04_PROJECT_ID` ASC) VISIBLE,
+  CONSTRAINT `fk_T02_PROJECT_has_T03_EMPLOYEE_T02_PROJECT1`
+    FOREIGN KEY (`C04_PROJECT_ID`)
+    REFERENCES `java23_company_management`.`T02_PROJECT` (`C02_PROJECT_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_T02_PROJECT_has_T03_EMPLOYEE_T03_EMPLOYEE1`
+    FOREIGN KEY (`C04_EMPLOYEE_ID`)
+    REFERENCES `java23_company_management`.`T03_EMPLOYEE` (`C03_EMPLOYEE_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `java23_company_management`.`T05_DEPARTMENT_MANAGER`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `java23_company_management`.`T05_DEPARTMENT_MANAGER` ;
+
+CREATE TABLE IF NOT EXISTS `java23_company_management`.`T05_DEPARTMENT_MANAGER` (
+  `C05_DEPARTMENT_ID` INT NOT NULL,
+  `C05_MANAGER_ID` INT NOT NULL,
+  `C05_STARTED_AT` DATE NOT NULL,
+  PRIMARY KEY (`C05_DEPARTMENT_ID`, `C05_MANAGER_ID`),
+  INDEX `FK_T05_T03_idx` (`C05_MANAGER_ID` ASC) VISIBLE,
+  CONSTRAINT `FK_T05_T01`
+    FOREIGN KEY (`C05_DEPARTMENT_ID`)
+    REFERENCES `java23_company_management`.`T01_DEPARTMENT` (`C01_DEPARMENT_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `FK_T05_T03`
+    FOREIGN KEY (`C05_MANAGER_ID`)
+    REFERENCES `java23_company_management`.`T03_EMPLOYEE` (`C03_EMPLOYEE_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
